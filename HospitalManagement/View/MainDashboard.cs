@@ -6,5 +6,6 @@ namespace HospitalManagement.View
         {
             InitializeComponent();
         }
+
     }
 }

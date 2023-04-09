@@ -12,7 +12,6 @@
     <Folder Include="DAL\" />
     <Folder Include="Model\" />
     <Folder Include="Controller\" />
-    <Folder Include="UserControls\" />
   </ItemGroup>
 
 </Project>
