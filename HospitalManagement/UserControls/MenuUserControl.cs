@@ -16,5 +16,10 @@ namespace HospitalManagement.UserControls
         {
             InitializeComponent();
         }
+
+        private void logoutLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //DialogResult = DialogResult.OK;
+        }
     }
 }
