@@ -123,6 +123,8 @@
             Controls.Add(addButton);
             Controls.Add(orderedTestsComboBox);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "ReviewTests";
             Text = "Review Tests";
             ResumeLayout(false);
