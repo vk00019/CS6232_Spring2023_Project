@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalManagement.Controller;
+using HospitalManagement.UserControls;
 
 namespace HospitalManagement.View
 {
@@ -33,17 +34,18 @@ namespace HospitalManagement.View
             var password = _controller.Password();
             if (username == usernameTextBox.Text && password == passwordTextBox.Text)
             {
-                using var mainform = new MainDashboard();
+                using var mainForm = new MainDashboard();
+                mainForm.GetMenuUserControl().SetUsername(username);
                 this.Hide();
-                var value = mainform.ShowDialog();
-                if (value != DialogResult.OK)
-                {
-                    this.Close();
-                }
-                else
-                {
-                    this.Show();
-                }
+                var value = mainForm.ShowDialog();
+                //if (value != DialogResult.OK)
+                //{
+                //    this.Close();
+                //}
+                //else
+                //{
+                //    this.Show();
+                //}
 
                 usernameTextBox.Clear();
                 passwordTextBox.Clear();

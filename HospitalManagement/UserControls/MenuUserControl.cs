@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using HospitalManagement.View;
+﻿using HospitalManagement.View;
 
 namespace HospitalManagement.UserControls
 {
@@ -18,19 +9,38 @@ namespace HospitalManagement.UserControls
             InitializeComponent();
         }
 
-        private void logoutLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LogoutLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //DialogResult = DialogResult.OK;
+            ExitMenuItem_Click(sender, e);
+            using var loginForm = new LoginForm();
+            loginForm.Show();
+
+            loginForm.DialogResult = DialogResult.OK;
         }
 
-        private void exitMenuItem_Click(object sender, EventArgs e)
+        private void ExitMenuItem_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
 
-        private void openMenuItem_Click(object sender, EventArgs e)
+        private void OpenMenuItem_Click(object sender, EventArgs e)
         {
             using var mainDashboard = new MainDashboard();
+            //this.Hide();
+            mainDashboard.ShowDialog();
+
+        }
+
+        public void SetUsername(string username)
+        {
+            usernameLabel.Text = username.ToUpper();
+        }
+
+        private void RegisterPatientMenuItem_Click(object sender, EventArgs e)
+        {
+            using var registerPatient = new PatientRegistration();
+           // this.Hide();
+            registerPatient.ShowDialog();
         }
     }
 }

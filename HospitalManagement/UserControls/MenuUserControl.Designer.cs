@@ -55,24 +55,25 @@
             this.logoutLinkLabel.TabIndex = 9;
             this.logoutLinkLabel.TabStop = true;
             this.logoutLinkLabel.Text = "Logout";
-            this.logoutLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.logoutLinkLabel_LinkClicked);
+            this.logoutLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogoutLinkLabel_LinkClicked);
             // 
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(462, 49);
+            this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.usernameLabel.Location = new System.Drawing.Point(502, 49);
             this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(119, 32);
+            this.usernameLabel.Size = new System.Drawing.Size(142, 37);
             this.usernameLabel.TabIndex = 8;
             this.usernameLabel.Text = "username";
             // 
             // exitMenuItem
             // 
             this.exitMenuItem.Name = "exitMenuItem";
-            this.exitMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.exitMenuItem.Size = new System.Drawing.Size(184, 44);
             this.exitMenuItem.Text = "Exit";
-            this.exitMenuItem.Click += new System.EventHandler(this.exitMenuItem_Click);
+            this.exitMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
             // 
             // closeMenu
             // 
@@ -85,20 +86,21 @@
             // searchPatientVisitMenuItem
             // 
             this.searchPatientVisitMenuItem.Name = "searchPatientVisitMenuItem";
-            this.searchPatientVisitMenuItem.Size = new System.Drawing.Size(350, 44);
+            this.searchPatientVisitMenuItem.Size = new System.Drawing.Size(359, 44);
             this.searchPatientVisitMenuItem.Text = "Search Patient Visit";
             // 
             // searchPatientMenuItem
             // 
             this.searchPatientMenuItem.Name = "searchPatientMenuItem";
-            this.searchPatientMenuItem.Size = new System.Drawing.Size(350, 44);
+            this.searchPatientMenuItem.Size = new System.Drawing.Size(359, 44);
             this.searchPatientMenuItem.Text = "Search Patient";
             // 
             // registerPatientMenuItem
             // 
             this.registerPatientMenuItem.Name = "registerPatientMenuItem";
-            this.registerPatientMenuItem.Size = new System.Drawing.Size(350, 44);
+            this.registerPatientMenuItem.Size = new System.Drawing.Size(359, 44);
             this.registerPatientMenuItem.Text = "Register Patient";
+            this.registerPatientMenuItem.Click += new System.EventHandler(this.RegisterPatientMenuItem_Click);
             // 
             // patientMenuItem
             // 
@@ -134,9 +136,9 @@
             // openMenuItem
             // 
             this.openMenuItem.Name = "openMenuItem";
-            this.openMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.openMenuItem.Size = new System.Drawing.Size(206, 44);
             this.openMenuItem.Text = "Open";
-            this.openMenuItem.Click += new System.EventHandler(this.openMenuItem_Click);
+            this.openMenuItem.Click += new System.EventHandler(this.OpenMenuItem_Click);
             // 
             // homeMenu
             // 

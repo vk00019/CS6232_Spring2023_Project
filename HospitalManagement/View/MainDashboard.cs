@@ -1,3 +1,5 @@
+using HospitalManagement.UserControls;
+
 namespace HospitalManagement.View
 {
     public partial class MainDashboard : Form
@@ -5,6 +7,11 @@ namespace HospitalManagement.View
         public MainDashboard()
         {
             InitializeComponent();
+        }
+
+        public MenuUserControl GetMenuUserControl()
+        {
+            return menuUserControl;
         }
 
     }
