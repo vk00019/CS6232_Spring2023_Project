@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            richTextBox1 = new RichTextBox();
+            initialDiagnosisRichTextBox = new RichTextBox();
             label1 = new Label();
-            richTextBox2 = new RichTextBox();
+            finalDiagnosisRichTextBox = new RichTextBox();
             label2 = new Label();
             addButton = new Button();
             cancelButton = new Button();
+            errorLabel = new Label();
             SuspendLayout();
             // 
-            // richTextBox1
+            // initialDiagnosisRichTextBox
             // 
-            richTextBox1.Location = new Point(107, 65);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(239, 96);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
+            initialDiagnosisRichTextBox.Location = new Point(107, 65);
+            initialDiagnosisRichTextBox.Name = "initialDiagnosisRichTextBox";
+            initialDiagnosisRichTextBox.Size = new Size(239, 96);
+            initialDiagnosisRichTextBox.TabIndex = 0;
+            initialDiagnosisRichTextBox.Text = "";
             // 
             // label1
             // 
@@ -53,13 +54,13 @@
             label1.TabIndex = 1;
             label1.Text = "Initial Diagnosis:";
             // 
-            // richTextBox2
+            // finalDiagnosisRichTextBox
             // 
-            richTextBox2.Location = new Point(107, 209);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(239, 96);
-            richTextBox2.TabIndex = 2;
-            richTextBox2.Text = "";
+            finalDiagnosisRichTextBox.Location = new Point(107, 209);
+            finalDiagnosisRichTextBox.Name = "finalDiagnosisRichTextBox";
+            finalDiagnosisRichTextBox.Size = new Size(239, 96);
+            finalDiagnosisRichTextBox.TabIndex = 2;
+            finalDiagnosisRichTextBox.Text = "";
             // 
             // label2
             // 
@@ -72,7 +73,7 @@
             // 
             // addButton
             // 
-            addButton.Location = new Point(121, 328);
+            addButton.Location = new Point(121, 341);
             addButton.Name = "addButton";
             addButton.Size = new Size(75, 23);
             addButton.TabIndex = 4;
@@ -81,24 +82,35 @@
             // 
             // cancelButton
             // 
-            cancelButton.Location = new Point(253, 328);
+            cancelButton.Location = new Point(253, 341);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(75, 23);
             cancelButton.TabIndex = 5;
             cancelButton.Text = "Cancel";
             cancelButton.UseVisualStyleBackColor = true;
             // 
+            // errorLabel
+            // 
+            errorLabel.AutoSize = true;
+            errorLabel.Location = new Point(156, 316);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(38, 15);
+            errorLabel.TabIndex = 6;
+            errorLabel.Text = "label3";
+            errorLabel.Visible = false;
+            // 
             // PatientDiagnosis
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(479, 374);
+            ClientSize = new Size(479, 385);
+            Controls.Add(errorLabel);
             Controls.Add(cancelButton);
             Controls.Add(addButton);
             Controls.Add(label2);
-            Controls.Add(richTextBox2);
+            Controls.Add(finalDiagnosisRichTextBox);
             Controls.Add(label1);
-            Controls.Add(richTextBox1);
+            Controls.Add(initialDiagnosisRichTextBox);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "PatientDiagnosis";
@@ -109,11 +121,12 @@
 
         #endregion
 
-        private RichTextBox richTextBox1;
+        private RichTextBox initialDiagnosisRichTextBox;
         private Label label1;
-        private RichTextBox richTextBox2;
+        private RichTextBox finalDiagnosisRichTextBox;
         private Label label2;
         private Button addButton;
         private Button cancelButton;
+        private Label errorLabel;
     }
 }
