@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HospitalManagement.View;
 
 namespace HospitalManagement.UserControls
 {
@@ -20,6 +21,16 @@ namespace HospitalManagement.UserControls
         private void logoutLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //DialogResult = DialogResult.OK;
+        }
+
+        private void exitMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void openMenuItem_Click(object sender, EventArgs e)
+        {
+            using var mainDashboard = new MainDashboard();
         }
     }
 }
