@@ -28,83 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            testResultsListView = new ListView();
-            addButton = new Button();
-            orderedTestsComboBox = new ComboBox();
-            label1 = new Label();
-            label2 = new Label();
-            testResultRichTextBox = new RichTextBox();
-            SuspendLayout();
+            this.testResultsListView = new System.Windows.Forms.ListView();
+            this.addButton = new System.Windows.Forms.Button();
+            this.orderedTestsComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.testResultRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.SuspendLayout();
             // 
             // testResultsListView
             // 
-            testResultsListView.Location = new Point(79, 243);
-            testResultsListView.Name = "testResultsListView";
-            testResultsListView.Size = new Size(184, 112);
-            testResultsListView.TabIndex = 14;
-            testResultsListView.UseCompatibleStateImageBehavior = false;
+            this.testResultsListView.Location = new System.Drawing.Point(79, 243);
+            this.testResultsListView.Name = "testResultsListView";
+            this.testResultsListView.Size = new System.Drawing.Size(184, 112);
+            this.testResultsListView.TabIndex = 14;
+            this.testResultsListView.UseCompatibleStateImageBehavior = false;
             // 
             // addButton
             // 
-            addButton.Location = new Point(132, 200);
-            addButton.Name = "addButton";
-            addButton.Size = new Size(75, 23);
-            addButton.TabIndex = 13;
-            addButton.Text = "Add";
-            addButton.UseVisualStyleBackColor = true;
+            this.addButton.Location = new System.Drawing.Point(132, 200);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 13;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
             // 
             // orderedTestsComboBox
             // 
-            orderedTestsComboBox.FormattingEnabled = true;
-            orderedTestsComboBox.Location = new Point(79, 52);
-            orderedTestsComboBox.Name = "orderedTestsComboBox";
-            orderedTestsComboBox.Size = new Size(184, 23);
-            orderedTestsComboBox.TabIndex = 12;
+            this.orderedTestsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.orderedTestsComboBox.FormattingEnabled = true;
+            this.orderedTestsComboBox.Location = new System.Drawing.Point(79, 52);
+            this.orderedTestsComboBox.Name = "orderedTestsComboBox";
+            this.orderedTestsComboBox.Size = new System.Drawing.Size(184, 23);
+            this.orderedTestsComboBox.TabIndex = 12;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(79, 31);
-            label1.Name = "label1";
-            label1.Size = new Size(78, 15);
-            label1.TabIndex = 11;
-            label1.Text = "Choose Tests:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(79, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 15);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Choose Tests:";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(79, 90);
-            label2.Name = "label2";
-            label2.Size = new Size(42, 15);
-            label2.TabIndex = 15;
-            label2.Text = "Result:";
-            label2.Click += label2_Click;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(79, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 15);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Result:";
             // 
             // testResultRichTextBox
             // 
-            testResultRichTextBox.Location = new Point(79, 108);
-            testResultRichTextBox.Name = "testResultRichTextBox";
-            testResultRichTextBox.Size = new Size(184, 71);
-            testResultRichTextBox.TabIndex = 16;
-            testResultRichTextBox.Text = "";
+            this.testResultRichTextBox.Location = new System.Drawing.Point(79, 108);
+            this.testResultRichTextBox.Name = "testResultRichTextBox";
+            this.testResultRichTextBox.Size = new System.Drawing.Size(184, 71);
+            this.testResultRichTextBox.TabIndex = 16;
+            this.testResultRichTextBox.Text = "";
             // 
             // TestResultsForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(352, 394);
-            Controls.Add(testResultRichTextBox);
-            Controls.Add(label2);
-            Controls.Add(testResultsListView);
-            Controls.Add(addButton);
-            Controls.Add(orderedTestsComboBox);
-            Controls.Add(label1);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "TestResultsForm";
-            Text = "Test Results";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(352, 394);
+            this.Controls.Add(this.testResultRichTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.testResultsListView);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.orderedTestsComboBox);
+            this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "TestResultsForm";
+            this.Text = "Test Results";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

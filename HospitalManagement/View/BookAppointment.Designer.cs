@@ -48,60 +48,68 @@
             // 
             this.menuUserControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.menuUserControl.Location = new System.Drawing.Point(0, 0);
+            this.menuUserControl.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.menuUserControl.Name = "menuUserControl";
-            this.menuUserControl.Size = new System.Drawing.Size(868, 114);
+            this.menuUserControl.Size = new System.Drawing.Size(467, 53);
             this.menuUserControl.TabIndex = 0;
             // 
             // patientLabel
             // 
             this.patientLabel.AutoSize = true;
             this.patientLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.patientLabel.Location = new System.Drawing.Point(113, 131);
+            this.patientLabel.Location = new System.Drawing.Point(61, 61);
+            this.patientLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.patientLabel.Name = "patientLabel";
-            this.patientLabel.Size = new System.Drawing.Size(112, 37);
+            this.patientLabel.Size = new System.Drawing.Size(59, 19);
             this.patientLabel.TabIndex = 1;
             this.patientLabel.Text = "Patient: ";
             // 
             // patientTextBox
             // 
-            this.patientTextBox.Location = new System.Drawing.Point(333, 122);
+            this.patientTextBox.Location = new System.Drawing.Point(179, 57);
+            this.patientTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.patientTextBox.Name = "patientTextBox";
-            this.patientTextBox.Size = new System.Drawing.Size(320, 39);
+            this.patientTextBox.Size = new System.Drawing.Size(174, 23);
             this.patientTextBox.TabIndex = 2;
             // 
             // doctorLabel
             // 
             this.doctorLabel.AutoSize = true;
             this.doctorLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.doctorLabel.Location = new System.Drawing.Point(113, 206);
+            this.doctorLabel.Location = new System.Drawing.Point(61, 97);
+            this.doctorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.doctorLabel.Name = "doctorLabel";
-            this.doctorLabel.Size = new System.Drawing.Size(104, 37);
+            this.doctorLabel.Size = new System.Drawing.Size(54, 19);
             this.doctorLabel.TabIndex = 3;
             this.doctorLabel.Text = "Doctor:";
             // 
             // doctorComboBox
             // 
+            this.doctorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.doctorComboBox.FormattingEnabled = true;
-            this.doctorComboBox.Location = new System.Drawing.Point(333, 197);
+            this.doctorComboBox.Location = new System.Drawing.Point(179, 92);
+            this.doctorComboBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.doctorComboBox.Name = "doctorComboBox";
-            this.doctorComboBox.Size = new System.Drawing.Size(320, 40);
+            this.doctorComboBox.Size = new System.Drawing.Size(174, 23);
             this.doctorComboBox.TabIndex = 4;
             // 
             // reasonLabel
             // 
             this.reasonLabel.AutoSize = true;
             this.reasonLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.reasonLabel.Location = new System.Drawing.Point(113, 293);
+            this.reasonLabel.Location = new System.Drawing.Point(61, 137);
+            this.reasonLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.reasonLabel.Name = "reasonLabel";
-            this.reasonLabel.Size = new System.Drawing.Size(108, 37);
+            this.reasonLabel.Size = new System.Drawing.Size(56, 19);
             this.reasonLabel.TabIndex = 5;
             this.reasonLabel.Text = "Reason:";
             // 
             // reasonTextBox
             // 
-            this.reasonTextBox.Location = new System.Drawing.Point(333, 284);
+            this.reasonTextBox.Location = new System.Drawing.Point(179, 133);
+            this.reasonTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.reasonTextBox.Name = "reasonTextBox";
-            this.reasonTextBox.Size = new System.Drawing.Size(320, 192);
+            this.reasonTextBox.Size = new System.Drawing.Size(174, 92);
             this.reasonTextBox.TabIndex = 6;
             this.reasonTextBox.Text = "";
             // 
@@ -109,32 +117,35 @@
             // 
             this.dateLabel.AutoSize = true;
             this.dateLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateLabel.Location = new System.Drawing.Point(113, 525);
+            this.dateLabel.Location = new System.Drawing.Point(61, 246);
+            this.dateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(156, 37);
+            this.dateLabel.Size = new System.Drawing.Size(80, 19);
             this.dateLabel.TabIndex = 7;
             this.dateLabel.Text = "Select Date:";
             // 
             // datePicker
             // 
             this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePicker.Location = new System.Drawing.Point(333, 525);
+            this.datePicker.Location = new System.Drawing.Point(179, 246);
+            this.datePicker.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.datePicker.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
             this.datePicker.MinDate = new System.DateTime(2023, 4, 8, 21, 1, 25, 0);
             this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(320, 39);
+            this.datePicker.Size = new System.Drawing.Size(174, 23);
             this.datePicker.TabIndex = 8;
             this.datePicker.Value = new System.DateTime(2023, 4, 8, 21, 1, 25, 0);
             // 
             // timePicker
             // 
             this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timePicker.Location = new System.Drawing.Point(333, 600);
+            this.timePicker.Location = new System.Drawing.Point(179, 281);
+            this.timePicker.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.timePicker.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
             this.timePicker.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.timePicker.Name = "timePicker";
             this.timePicker.ShowUpDown = true;
-            this.timePicker.Size = new System.Drawing.Size(320, 39);
+            this.timePicker.Size = new System.Drawing.Size(174, 23);
             this.timePicker.TabIndex = 9;
             this.timePicker.Value = new System.DateTime(2023, 4, 8, 21, 1, 25, 0);
             // 
@@ -142,28 +153,33 @@
             // 
             this.timeLabel.AutoSize = true;
             this.timeLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.timeLabel.Location = new System.Drawing.Point(113, 602);
+            this.timeLabel.Location = new System.Drawing.Point(61, 282);
+            this.timeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(158, 37);
+            this.timeLabel.Size = new System.Drawing.Size(80, 19);
             this.timeLabel.TabIndex = 10;
             this.timeLabel.Text = "Select Time:";
             // 
             // bookButton
             // 
+            this.bookButton.AutoSize = true;
             this.bookButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bookButton.Location = new System.Drawing.Point(157, 686);
+            this.bookButton.Location = new System.Drawing.Point(85, 322);
+            this.bookButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.bookButton.Name = "bookButton";
-            this.bookButton.Size = new System.Drawing.Size(150, 46);
+            this.bookButton.Size = new System.Drawing.Size(81, 29);
             this.bookButton.TabIndex = 11;
             this.bookButton.Text = "Book";
             this.bookButton.UseVisualStyleBackColor = true;
             // 
             // clearButton
             // 
+            this.clearButton.AutoSize = true;
             this.clearButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.clearButton.Location = new System.Drawing.Point(485, 686);
+            this.clearButton.Location = new System.Drawing.Point(261, 322);
+            this.clearButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(150, 46);
+            this.clearButton.Size = new System.Drawing.Size(81, 29);
             this.clearButton.TabIndex = 12;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
@@ -173,18 +189,19 @@
             this.bookErrorlabel.AutoSize = true;
             this.bookErrorlabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bookErrorlabel.ForeColor = System.Drawing.Color.Red;
-            this.bookErrorlabel.Location = new System.Drawing.Point(201, 751);
+            this.bookErrorlabel.Location = new System.Drawing.Point(108, 361);
+            this.bookErrorlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bookErrorlabel.Name = "bookErrorlabel";
-            this.bookErrorlabel.Size = new System.Drawing.Size(165, 32);
+            this.bookErrorlabel.Size = new System.Drawing.Size(81, 15);
             this.bookErrorlabel.TabIndex = 13;
             this.bookErrorlabel.Text = "error message";
             this.bookErrorlabel.Visible = false;
             // 
             // BookAppointment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 816);
+            this.ClientSize = new System.Drawing.Size(467, 393);
             this.Controls.Add(this.bookErrorlabel);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.bookButton);
@@ -199,6 +216,7 @@
             this.Controls.Add(this.patientTextBox);
             this.Controls.Add(this.patientLabel);
             this.Controls.Add(this.menuUserControl);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BookAppointment";

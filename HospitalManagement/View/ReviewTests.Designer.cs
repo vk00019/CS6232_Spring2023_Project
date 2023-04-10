@@ -28,107 +28,109 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cancelButton = new Button();
-            deleteButton = new Button();
-            orderTestsButton = new Button();
-            reviewTestsListView = new ListView();
-            addButton = new Button();
-            orderedTestsComboBox = new ComboBox();
-            label1 = new Label();
-            errorLabel = new Label();
-            SuspendLayout();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.orderTestsButton = new System.Windows.Forms.Button();
+            this.reviewTestsListView = new System.Windows.Forms.ListView();
+            this.addButton = new System.Windows.Forms.Button();
+            this.orderedTestsComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.errorLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // cancelButton
             // 
-            cancelButton.Location = new Point(264, 274);
-            cancelButton.Name = "cancelButton";
-            cancelButton.Size = new Size(75, 23);
-            cancelButton.TabIndex = 13;
-            cancelButton.Text = "Cancel";
-            cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(264, 274);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 13;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // deleteButton
             // 
-            deleteButton.Location = new Point(171, 274);
-            deleteButton.Name = "deleteButton";
-            deleteButton.Size = new Size(75, 23);
-            deleteButton.TabIndex = 12;
-            deleteButton.Text = "Delete";
-            deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Location = new System.Drawing.Point(171, 274);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 12;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
             // 
             // orderTestsButton
             // 
-            orderTestsButton.AutoSize = true;
-            orderTestsButton.Location = new Point(75, 274);
-            orderTestsButton.Name = "orderTestsButton";
-            orderTestsButton.Size = new Size(82, 25);
-            orderTestsButton.TabIndex = 11;
-            orderTestsButton.Text = "Order Tests";
-            orderTestsButton.UseVisualStyleBackColor = true;
+            this.orderTestsButton.AutoSize = true;
+            this.orderTestsButton.Location = new System.Drawing.Point(75, 274);
+            this.orderTestsButton.Name = "orderTestsButton";
+            this.orderTestsButton.Size = new System.Drawing.Size(82, 25);
+            this.orderTestsButton.TabIndex = 11;
+            this.orderTestsButton.Text = "Order Tests";
+            this.orderTestsButton.UseVisualStyleBackColor = true;
             // 
             // reviewTestsListView
             // 
-            reviewTestsListView.Location = new Point(118, 138);
-            reviewTestsListView.Name = "reviewTestsListView";
-            reviewTestsListView.Size = new Size(184, 97);
-            reviewTestsListView.TabIndex = 10;
-            reviewTestsListView.UseCompatibleStateImageBehavior = false;
+            this.reviewTestsListView.Location = new System.Drawing.Point(118, 138);
+            this.reviewTestsListView.Name = "reviewTestsListView";
+            this.reviewTestsListView.Size = new System.Drawing.Size(184, 97);
+            this.reviewTestsListView.TabIndex = 10;
+            this.reviewTestsListView.UseCompatibleStateImageBehavior = false;
             // 
             // addButton
             // 
-            addButton.Location = new Point(171, 98);
-            addButton.Name = "addButton";
-            addButton.Size = new Size(75, 23);
-            addButton.TabIndex = 9;
-            addButton.Text = "Add";
-            addButton.UseVisualStyleBackColor = true;
+            this.addButton.Location = new System.Drawing.Point(171, 98);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 9;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
             // 
             // orderedTestsComboBox
             // 
-            orderedTestsComboBox.FormattingEnabled = true;
-            orderedTestsComboBox.Location = new Point(118, 61);
-            orderedTestsComboBox.Name = "orderedTestsComboBox";
-            orderedTestsComboBox.Size = new Size(184, 23);
-            orderedTestsComboBox.TabIndex = 8;
+            this.orderedTestsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.orderedTestsComboBox.FormattingEnabled = true;
+            this.orderedTestsComboBox.Location = new System.Drawing.Point(118, 61);
+            this.orderedTestsComboBox.Name = "orderedTestsComboBox";
+            this.orderedTestsComboBox.Size = new System.Drawing.Size(184, 23);
+            this.orderedTestsComboBox.TabIndex = 8;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(118, 40);
-            label1.Name = "label1";
-            label1.Size = new Size(78, 15);
-            label1.TabIndex = 7;
-            label1.Text = "Choose Tests:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(118, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 15);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Choose Tests:";
             // 
             // errorLabel
             // 
-            errorLabel.AutoSize = true;
-            errorLabel.Location = new Point(141, 249);
-            errorLabel.Name = "errorLabel";
-            errorLabel.Size = new Size(38, 15);
-            errorLabel.TabIndex = 14;
-            errorLabel.Text = "label2";
-            errorLabel.Visible = false;
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Location = new System.Drawing.Point(141, 249);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(38, 15);
+            this.errorLabel.TabIndex = 14;
+            this.errorLabel.Text = "label2";
+            this.errorLabel.Visible = false;
             // 
             // ReviewTests
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(434, 322);
-            Controls.Add(errorLabel);
-            Controls.Add(cancelButton);
-            Controls.Add(deleteButton);
-            Controls.Add(orderTestsButton);
-            Controls.Add(reviewTestsListView);
-            Controls.Add(addButton);
-            Controls.Add(orderedTestsComboBox);
-            Controls.Add(label1);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "ReviewTests";
-            Text = "Review Tests";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(434, 322);
+            this.Controls.Add(this.errorLabel);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.orderTestsButton);
+            this.Controls.Add(this.reviewTestsListView);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.orderedTestsComboBox);
+            this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ReviewTests";
+            this.Text = "Review Tests";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

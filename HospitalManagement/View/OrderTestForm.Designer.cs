@@ -28,93 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            allTestsComboBox = new ComboBox();
-            addButton = new Button();
-            orderTestsListView = new ListView();
-            reviewTestsButton = new Button();
-            deleteButton = new Button();
-            cancelButton = new Button();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.allTestsComboBox = new System.Windows.Forms.ComboBox();
+            this.addButton = new System.Windows.Forms.Button();
+            this.orderTestsListView = new System.Windows.Forms.ListView();
+            this.reviewTestsButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(93, 32);
-            label1.Name = "label1";
-            label1.Size = new Size(78, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Choose Tests:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(93, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Choose Tests:";
             // 
             // allTestsComboBox
             // 
-            allTestsComboBox.FormattingEnabled = true;
-            allTestsComboBox.Location = new Point(93, 53);
-            allTestsComboBox.Name = "allTestsComboBox";
-            allTestsComboBox.Size = new Size(184, 23);
-            allTestsComboBox.TabIndex = 1;
+            this.allTestsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.allTestsComboBox.FormattingEnabled = true;
+            this.allTestsComboBox.Location = new System.Drawing.Point(93, 53);
+            this.allTestsComboBox.Name = "allTestsComboBox";
+            this.allTestsComboBox.Size = new System.Drawing.Size(184, 23);
+            this.allTestsComboBox.TabIndex = 1;
             // 
             // addButton
             // 
-            addButton.Location = new Point(146, 90);
-            addButton.Name = "addButton";
-            addButton.Size = new Size(75, 23);
-            addButton.TabIndex = 2;
-            addButton.Text = "Add";
-            addButton.UseVisualStyleBackColor = true;
+            this.addButton.Location = new System.Drawing.Point(146, 90);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 2;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
             // 
             // orderTestsListView
             // 
-            orderTestsListView.Location = new Point(93, 130);
-            orderTestsListView.Name = "orderTestsListView";
-            orderTestsListView.Size = new Size(184, 97);
-            orderTestsListView.TabIndex = 3;
-            orderTestsListView.UseCompatibleStateImageBehavior = false;
+            this.orderTestsListView.Location = new System.Drawing.Point(93, 130);
+            this.orderTestsListView.Name = "orderTestsListView";
+            this.orderTestsListView.Size = new System.Drawing.Size(184, 97);
+            this.orderTestsListView.TabIndex = 3;
+            this.orderTestsListView.UseCompatibleStateImageBehavior = false;
             // 
             // reviewTestsButton
             // 
-            reviewTestsButton.AutoSize = true;
-            reviewTestsButton.Location = new Point(50, 250);
-            reviewTestsButton.Name = "reviewTestsButton";
-            reviewTestsButton.Size = new Size(82, 25);
-            reviewTestsButton.TabIndex = 4;
-            reviewTestsButton.Text = "Review Tests";
-            reviewTestsButton.UseVisualStyleBackColor = true;
+            this.reviewTestsButton.AutoSize = true;
+            this.reviewTestsButton.Location = new System.Drawing.Point(50, 250);
+            this.reviewTestsButton.Name = "reviewTestsButton";
+            this.reviewTestsButton.Size = new System.Drawing.Size(82, 25);
+            this.reviewTestsButton.TabIndex = 4;
+            this.reviewTestsButton.Text = "Review Tests";
+            this.reviewTestsButton.UseVisualStyleBackColor = true;
             // 
             // deleteButton
             // 
-            deleteButton.Location = new Point(146, 250);
-            deleteButton.Name = "deleteButton";
-            deleteButton.Size = new Size(75, 23);
-            deleteButton.TabIndex = 5;
-            deleteButton.Text = "Delete";
-            deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Location = new System.Drawing.Point(146, 250);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 5;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
             // 
             // cancelButton
             // 
-            cancelButton.Location = new Point(239, 250);
-            cancelButton.Name = "cancelButton";
-            cancelButton.Size = new Size(75, 23);
-            cancelButton.TabIndex = 6;
-            cancelButton.Text = "Cancel";
-            cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(239, 250);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 6;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // OrderTestForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(382, 307);
-            Controls.Add(cancelButton);
-            Controls.Add(deleteButton);
-            Controls.Add(reviewTestsButton);
-            Controls.Add(orderTestsListView);
-            Controls.Add(addButton);
-            Controls.Add(allTestsComboBox);
-            Controls.Add(label1);
-            Name = "OrderTestForm";
-            Text = "Order Test";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(382, 307);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.reviewTestsButton);
+            this.Controls.Add(this.orderTestsListView);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.allTestsComboBox);
+            this.Controls.Add(this.label1);
+            this.Name = "OrderTestForm";
+            this.Text = "Order Test";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
