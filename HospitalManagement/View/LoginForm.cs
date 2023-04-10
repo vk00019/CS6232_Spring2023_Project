@@ -16,5 +16,11 @@ namespace HospitalManagement.View
         {
             InitializeComponent();
         }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            usernameTextBox.Clear();
+            passwordTextBox.Clear();
+        }
     }
 }
