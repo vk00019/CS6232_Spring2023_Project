@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HospitalManagement.DAL;
+using HospitalManagement.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,17 +10,26 @@ namespace HospitalManagement.Controller
 {
     public class ManagementController
     {
-        private string _username = "jane";
-        private string _password = "test1234";
+        private ManagementDBDAL _managementDAL;
 
-        public string Username()
+        public ManagementController()
         {
-            return _username;
+            _managementDAL = new ManagementDBDAL();
         }
 
-        public string Password()
+        public void RegisterPatient(PersonalDetails personalDetials)
         {
-            return _password;
+            _managementDAL.RegisterPatient(personalDetials);
+        }
+
+        public List<string> GetStates()
+        {
+            return _managementDAL.GetStates();
+        }
+
+        public bool CheckUser(string username, string password)
+        {
+            return _managementDAL.CheckUser(username,password);
         }
     }
 }

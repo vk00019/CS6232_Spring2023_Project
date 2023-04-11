@@ -13,7 +13,7 @@ namespace TechSupport.DAL
         /// <returns></returns>
         public static SqlConnection GetConnection()
         {
-            const string connectionString = "Data source=(localdb)\\MSSQLLocalDB;Initial Catalog = TechSupport;Integrated Security = True";
+            const string connectionString = "Data source=(localdb)\\MSSQLLocalDB;Initial Catalog = cs6232-f2f;Integrated Security = True";
             return new SqlConnection(connectionString);
         }
     }

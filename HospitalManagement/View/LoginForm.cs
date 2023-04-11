@@ -30,12 +30,10 @@ namespace HospitalManagement.View
         private void loginButton_Click(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
-            var username = _controller.Username();
-            var password = _controller.Password();
-            if (username == usernameTextBox.Text && password == passwordTextBox.Text)
+            if (_controller.CheckUser(usernameTextBox.Text,passwordTextBox.Text))
             {
                 using var mainForm = new MainDashboard();
-                mainForm.GetMenuUserControl().SetUsername(username);
+                mainForm.GetMenuUserControl().SetUsername(usernameTextBox.Text);
                 this.Hide();
                 var value = mainForm.ShowDialog();
                 //if (value != DialogResult.OK)

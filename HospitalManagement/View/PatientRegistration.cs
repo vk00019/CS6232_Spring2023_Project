@@ -1,4 +1,5 @@
 ﻿using HospitalManagement.Controller;
+using HospitalManagement.Model;
 
 namespace HospitalManagement.View
 {
@@ -13,6 +14,7 @@ namespace HospitalManagement.View
             AddGender();
             InitializeComponent();
             genderComboBox.DataSource = gender;
+            statesComboBox.DataSource = _controller.GetStates();
         }
 
         private void AddGender()
@@ -46,7 +48,20 @@ namespace HospitalManagement.View
             else
             {
                 errorLabel.Visible = false;
-                _controller.RegisterPatient();
+                var personalDetials = new PersonalDetails
+                {
+                    FirstName = firstNameTextBox.Text,
+                    LastName = lastNameTextBox.Text,
+                    DateOfBirth = birthDayDateTimePicker.Value,
+                    PhoneNumber = phoneNumberTextBox.Text,
+                    Gender = genderComboBox.SelectedItem.ToString(),
+                    Street = streetAddressTextBox.Text,
+                    City = cityTextBox.Text,
+                    State = statesComboBox.SelectedItem.ToString(),
+                    ZipCode = zipCodeTextBox.Text,
+                    Country = countryTextBox.Text
+                };
+                _controller.RegisterPatient(personalDetials);
 
             }
         }
