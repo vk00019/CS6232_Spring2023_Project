@@ -25,6 +25,7 @@ namespace HospitalManagement.View
         {
             usernameTextBox.Clear();
             passwordTextBox.Clear();
+            errorLabel.Visible = false;
         }
 
         private void loginButton_Click(object sender, EventArgs e)
