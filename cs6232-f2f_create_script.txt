@@ -19,7 +19,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[PersonalDetails](
-	[pdID] [int] NOT NULL,
+	[pdID] [int] IDENTITY(1,1) NOT NULL,
 	[firstName] [varchar](50) NOT NULL,
 	[lastName] [varchar](50) NOT NULL,
 	[dateOfBirth] [datetime] NOT NULL,
@@ -44,7 +44,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Nurse](
-	[nurseID] [int] NOT NULL,
+	[nurseID] [int] IDENTITY(1,1) NOT NULL,
 	[pdID] [int] NOT NULL,
  CONSTRAINT [PK_Nurse] PRIMARY KEY 
 (
@@ -60,7 +60,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Patient](
-	[patientID] [int] NOT NULL,
+	[patientID] [int] IDENTITY(1,1) NOT NULL,
 	[pdID] [int] NOT NULL,
  CONSTRAINT [PK_Patient] PRIMARY KEY 
 (
@@ -76,7 +76,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Doctor](
-	[doctorID] [int] NOT NULL,
+	[doctorID] [int] IDENTITY(1,1) NOT NULL,
 	[pdID] [int] NOT NULL,
  CONSTRAINT [PK_Doctor] PRIMARY KEY 
 (
@@ -109,7 +109,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Specialities](
-	[specialityID] [int] NOT NULL,
+	[specialityID] [int] IDENTITY(1,1) NOT NULL,
 	[speciality] [varchar](50) NOT NULL,
  CONSTRAINT [PK_Specialities] PRIMARY KEY 
 (
@@ -125,7 +125,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Appointment](
-	[appointmentID] [int] NOT NULL,
+	[appointmentID] [int] IDENTITY(1,1) NOT NULL,
 	[patientID] [int] NOT NULL,
 	[doctorID] [int] NOT NULL,
 	[schedulateDate] [datetime] NOT NULL,
@@ -144,7 +144,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Visit](
-	[visitID] [int] NOT NULL,
+	[visitID] [int] IDENTITY(1,1) NOT NULL,
 	[appointmentID] [int] NOT NULL,
 	[nurseID] [int] NOT NULL,
 	[height] [varchar](50),
@@ -170,7 +170,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Tests](
-	[testID] [int] NOT NULL,
+	[testID] [int] IDENTITY(1,1) NOT NULL,
 	[testName] [varchar](50) NOT NULL,
  CONSTRAINT [PK_Tests] PRIMARY KEY 
 (

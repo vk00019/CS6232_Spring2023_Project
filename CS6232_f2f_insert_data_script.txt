@@ -50,6 +50,13 @@ GO
 INSERT [dbo].[Tests] ([testID], [testName]) VALUES (1, 'Xray')
 INSERT [dbo].[Tests] ([testID], [testName]) VALUES (2, 'Blood sugar test')
 
+
+SET ANSI_PADDING OFF
+GO
+INSERT [dbo].[Users] ([userName], [password], [pdID]) VALUES ('test', 'test1234', 2)
+INSERT [dbo].[Users] ([userName], [password], [pdID]) VALUES ('user', 'user1234', 6)
+
+
 SET ANSI_PADDING OFF
 GO
 INSERT [dbo].[States] ([stateName], [stateCode]) VALUES ('Alabama', 'AL')
