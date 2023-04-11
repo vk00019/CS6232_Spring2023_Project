@@ -14,5 +14,10 @@ namespace HospitalManagement.View
             return menuUserControl;
         }
 
+        public void CloseForm()
+        {
+            this.Close();
+        }
+
     }
 }

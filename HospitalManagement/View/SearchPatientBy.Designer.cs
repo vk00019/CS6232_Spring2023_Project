@@ -43,6 +43,8 @@
             this.clearButton = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
             this.searchDataGridView = new System.Windows.Forms.DataGridView();
+            this.viewButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.searchDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,11 +199,33 @@
             this.searchDataGridView.TabIndex = 39;
             this.searchDataGridView.Visible = false;
             // 
+            // viewButton
+            // 
+            this.viewButton.AutoSize = true;
+            this.viewButton.Location = new System.Drawing.Point(223, 998);
+            this.viewButton.Name = "viewButton";
+            this.viewButton.Size = new System.Drawing.Size(155, 46);
+            this.viewButton.TabIndex = 40;
+            this.viewButton.Text = "View Patient";
+            this.viewButton.UseVisualStyleBackColor = true;
+            // 
+            // editButton
+            // 
+            this.editButton.AutoSize = true;
+            this.editButton.Location = new System.Drawing.Point(512, 998);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(155, 46);
+            this.editButton.TabIndex = 41;
+            this.editButton.Text = "Edit Patient";
+            this.editButton.UseVisualStyleBackColor = true;
+            // 
             // SearchPatientBy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 1020);
+            this.ClientSize = new System.Drawing.Size(962, 1094);
+            this.Controls.Add(this.editButton);
+            this.Controls.Add(this.viewButton);
             this.Controls.Add(this.searchDataGridView);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.clearButton);
@@ -244,5 +268,7 @@
         private Button clearButton;
         private Label errorLabel;
         private DataGridView searchDataGridView;
+        private Button viewButton;
+        private Button editButton;
     }
 }
