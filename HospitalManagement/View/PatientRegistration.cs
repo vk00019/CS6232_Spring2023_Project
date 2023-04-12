@@ -9,11 +9,11 @@ namespace HospitalManagement.View
         private ManagementController _controller;
         public PatientRegistration()
         {
+            InitializeComponent();
             _controller = new ManagementController();
             gender = new List<string>();
             AddGender();
-            InitializeComponent();
-            genderComboBox.DataSource = gender;
+            genderComboBox.DataSource = gender.ToArray();
             statesComboBox.DataSource = _controller.GetStates();
         }
 
@@ -39,6 +39,7 @@ namespace HospitalManagement.View
 
         private void registerPatientButton_Click(object sender, EventArgs e)
         {
+            errorLabel.Visible = false;
             CheckAllFields();
             if (errorLabel.Visible == true)
             {
@@ -62,6 +63,10 @@ namespace HospitalManagement.View
                     Country = countryTextBox.Text
                 };
                 _controller.RegisterPatient(personalDetials);
+                ClearAllFields();
+                errorLabel.Text = "Patient Registered Successfully";
+                errorLabel.ForeColor = Color.Green; 
+                errorLabel.Visible = true;
 
             }
         }
@@ -96,6 +101,20 @@ namespace HospitalManagement.View
             {
                 errorLabel.Visible = true;
             }
+        }
+
+        private void ClearAllFields()
+        {
+            firstNameTextBox.Clear();
+            lastNameTextBox.Clear();
+            phoneNumberTextBox.Clear();
+            streetAddressTextBox.Clear();
+            cityTextBox.Clear();
+            zipCodeTextBox.Clear();
+            countryTextBox.Clear();
+            genderComboBox.SelectedIndex = 0;
+            statesComboBox.SelectedIndex = 0;
+            birthDayDateTimePicker.ResetText();
         }
 
         private void zipCodeTextBox_TextChanged(object sender, EventArgs e)

@@ -20,11 +20,11 @@ namespace HospitalManagement.DAL
             var gender = personalDetials.Gender;
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            string query = "INSERT INTO PersonalDetails(firstName,lastName,dateOfBirth,streetAddress,city,state,zipCode,country,phoneNumber) " +
-                "VALUES(@firstname,@lastname,@dateOfBirth,@street,@city,@state,@zipCode,@country,@phonenumber)";
+            string query = "INSERT INTO PersonalDetails(firstName,lastName,dateOfBirth,gender,streetAddress,city,state,zipCode,country,phoneNumber) " +
+                "VALUES(@firstname,@lastname,@dateOfBirth,@gender,@street,@city,@state,@zipCode,@country,@phonenumber)";
             using var command = new SqlCommand(query,connection);
 
-            string query2 = "INSERT INTO Patient(pdID) " 
+            string query2 = "INSERT INTO Patient(pdID) "
                 + "values((select pdID from PersonalDetails where firstName = @firstname and lastName = @lastname and dateOfBirth = @dateOfBirth))";
 
             using var command2 = new SqlCommand(query2, connection);
