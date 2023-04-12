@@ -57,11 +57,11 @@
             // cancelButton
             // 
             this.cancelButton.AutoSize = true;
-            this.cancelButton.Location = new System.Drawing.Point(567, 923);
+            this.cancelButton.Location = new System.Drawing.Point(483, 913);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(150, 53);
-            this.cancelButton.TabIndex = 71;
+            this.cancelButton.TabIndex = 12;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
@@ -69,25 +69,25 @@
             // 
             this.headerLabel.AutoSize = true;
             this.headerLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.headerLabel.Location = new System.Drawing.Point(290, 19);
+            this.headerLabel.Location = new System.Drawing.Point(206, 9);
             this.headerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.headerLabel.Name = "headerLabel";
             this.headerLabel.Size = new System.Drawing.Size(402, 37);
-            this.headerLabel.TabIndex = 70;
+            this.headerLabel.TabIndex = 0;
             this.headerLabel.Text = "Edit Patient Information Form";
             // 
             // countryTextBox
             // 
-            this.countryTextBox.Location = new System.Drawing.Point(434, 738);
+            this.countryTextBox.Location = new System.Drawing.Point(350, 728);
             this.countryTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.countryTextBox.Name = "countryTextBox";
             this.countryTextBox.Size = new System.Drawing.Size(327, 39);
-            this.countryTextBox.TabIndex = 69;
+            this.countryTextBox.TabIndex = 9;
             // 
             // countryLabel
             // 
             this.countryLabel.AutoSize = true;
-            this.countryLabel.Location = new System.Drawing.Point(183, 744);
+            this.countryLabel.Location = new System.Drawing.Point(99, 734);
             this.countryLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.countryLabel.Name = "countryLabel";
             this.countryLabel.Size = new System.Drawing.Size(104, 32);
@@ -98,26 +98,26 @@
             // 
             this.statesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.statesComboBox.FormattingEnabled = true;
-            this.statesComboBox.Location = new System.Drawing.Point(434, 655);
+            this.statesComboBox.Location = new System.Drawing.Point(350, 645);
             this.statesComboBox.Margin = new System.Windows.Forms.Padding(6);
             this.statesComboBox.Name = "statesComboBox";
             this.statesComboBox.Size = new System.Drawing.Size(327, 40);
-            this.statesComboBox.TabIndex = 67;
+            this.statesComboBox.TabIndex = 8;
             // 
             // genderComboBox
             // 
             this.genderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genderComboBox.FormattingEnabled = true;
-            this.genderComboBox.Location = new System.Drawing.Point(434, 412);
+            this.genderComboBox.Location = new System.Drawing.Point(350, 402);
             this.genderComboBox.Margin = new System.Windows.Forms.Padding(6);
             this.genderComboBox.Name = "genderComboBox";
             this.genderComboBox.Size = new System.Drawing.Size(327, 40);
-            this.genderComboBox.TabIndex = 66;
+            this.genderComboBox.TabIndex = 5;
             // 
             // genderLabel
             // 
             this.genderLabel.AutoSize = true;
-            this.genderLabel.Location = new System.Drawing.Point(183, 416);
+            this.genderLabel.Location = new System.Drawing.Point(99, 406);
             this.genderLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.genderLabel.Name = "genderLabel";
             this.genderLabel.Size = new System.Drawing.Size(97, 32);
@@ -127,66 +127,66 @@
             // birthDayDateTimePicker
             // 
             this.birthDayDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.birthDayDateTimePicker.Location = new System.Drawing.Point(434, 258);
+            this.birthDayDateTimePicker.Location = new System.Drawing.Point(350, 248);
             this.birthDayDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.birthDayDateTimePicker.MaxDate = new System.DateTime(2023, 4, 12, 15, 52, 12, 0);
             this.birthDayDateTimePicker.Name = "birthDayDateTimePicker";
             this.birthDayDateTimePicker.Size = new System.Drawing.Size(327, 39);
-            this.birthDayDateTimePicker.TabIndex = 64;
+            this.birthDayDateTimePicker.TabIndex = 3;
             this.birthDayDateTimePicker.Value = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
             // 
             // lastNameTextBox
             // 
-            this.lastNameTextBox.Location = new System.Drawing.Point(434, 177);
+            this.lastNameTextBox.Location = new System.Drawing.Point(350, 167);
             this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(327, 39);
-            this.lastNameTextBox.TabIndex = 63;
+            this.lastNameTextBox.TabIndex = 2;
             // 
             // phoneNumberTextBox
             // 
-            this.phoneNumberTextBox.Location = new System.Drawing.Point(434, 337);
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(350, 327);
             this.phoneNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(327, 39);
-            this.phoneNumberTextBox.TabIndex = 62;
+            this.phoneNumberTextBox.TabIndex = 4;
             // 
             // streetAddressTextBox
             // 
-            this.streetAddressTextBox.Location = new System.Drawing.Point(434, 491);
+            this.streetAddressTextBox.Location = new System.Drawing.Point(350, 481);
             this.streetAddressTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.streetAddressTextBox.Name = "streetAddressTextBox";
             this.streetAddressTextBox.Size = new System.Drawing.Size(327, 39);
-            this.streetAddressTextBox.TabIndex = 61;
+            this.streetAddressTextBox.TabIndex = 6;
             // 
             // cityTextBox
             // 
-            this.cityTextBox.Location = new System.Drawing.Point(434, 569);
+            this.cityTextBox.Location = new System.Drawing.Point(350, 559);
             this.cityTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cityTextBox.Name = "cityTextBox";
             this.cityTextBox.Size = new System.Drawing.Size(327, 39);
-            this.cityTextBox.TabIndex = 60;
+            this.cityTextBox.TabIndex = 7;
             // 
             // zipCodeTextBox
             // 
-            this.zipCodeTextBox.Location = new System.Drawing.Point(434, 815);
+            this.zipCodeTextBox.Location = new System.Drawing.Point(350, 805);
             this.zipCodeTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.zipCodeTextBox.Name = "zipCodeTextBox";
             this.zipCodeTextBox.Size = new System.Drawing.Size(327, 39);
-            this.zipCodeTextBox.TabIndex = 59;
+            this.zipCodeTextBox.TabIndex = 10;
             // 
             // firstNameTextBox
             // 
-            this.firstNameTextBox.Location = new System.Drawing.Point(434, 98);
+            this.firstNameTextBox.Location = new System.Drawing.Point(350, 88);
             this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(327, 39);
-            this.firstNameTextBox.TabIndex = 58;
+            this.firstNameTextBox.TabIndex = 1;
             // 
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(302, 877);
+            this.errorLabel.Location = new System.Drawing.Point(218, 867);
             this.errorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(116, 32);
@@ -198,18 +198,18 @@
             // 
             this.editPatientButton.AutoSize = true;
             this.editPatientButton.Enabled = false;
-            this.editPatientButton.Location = new System.Drawing.Point(233, 923);
+            this.editPatientButton.Location = new System.Drawing.Point(149, 913);
             this.editPatientButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.editPatientButton.Name = "editPatientButton";
             this.editPatientButton.Size = new System.Drawing.Size(150, 53);
-            this.editPatientButton.TabIndex = 56;
+            this.editPatientButton.TabIndex = 11;
             this.editPatientButton.Text = "Edit";
             this.editPatientButton.UseVisualStyleBackColor = true;
             // 
             // zipCodeLabel
             // 
             this.zipCodeLabel.AutoSize = true;
-            this.zipCodeLabel.Location = new System.Drawing.Point(183, 817);
+            this.zipCodeLabel.Location = new System.Drawing.Point(99, 807);
             this.zipCodeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.zipCodeLabel.Name = "zipCodeLabel";
             this.zipCodeLabel.Size = new System.Drawing.Size(105, 32);
@@ -219,7 +219,7 @@
             // streetLabel
             // 
             this.streetLabel.AutoSize = true;
-            this.streetLabel.Location = new System.Drawing.Point(183, 495);
+            this.streetLabel.Location = new System.Drawing.Point(99, 485);
             this.streetLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.streetLabel.Name = "streetLabel";
             this.streetLabel.Size = new System.Drawing.Size(81, 32);
@@ -229,7 +229,7 @@
             // cityLabel
             // 
             this.cityLabel.AutoSize = true;
-            this.cityLabel.Location = new System.Drawing.Point(183, 572);
+            this.cityLabel.Location = new System.Drawing.Point(99, 562);
             this.cityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cityLabel.Name = "cityLabel";
             this.cityLabel.Size = new System.Drawing.Size(60, 32);
@@ -239,7 +239,7 @@
             // stateLabel
             // 
             this.stateLabel.AutoSize = true;
-            this.stateLabel.Location = new System.Drawing.Point(183, 655);
+            this.stateLabel.Location = new System.Drawing.Point(99, 645);
             this.stateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.stateLabel.Name = "stateLabel";
             this.stateLabel.Size = new System.Drawing.Size(72, 32);
@@ -249,7 +249,7 @@
             // phoneNumberLabel
             // 
             this.phoneNumberLabel.AutoSize = true;
-            this.phoneNumberLabel.Location = new System.Drawing.Point(183, 339);
+            this.phoneNumberLabel.Location = new System.Drawing.Point(99, 329);
             this.phoneNumberLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.phoneNumberLabel.Name = "phoneNumberLabel";
             this.phoneNumberLabel.Size = new System.Drawing.Size(182, 32);
@@ -259,7 +259,7 @@
             // dobLabel
             // 
             this.dobLabel.AutoSize = true;
-            this.dobLabel.Location = new System.Drawing.Point(183, 258);
+            this.dobLabel.Location = new System.Drawing.Point(99, 248);
             this.dobLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dobLabel.Name = "dobLabel";
             this.dobLabel.Size = new System.Drawing.Size(155, 32);
@@ -269,7 +269,7 @@
             // lastnameLabel
             // 
             this.lastnameLabel.AutoSize = true;
-            this.lastnameLabel.Location = new System.Drawing.Point(183, 179);
+            this.lastnameLabel.Location = new System.Drawing.Point(99, 169);
             this.lastnameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lastnameLabel.Name = "lastnameLabel";
             this.lastnameLabel.Size = new System.Drawing.Size(131, 32);
@@ -279,7 +279,7 @@
             // firstnameLabel
             // 
             this.firstnameLabel.AutoSize = true;
-            this.firstnameLabel.Location = new System.Drawing.Point(183, 102);
+            this.firstnameLabel.Location = new System.Drawing.Point(99, 92);
             this.firstnameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.firstnameLabel.Name = "firstnameLabel";
             this.firstnameLabel.Size = new System.Drawing.Size(134, 32);
@@ -290,7 +290,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 1010);
+            this.ClientSize = new System.Drawing.Size(826, 1010);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.headerLabel);
             this.Controls.Add(this.countryTextBox);
@@ -318,6 +318,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditPatientForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Patient Form";
             this.ResumeLayout(false);
             this.PerformLayout();

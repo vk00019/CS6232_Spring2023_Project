@@ -9,11 +9,6 @@ namespace HospitalManagement.View
             InitializeComponent();
         }
 
-        public void CloseForm()
-        {
-            this.Close();
-        }
-
         public void SetUsernameLabel(string username)
         {
             usernameLabel.Text = username;

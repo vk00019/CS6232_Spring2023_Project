@@ -60,7 +60,7 @@
             this.countryTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.countryTextBox.Name = "countryTextBox";
             this.countryTextBox.Size = new System.Drawing.Size(327, 39);
-            this.countryTextBox.TabIndex = 45;
+            this.countryTextBox.TabIndex = 8;
             // 
             // countryLabel
             // 
@@ -80,7 +80,7 @@
             this.statesComboBox.Margin = new System.Windows.Forms.Padding(6);
             this.statesComboBox.Name = "statesComboBox";
             this.statesComboBox.Size = new System.Drawing.Size(327, 40);
-            this.statesComboBox.TabIndex = 43;
+            this.statesComboBox.TabIndex = 7;
             // 
             // genderComboBox
             // 
@@ -90,7 +90,7 @@
             this.genderComboBox.Margin = new System.Windows.Forms.Padding(6);
             this.genderComboBox.Name = "genderComboBox";
             this.genderComboBox.Size = new System.Drawing.Size(327, 40);
-            this.genderComboBox.TabIndex = 42;
+            this.genderComboBox.TabIndex = 4;
             // 
             // genderLabel
             // 
@@ -110,7 +110,7 @@
             this.birthDayDateTimePicker.MaxDate = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
             this.birthDayDateTimePicker.Name = "birthDayDateTimePicker";
             this.birthDayDateTimePicker.Size = new System.Drawing.Size(327, 39);
-            this.birthDayDateTimePicker.TabIndex = 40;
+            this.birthDayDateTimePicker.TabIndex = 2;
             this.birthDayDateTimePicker.Value = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
             // 
             // lastNameTextBox
@@ -119,7 +119,7 @@
             this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(327, 39);
-            this.lastNameTextBox.TabIndex = 39;
+            this.lastNameTextBox.TabIndex = 1;
             // 
             // phoneNumberTextBox
             // 
@@ -127,7 +127,7 @@
             this.phoneNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(327, 39);
-            this.phoneNumberTextBox.TabIndex = 38;
+            this.phoneNumberTextBox.TabIndex = 3;
             this.phoneNumberTextBox.TextChanged += new System.EventHandler(this.PhoneNumberTextBox_TextChanged);
             this.phoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumberTextBox_KeyPress);
             // 
@@ -137,7 +137,7 @@
             this.streetAddressTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.streetAddressTextBox.Name = "streetAddressTextBox";
             this.streetAddressTextBox.Size = new System.Drawing.Size(327, 39);
-            this.streetAddressTextBox.TabIndex = 37;
+            this.streetAddressTextBox.TabIndex = 5;
             // 
             // cityTextBox
             // 
@@ -145,7 +145,7 @@
             this.cityTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cityTextBox.Name = "cityTextBox";
             this.cityTextBox.Size = new System.Drawing.Size(327, 39);
-            this.cityTextBox.TabIndex = 36;
+            this.cityTextBox.TabIndex = 6;
             // 
             // zipCodeTextBox
             // 
@@ -153,7 +153,7 @@
             this.zipCodeTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.zipCodeTextBox.Name = "zipCodeTextBox";
             this.zipCodeTextBox.Size = new System.Drawing.Size(327, 39);
-            this.zipCodeTextBox.TabIndex = 35;
+            this.zipCodeTextBox.TabIndex = 9;
             this.zipCodeTextBox.TextChanged += new System.EventHandler(this.ZipCodeTextBox_TextChanged);
             this.zipCodeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ZipCodeTextBox_KeyPress);
             // 
@@ -163,7 +163,7 @@
             this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(327, 39);
-            this.firstNameTextBox.TabIndex = 34;
+            this.firstNameTextBox.TabIndex = 0;
             // 
             // errorLabel
             // 
@@ -183,7 +183,7 @@
             this.registerPatientButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.registerPatientButton.Name = "registerPatientButton";
             this.registerPatientButton.Size = new System.Drawing.Size(150, 53);
-            this.registerPatientButton.TabIndex = 32;
+            this.registerPatientButton.TabIndex = 10;
             this.registerPatientButton.Text = "Register";
             this.registerPatientButton.UseVisualStyleBackColor = true;
             this.registerPatientButton.Click += new System.EventHandler(this.RegisterPatientButton_Click);
@@ -286,7 +286,7 @@
             this.clearButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(150, 53);
-            this.clearButton.TabIndex = 47;
+            this.clearButton.TabIndex = 11;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);

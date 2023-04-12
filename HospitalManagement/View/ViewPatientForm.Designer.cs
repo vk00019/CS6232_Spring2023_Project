@@ -145,6 +145,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ViewPatientForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Patient Information";
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitDataGridView)).EndInit();
