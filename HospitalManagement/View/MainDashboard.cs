@@ -9,26 +9,31 @@ namespace HospitalManagement.View
             InitializeComponent();
         }
 
-        public MenuUserControl GetMenuUserControl()
-        {
-            return menuUserControl;
-        }
-
         public void CloseForm()
         {
             this.Close();
         }
 
-        private void registerPatientButton_Click(object sender, EventArgs e)
+        public void SetUsernameLabel(string username)
+        {
+            usernameLabel.Text = username;
+        }
+
+        private void RegisterPatientButton_Click(object sender, EventArgs e)
         {
             registerPatientUserControl.Visible = true;
             searchPatientByUserControl.Visible = false;
         }
 
-        private void searchPatientButton_Click(object sender, EventArgs e)
+        private void SearchPatientButton_Click(object sender, EventArgs e)
         {
             registerPatientUserControl.Visible = false;
             searchPatientByUserControl.Visible = true;
+        }
+
+        private void logoutLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DialogResult = DialogResult.OK;
         }
     }
 }

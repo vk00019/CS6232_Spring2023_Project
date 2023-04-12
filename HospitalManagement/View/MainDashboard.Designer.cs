@@ -54,7 +54,7 @@
             this.tabControl.Controls.Add(this.appointmentTab);
             this.tabControl.Controls.Add(this.visitTab);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl.Location = new System.Drawing.Point(0, 55);
+            this.tabControl.Location = new System.Drawing.Point(0, 47);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1188, 1229);
@@ -79,7 +79,7 @@
             this.searchPatientByUserControl.AutoSize = true;
             this.searchPatientByUserControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.searchPatientByUserControl.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.searchPatientByUserControl.Location = new System.Drawing.Point(133, 136);
+            this.searchPatientByUserControl.Location = new System.Drawing.Point(115, 110);
             this.searchPatientByUserControl.Name = "searchPatientByUserControl";
             this.searchPatientByUserControl.Size = new System.Drawing.Size(894, 449);
             this.searchPatientByUserControl.TabIndex = 3;
@@ -90,7 +90,7 @@
             this.registerPatientUserControl.AutoSize = true;
             this.registerPatientUserControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.registerPatientUserControl.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.registerPatientUserControl.Location = new System.Drawing.Point(175, 116);
+            this.registerPatientUserControl.Location = new System.Drawing.Point(213, 133);
             this.registerPatientUserControl.Name = "registerPatientUserControl";
             this.registerPatientUserControl.Size = new System.Drawing.Size(678, 980);
             this.registerPatientUserControl.TabIndex = 2;
@@ -105,7 +105,7 @@
             this.searchPatientButton.TabIndex = 1;
             this.searchPatientButton.Text = "Search Patient";
             this.searchPatientButton.UseVisualStyleBackColor = true;
-            this.searchPatientButton.Click += new System.EventHandler(this.searchPatientButton_Click);
+            this.searchPatientButton.Click += new System.EventHandler(this.SearchPatientButton_Click);
             // 
             // registerPatientButton
             // 
@@ -116,7 +116,7 @@
             this.registerPatientButton.TabIndex = 0;
             this.registerPatientButton.Text = "Register Patient";
             this.registerPatientButton.UseVisualStyleBackColor = true;
-            this.registerPatientButton.Click += new System.EventHandler(this.registerPatientButton_Click);
+            this.registerPatientButton.Click += new System.EventHandler(this.RegisterPatientButton_Click);
             // 
             // appointmentTab
             // 
@@ -184,19 +184,20 @@
             // logoutLinkLabel
             // 
             this.logoutLinkLabel.AutoSize = true;
-            this.logoutLinkLabel.Location = new System.Drawing.Point(1018, 18);
+            this.logoutLinkLabel.Location = new System.Drawing.Point(910, 15);
             this.logoutLinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.logoutLinkLabel.Name = "logoutLinkLabel";
             this.logoutLinkLabel.Size = new System.Drawing.Size(89, 32);
             this.logoutLinkLabel.TabIndex = 11;
             this.logoutLinkLabel.TabStop = true;
             this.logoutLinkLabel.Text = "Logout";
+            this.logoutLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.logoutLinkLabel_LinkClicked);
             // 
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.usernameLabel.Location = new System.Drawing.Point(764, 18);
+            this.usernameLabel.Location = new System.Drawing.Point(706, 9);
             this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(142, 37);
@@ -233,7 +234,6 @@
         }
 
         #endregion
-        private UserControls.MenuUserControl menuUserControl;
         private TabControl tabControl;
         private TabPage patientTab;
         private TabPage appointmentTab;
@@ -246,7 +246,7 @@
         private Button startPatientVisitButton;
         private LinkLabel logoutLinkLabel;
         private Label usernameLabel;
-        private UserControls.RegisterPatientUserControl registerPatientUserControl;
         private UserControls.SearchPatientByUserControl searchPatientByUserControl;
+        private UserControls.RegisterPatientUserControl registerPatientUserControl;
     }
 }

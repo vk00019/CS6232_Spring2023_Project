@@ -14,36 +14,38 @@ namespace HospitalManagement.View
 {
     public partial class LoginForm : Form
     {
-        private ManagementController _controller;
+        private readonly ManagementController _controller;
         public LoginForm()
         {
             InitializeComponent();
             _controller = new ManagementController();
         }
 
-        private void clearButton_Click(object sender, EventArgs e)
+        private void ClearButton_Click(object sender, EventArgs e)
         {
             usernameTextBox.Clear();
             passwordTextBox.Clear();
             errorLabel.Visible = false;
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void LoginButton_Click(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
             if (_controller.CheckUser(usernameTextBox.Text,passwordTextBox.Text))
             {
                 using var mainForm = new MainDashboard();
+                mainForm.SetUsernameLabel(usernameTextBox.Text);
                 this.Hide();
                 var value = mainForm.ShowDialog();
-                //if (value != DialogResult.OK)
-                //{
-                //    this.Close();
-                //}
-                //else
-                //{
-                //    this.Show();
-                //}
+
+                if (value != DialogResult.OK)
+                {
+                    this.Close();
+                }
+                else
+                {
+                    this.Show();
+                }
 
                 usernameTextBox.Clear();
                 passwordTextBox.Clear();

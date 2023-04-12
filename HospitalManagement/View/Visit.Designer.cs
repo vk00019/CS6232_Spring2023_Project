@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuUserControl1 = new HospitalManagement.UserControls.MenuUserControl();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,14 +39,6 @@
             this.nurseTextBox = new System.Windows.Forms.TextBox();
             this.patientTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // menuUserControl1
-            // 
-            this.menuUserControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.menuUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.menuUserControl1.Name = "menuUserControl1";
-            this.menuUserControl1.Size = new System.Drawing.Size(800, 104);
-            this.menuUserControl1.TabIndex = 0;
             // 
             // label1
             // 
@@ -152,7 +143,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.menuUserControl1);
             this.Name = "Visit";
             this.Text = "Visit Information";
             this.ResumeLayout(false);
@@ -161,8 +151,7 @@
         }
 
         #endregion
-
-        private UserControls.MenuUserControl menuUserControl1;
+        
         private Label label1;
         private Label label2;
         private Label label3;

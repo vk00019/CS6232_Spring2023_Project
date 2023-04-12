@@ -128,6 +128,8 @@
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(327, 39);
             this.phoneNumberTextBox.TabIndex = 38;
+            this.phoneNumberTextBox.TextChanged += new System.EventHandler(this.PhoneNumberTextBox_TextChanged);
+            this.phoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumberTextBox_KeyPress);
             // 
             // streetAddressTextBox
             // 
@@ -152,6 +154,8 @@
             this.zipCodeTextBox.Name = "zipCodeTextBox";
             this.zipCodeTextBox.Size = new System.Drawing.Size(327, 39);
             this.zipCodeTextBox.TabIndex = 35;
+            this.zipCodeTextBox.TextChanged += new System.EventHandler(this.ZipCodeTextBox_TextChanged);
+            this.zipCodeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ZipCodeTextBox_KeyPress);
             // 
             // firstNameTextBox
             // 
@@ -182,6 +186,7 @@
             this.registerPatientButton.TabIndex = 32;
             this.registerPatientButton.Text = "Register";
             this.registerPatientButton.UseVisualStyleBackColor = true;
+            this.registerPatientButton.Click += new System.EventHandler(this.RegisterPatientButton_Click);
             // 
             // label7
             // 
@@ -284,6 +289,7 @@
             this.clearButton.TabIndex = 47;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // RegisterPatientUserControl
             // 
@@ -316,6 +322,7 @@
             this.Controls.Add(this.label);
             this.Name = "RegisterPatientUserControl";
             this.Size = new System.Drawing.Size(802, 1042);
+            this.Load += new System.EventHandler(this.RegisterPatientUserControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
