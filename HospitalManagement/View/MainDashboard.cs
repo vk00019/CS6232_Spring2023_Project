@@ -31,9 +31,21 @@ namespace HospitalManagement.View
             searchPatientByUserControl.Visible = true;
         }
 
-        private void logoutLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LogoutLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DialogResult = DialogResult.OK;
+        }
+
+        private void BookAppointmentButton_Click(object sender, EventArgs e)
+        {
+            bookAppointmentUserControl.Visible = true;
+            searchAppointmentByUserControl.Visible = false;
+        }
+
+        private void SearchAppointmentButton_Click(object sender, EventArgs e)
+        {
+            bookAppointmentUserControl.Visible = false;
+            searchAppointmentByUserControl.Visible = true;
         }
     }
 }

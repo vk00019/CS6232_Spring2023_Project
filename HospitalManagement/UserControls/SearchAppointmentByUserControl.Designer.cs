@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.editButton = new System.Windows.Forms.Button();
-            this.viewButton = new System.Windows.Forms.Button();
+            this.viewEditButton = new System.Windows.Forms.Button();
             this.searchDataGridView = new System.Windows.Forms.DataGridView();
             this.errorLabel = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
@@ -47,25 +46,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // editButton
+            // viewEditButton
             // 
-            this.editButton.AutoSize = true;
-            this.editButton.Location = new System.Drawing.Point(482, 909);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(212, 46);
-            this.editButton.TabIndex = 73;
-            this.editButton.Text = "Edit Appointment";
-            this.editButton.UseVisualStyleBackColor = true;
-            // 
-            // viewButton
-            // 
-            this.viewButton.AutoSize = true;
-            this.viewButton.Location = new System.Drawing.Point(160, 909);
-            this.viewButton.Name = "viewButton";
-            this.viewButton.Size = new System.Drawing.Size(223, 46);
-            this.viewButton.TabIndex = 72;
-            this.viewButton.Text = "View Appointment";
-            this.viewButton.UseVisualStyleBackColor = true;
+            this.viewEditButton.AutoSize = true;
+            this.viewEditButton.Location = new System.Drawing.Point(502, 909);
+            this.viewEditButton.Name = "viewEditButton";
+            this.viewEditButton.Size = new System.Drawing.Size(272, 46);
+            this.viewEditButton.TabIndex = 72;
+            this.viewEditButton.Text = "View/Edit Appointment";
+            this.viewEditButton.UseVisualStyleBackColor = true;
+            this.viewEditButton.Visible = false;
             // 
             // searchDataGridView
             // 
@@ -90,6 +80,7 @@
             this.errorLabel.Size = new System.Drawing.Size(165, 32);
             this.errorLabel.TabIndex = 70;
             this.errorLabel.Text = "error message";
+            this.errorLabel.Visible = false;
             // 
             // clearButton
             // 
@@ -213,8 +204,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.editButton);
-            this.Controls.Add(this.viewButton);
+            this.Controls.Add(this.viewEditButton);
             this.Controls.Add(this.searchDataGridView);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.clearButton);
@@ -238,9 +228,7 @@
         }
 
         #endregion
-
-        private Button editButton;
-        private Button viewButton;
+        private Button viewEditButton;
         private DataGridView searchDataGridView;
         private Label errorLabel;
         private Button clearButton;
