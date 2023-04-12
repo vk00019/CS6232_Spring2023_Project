@@ -34,7 +34,6 @@ namespace HospitalManagement.View
             if (_controller.CheckUser(usernameTextBox.Text,passwordTextBox.Text))
             {
                 using var mainForm = new MainDashboard();
-                mainForm.GetMenuUserControl().SetUsername(usernameTextBox.Text);
                 this.Hide();
                 var value = mainForm.ShowDialog();
                 //if (value != DialogResult.OK)

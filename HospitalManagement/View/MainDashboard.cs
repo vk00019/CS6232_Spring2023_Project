@@ -19,5 +19,16 @@ namespace HospitalManagement.View
             this.Close();
         }
 
+        private void registerPatientButton_Click(object sender, EventArgs e)
+        {
+            registerPatientUserControl.Visible = true;
+            searchPatientByUserControl.Visible = false;
+        }
+
+        private void searchPatientButton_Click(object sender, EventArgs e)
+        {
+            registerPatientUserControl.Visible = false;
+            searchPatientByUserControl.Visible = true;
+        }
     }
 }

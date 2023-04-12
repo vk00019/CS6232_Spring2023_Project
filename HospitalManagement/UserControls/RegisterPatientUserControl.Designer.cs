@@ -107,11 +107,11 @@
             this.birthDayDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.birthDayDateTimePicker.Location = new System.Drawing.Point(345, 260);
             this.birthDayDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.birthDayDateTimePicker.MaxDate = new System.DateTime(2023, 4, 8, 0, 0, 0, 0);
+            this.birthDayDateTimePicker.MaxDate = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
             this.birthDayDateTimePicker.Name = "birthDayDateTimePicker";
             this.birthDayDateTimePicker.Size = new System.Drawing.Size(327, 39);
             this.birthDayDateTimePicker.TabIndex = 40;
-            this.birthDayDateTimePicker.Value = new System.DateTime(2023, 4, 8, 0, 0, 0, 0);
+            this.birthDayDateTimePicker.Value = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
             // 
             // lastNameTextBox
             // 
