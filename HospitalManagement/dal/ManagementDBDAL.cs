@@ -101,5 +101,28 @@ namespace HospitalManagement.DAL
             int count = Convert.ToInt32(command.ExecuteScalar());
             return count == 1;
         }
+
+        public List<string> GetPatientWithDob(DateTime value)
+        {
+            var patients = new List<string>();
+            var dateOfBirth = value.Date;
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select firstName, lastName from PersonalDetails,patient where personalDetails.pdID = patient.pdID and dateOfBirth = @dateOfBirth";
+            using var command = new SqlCommand(query, connection);
+            command.Parameters.Add("@dateOfBirth", System.Data.SqlDbType.DateTime);
+            command.Parameters["@dateOfBirth"].Value = dateOfBirth;
+            using var reader = command.ExecuteReader();
+            var firstNameOrdinal = reader.GetOrdinal("firstName");
+            var lastNameOrdinal = reader.GetOrdinal("lastName");
+            while (reader.Read())
+            {
+                var patientName = reader.GetString(firstNameOrdinal) + " " + reader.GetString(lastNameOrdinal);
+                patients.Add(patientName.ToString());
+            }
+            return patients;
+        }
+
+
     }
 }

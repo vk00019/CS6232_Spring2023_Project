@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HospitalManagement.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace HospitalManagement.UserControls
 {
     public partial class SearchPatientByUserControl : UserControl
     {
+        private readonly ManagementController _controller;
         public SearchPatientByUserControl()
         {
             InitializeComponent();
+            _controller = new ManagementController();
         }
 
         private void DobRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -45,6 +48,17 @@ namespace HospitalManagement.UserControls
             lastnameTextBox.Visible = true;
             firstnameLabel.Visible = true;
             firstnametextBox.Visible = true;
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            List<string> patients = new List<string>();
+            if (dobRadioButton.Checked)
+            {
+                patients = _controller.GetPatientWithDob(dobDateTimePicker.Value);
+                searchDataGridView.DataSource = patients.ToArray();
+                searchDataGridView.Visible = true;
+            }
         }
     }
 }
