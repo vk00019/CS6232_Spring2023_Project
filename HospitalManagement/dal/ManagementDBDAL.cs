@@ -3,14 +3,14 @@ using System.Data.SqlClient;
 
 namespace HospitalManagement.DAL
 {
-    public class ManagementDBDAL
+    public class ManagementDbDal
     {
         public void RegisterPatient(PersonalDetails personalDetails)
         {
             var firstname = personalDetails.FirstName;
             var lastname = personalDetails.LastName;
             var dateOfBirth = personalDetails.DateOfBirth;
-            var phonenumber = personalDetails.PhoneNumber;
+            var phoneNumber = personalDetails.PhoneNumber;
             var street =  personalDetails.Street;
             var city = personalDetails.City;
             var country = personalDetails.Country;
@@ -20,7 +20,7 @@ namespace HospitalManagement.DAL
             using var connection = DBConnection.GetConnection();
             connection.Open();
             string query = "INSERT INTO PersonalDetails(firstName,lastName,dateOfBirth,gender,streetAddress,city,state,zipCode,country,phoneNumber) " +
-                "VALUES(@firstname,@lastname,@dateOfBirth,@gender,@street,@city,@state,@zipCode,@country,@phonenumber)";
+                "VALUES(@firstname,@lastname,@dateOfBirth,@gender,@street,@city,@state,@zipCode,@country,@phoneNumber)";
             using var command = new SqlCommand(query,connection);
 
             string query2 = "INSERT INTO Patient(pdID) "
@@ -34,8 +34,8 @@ namespace HospitalManagement.DAL
             command.Parameters.Add("@lastname", System.Data.SqlDbType.VarChar);
             command.Parameters["@lastname"].Value = lastname;
 
-            command.Parameters.Add("@phonenumber", System.Data.SqlDbType.VarChar);
-            command.Parameters["@phonenumber"].Value = phonenumber;
+            command.Parameters.Add("@phoneNumber", System.Data.SqlDbType.VarChar);
+            command.Parameters["@phoneNumber"].Value = phoneNumber;
 
             command.Parameters.Add("@street", System.Data.SqlDbType.VarChar);
             command.Parameters["@street"].Value = street;

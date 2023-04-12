@@ -10,26 +10,26 @@ namespace HospitalManagement.Controller
 {
     public class ManagementController
     {
-        private ManagementDBDAL _managementDAL;
+        private readonly ManagementDbDal _managementDal;
 
         public ManagementController()
         {
-            _managementDAL = new ManagementDBDAL();
+            _managementDal = new ManagementDbDal();
         }
 
-        public void RegisterPatient(PersonalDetails personalDetials)
+        public void RegisterPatient(PersonalDetails personalDetails)
         {
-            _managementDAL.RegisterPatient(personalDetials);
+            _managementDal.RegisterPatient(personalDetails);
         }
 
         public List<string> GetStates()
         {
-            return _managementDAL.GetStates();
+            return _managementDal.GetStates();
         }
 
         public bool CheckUser(string username, string password)
         {
-            return _managementDAL.CheckUser(username,password);
+            return _managementDal.CheckUser(username,password);
         }
     }
 }
