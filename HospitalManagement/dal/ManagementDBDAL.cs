@@ -1,23 +1,22 @@
 ﻿using HospitalManagement.Model;
 using System.Data.SqlClient;
-using TechSupport.DAL;
 
 namespace HospitalManagement.DAL
 {
     public class ManagementDBDAL
     {
-        public void RegisterPatient(PersonalDetails personalDetials)
+        public void RegisterPatient(PersonalDetails personalDetails)
         {
-            var firstname = personalDetials.FirstName;
-            var lastname = personalDetials.LastName;
-            var dateOfBirth = personalDetials.DateOfBirth;
-            var phonenumber = personalDetials.PhoneNumber;
-            var street =  personalDetials.Street;
-            var city = personalDetials.City;
-            var country = personalDetials.Country;
-            var zipCode = personalDetials.ZipCode;
-            var state = personalDetials.State;
-            var gender = personalDetials.Gender;
+            var firstname = personalDetails.FirstName;
+            var lastname = personalDetails.LastName;
+            var dateOfBirth = personalDetails.DateOfBirth;
+            var phonenumber = personalDetails.PhoneNumber;
+            var street =  personalDetails.Street;
+            var city = personalDetails.City;
+            var country = personalDetails.Country;
+            var zipCode = personalDetails.ZipCode;
+            var state = personalDetails.State;
+            var gender = personalDetails.Gender;
             using var connection = DBConnection.GetConnection();
             connection.Open();
             string query = "INSERT INTO PersonalDetails(firstName,lastName,dateOfBirth,gender,streetAddress,city,state,zipCode,country,phoneNumber) " +

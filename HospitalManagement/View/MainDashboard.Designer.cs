@@ -28,85 +28,195 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bookAppointmentButton = new System.Windows.Forms.Button();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.patientTab = new System.Windows.Forms.TabPage();
+            this.appointmentTab = new System.Windows.Forms.TabPage();
+            this.visitTab = new System.Windows.Forms.TabPage();
             this.registerPatientButton = new System.Windows.Forms.Button();
-            this.startPatientVisitButton = new System.Windows.Forms.Button();
             this.searchPatientButton = new System.Windows.Forms.Button();
-            this.menuUserControl = new HospitalManagement.UserControls.MenuUserControl();
+            this.searchAppointmentButton = new System.Windows.Forms.Button();
+            this.bookAppointmentButton = new System.Windows.Forms.Button();
+            this.searchVisitButton = new System.Windows.Forms.Button();
+            this.startPatientVisitButton = new System.Windows.Forms.Button();
+            this.logoutLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.usernameLabel = new System.Windows.Forms.Label();
+            this.tabControl.SuspendLayout();
+            this.patientTab.SuspendLayout();
+            this.appointmentTab.SuspendLayout();
+            this.visitTab.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bookAppointmentButton
+            // tabControl
             // 
-            this.bookAppointmentButton.AutoSize = true;
-            this.bookAppointmentButton.Location = new System.Drawing.Point(73, 184);
-            this.bookAppointmentButton.Name = "bookAppointmentButton";
-            this.bookAppointmentButton.Size = new System.Drawing.Size(226, 46);
-            this.bookAppointmentButton.TabIndex = 3;
-            this.bookAppointmentButton.Text = "Book Appointment";
-            this.bookAppointmentButton.UseVisualStyleBackColor = true;
+            this.tabControl.Controls.Add(this.patientTab);
+            this.tabControl.Controls.Add(this.appointmentTab);
+            this.tabControl.Controls.Add(this.visitTab);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabControl.Location = new System.Drawing.Point(0, 61);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(1150, 658);
+            this.tabControl.TabIndex = 0;
+            // 
+            // patientTab
+            // 
+            this.patientTab.Controls.Add(this.searchPatientButton);
+            this.patientTab.Controls.Add(this.registerPatientButton);
+            this.patientTab.Location = new System.Drawing.Point(8, 46);
+            this.patientTab.Name = "patientTab";
+            this.patientTab.Padding = new System.Windows.Forms.Padding(3);
+            this.patientTab.Size = new System.Drawing.Size(1134, 604);
+            this.patientTab.TabIndex = 0;
+            this.patientTab.Text = "Patient";
+            this.patientTab.UseVisualStyleBackColor = true;
+            // 
+            // appointmentTab
+            // 
+            this.appointmentTab.Controls.Add(this.searchAppointmentButton);
+            this.appointmentTab.Controls.Add(this.bookAppointmentButton);
+            this.appointmentTab.Location = new System.Drawing.Point(8, 46);
+            this.appointmentTab.Name = "appointmentTab";
+            this.appointmentTab.Padding = new System.Windows.Forms.Padding(3);
+            this.appointmentTab.Size = new System.Drawing.Size(1134, 604);
+            this.appointmentTab.TabIndex = 1;
+            this.appointmentTab.Text = "Appointment";
+            this.appointmentTab.UseVisualStyleBackColor = true;
+            // 
+            // visitTab
+            // 
+            this.visitTab.Controls.Add(this.searchVisitButton);
+            this.visitTab.Controls.Add(this.startPatientVisitButton);
+            this.visitTab.Location = new System.Drawing.Point(8, 46);
+            this.visitTab.Name = "visitTab";
+            this.visitTab.Size = new System.Drawing.Size(1134, 604);
+            this.visitTab.TabIndex = 2;
+            this.visitTab.Text = "Visit";
+            this.visitTab.UseVisualStyleBackColor = true;
             // 
             // registerPatientButton
             // 
             this.registerPatientButton.AutoSize = true;
-            this.registerPatientButton.Location = new System.Drawing.Point(474, 184);
+            this.registerPatientButton.Location = new System.Drawing.Point(267, 38);
             this.registerPatientButton.Name = "registerPatientButton";
-            this.registerPatientButton.Size = new System.Drawing.Size(226, 46);
-            this.registerPatientButton.TabIndex = 4;
+            this.registerPatientButton.Size = new System.Drawing.Size(189, 46);
+            this.registerPatientButton.TabIndex = 0;
             this.registerPatientButton.Text = "Register Patient";
             this.registerPatientButton.UseVisualStyleBackColor = true;
-            // 
-            // startPatientVisitButton
-            // 
-            this.startPatientVisitButton.AutoSize = true;
-            this.startPatientVisitButton.Location = new System.Drawing.Point(73, 327);
-            this.startPatientVisitButton.Name = "startPatientVisitButton";
-            this.startPatientVisitButton.Size = new System.Drawing.Size(226, 46);
-            this.startPatientVisitButton.TabIndex = 5;
-            this.startPatientVisitButton.Text = "Start Patient Visit";
-            this.startPatientVisitButton.UseVisualStyleBackColor = true;
             // 
             // searchPatientButton
             // 
             this.searchPatientButton.AutoSize = true;
-            this.searchPatientButton.Location = new System.Drawing.Point(474, 327);
+            this.searchPatientButton.Location = new System.Drawing.Point(588, 38);
             this.searchPatientButton.Name = "searchPatientButton";
-            this.searchPatientButton.Size = new System.Drawing.Size(226, 46);
-            this.searchPatientButton.TabIndex = 6;
+            this.searchPatientButton.Size = new System.Drawing.Size(189, 46);
+            this.searchPatientButton.TabIndex = 1;
             this.searchPatientButton.Text = "Search Patient";
             this.searchPatientButton.UseVisualStyleBackColor = true;
             // 
-            // menuUserControl
+            // searchAppointmentButton
             // 
-            this.menuUserControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.menuUserControl.Location = new System.Drawing.Point(0, 0);
-            this.menuUserControl.Name = "menuUserControl";
-            this.menuUserControl.Size = new System.Drawing.Size(840, 108);
-            this.menuUserControl.TabIndex = 7;
+            this.searchAppointmentButton.AutoSize = true;
+            this.searchAppointmentButton.Location = new System.Drawing.Point(570, 41);
+            this.searchAppointmentButton.Name = "searchAppointmentButton";
+            this.searchAppointmentButton.Size = new System.Drawing.Size(243, 46);
+            this.searchAppointmentButton.TabIndex = 3;
+            this.searchAppointmentButton.Text = "Search Appointment";
+            this.searchAppointmentButton.UseVisualStyleBackColor = true;
+            // 
+            // bookAppointmentButton
+            // 
+            this.bookAppointmentButton.AutoSize = true;
+            this.bookAppointmentButton.Location = new System.Drawing.Point(219, 41);
+            this.bookAppointmentButton.Name = "bookAppointmentButton";
+            this.bookAppointmentButton.Size = new System.Drawing.Size(259, 46);
+            this.bookAppointmentButton.TabIndex = 2;
+            this.bookAppointmentButton.Text = "Book an Appointment";
+            this.bookAppointmentButton.UseVisualStyleBackColor = true;
+            // 
+            // searchVisitButton
+            // 
+            this.searchVisitButton.AutoSize = true;
+            this.searchVisitButton.Location = new System.Drawing.Point(564, 41);
+            this.searchVisitButton.Name = "searchVisitButton";
+            this.searchVisitButton.Size = new System.Drawing.Size(227, 46);
+            this.searchVisitButton.TabIndex = 3;
+            this.searchVisitButton.Text = "Search Patient Visit";
+            this.searchVisitButton.UseVisualStyleBackColor = true;
+            // 
+            // startPatientVisitButton
+            // 
+            this.startPatientVisitButton.AutoSize = true;
+            this.startPatientVisitButton.Location = new System.Drawing.Point(243, 41);
+            this.startPatientVisitButton.Name = "startPatientVisitButton";
+            this.startPatientVisitButton.Size = new System.Drawing.Size(204, 46);
+            this.startPatientVisitButton.TabIndex = 2;
+            this.startPatientVisitButton.Text = "Start Patient Visit";
+            this.startPatientVisitButton.UseVisualStyleBackColor = true;
+            // 
+            // logoutLinkLabel
+            // 
+            this.logoutLinkLabel.AutoSize = true;
+            this.logoutLinkLabel.Location = new System.Drawing.Point(1018, 18);
+            this.logoutLinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.logoutLinkLabel.Name = "logoutLinkLabel";
+            this.logoutLinkLabel.Size = new System.Drawing.Size(89, 32);
+            this.logoutLinkLabel.TabIndex = 11;
+            this.logoutLinkLabel.TabStop = true;
+            this.logoutLinkLabel.Text = "Logout";
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.usernameLabel.Location = new System.Drawing.Point(764, 18);
+            this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(142, 37);
+            this.usernameLabel.TabIndex = 10;
+            this.usernameLabel.Text = "username";
             // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 545);
-            this.Controls.Add(this.menuUserControl);
-            this.Controls.Add(this.searchPatientButton);
-            this.Controls.Add(this.startPatientVisitButton);
-            this.Controls.Add(this.registerPatientButton);
-            this.Controls.Add(this.bookAppointmentButton);
+            this.AutoScroll = true;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1150, 719);
+            this.Controls.Add(this.logoutLinkLabel);
+            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.usernameLabel);
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hospital Management Dashboard";
+            this.tabControl.ResumeLayout(false);
+            this.patientTab.ResumeLayout(false);
+            this.patientTab.PerformLayout();
+            this.appointmentTab.ResumeLayout(false);
+            this.appointmentTab.PerformLayout();
+            this.visitTab.ResumeLayout(false);
+            this.visitTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private Button bookAppointmentButton;
-        private Button registerPatientButton;
-        private Button startPatientVisitButton;
-        private Button searchPatientButton;
         private UserControls.MenuUserControl menuUserControl;
+        private TabControl tabControl;
+        private TabPage patientTab;
+        private TabPage appointmentTab;
+        private TabPage visitTab;
+        private Button searchPatientButton;
+        private Button registerPatientButton;
+        private Button searchAppointmentButton;
+        private Button bookAppointmentButton;
+        private Button searchVisitButton;
+        private Button startPatientVisitButton;
+        private LinkLabel logoutLinkLabel;
+        private Label usernameLabel;
     }
 }

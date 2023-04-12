@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 
-namespace TechSupport.DAL
+namespace HospitalManagement.DAL
 {
     /// <summary>
     /// This class is used to connect tot DB

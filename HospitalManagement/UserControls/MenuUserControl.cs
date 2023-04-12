@@ -14,21 +14,12 @@ namespace HospitalManagement.UserControls
             ExitMenuItem_Click(sender, e);
             using var loginForm = new LoginForm();
             loginForm.Show();
-
-            loginForm.DialogResult = DialogResult.OK;
+            
         }
 
         private void ExitMenuItem_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
-        }
-
-        private void OpenMenuItem_Click(object sender, EventArgs e)
-        {
-            using var mainDashboard = new MainDashboard();
-            //this.Hide();
-            mainDashboard.ShowDialog();
-
+            Application.Exit();
         }
 
         public void SetUsername(string username)
@@ -36,11 +27,41 @@ namespace HospitalManagement.UserControls
             usernameLabel.Text = username.ToUpper();
         }
 
+        private void OpenMenuItem_Click(object sender, EventArgs e)
+        {
+            //using MainDashboard dashboard = new MainDashboard();
+            //dashboard.TopLevel = true;
+            //dashboard.Show();
+            
+            Form openForm = Application.OpenForms["MainDashboard"];
+            if (openForm != null)
+            {
+                openForm.Focus();
+            }
+            else
+            {
+                using var open = new MainDashboard();
+                open.Show();
+            }
+        }
+
         private void RegisterPatientMenuItem_Click(object sender, EventArgs e)
         {
-            using var registerPatient = new PatientRegistration();
-           // this.Hide();
-            registerPatient.ShowDialog();
+            //using PatientRegistration register = new PatientRegistration();
+            //register.TopLevel = false;
+            //register.Show();
+
+            Form openForm = Application.OpenForms["PatientRegistration"];
+            if (openForm != null)
+            {
+                openForm.Focus();
+            }
+            else
+            {
+                using var register = new PatientRegistration();
+                register.Show();
+            }
+            
         }
     }
 }

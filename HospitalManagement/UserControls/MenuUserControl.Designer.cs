@@ -86,19 +86,19 @@
             // searchPatientVisitMenuItem
             // 
             this.searchPatientVisitMenuItem.Name = "searchPatientVisitMenuItem";
-            this.searchPatientVisitMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.searchPatientVisitMenuItem.Size = new System.Drawing.Size(350, 44);
             this.searchPatientVisitMenuItem.Text = "Search Patient Visit";
             // 
             // searchPatientMenuItem
             // 
             this.searchPatientMenuItem.Name = "searchPatientMenuItem";
-            this.searchPatientMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.searchPatientMenuItem.Size = new System.Drawing.Size(350, 44);
             this.searchPatientMenuItem.Text = "Search Patient";
             // 
             // registerPatientMenuItem
             // 
             this.registerPatientMenuItem.Name = "registerPatientMenuItem";
-            this.registerPatientMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.registerPatientMenuItem.Size = new System.Drawing.Size(350, 44);
             this.registerPatientMenuItem.Text = "Register Patient";
             this.registerPatientMenuItem.Click += new System.EventHandler(this.RegisterPatientMenuItem_Click);
             // 
