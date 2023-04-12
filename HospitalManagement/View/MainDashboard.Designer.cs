@@ -35,6 +35,8 @@
             this.searchPatientButton = new System.Windows.Forms.Button();
             this.registerPatientButton = new System.Windows.Forms.Button();
             this.appointmentTab = new System.Windows.Forms.TabPage();
+            this.searchAppointmentByUserControl = new HospitalManagement.UserControls.SearchAppointmentByUserControl();
+            this.bookAppointmentUserControl = new HospitalManagement.UserControls.BookAppointmentUserControl();
             this.searchAppointmentButton = new System.Windows.Forms.Button();
             this.bookAppointmentButton = new System.Windows.Forms.Button();
             this.visitTab = new System.Windows.Forms.TabPage();
@@ -54,10 +56,10 @@
             this.tabControl.Controls.Add(this.appointmentTab);
             this.tabControl.Controls.Add(this.visitTab);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl.Location = new System.Drawing.Point(0, 47);
+            this.tabControl.Location = new System.Drawing.Point(0, 72);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1188, 1229);
+            this.tabControl.Size = new System.Drawing.Size(1222, 1229);
             this.tabControl.TabIndex = 0;
             // 
             // patientTab
@@ -69,7 +71,7 @@
             this.patientTab.Location = new System.Drawing.Point(8, 46);
             this.patientTab.Name = "patientTab";
             this.patientTab.Padding = new System.Windows.Forms.Padding(3);
-            this.patientTab.Size = new System.Drawing.Size(1172, 1175);
+            this.patientTab.Size = new System.Drawing.Size(1206, 1175);
             this.patientTab.TabIndex = 0;
             this.patientTab.Text = "Patient";
             this.patientTab.UseVisualStyleBackColor = true;
@@ -120,15 +122,34 @@
             // 
             // appointmentTab
             // 
+            this.appointmentTab.Controls.Add(this.searchAppointmentByUserControl);
+            this.appointmentTab.Controls.Add(this.bookAppointmentUserControl);
             this.appointmentTab.Controls.Add(this.searchAppointmentButton);
             this.appointmentTab.Controls.Add(this.bookAppointmentButton);
             this.appointmentTab.Location = new System.Drawing.Point(8, 46);
             this.appointmentTab.Name = "appointmentTab";
             this.appointmentTab.Padding = new System.Windows.Forms.Padding(3);
-            this.appointmentTab.Size = new System.Drawing.Size(1172, 1175);
+            this.appointmentTab.Size = new System.Drawing.Size(1206, 1175);
             this.appointmentTab.TabIndex = 1;
             this.appointmentTab.Text = "Appointment";
             this.appointmentTab.UseVisualStyleBackColor = true;
+            // 
+            // searchAppointmentByUserControl
+            // 
+            this.searchAppointmentByUserControl.Location = new System.Drawing.Point(109, 116);
+            this.searchAppointmentByUserControl.Name = "searchAppointmentByUserControl";
+            this.searchAppointmentByUserControl.Size = new System.Drawing.Size(906, 1024);
+            this.searchAppointmentByUserControl.TabIndex = 5;
+            this.searchAppointmentByUserControl.Visible = false;
+            // 
+            // bookAppointmentUserControl
+            // 
+            this.bookAppointmentUserControl.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bookAppointmentUserControl.Location = new System.Drawing.Point(133, 158);
+            this.bookAppointmentUserControl.Name = "bookAppointmentUserControl";
+            this.bookAppointmentUserControl.Size = new System.Drawing.Size(808, 838);
+            this.bookAppointmentUserControl.TabIndex = 4;
+            this.bookAppointmentUserControl.Visible = false;
             // 
             // searchAppointmentButton
             // 
@@ -139,6 +160,7 @@
             this.searchAppointmentButton.TabIndex = 3;
             this.searchAppointmentButton.Text = "Search Appointment";
             this.searchAppointmentButton.UseVisualStyleBackColor = true;
+            this.searchAppointmentButton.Click += new System.EventHandler(this.SearchAppointmentButton_Click);
             // 
             // bookAppointmentButton
             // 
@@ -149,6 +171,7 @@
             this.bookAppointmentButton.TabIndex = 2;
             this.bookAppointmentButton.Text = "Book an Appointment";
             this.bookAppointmentButton.UseVisualStyleBackColor = true;
+            this.bookAppointmentButton.Click += new System.EventHandler(this.BookAppointmentButton_Click);
             // 
             // visitTab
             // 
@@ -156,7 +179,7 @@
             this.visitTab.Controls.Add(this.startPatientVisitButton);
             this.visitTab.Location = new System.Drawing.Point(8, 46);
             this.visitTab.Name = "visitTab";
-            this.visitTab.Size = new System.Drawing.Size(1172, 1175);
+            this.visitTab.Size = new System.Drawing.Size(1206, 1175);
             this.visitTab.TabIndex = 2;
             this.visitTab.Text = "Visit";
             this.visitTab.UseVisualStyleBackColor = true;
@@ -191,7 +214,7 @@
             this.logoutLinkLabel.TabIndex = 11;
             this.logoutLinkLabel.TabStop = true;
             this.logoutLinkLabel.Text = "Logout";
-            this.logoutLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.logoutLinkLabel_LinkClicked);
+            this.logoutLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogoutLinkLabel_LinkClicked);
             // 
             // usernameLabel
             // 
@@ -211,7 +234,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1222, 953);
+            this.ClientSize = new System.Drawing.Size(1222, 1301);
             this.Controls.Add(this.logoutLinkLabel);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.usernameLabel);
@@ -248,5 +271,7 @@
         private Label usernameLabel;
         private UserControls.SearchPatientByUserControl searchPatientByUserControl;
         private UserControls.RegisterPatientUserControl registerPatientUserControl;
+        private UserControls.BookAppointmentUserControl bookAppointmentUserControl;
+        private UserControls.SearchAppointmentByUserControl searchAppointmentByUserControl;
     }
 }
