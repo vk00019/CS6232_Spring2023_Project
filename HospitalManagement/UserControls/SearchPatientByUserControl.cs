@@ -1,4 +1,5 @@
 ﻿using HospitalManagement.Controller;
+using HospitalManagement.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,13 +53,23 @@ namespace HospitalManagement.UserControls
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            List<string> patients = new List<string>();
+            List<PersonalDetails> patients = new List<PersonalDetails>();
             if (dobRadioButton.Checked)
             {
-                patients = _controller.GetPatientWithDob(dobDateTimePicker.Value);
-                searchDataGridView.DataSource = patients.ToArray();
+                var patientsObject = new PersonalDetails
+                {
+                    DateOfBirth = dobDateTimePicker.Value
+                };
+                patients = _controller.GetPatientWithDob(patientsObject);
                 searchDataGridView.Visible = true;
+                searchDataGridView.DataSource = patients;
+                searchDataGridView.ClearSelection();
             }
+        }
+
+        private void SearchPatientByUserControl_Load(object sender, EventArgs e)
+        {
+            searchDataGridView.ClearSelection();
         }
     }
 }

@@ -102,27 +102,59 @@ namespace HospitalManagement.DAL
             return count == 1;
         }
 
-        public List<string> GetPatientWithDob(DateTime value)
+        public List<PersonalDetails> GetPatientWithDob(PersonalDetails patient)
         {
-            var patients = new List<string>();
-            var dateOfBirth = value.Date;
+            var patients = new List<PersonalDetails>();
+            var dateOfBirth = patient.DateOfBirth;
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            string query = "select firstName, lastName from PersonalDetails,patient where personalDetails.pdID = patient.pdID and dateOfBirth = @dateOfBirth";
+            string query = "select patientID, firstName, lastName, phoneNumber, gender, streetAddress, city, state, zipCode, country " +
+                "from PersonalDetails, patient where personalDetails.pdID = patient.pdID and dateOfBirth = @dateOfBirth";
             using var command = new SqlCommand(query, connection);
             command.Parameters.Add("@dateOfBirth", System.Data.SqlDbType.DateTime);
             command.Parameters["@dateOfBirth"].Value = dateOfBirth;
             using var reader = command.ExecuteReader();
+
+            var patientIDOrdinal = reader.GetOrdinal("patientID");
             var firstNameOrdinal = reader.GetOrdinal("firstName");
             var lastNameOrdinal = reader.GetOrdinal("lastName");
+            var phoneNumberOrdinal = reader.GetOrdinal("phoneNumber");
+            var genderOrdinal = reader.GetOrdinal("gender");
+            var streetOrdinal = reader.GetOrdinal("streetAddress");
+            var cityOrdinal = reader.GetOrdinal("city");
+            var stateOrdinal = reader.GetOrdinal("state");
+            var zipOrdinal = reader.GetOrdinal("zipCode");
+            var countryOrdinal = reader.GetOrdinal("country");
+
             while (reader.Read())
             {
-                var patientName = reader.GetString(firstNameOrdinal) + " " + reader.GetString(lastNameOrdinal);
-                patients.Add(patientName.ToString());
+                var patientID = reader.GetInt32(patientIDOrdinal);
+                var firstName = reader.GetString(firstNameOrdinal);
+                var lastName = reader.GetString(lastNameOrdinal);
+                var phoneNumber = reader.GetString(phoneNumberOrdinal);
+                var gender = reader.GetString(genderOrdinal);
+                var street = reader.GetString(streetOrdinal);
+                var city = reader.GetString(cityOrdinal);
+                var state = reader.GetString(stateOrdinal);
+                var zip = reader.GetString(zipOrdinal);
+                var country = reader.GetString(countryOrdinal);
+
+                patients.Add(new PersonalDetails
+                {
+                    PdID = patientID,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    DateOfBirth = dateOfBirth,
+                    PhoneNumber = phoneNumber,
+                    Gender = gender,
+                    Street = street,
+                    City = city,
+                    State = state,
+                    ZipCode = zip,
+                    Country = country
+                });
             }
             return patients;
         }
-
-
     }
 }

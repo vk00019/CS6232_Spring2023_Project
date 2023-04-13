@@ -8,6 +8,7 @@ namespace HospitalManagement.Model
 {
     public class PersonalDetails
     {
+        public int PdID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }

@@ -32,9 +32,9 @@ namespace HospitalManagement.Controller
             return _managementDal.CheckUser(username,password);
         }
 
-        public List<string> GetPatientWithDob(DateTime dt)
+        public List<PersonalDetails> GetPatientWithDob(PersonalDetails patient)
         {
-            return _managementDal.GetPatientWithDob(dt);
+            return _managementDal.GetPatientWithDob(patient);
         }
     }
 }

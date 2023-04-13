@@ -75,14 +75,15 @@
             // 
             searchDataGridView.BackgroundColor = SystemColors.ControlLightLight;
             searchDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            searchDataGridView.Location = new Point(58, 261);
+            searchDataGridView.Location = new Point(20, 261);
             searchDataGridView.Margin = new Padding(2, 1, 2, 1);
+            searchDataGridView.MultiSelect = false;
             searchDataGridView.Name = "searchDataGridView";
             searchDataGridView.ReadOnly = true;
             searchDataGridView.RowHeadersWidth = 82;
             searchDataGridView.RowTemplate.Height = 41;
             searchDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            searchDataGridView.Size = new Size(377, 141);
+            searchDataGridView.Size = new Size(451, 141);
             searchDataGridView.TabIndex = 55;
             searchDataGridView.Visible = false;
             // 
@@ -253,6 +254,7 @@
             Margin = new Padding(2, 1, 2, 1);
             Name = "SearchPatientByUserControl";
             Size = new Size(491, 475);
+            Load += SearchPatientByUserControl_Load;
             ((System.ComponentModel.ISupportInitialize)searchDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
