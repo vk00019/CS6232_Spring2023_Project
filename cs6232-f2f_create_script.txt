@@ -23,7 +23,7 @@ CREATE TABLE [dbo].[PersonalDetails](
 	[firstName] [varchar](50) NOT NULL,
 	[lastName] [varchar](50) NOT NULL,
 	[dateOfBirth] [datetime] NOT NULL,
-	[gender] [varchar](10) NOT NULL,
+	[gender] [varchar](20) NOT NULL,
 	[streetAddress] [varchar](50) NOT NULL,
 	[city] [varchar](50) NOT NULL,
 	[state] [varchar](50) NOT NULL,
