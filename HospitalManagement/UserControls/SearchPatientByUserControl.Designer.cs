@@ -108,6 +108,7 @@
             clearButton.TabIndex = 53;
             clearButton.Text = "Clear";
             clearButton.UseVisualStyleBackColor = true;
+            clearButton.Click += clearButton_Click;
             // 
             // searchButton
             // 
