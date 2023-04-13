@@ -46,12 +46,7 @@ namespace HospitalManagement.UserControls
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            searchButton.Visible = true;
-            editButton.Visible = true;
-            searchButton.Enabled = false;
-            editButton.Enabled = false;
-            errorLabel.Visible = false;
-            List<PersonalDetails> patients;
+            List<PersonalDetails> patients = new List<PersonalDetails>();
             if (dobRadioButton.Checked)
             {
                 var patientsObject = new PersonalDetails
@@ -63,48 +58,7 @@ namespace HospitalManagement.UserControls
                 searchDataGridView.DataSource = patients;
                 searchDataGridView.ClearSelection();
             }
-            else if (dobLnRadioButton.Checked)
-            {
-                if (!string.IsNullOrEmpty(lastnameTextBox.Text))
-                {
-                    var patientsObject = new PersonalDetails
-                    {
-                        DateOfBirth = dobDateTimePicker.Value,
-                        LastName = lastnameTextBox.Text
-                    };
-                    patients = _controller.GetPatientWithDobAndLastname(patientsObject);
-                    searchDataGridView.Visible = true;
-                    searchDataGridView.DataSource = patients;
-                    searchDataGridView.ClearSelection();
-                }
-                else
-                {
-                    errorLabel.Text = "Please fill Lastname field";
-                    errorLabel.Visible = true;
-                    errorLabel.ForeColor = Color.Red;
-                }
-
-            }
-            else
-            {
-                if (!(string.IsNullOrEmpty(firstnametextBox.Text) || string.IsNullOrEmpty(lastnameTextBox.Text)))
-                {
-                    var patientsObject = new PersonalDetails
-                    {
-                        FirstName = firstnametextBox.Text,
-                        LastName = lastnameTextBox.Text
-                    };
-                    patients = _controller.GetPatientWithFirstnameAndLastname(patientsObject);
-                    searchDataGridView.Visible = true;
-                    searchDataGridView.DataSource = patients;
-                    searchDataGridView.ClearSelection();
-                }
-                else
-                {
-                    errorLabel.Text = "Please fill both Firstname and Lastname";
-                    errorLabel.Visible = true;
-                    errorLabel.ForeColor = Color.Red;
-                }
+        }
 
             }
         }
