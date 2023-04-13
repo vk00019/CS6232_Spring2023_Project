@@ -36,5 +36,15 @@ namespace HospitalManagement.Controller
         {
             return _managementDal.GetPatientWithDob(patient);
         }
+
+        public List<PersonalDetails> GetPatientWithDobAndLastname(PersonalDetails patient)
+        {
+            return _managementDal.GetPatientWithDobAndLastname(patient);
+        }
+
+        public List<PersonalDetails> GetPatientWithFirstnameAndLastname(PersonalDetails patientsObject)
+        {
+            return _managementDal.GetPatientWithFirstnameAndLastname(patientsObject);
+        }
     }
 }
