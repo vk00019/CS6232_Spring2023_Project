@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace HospitalManagement.UserControls
+﻿namespace HospitalManagement.UserControls
 {
     public partial class BookAppointmentUserControl : UserControl
     {
         public BookAppointmentUserControl()
         {
             InitializeComponent();
+        }
+
+        private void bookButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
