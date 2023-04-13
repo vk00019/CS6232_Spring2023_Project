@@ -70,6 +70,7 @@
             this.viewButton.Text = "View Patient";
             this.viewButton.UseVisualStyleBackColor = true;
             this.viewButton.Visible = false;
+            this.viewButton.Click += new System.EventHandler(this.ViewButton_Click);
             // 
             // searchDataGridView
             // 

@@ -1,5 +1,6 @@
 ﻿using HospitalManagement.Controller;
 using HospitalManagement.Model;
+using HospitalManagement.View;
 
 namespace HospitalManagement.UserControls
 {
@@ -148,8 +149,43 @@ namespace HospitalManagement.UserControls
 
         private void SearchDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            viewButton.Enabled = true;
-            editButton.Enabled = true;
+            if (e.RowIndex == -1)
+            {
+                viewButton.Enabled = false;
+                editButton.Enabled = false;
+            }
+            else
+            {
+                viewButton.Enabled = true;
+                editButton.Enabled = true;
+            }
+        }
+
+        private void ViewButton_Click(object sender, EventArgs e)
+        {
+            PersonalDetails patient = new PersonalDetails();
+            if (searchDataGridView.SelectedRows[0] != null)
+            {
+                patient.PdID = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+                patient.FirstName = searchDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+                patient.LastName = searchDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+                patient.DateOfBirth = DateTime.Parse(searchDataGridView.SelectedRows[0].Cells[3].Value.ToString());
+                patient.PhoneNumber = searchDataGridView.SelectedRows[0].Cells[4].Value.ToString();
+                patient.Gender = searchDataGridView.SelectedRows[0].Cells[5].Value.ToString();
+                patient.Street = searchDataGridView.SelectedRows[0].Cells[6].Value.ToString();
+                patient.City = searchDataGridView.SelectedRows[0].Cells[7].Value.ToString();
+                patient.State = searchDataGridView.SelectedRows[0].Cells[8].Value.ToString();
+                patient.Country = searchDataGridView.SelectedRows[0].Cells[9].Value.ToString();
+                patient.ZipCode = searchDataGridView.SelectedRows[0].Cells[10].Value.ToString();
+            }
+
+            using var viewForm = new ViewPatientForm();
+            viewForm.SetPatientDetails(patient);
+            viewForm.ShowDialog();
+            if (viewForm.DialogResult == DialogResult.OK)
+            {
+                this.Show();
+            }
         }
     }
 }

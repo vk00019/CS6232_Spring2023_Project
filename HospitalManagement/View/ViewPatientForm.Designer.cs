@@ -36,6 +36,7 @@
             this.visitsLabel = new System.Windows.Forms.Label();
             this.visitDataGridView = new System.Windows.Forms.DataGridView();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.patientIdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -54,17 +55,17 @@
             // 
             this.patientNameLabel.AutoSize = true;
             this.patientNameLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.patientNameLabel.Location = new System.Drawing.Point(137, 96);
+            this.patientNameLabel.Location = new System.Drawing.Point(301, 96);
             this.patientNameLabel.Name = "patientNameLabel";
-            this.patientNameLabel.Size = new System.Drawing.Size(216, 37);
+            this.patientNameLabel.Size = new System.Drawing.Size(177, 37);
             this.patientNameLabel.TabIndex = 1;
-            this.patientNameLabel.Text = "Patient Name, ID";
+            this.patientNameLabel.Text = "Patient Name";
             // 
             // dobLabel
             // 
             this.dobLabel.AutoSize = true;
             this.dobLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dobLabel.Location = new System.Drawing.Point(619, 96);
+            this.dobLabel.Location = new System.Drawing.Point(801, 96);
             this.dobLabel.Name = "dobLabel";
             this.dobLabel.Size = new System.Drawing.Size(157, 37);
             this.dobLabel.TabIndex = 2;
@@ -77,6 +78,7 @@
             this.appointmentsDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.appointmentsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.appointmentsDataGridView.Location = new System.Drawing.Point(49, 228);
+            this.appointmentsDataGridView.MultiSelect = false;
             this.appointmentsDataGridView.Name = "appointmentsDataGridView";
             this.appointmentsDataGridView.ReadOnly = true;
             this.appointmentsDataGridView.RowHeadersWidth = 82;
@@ -84,6 +86,7 @@
             this.appointmentsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.appointmentsDataGridView.Size = new System.Drawing.Size(918, 300);
             this.appointmentsDataGridView.TabIndex = 3;
+            this.appointmentsDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.AppointmentsDataGridView_CellMouseClick);
             // 
             // nameLabel
             // 
@@ -128,12 +131,24 @@
             this.cancelButton.TabIndex = 7;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
+            // patientIdLabel
+            // 
+            this.patientIdLabel.AutoSize = true;
+            this.patientIdLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.patientIdLabel.Location = new System.Drawing.Point(49, 96);
+            this.patientIdLabel.Name = "patientIdLabel";
+            this.patientIdLabel.Size = new System.Drawing.Size(132, 37);
+            this.patientIdLabel.TabIndex = 8;
+            this.patientIdLabel.Text = "Patient ID";
             // 
             // ViewPatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 1064);
+            this.Controls.Add(this.patientIdLabel);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.visitsLabel);
             this.Controls.Add(this.visitDataGridView);
@@ -147,6 +162,7 @@
             this.Name = "ViewPatientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Patient Information";
+            this.Load += new System.EventHandler(this.ViewPatientForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -164,5 +180,6 @@
         private Label visitsLabel;
         private DataGridView visitDataGridView;
         private Button cancelButton;
+        private Label patientIdLabel;
     }
 }
