@@ -69,9 +69,7 @@ namespace HospitalManagement.UserControls
                     DateOfBirth = dobDateTimePicker.Value
                 };
                 patients = _controller.GetPatientWithDob(patientsObject);
-                searchDataGridView.Visible = true;
-                searchDataGridView.DataSource = patients;
-                searchDataGridView.ClearSelection();
+                CheckForPatients(patients);
             }
             else if (dobLnRadioButton.Checked)
             {
@@ -83,9 +81,7 @@ namespace HospitalManagement.UserControls
                         LastName = lastnameTextBox.Text
                     };
                     patients = _controller.GetPatientWithDobAndLastname(patientsObject);
-                    searchDataGridView.Visible = true;
-                    searchDataGridView.DataSource = patients;
-                    searchDataGridView.ClearSelection();
+                    CheckForPatients(patients);
                 }
                 else
                 {
@@ -106,9 +102,7 @@ namespace HospitalManagement.UserControls
                         LastName = lastnameTextBox.Text
                     };
                     patients = _controller.GetPatientWithFirstnameAndLastname(patientsObject);
-                    searchDataGridView.Visible = true;
-                    searchDataGridView.DataSource = patients;
-                    searchDataGridView.ClearSelection();
+                    CheckForPatients(patients);
                 }
                 else
                 {
@@ -118,7 +112,26 @@ namespace HospitalManagement.UserControls
                     viewButton.Visible = false;
                     editButton.Visible = false;
                 }
+            }
+        }
 
+        private void CheckForPatients(List<PersonalDetails> patients)
+        {
+            if (patients.Count > 0)
+            {
+                searchDataGridView.Visible = true;
+                searchDataGridView.DataSource = patients;
+                searchDataGridView.ClearSelection();
+            }
+            else
+            {
+                searchDataGridView.Visible = false;
+                errorLabel.Text = "There are no patients available with details provided." + Environment.NewLine +
+                                  "Register them or check the details given again.";
+                errorLabel.Visible = true;
+                errorLabel.ForeColor = Color.Red;
+                viewButton.Visible = false;
+                editButton.Visible = false;
             }
         }
 

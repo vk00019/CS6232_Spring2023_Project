@@ -56,10 +56,10 @@
             this.tabControl.Controls.Add(this.appointmentTab);
             this.tabControl.Controls.Add(this.visitTab);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl.Location = new System.Drawing.Point(0, 72);
+            this.tabControl.Location = new System.Drawing.Point(0, 50);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1222, 1229);
+            this.tabControl.Size = new System.Drawing.Size(1112, 1251);
             this.tabControl.TabIndex = 0;
             // 
             // patientTab
@@ -71,7 +71,7 @@
             this.patientTab.Location = new System.Drawing.Point(8, 46);
             this.patientTab.Name = "patientTab";
             this.patientTab.Padding = new System.Windows.Forms.Padding(3);
-            this.patientTab.Size = new System.Drawing.Size(1206, 1175);
+            this.patientTab.Size = new System.Drawing.Size(1096, 1197);
             this.patientTab.TabIndex = 0;
             this.patientTab.Text = "Patient";
             this.patientTab.UseVisualStyleBackColor = true;
@@ -82,8 +82,9 @@
             this.searchPatientByUserControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.searchPatientByUserControl.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.searchPatientByUserControl.Location = new System.Drawing.Point(115, 110);
+            this.searchPatientByUserControl.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.searchPatientByUserControl.Name = "searchPatientByUserControl";
-            this.searchPatientByUserControl.Size = new System.Drawing.Size(894, 449);
+            this.searchPatientByUserControl.Size = new System.Drawing.Size(894, 450);
             this.searchPatientByUserControl.TabIndex = 3;
             this.searchPatientByUserControl.Visible = false;
             // 
@@ -129,7 +130,7 @@
             this.appointmentTab.Location = new System.Drawing.Point(8, 46);
             this.appointmentTab.Name = "appointmentTab";
             this.appointmentTab.Padding = new System.Windows.Forms.Padding(3);
-            this.appointmentTab.Size = new System.Drawing.Size(1206, 1175);
+            this.appointmentTab.Size = new System.Drawing.Size(1096, 1197);
             this.appointmentTab.TabIndex = 1;
             this.appointmentTab.Text = "Appointment";
             this.appointmentTab.UseVisualStyleBackColor = true;
@@ -179,7 +180,7 @@
             this.visitTab.Controls.Add(this.startPatientVisitButton);
             this.visitTab.Location = new System.Drawing.Point(8, 46);
             this.visitTab.Name = "visitTab";
-            this.visitTab.Size = new System.Drawing.Size(1206, 1175);
+            this.visitTab.Size = new System.Drawing.Size(1100, 1175);
             this.visitTab.TabIndex = 2;
             this.visitTab.Text = "Visit";
             this.visitTab.UseVisualStyleBackColor = true;
@@ -231,10 +232,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1222, 1301);
+            this.ClientSize = new System.Drawing.Size(1112, 1301);
             this.Controls.Add(this.logoutLinkLabel);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.usernameLabel);
