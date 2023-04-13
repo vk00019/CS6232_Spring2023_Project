@@ -40,7 +40,7 @@ namespace HospitalManagement.UserControls
             lastnameTextBox.Visible = true;
             firstnameLabel.Visible = true;
             firstnametextBox.Visible = true;
-            searchButton.Visible = false;
+            viewButton.Visible = false;
             editButton.Visible = false;
         }
 
@@ -57,9 +57,6 @@ namespace HospitalManagement.UserControls
                 searchDataGridView.Visible = true;
                 searchDataGridView.DataSource = patients;
                 searchDataGridView.ClearSelection();
-            }
-        }
-
             }
         }
 
