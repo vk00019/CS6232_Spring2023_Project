@@ -203,7 +203,7 @@ namespace HospitalManagement.UserControls
         private void SearchPatientByUserControl_Load(object sender, EventArgs e)
         {
             dobDateTimePicker.MaxDate = DateTime.Now;
-            dobDateTimePicker.Value = DateTime.Now;
+            dobDateTimePicker.Value = DateTime.Now.Date;
         }
     }
 }

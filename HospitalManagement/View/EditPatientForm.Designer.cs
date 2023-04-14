@@ -216,6 +216,7 @@
             this.editPatientButton.TabIndex = 11;
             this.editPatientButton.Text = "Edit";
             this.editPatientButton.UseVisualStyleBackColor = true;
+            this.editPatientButton.Click += new System.EventHandler(this.EditPatientButton_Click);
             // 
             // zipCodeLabel
             // 
