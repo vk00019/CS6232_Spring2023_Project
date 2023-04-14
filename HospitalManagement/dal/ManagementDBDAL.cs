@@ -135,6 +135,23 @@ namespace HospitalManagement.DAL
             return times;
         }
 
+        public bool ValidatePatient(int id)
+        {
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+
+            const string query = "SELECT count(*) FROM Patient " +
+                                 "WHERE patientID = @id";
+
+            using var command = new SqlCommand(query, connection);
+            command.Parameters.Add("@id", SqlDbType.Int);
+            command.Parameters["@id"].Value = id;
+
+            var count = Convert.ToInt32(command.ExecuteScalar());
+
+            return count == 1;
+        }
+
         public List<Doctor> GetDoctors()
         {
             var doctors = new List<Doctor>();
