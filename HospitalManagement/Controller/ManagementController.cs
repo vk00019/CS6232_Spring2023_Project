@@ -37,6 +37,11 @@ namespace HospitalManagement.Controller
             return _managementDal.GetDoctorAppointmentTimes(id);
         }
 
+        public void UpdateAppointment(Appointment appointment)
+        {
+            _managementDal.UpdateAppointment(appointment);
+        }
+
         public bool ValidatePatient(int id)
         {
             return _managementDal.ValidatePatient(id);

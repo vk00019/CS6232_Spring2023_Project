@@ -99,6 +99,33 @@ namespace HospitalManagement.DAL
             command.ExecuteNonQuery();
         }
 
+        public void UpdateAppointment(Appointment appointment)
+        {
+            var patientId = appointment.PatientId;
+            var doctorId = appointment.DoctorId;
+            var reason = appointment.Reason;
+            var date = appointment.ScheduledTime;
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "UPDATE Appointment SET patientID = @patientId, doctorID = @doctorId, " +
+                "reason = @reason, scheduledDate = @date) "
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@patientId", System.Data.SqlDbType.Int);
+            command.Parameters["@patientId"].Value = patientId;
+
+            command.Parameters.Add("@doctorId", System.Data.SqlDbType.Int);
+            command.Parameters["@doctorId"].Value = doctorId;
+
+            command.Parameters.Add("@reason", System.Data.SqlDbType.VarChar);
+            command.Parameters["@reason"].Value = reason;
+
+            command.Parameters.Add("@date", System.Data.SqlDbType.DateTime);
+            command.Parameters["@date"].Value = date;
+
+            command.ExecuteNonQuery();
+        }
+
         public List<string> GetStates()
         {
             var states = new List<string>();
