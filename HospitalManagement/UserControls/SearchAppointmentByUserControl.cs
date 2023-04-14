@@ -125,8 +125,9 @@ namespace HospitalManagement.UserControls
         private void ViewEditButton_Click(object sender, EventArgs e)
         {
             using var viewform = new ViewAppointmentForm();
-                viewform.SetAppointment(_appointment);
+            viewform.SetAppointment(_appointment);
             viewform.ShowDialog();
+            searchDataGridView.Visible = false;
         }
     }
 }
