@@ -72,6 +72,64 @@ namespace HospitalManagement.DAL
             command2.ExecuteNonQuery();
         }
 
+        public void UpdatePatientDetails(PersonalDetails patientDetails)
+        {
+            var firstname = patientDetails.FirstName;
+            var lastname = patientDetails.LastName;
+            var dateOfBirth = patientDetails.DateOfBirth;
+            var phoneNumber = patientDetails.PhoneNumber;
+            var street = patientDetails.Street;
+            var city = patientDetails.City;
+            var country = patientDetails.Country;
+            var zipCode = patientDetails.ZipCode;
+            var state = patientDetails.State;
+            var gender = patientDetails.Gender;
+
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+
+            string query = "Update PersonalDetails set firstName = @firstname, lastName = @lastname, dateOfBirth = @dateOfBirth, " +
+                           " gender = @gender, streetAddress = @street, state = @state, zipCode = @zipCode," +
+                           " country = @country, phoneNumber = @phoneNumber where " +
+                           "pdID = (select pdID from Patient where patientID = @patientId)";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@patientId", SqlDbType.Int);
+            command.Parameters["@patientId"].Value = patientDetails.PdID;
+
+            command.Parameters.Add("@firstname", SqlDbType.VarChar);
+            command.Parameters["@firstname"].Value = firstname;
+
+            command.Parameters.Add("@lastname", SqlDbType.VarChar);
+            command.Parameters["@lastname"].Value = lastname;
+
+            command.Parameters.Add("@phoneNumber", SqlDbType.VarChar);
+            command.Parameters["@phoneNumber"].Value = phoneNumber;
+
+            command.Parameters.Add("@street", SqlDbType.VarChar);
+            command.Parameters["@street"].Value = street;
+
+            command.Parameters.Add("@city", SqlDbType.VarChar);
+            command.Parameters["@city"].Value = city;
+
+            command.Parameters.Add("@country", SqlDbType.VarChar);
+            command.Parameters["@country"].Value = country;
+
+            command.Parameters.Add("@zipCode", SqlDbType.VarChar);
+            command.Parameters["@zipCode"].Value = zipCode;
+
+            command.Parameters.Add("@state", SqlDbType.VarChar);
+            command.Parameters["@state"].Value = state;
+
+            command.Parameters.Add("@gender", SqlDbType.VarChar);
+            command.Parameters["@gender"].Value = gender;
+
+            command.Parameters.Add("@dateOfBirth", SqlDbType.DateTime);
+            command.Parameters["@dateOfBirth"].Value = dateOfBirth;
+
+            command.ExecuteNonQuery();
+        }
+
         public void BookAppointment(Appointment appointment)
         {
             var patientId = appointment.PatientId;
