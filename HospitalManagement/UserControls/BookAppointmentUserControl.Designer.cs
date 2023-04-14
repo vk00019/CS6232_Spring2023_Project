@@ -40,7 +40,7 @@
             doctorLabel = new Label();
             patientTextBox = new TextBox();
             patientLabel = new Label();
-            bookErrorlabel = new Label();
+            errorlabel = new Label();
             headerLabel = new Label();
             SuspendLayout();
             // 
@@ -176,18 +176,18 @@
             patientLabel.TabIndex = 14;
             patientLabel.Text = "Patient: ";
             // 
-            // bookErrorlabel
+            // errorlabel
             // 
-            bookErrorlabel.AutoSize = true;
-            bookErrorlabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            bookErrorlabel.ForeColor = Color.Red;
-            bookErrorlabel.Location = new Point(146, 404);
-            bookErrorlabel.Margin = new Padding(2, 0, 2, 0);
-            bookErrorlabel.Name = "bookErrorlabel";
-            bookErrorlabel.Size = new Size(103, 20);
-            bookErrorlabel.TabIndex = 27;
-            bookErrorlabel.Text = "error message";
-            bookErrorlabel.Visible = false;
+            errorlabel.AutoSize = true;
+            errorlabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            errorlabel.ForeColor = Color.Red;
+            errorlabel.Location = new Point(146, 404);
+            errorlabel.Margin = new Padding(2, 0, 2, 0);
+            errorlabel.Name = "errorlabel";
+            errorlabel.Size = new Size(103, 20);
+            errorlabel.TabIndex = 27;
+            errorlabel.Text = "error message";
+            errorlabel.Visible = false;
             // 
             // headerLabel
             // 
@@ -206,7 +206,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             Controls.Add(headerLabel);
-            Controls.Add(bookErrorlabel);
+            Controls.Add(errorlabel);
             Controls.Add(clearButton);
             Controls.Add(bookButton);
             Controls.Add(timeLabel);
@@ -219,7 +219,7 @@
             Controls.Add(doctorLabel);
             Controls.Add(patientTextBox);
             Controls.Add(patientLabel);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "BookAppointmentUserControl";
             Size = new Size(482, 510);
             Load += BookAppointmentUserControl_Load;
@@ -241,7 +241,7 @@
         private Label doctorLabel;
         private TextBox patientTextBox;
         private Label patientLabel;
-        private Label bookErrorlabel;
+        private Label errorlabel;
         private Label headerLabel;
     }
 }

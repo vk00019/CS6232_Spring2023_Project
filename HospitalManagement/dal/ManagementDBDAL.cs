@@ -89,6 +89,25 @@ namespace HospitalManagement.DAL
             return states;
         }
 
+        public List<DateTime> GetDoctorAppointmentTimes(int id)
+        {
+            var times = new List<DateTime>();
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select scheduledDate from Appointment where doctorID = @id";
+            using var command = new SqlCommand(query, connection);
+            command.Parameters.Add("@id", System.Data.SqlDbType.Int);
+            command.Parameters["@id"].Value = id;
+            using var reader = command.ExecuteReader();
+            var dateOrdinal = reader.GetOrdinal("scheduledDate");
+            while (reader.Read())
+            {
+                var date = reader.GetDateTime(dateOrdinal);
+                times.Add(date);
+            }
+            return times;
+        }
+
         public List<Doctor> GetDoctors()
         {
             var doctors = new List<Doctor>();
@@ -248,10 +267,8 @@ namespace HospitalManagement.DAL
             var patients = new List<PersonalDetails>();
             var firstNameFromPatient = patient.FirstName;
             var lastNameFromPatient = patient.LastName;
-
             using var connection = DBConnection.GetConnection();
             connection.Open();
-
             string query = "select patientID, dateOfBirth, phoneNumber, gender, streetAddress, city, state, zipCode, country " +
                 "from PersonalDetails, patient where personalDetails.pdID = patient.pdID and firstName = @firstName and lastName = @lastName";
             using var command = new SqlCommand(query, connection);
@@ -352,13 +369,12 @@ namespace HospitalManagement.DAL
             connection.Open();
 
             var query = "select visitID, nurseID, height, weight, systolicBP, diastolic, bodyTemperature, " +
-                        "pulse, symptoms, initialDiagnosis, finalDiagnosis from Visit where appointmentID = @appointmentId";
+                        "pulse, symptoms, initialDiagnosis, finalDiagnosis from Visit where appointmentID = @appointmentId;";
 
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@appointmentId", SqlDbType.Int);
             command.Parameters["@appointmentId"].Value = appointmentId;
-
             using var reader = command.ExecuteReader();
 
             var visitIdOrdinal = reader.GetOrdinal("visitID");
@@ -375,7 +391,7 @@ namespace HospitalManagement.DAL
 
             while (reader.Read())
             {
-                var visitId =  reader.GetInt32(visitIdOrdinal);
+                var visitId = reader.GetInt32(visitIdOrdinal);
                 var nurseId = reader.GetInt32(nurseIdOrdinal);
                 var height = reader.IsDBNull(heightOrdinal) ? -1 : reader.GetDecimal(heightOrdinal);
                 var weight = reader.IsDBNull(weightOrdinal)? -1 : reader.GetDecimal(weightOrdinal);

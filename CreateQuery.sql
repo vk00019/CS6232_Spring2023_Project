@@ -19,10 +19,11 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[PersonalDetails](
-	[pdID] [int] NOT NULL,
+	[pdID] [int] IDENTITY(1,1) NOT NULL,
 	[firstName] [varchar](50) NOT NULL,
 	[lastName] [varchar](50) NOT NULL,
 	[dateOfBirth] [datetime] NOT NULL,
+	[gender] [varchar](20) NOT NULL,
 	[streetAddress] [varchar](50) NOT NULL,
 	[city] [varchar](50) NOT NULL,
 	[state] [varchar](50) NOT NULL,
@@ -43,7 +44,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Nurse](
-	[nurseID] [int] NOT NULL,
+	[nurseID] [int] IDENTITY(1,1) NOT NULL,
 	[pdID] [int] NOT NULL,
  CONSTRAINT [PK_Nurse] PRIMARY KEY 
 (
@@ -59,7 +60,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Patient](
-	[patientID] [int] NOT NULL,
+	[patientID] [int] IDENTITY(1,1) NOT NULL,
 	[pdID] [int] NOT NULL,
  CONSTRAINT [PK_Patient] PRIMARY KEY 
 (
@@ -75,7 +76,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Doctor](
-	[doctorID] [int] NOT NULL,
+	[doctorID] [int] IDENTITY(1,1) NOT NULL,
 	[pdID] [int] NOT NULL,
  CONSTRAINT [PK_Doctor] PRIMARY KEY 
 (
@@ -108,7 +109,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Specialities](
-	[specialityID] [int] NOT NULL,
+	[specialityID] [int] IDENTITY(1,1) NOT NULL,
 	[speciality] [varchar](50) NOT NULL,
  CONSTRAINT [PK_Specialities] PRIMARY KEY 
 (
@@ -124,10 +125,10 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Appointment](
-	[appointmentID] [int] NOT NULL,
+	[appointmentID] [int] IDENTITY(1,1) NOT NULL,
 	[patientID] [int] NOT NULL,
 	[doctorID] [int] NOT NULL,
-	[schedulateDate] [datetime] NOT NULL,
+	[scheduledDate] [datetime] NOT NULL,
 	[reason] [varchar](255)
  CONSTRAINT [PK_Appointment] PRIMARY KEY 
 (
@@ -143,11 +144,11 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Visit](
-	[visitID] [int] NOT NULL,
+	[visitID] [int] IDENTITY(1,1) NOT NULL,
 	[appointmentID] [int] NOT NULL,
 	[nurseID] [int] NOT NULL,
-	[height] [varchar](50),
-	[weight] [varchar](50),
+	[height] [decimal](5, 2),
+	[weight] [decimal](5, 2),
 	[systolicBP] [int],
 	[diastolic] [int],
 	[bodyTemperature] [decimal](4, 1),
@@ -169,7 +170,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Tests](
-	[testID] [int] NOT NULL,
+	[testID] [int] IDENTITY(1,1) NOT NULL,
 	[testName] [varchar](50) NOT NULL,
  CONSTRAINT [PK_Tests] PRIMARY KEY 
 (
@@ -211,6 +212,22 @@ CREATE TABLE [dbo].[Users](
  CONSTRAINT [PK_Users] PRIMARY KEY 
 (
 	[userName] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[States](
+	[stateName] [varchar](50) NOT NULL,
+	[stateCode] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_States] PRIMARY KEY 
+(
+	[stateCode] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
