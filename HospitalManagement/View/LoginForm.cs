@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using HospitalManagement.Controller;
-using HospitalManagement.UserControls;
+﻿using HospitalManagement.Controller;
 
 namespace HospitalManagement.View
 {
@@ -59,6 +49,11 @@ namespace HospitalManagement.View
                 errorLabel.ForeColor = Color.Red;
                 errorLabel.Visible = true;
             }
+        }
+
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            errorLabel.Visible = false;
         }
     }
 }
