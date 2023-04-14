@@ -2,13 +2,24 @@ using HospitalManagement.UserControls;
 
 namespace HospitalManagement.View
 {
+    /// <summary>
+    /// This class is used for main dashboard interface
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class MainDashboard : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainDashboard"/> class.
+        /// </summary>
         public MainDashboard()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Sets the username label.
+        /// </summary>
+        /// <param name="username">The username.</param>
         public void SetUsernameLabel(string username)
         {
             usernameLabel.Text = username;

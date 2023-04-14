@@ -2,9 +2,16 @@
 
 namespace HospitalManagement.View
 {
+    /// <summary>
+    /// This class is used for login form interface
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class LoginForm : Form
     {
         private readonly ManagementController _controller;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LoginForm"/> class.
+        /// </summary>
         public LoginForm()
         {
             InitializeComponent();

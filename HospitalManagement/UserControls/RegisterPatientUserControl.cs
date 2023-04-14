@@ -3,10 +3,17 @@ using HospitalManagement.Model;
 
 namespace HospitalManagement.UserControls
 {
+    /// <summary>
+    /// This class is used for register patients interface
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class RegisterPatientUserControl : UserControl
     {
         private List<string> _gender;
         private readonly ManagementController _controller;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RegisterPatientUserControl"/> class.
+        /// </summary>
         public RegisterPatientUserControl()
         {
             InitializeComponent();

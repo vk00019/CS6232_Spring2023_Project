@@ -3,16 +3,26 @@ using HospitalManagement.Model;
 
 namespace HospitalManagement.View
 {
+    /// <summary>
+    /// This class is used for view patient interface
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class ViewPatientForm : Form
     {
         private PersonalDetails _patient;
         private readonly ManagementController _controller;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ViewPatientForm"/> class.
+        /// </summary>
         public ViewPatientForm()
         {
             InitializeComponent();
             _controller = new ManagementController();
         }
-
+        /// <summary>
+        /// Sets the patient details.
+        /// </summary>
+        /// <param name="patientDetails">The patient details.</param>
         public void SetPatientDetails(PersonalDetails patientDetails)
         {
             _patient = patientDetails;

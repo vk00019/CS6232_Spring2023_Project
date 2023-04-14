@@ -1,20 +1,18 @@
 ﻿using HospitalManagement.Controller;
 using HospitalManagement.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace HospitalManagement.UserControls
 {
+    /// <summary>
+    /// This class is used for search appointment interface
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class SearchAppointmentByUserControl : UserControl
     {
         private ManagementController _controller;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchAppointmentByUserControl"/> class.
+        /// </summary>
         public SearchAppointmentByUserControl()
         {
             _controller = new ManagementController();

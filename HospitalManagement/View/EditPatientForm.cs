@@ -1,29 +1,30 @@
 ﻿using HospitalManagement.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using HospitalManagement.Controller;
 
 namespace HospitalManagement.View
 {
+    /// <summary>
+    /// This class is used for edit patient interface
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class EditPatientForm : Form
     {
         private PersonalDetails _patient;
         private List<string> _gender;
         private readonly ManagementController _controller;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EditPatientForm"/> class.
+        /// </summary>
         public EditPatientForm()
         {
             InitializeComponent();
             _controller = new ManagementController();
             _gender = new List<string>();
         }
-
+        /// <summary>
+        /// Sets the patient details.
+        /// </summary>
+        /// <param name="patientDetails">The patient details.</param>
         public void SetPatientDetails(PersonalDetails patientDetails)
         {
             _patient = patientDetails;
