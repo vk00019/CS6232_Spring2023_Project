@@ -15,7 +15,7 @@ namespace HospitalManagement.Model
         public string Weight { get; set; }
         public int SystolicBp { get; set; }
         public int DiastolicBp { get; set; }
-        public double BodyTemperature { get; set; }
+        public decimal BodyTemperature { get; set; }
         public int Pulse { get; set; }
         public string Symptoms { get; set; }
         public string InitialDiagnosis { get; set; }

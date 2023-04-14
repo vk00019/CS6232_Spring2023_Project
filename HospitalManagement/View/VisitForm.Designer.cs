@@ -1,6 +1,6 @@
 ﻿namespace HospitalManagement.View
 {
-    partial class Visit
+    partial class VisitForm
     {
         /// <summary>
         /// Required designer variable.
