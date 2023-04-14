@@ -178,9 +178,9 @@
             patientLabel.Location = new Point(76, 61);
             patientLabel.Margin = new Padding(2, 0, 2, 0);
             patientLabel.Name = "patientLabel";
-            patientLabel.Size = new Size(72, 23);
+            patientLabel.Size = new Size(94, 23);
             patientLabel.TabIndex = 14;
-            patientLabel.Text = "Patient: ";
+            patientLabel.Text = "Patient ID: ";
             // 
             // errorLabel
             // 

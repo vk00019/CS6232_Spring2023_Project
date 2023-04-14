@@ -14,38 +14,54 @@ namespace HospitalManagement.UserControls
 
         private void bookButton_Click(object sender, EventArgs e)
         {
-            var appointmentTime = new DateTime(datePicker.Value.Year, datePicker.Value.Month, datePicker.Value.Day,
+            try
+            {
+                var appointmentTime = new DateTime(datePicker.Value.Year, datePicker.Value.Month, datePicker.Value.Day,
                timePicker.Value.Hour, timePicker.Value.Minute, timePicker.Value.Second);
-            errorLabel.Visible = false;
-            var doctor = doctorComboBox.SelectedItem as Doctor;
-            var id = doctor.doctorID;
-            CheckAllFields();
-            if (errorLabel.Visible)
-            {
-                errorLabel.Text = "*All fields are required to register*";
-                errorLabel.ForeColor = Color.Red;
-                errorLabel.Visible = true;
-            }
-            else if (!DoctorOpen(id))
-            {
-                errorLabel.Text = "Doctor is not available for the selected time";
-                errorLabel.ForeColor = Color.Red;
-                errorLabel.Visible = true;
-            }
-            else
-            {
                 errorLabel.Visible = false;
-                var appointment = new Appointment
+                var doctor = doctorComboBox.SelectedItem as Doctor;
+                var id = doctor.doctorID;
+                var patientId = Convert.ToInt32(patientTextBox.Text);
+                CheckAllFields();
+                if (!_controller.ValidatePatient(patientId))
                 {
-                    PatientId = Convert.ToInt32(patientTextBox.Text),
-                    DoctorId = id,
-                    Reason = reasonTextBox.Text,
-                    ScheduledTime = appointmentTime
-                };
-                _controller.BookAppointment(appointment);
-                ClearAllFields();
-                errorLabel.Text = "Appointment booked Successfully";
-                errorLabel.ForeColor = Color.Green;
+                    errorLabel.Text = "There is no patient with this ID";
+                    errorLabel.ForeColor = Color.Red;
+                    errorLabel.Visible = true;
+                }
+                else if (errorLabel.Visible)
+                {
+                    errorLabel.Text = "*All fields are required to register*";
+                    errorLabel.ForeColor = Color.Red;
+                    errorLabel.Visible = true;
+                }
+                else if (!DoctorOpen(id))
+                {
+                    errorLabel.Text = "Doctor is not available for the selected time";
+                    errorLabel.ForeColor = Color.Red;
+                    errorLabel.Visible = true;
+                }
+                else
+                {
+                    errorLabel.Visible = false;
+                    var appointment = new Appointment
+                    {
+                        PatientId = patientId,
+                        DoctorId = id,
+                        Reason = reasonTextBox.Text,
+                        ScheduledTime = appointmentTime
+                    };
+                    _controller.BookAppointment(appointment);
+                    ClearAllFields();
+                    errorLabel.Text = "Appointment booked Successfully";
+                    errorLabel.ForeColor = Color.Green;
+                    errorLabel.Visible = true;
+                }
+            }
+            catch
+            {
+                errorLabel.Text = "Please enter only numbers for patient id";
+                errorLabel.ForeColor = Color.Red;
                 errorLabel.Visible = true;
             }
 
