@@ -11,8 +11,8 @@ namespace HospitalManagement.Model
         public int VisitId { get; set; }
         public int AppointmentId { get; set; }
         public int NurseId { get; set; }
-        public string Height { get; set; }
-        public string Weight { get; set; }
+        public decimal Height { get; set; }
+        public decimal Weight { get; set; }
         public int SystolicBp { get; set; }
         public int DiastolicBp { get; set; }
         public decimal BodyTemperature { get; set; }

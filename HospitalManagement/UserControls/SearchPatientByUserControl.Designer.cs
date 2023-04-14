@@ -58,6 +58,7 @@
             this.editButton.Text = "Edit Patient";
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Visible = false;
+            this.editButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // viewButton
             // 
@@ -257,6 +258,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "SearchPatientByUserControl";
             this.Size = new System.Drawing.Size(912, 1013);
+            this.Load += new System.EventHandler(this.SearchPatientByUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.searchDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

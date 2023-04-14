@@ -64,6 +64,7 @@
             this.cancelButton.TabIndex = 12;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // headerLabel
             // 
@@ -83,6 +84,7 @@
             this.countryTextBox.Name = "countryTextBox";
             this.countryTextBox.Size = new System.Drawing.Size(327, 39);
             this.countryTextBox.TabIndex = 9;
+            this.countryTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // countryLabel
             // 
@@ -103,6 +105,7 @@
             this.statesComboBox.Name = "statesComboBox";
             this.statesComboBox.Size = new System.Drawing.Size(327, 40);
             this.statesComboBox.TabIndex = 8;
+            this.statesComboBox.SelectedIndexChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // genderComboBox
             // 
@@ -113,6 +116,7 @@
             this.genderComboBox.Name = "genderComboBox";
             this.genderComboBox.Size = new System.Drawing.Size(327, 40);
             this.genderComboBox.TabIndex = 5;
+            this.genderComboBox.SelectedIndexChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // genderLabel
             // 
@@ -134,6 +138,7 @@
             this.birthDayDateTimePicker.Size = new System.Drawing.Size(327, 39);
             this.birthDayDateTimePicker.TabIndex = 3;
             this.birthDayDateTimePicker.Value = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
+            this.birthDayDateTimePicker.ValueChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // lastNameTextBox
             // 
@@ -142,6 +147,7 @@
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(327, 39);
             this.lastNameTextBox.TabIndex = 2;
+            this.lastNameTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // phoneNumberTextBox
             // 
@@ -150,6 +156,7 @@
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(327, 39);
             this.phoneNumberTextBox.TabIndex = 4;
+            this.phoneNumberTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // streetAddressTextBox
             // 
@@ -158,6 +165,7 @@
             this.streetAddressTextBox.Name = "streetAddressTextBox";
             this.streetAddressTextBox.Size = new System.Drawing.Size(327, 39);
             this.streetAddressTextBox.TabIndex = 6;
+            this.streetAddressTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // cityTextBox
             // 
@@ -166,6 +174,7 @@
             this.cityTextBox.Name = "cityTextBox";
             this.cityTextBox.Size = new System.Drawing.Size(327, 39);
             this.cityTextBox.TabIndex = 7;
+            this.cityTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // zipCodeTextBox
             // 
@@ -174,6 +183,7 @@
             this.zipCodeTextBox.Name = "zipCodeTextBox";
             this.zipCodeTextBox.Size = new System.Drawing.Size(327, 39);
             this.zipCodeTextBox.TabIndex = 10;
+            this.zipCodeTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // firstNameTextBox
             // 
@@ -182,6 +192,7 @@
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(327, 39);
             this.firstNameTextBox.TabIndex = 1;
+            this.firstNameTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // errorLabel
             // 
@@ -205,6 +216,7 @@
             this.editPatientButton.TabIndex = 11;
             this.editPatientButton.Text = "Edit";
             this.editPatientButton.UseVisualStyleBackColor = true;
+            this.editPatientButton.Click += new System.EventHandler(this.EditPatientButton_Click);
             // 
             // zipCodeLabel
             // 
@@ -320,6 +332,7 @@
             this.Name = "EditPatientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Patient Form";
+            this.Load += new System.EventHandler(this.EditPatientForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

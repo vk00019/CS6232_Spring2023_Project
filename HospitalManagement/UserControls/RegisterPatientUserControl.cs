@@ -53,6 +53,8 @@ namespace HospitalManagement.UserControls
             AddGender();
             genderComboBox.DataSource = _gender.ToArray();
             statesComboBox.DataSource = _controller.GetStates();
+            birthDayDateTimePicker.MaxDate = DateTime.Now;
+            birthDayDateTimePicker.Value = DateTime.Now.Date;
         }
 
         private void AddGender()

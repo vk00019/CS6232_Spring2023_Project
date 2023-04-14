@@ -16,7 +16,6 @@ namespace HospitalManagement.View
         public void SetPatientDetails(PersonalDetails patientDetails)
         {
             _patient = patientDetails;
-
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

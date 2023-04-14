@@ -353,7 +353,7 @@ namespace HospitalManagement.DAL
             connection.Open();
 
             var query =
-                "select appointmentID, patientID, doctorID, schedulateDate, reason from Appointment where patientID = @patientId";
+                "select appointmentID, patientID, doctorID, scheduledDate, reason from Appointment where patientID = @patientId";
 
             using var command = new SqlCommand(query, connection);
 
@@ -364,7 +364,7 @@ namespace HospitalManagement.DAL
             var patientIdOrdinal = reader.GetOrdinal("patientID");
             var appointmentIdOrdinal = reader.GetOrdinal("appointmentID");
             var doctorIdOrdinal = reader.GetOrdinal("doctorID");
-            var scheduledDateOrdinal = reader.GetOrdinal("schedulateDate");
+            var scheduledDateOrdinal = reader.GetOrdinal("scheduledDate");
             var reasonOrdinal = reader.GetOrdinal("reason");
 
             while (reader.Read())
@@ -420,15 +420,16 @@ namespace HospitalManagement.DAL
             {
                 var visitId = reader.GetInt32(visitIdOrdinal);
                 var nurseId = reader.GetInt32(nurseIdOrdinal);
-                var height = reader.GetString(heightOrdinal);
-                var weight = reader.GetString(weightOrdinal);
-                var sysBp = reader.GetInt32(sysOrdinal);
-                var diaBp = reader.GetInt32(diaBpOrdinal);
-                var temp = reader.GetInt32(tempOrdinal);
-                var pulse = reader.GetInt32(pulseOrdinal);
-                var symptoms = reader.GetString(symptomsOrdinal);
-                var initial = reader.GetString(iniOrdinal);
-                var final = reader.GetString(finalOrdinal);
+                var height = reader.IsDBNull(heightOrdinal) ? -1 : reader.GetDecimal(heightOrdinal);
+                var weight = reader.IsDBNull(weightOrdinal)? -1 : reader.GetDecimal(weightOrdinal);
+                var sysBp = reader.IsDBNull(sysOrdinal)? -1 : reader.GetInt32(sysOrdinal);
+                var diaBp = reader.IsDBNull(diaBpOrdinal) ? -1 : reader.GetInt32(diaBpOrdinal);
+                var temp = reader.IsDBNull(tempOrdinal) ? -1 : reader.GetDecimal(tempOrdinal);
+                var pulse = reader.IsDBNull(pulseOrdinal) ? -1 : reader.GetInt32(pulseOrdinal);
+                var symptoms = reader.IsDBNull(symptomsOrdinal) ? "" : reader.GetString(symptomsOrdinal);
+                var initial = reader.IsDBNull(iniOrdinal) ? "" : reader.GetString(iniOrdinal);
+                var final = reader.IsDBNull(finalOrdinal)
+                    ? "" : reader.GetString(finalOrdinal);
 
                 appointmentVisits.Add(new Visit
                 {
