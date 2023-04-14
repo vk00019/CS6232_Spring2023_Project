@@ -599,7 +599,48 @@ namespace HospitalManagement.DAL
 
         }
 
+        public List<Appointment> GetAppointmentsWithDOBAndLastname(PersonalDetails patient)
+        {
+            var dateOfBirth = patient.DateOfBirth;
+            var lastName = patient.LastName;
+            List<Appointment> appointments = new List<Appointment>();
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            var query = "select Appointment.appointmentID,Patient.patientID,Appointment.doctorID, Appointment.scheduledDate, Appointment.reason " +
+                        "from Appointment,Patient,PersonalDetails " +
+                        "where Appointment.patientID = Patient.patientID and Patient.pdID = PersonalDetails.pdID and PersonalDetails.dateOfBirth = @dateOfBirth";
 
+            using var command = new SqlCommand(query, connection);
 
+            command.Parameters.Add("@dateOfBirth", SqlDbType.DateTime);
+            command.Parameters["@dateOfBirth"].Value = dateOfBirth;
+            using var reader = command.ExecuteReader();
+
+            var patientIdOrdinal = reader.GetOrdinal("patientID");
+            var appointmentIdOrdinal = reader.GetOrdinal("appointmentID");
+            var doctorIdOrdinal = reader.GetOrdinal("doctorID");
+            var scheduledDateOrdinal = reader.GetOrdinal("scheduledDate");
+            var reasonOrdinal = reader.GetOrdinal("reason");
+
+            while (reader.Read())
+            {
+                var patientID = reader.GetInt32(patientIdOrdinal);
+                var appointmentId = reader.GetInt32(appointmentIdOrdinal);
+                var doctorId = reader.GetInt32(doctorIdOrdinal);
+                var scheduledDate = reader.GetDateTime(scheduledDateOrdinal);
+                var reason = reader.GetString(reasonOrdinal);
+
+                appointments.Add(new Appointment
+                {
+                    PatientId = patientID,
+                    AppointmentId = appointmentId,
+                    DoctorId = doctorId,
+                    ScheduledTime = scheduledDate,
+                    Reason = reason
+                });
+            }
+
+            return appointments;
+        }
     }
 }

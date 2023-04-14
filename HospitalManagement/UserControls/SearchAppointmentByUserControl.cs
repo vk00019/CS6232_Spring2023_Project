@@ -53,6 +53,8 @@ namespace HospitalManagement.UserControls
 
         private void searchButton_Click(object sender, EventArgs e)
         {
+            viewEditButton.Visible = true;
+            viewEditButton.Enabled = false;
             List<Appointment> appointments;
             if (dobRadioButton.Checked)
             {
@@ -63,7 +65,36 @@ namespace HospitalManagement.UserControls
                 appointments = _controller.GetAppointmenttWithDob(patientsObject);
                 searchDataGridView.DataSource = appointments;
                 searchDataGridView.Visible = true;
+                searchDataGridView.ClearSelection();
+            } else if (dobLnRadioButton.Checked)
+            {
+                var patientsObject = new PersonalDetails
+                {
+                    DateOfBirth = dobDateTimePicker.Value,
+                    LastName = lastnameTextBox.Text
+                };
+                appointments = _controller.GetAppointmentWithDobAndLastname(patientsObject);
+                searchDataGridView.DataSource = appointments;
+                searchDataGridView.Visible = true;
+                searchDataGridView.ClearSelection();
 
+            }
+            else
+            {
+
+            }
+        }
+
+        private void searchDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.RowIndex == -1)
+            {
+                viewEditButton.Enabled = false;
+            }
+            else
+            {
+                viewEditButton.Visible = true;
+                viewEditButton.Enabled = true;
             }
         }
     }
