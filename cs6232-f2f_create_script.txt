@@ -128,7 +128,7 @@ CREATE TABLE [dbo].[Appointment](
 	[appointmentID] [int] IDENTITY(1,1) NOT NULL,
 	[patientID] [int] NOT NULL,
 	[doctorID] [int] NOT NULL,
-	[schedulateDate] [datetime] NOT NULL,
+	[scheduledDate] [datetime] NOT NULL,
 	[reason] [varchar](255)
  CONSTRAINT [PK_Appointment] PRIMARY KEY 
 (
@@ -147,8 +147,8 @@ CREATE TABLE [dbo].[Visit](
 	[visitID] [int] IDENTITY(1,1) NOT NULL,
 	[appointmentID] [int] NOT NULL,
 	[nurseID] [int] NOT NULL,
-	[height] [varchar](50),
-	[weight] [varchar](50),
+	[height] [decimal](5, 2),
+	[weight] [decimal](5, 2),
 	[systolicBP] [int],
 	[diastolic] [int],
 	[bodyTemperature] [decimal](4, 1),

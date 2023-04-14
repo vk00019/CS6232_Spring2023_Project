@@ -89,6 +89,23 @@ namespace HospitalManagement.DAL
             return states;
         }
 
+        public List<DateTime> GetAppointmentTimes(int id)
+        {
+            var times = new List<string>();
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select stateName from states";
+            using var command = new SqlCommand(query, connection);
+            using var reader = command.ExecuteReader();
+            var stateNameOrdinal = reader.GetOrdinal("stateName");
+            while (reader.Read())
+            {
+                var state = reader.GetString(stateNameOrdinal);
+                times.Add(state);
+            }
+            return times;
+        }
+
         public List<Doctor> GetDoctors()
         {
             var doctors = new List<Doctor>();

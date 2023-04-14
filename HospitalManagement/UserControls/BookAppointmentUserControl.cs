@@ -14,12 +14,14 @@ namespace HospitalManagement.UserControls
         private void bookButton_Click(object sender, EventArgs e)
         {
 
+
         }
 
         private void BookAppointmentUserControl_Load(object sender, EventArgs e)
         {
             doctorComboBox.DataSource = _controller.GetDoctors();
-            doctorComboBox.ValueMember = "Name";
+            doctorComboBox.ValueMember = "pdID";
+            doctorComboBox.DisplayMember = "Name";
         }
     }
 }
