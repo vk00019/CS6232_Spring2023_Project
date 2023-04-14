@@ -64,6 +64,7 @@
             this.cancelButton.TabIndex = 12;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // headerLabel
             // 
@@ -320,6 +321,7 @@
             this.Name = "EditPatientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Patient Form";
+            this.Load += new System.EventHandler(this.EditPatientForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -58,6 +58,7 @@
             this.editButton.Text = "Edit Patient";
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Visible = false;
+            this.editButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // viewButton
             // 
