@@ -81,5 +81,10 @@ namespace HospitalManagement.Controller
         {
             return _managementDal.GetPatientVisits(appointmentId);
         }
+
+        public void UpdatePatientDetails(PersonalDetails patientDetails)
+        { 
+            _managementDal.UpdatePatientDetails(patientDetails);
+        }
     }
 }
