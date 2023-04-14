@@ -83,7 +83,7 @@ namespace HospitalManagement.UserControls
             {
                 var patientsObject = new PersonalDetails
                 {
-                    FirstName = firstnameLabel.Text,
+                    FirstName = firstnametextBox.Text,
                     LastName = lastnameTextBox.Text
                 };
                 appointments = _controller.GetAppointmentWithFirstNameAndLastName(patientsObject);

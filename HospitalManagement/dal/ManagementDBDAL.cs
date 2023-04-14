@@ -653,7 +653,7 @@ namespace HospitalManagement.DAL
             connection.Open();
             var query = "select Appointment.appointmentID,Patient.patientID,Appointment.doctorID, Appointment.scheduledDate, Appointment.reason " +
                         "from Appointment,Patient,PersonalDetails " +
-                        "where Appointment.patientID = Patient.patientID and Patient.pdID = PersonalDetails.pdID and PersonalDetails.firstName = @firstName and PersonalDetails.lastName = @lastName";
+                        "where Appointment.patientID = Patient.patientID and Patient.pdID = PersonalDetails.pdID and PersonalDetails.firstName = @firstName and PersonalDetails.lastName = @lastName ";
 
             using var command = new SqlCommand(query, connection);
 
