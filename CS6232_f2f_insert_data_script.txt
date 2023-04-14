@@ -52,8 +52,8 @@ INSERT [dbo].[DoctorSpecialities] ([doctorID], [specialityID]) VALUES (2, 2)
 SET ANSI_PADDING OFF
 GO
 SET IDENTITY_INSERT [dbo].[Appointment] ON
-INSERT [dbo].[Appointment] ([appointmentID], [doctorID], [patientID], [schedulateDate], [reason]) VALUES (1, 3, 2, '2023-04-14', 'Mild Surgery for the body')
-INSERT [dbo].[Appointment] ([appointmentID], [doctorID], [patientID], [schedulateDate], [reason]) VALUES (2, 4, 1, '2023-04-13', 'General health check up')
+INSERT [dbo].[Appointment] ([appointmentID], [doctorID], [patientID], [scheduledDate], [reason]) VALUES (1, 3, 2, '2023-04-14', 'Mild Surgery for the body')
+INSERT [dbo].[Appointment] ([appointmentID], [doctorID], [patientID], [scheduledDate], [reason]) VALUES (2, 4, 1, '2023-04-13', 'General health check up')
 SET IDENTITY_INSERT [dbo].[Appointment] OFF
 
 SET ANSI_PADDING OFF

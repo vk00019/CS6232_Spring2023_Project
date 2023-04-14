@@ -83,6 +83,7 @@ namespace HospitalManagement.View
                 errorLabel.Visible = false;
                 var personalDetails = new PersonalDetails
                 {
+                    PdID = _patient.PdID,
                     FirstName = firstNameTextBox.Text,
                     LastName = lastNameTextBox.Text,
                     DateOfBirth = birthDayDateTimePicker.Value,
@@ -94,10 +95,11 @@ namespace HospitalManagement.View
                     ZipCode = zipCodeTextBox.Text,
                     Country = countryTextBox.Text
                 };
-                _controller.RegisterPatient(personalDetails);
+                _controller.UpdatePatientDetails(personalDetails);
                 errorLabel.Text = "Patient Updated Successfully";
                 errorLabel.ForeColor = Color.Green;
                 errorLabel.Visible = true;
+                editPatientButton.Enabled = false;
             }
         }
 

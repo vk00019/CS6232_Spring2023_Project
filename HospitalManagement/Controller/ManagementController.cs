@@ -37,6 +37,11 @@ namespace HospitalManagement.Controller
             return _managementDal.GetDoctorAppointmentTimes(id);
         }
 
+        public void UpdateAppointment(Appointment appointment)
+        {
+            _managementDal.UpdateAppointment(appointment);
+        }
+
         public bool ValidatePatient(int id)
         {
             return _managementDal.ValidatePatient(id);
@@ -75,6 +80,11 @@ namespace HospitalManagement.Controller
         public List<Visit> GetPatientVisits(int appointmentId)
         {
             return _managementDal.GetPatientVisits(appointmentId);
+        }
+
+        public void UpdatePatientDetails(PersonalDetails patientDetails)
+        { 
+            _managementDal.UpdatePatientDetails(patientDetails);
         }
 
         internal List<Appointment> GetAppointmenttWithDob(PersonalDetails patientsObject)
