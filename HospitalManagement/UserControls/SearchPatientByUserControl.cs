@@ -1,14 +1,20 @@
-﻿using System.Reflection.Metadata;
-using HospitalManagement.Controller;
+﻿using HospitalManagement.Controller;
 using HospitalManagement.Model;
 using HospitalManagement.View;
 
 namespace HospitalManagement.UserControls
 {
+    /// <summary>
+    /// This class is used for search patient interface
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class SearchPatientByUserControl : UserControl
     {
         private readonly ManagementController _controller;
         private readonly PersonalDetails _patientDetails;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchPatientByUserControl"/> class.
+        /// </summary>
         public SearchPatientByUserControl()
         {
             InitializeComponent();

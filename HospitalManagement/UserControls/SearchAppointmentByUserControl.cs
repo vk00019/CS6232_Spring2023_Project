@@ -4,10 +4,17 @@ using HospitalManagement.View;
 
 namespace HospitalManagement.UserControls
 {
+    /// <summary>
+    /// This class is used for search appointment interface
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class SearchAppointmentByUserControl : UserControl
     {
         private Appointment _appointment;
         private ManagementController _controller;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchAppointmentByUserControl"/> class.
+        /// </summary>
         public SearchAppointmentByUserControl()
         {
             InitializeComponent();
@@ -84,7 +91,7 @@ namespace HospitalManagement.UserControls
             {
                 var patientsObject = new PersonalDetails
                 {
-                    FirstName = firstnameLabel.Text,
+                    FirstName = firstnametextBox.Text,
                     LastName = lastnameTextBox.Text
                 };
                 appointments = _controller.GetAppointmentWithFirstNameAndLastName(patientsObject);

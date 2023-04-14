@@ -3,9 +3,16 @@ using HospitalManagement.Model;
 
 namespace HospitalManagement.UserControls
 {
+    /// <summary>
+    /// This class is used for book appointment interface
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class BookAppointmentUserControl : UserControl
     {
         private readonly ManagementController _controller;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BookAppointmentUserControl"/> class.
+        /// </summary>
         public BookAppointmentUserControl()
         {
             InitializeComponent();

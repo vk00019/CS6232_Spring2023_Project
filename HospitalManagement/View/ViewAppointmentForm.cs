@@ -3,10 +3,17 @@ using HospitalManagement.Model;
 
 namespace HospitalManagement.View
 {
+    /// <summary>
+    /// This class is used for view appointment interface
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class ViewAppointmentForm : Form
     {
         private readonly ManagementController _controller;
         private Appointment _apointment;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ViewAppointmentForm"/> class.
+        /// </summary>
         public ViewAppointmentForm()
         {
             InitializeComponent();
@@ -18,6 +25,10 @@ namespace HospitalManagement.View
             SetupForm();
         }
 
+        /// <summary>
+        /// Sets the appointment.
+        /// </summary>
+        /// <param name="appointment">The appointment.</param>
         public void SetAppointment(Appointment appointment)
         {
             this._apointment = appointment;

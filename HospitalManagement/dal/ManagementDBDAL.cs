@@ -4,8 +4,15 @@ using System.Data.SqlClient;
 
 namespace HospitalManagement.DAL
 {
+    /// <summary>
+    /// This class is used to interact with the Database
+    /// </summary>
     public class ManagementDbDal
     {
+        /// <summary>
+        /// Registers the patient.
+        /// </summary>
+        /// <param name="personalDetails">The personal details.</param>
         public void RegisterPatient(PersonalDetails personalDetails)
         {
             var firstname = personalDetails.FirstName;
@@ -72,6 +79,10 @@ namespace HospitalManagement.DAL
             command2.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Updates the patient details.
+        /// </summary>
+        /// <param name="patientDetails">The patient details.</param>
         public void UpdatePatientDetails(PersonalDetails patientDetails)
         {
             var firstname = patientDetails.FirstName;
@@ -130,6 +141,10 @@ namespace HospitalManagement.DAL
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Books the appointment.
+        /// </summary>
+        /// <param name="appointment">The appointment.</param>
         public void BookAppointment(Appointment appointment)
         {
             var patientId = appointment.PatientId;
@@ -157,6 +172,10 @@ namespace HospitalManagement.DAL
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Updates the appointment.
+        /// </summary>
+        /// <param name="appointment">The appointment.</param>
         public void UpdateAppointment(Appointment appointment)
         {
             var appointmentId = appointment.AppointmentId;
@@ -185,6 +204,10 @@ namespace HospitalManagement.DAL
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Gets the states.
+        /// </summary>
+        /// <returns></returns>
         public List<string> GetStates()
         {
             var states = new List<string>();
@@ -202,6 +225,11 @@ namespace HospitalManagement.DAL
             return states;
         }
 
+        /// <summary>
+        /// Gets the doctor appointment times.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public List<DateTime> GetDoctorAppointmentTimes(int id)
         {
             var times = new List<DateTime>();
@@ -221,6 +249,11 @@ namespace HospitalManagement.DAL
             return times;
         }
 
+        /// <summary>
+        /// Validates the patient.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public bool ValidatePatient(int id)
         {
             using var connection = DBConnection.GetConnection();
@@ -238,6 +271,10 @@ namespace HospitalManagement.DAL
             return count == 1;
         }
 
+        /// <summary>
+        /// Gets the doctors.
+        /// </summary>
+        /// <returns></returns>
         public List<Doctor> GetDoctors()
         {
             var doctors = new List<Doctor>();
@@ -267,6 +304,12 @@ namespace HospitalManagement.DAL
             return doctors;
         }
 
+        /// <summary>
+        /// Checks the user.
+        /// </summary>
+        /// <param name="username">The username.</param>
+        /// <param name="password">The password.</param>
+        /// <returns></returns>
         public bool CheckUser(string username, string password)
         {
             using var connection = DBConnection.GetConnection();
@@ -281,6 +324,11 @@ namespace HospitalManagement.DAL
             return count == 1;
         }
 
+        /// <summary>
+        /// Gets the patient with dob.
+        /// </summary>
+        /// <param name="patient">The patient.</param>
+        /// <returns></returns>
         public List<PersonalDetails> GetPatientWithDob(PersonalDetails patient)
         {
             var patients = new List<PersonalDetails>();
@@ -336,6 +384,11 @@ namespace HospitalManagement.DAL
             return patients;
         }
 
+        /// <summary>
+        /// Gets the patient with dob and lastname.
+        /// </summary>
+        /// <param name="patient">The patient.</param>
+        /// <returns></returns>
         public List<PersonalDetails> GetPatientWithDobAndLastname(PersonalDetails patient)
         {
             var patients = new List<PersonalDetails>();
@@ -392,6 +445,11 @@ namespace HospitalManagement.DAL
             return patients;
         }
 
+        /// <summary>
+        /// Gets the patient with firstname and lastname.
+        /// </summary>
+        /// <param name="patient">The patient.</param>
+        /// <returns></returns>
         public List<PersonalDetails> GetPatientWithFirstnameAndLastname(PersonalDetails patient)
         {
             var patients = new List<PersonalDetails>();
@@ -448,6 +506,11 @@ namespace HospitalManagement.DAL
             return patients;
         }
 
+        /// <summary>
+        /// Gets the patient appointments.
+        /// </summary>
+        /// <param name="patientId">The patient identifier.</param>
+        /// <returns></returns>
         public List<Appointment> GetPatientAppointments(int patientId)
         {
             List<Appointment> appointments = new List<Appointment>();
@@ -491,6 +554,11 @@ namespace HospitalManagement.DAL
             return appointments;
         }
 
+        /// <summary>
+        /// Gets the patient visits.
+        /// </summary>
+        /// <param name="appointmentId">The appointment identifier.</param>
+        /// <returns></returns>
         public List<Visit> GetPatientVisits(int appointmentId)
         {
             List<Visit> appointmentVisits = new List<Visit>();
@@ -554,7 +622,11 @@ namespace HospitalManagement.DAL
             return appointmentVisits;
         }
 
-
+        /// <summary>
+        /// Gets the appointments with dob.
+        /// </summary>
+        /// <param name="patient">The patient.</param>
+        /// <returns></returns>
         public List<Appointment> GetAppointmentsWithDOB(PersonalDetails patient)
         {
             var dateOfBirth = patient.DateOfBirth;
@@ -600,6 +672,11 @@ namespace HospitalManagement.DAL
 
         }
 
+        /// <summary>
+        /// Gets the appointments with dob and lastname.
+        /// </summary>
+        /// <param name="patient">The patient.</param>
+        /// <returns></returns>
         public List<Appointment> GetAppointmentsWithDOBAndLastname(PersonalDetails patient)
         {
             var dateOfBirth = patient.DateOfBirth;
@@ -645,6 +722,11 @@ namespace HospitalManagement.DAL
             return appointments;
         }
 
+        /// <summary>
+        /// Gets the last name of the appointment with first name and.
+        /// </summary>
+        /// <param name="patient">The patient.</param>
+        /// <returns></returns>
         public List<Appointment> GetAppointmentWithFirstNameAndLastName(PersonalDetails patient)
         {
             var firstName = patient.FirstName;
@@ -654,7 +736,7 @@ namespace HospitalManagement.DAL
             connection.Open();
             var query = "select Appointment.appointmentID,Patient.patientID,Appointment.doctorID, Appointment.scheduledDate, Appointment.reason " +
                         "from Appointment,Patient,PersonalDetails " +
-                        "where Appointment.patientID = Patient.patientID and Patient.pdID = PersonalDetails.pdID and PersonalDetails.firstName = @firstName and PersonalDetails.lastName = @lastName";
+                        "where Appointment.patientID = Patient.patientID and Patient.pdID = PersonalDetails.pdID and PersonalDetails.firstName = @firstName and PersonalDetails.lastName = @lastName ";
 
             using var command = new SqlCommand(query, connection);
 
