@@ -76,5 +76,10 @@ namespace HospitalManagement.Controller
         {
             return _managementDal.GetPatientVisits(appointmentId);
         }
+
+        internal List<Appointment> GetAppointmenttWithDob(PersonalDetails patientsObject)
+        {
+            return _managementDal.GetAppointmentsWithDOB(patientsObject);
+        }
     }
 }

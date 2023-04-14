@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HospitalManagement.Controller;
+using HospitalManagement.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +14,10 @@ namespace HospitalManagement.UserControls
 {
     public partial class SearchAppointmentByUserControl : UserControl
     {
+        private ManagementController _controller;
         public SearchAppointmentByUserControl()
         {
+            _controller = new ManagementController();
             InitializeComponent();
         }
 
@@ -45,6 +49,22 @@ namespace HospitalManagement.UserControls
             lastnameTextBox.Visible = true;
             firstnameLabel.Visible = true;
             firstnametextBox.Visible = true;
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            List<Appointment> appointments;
+            if (dobRadioButton.Checked)
+            {
+                var patientsObject = new PersonalDetails
+                {
+                    DateOfBirth = dobDateTimePicker.Value
+                };
+                appointments = _controller.GetAppointmenttWithDob(patientsObject);
+                searchDataGridView.DataSource = appointments;
+                searchDataGridView.Visible = true;
+
+            }
         }
     }
 }
