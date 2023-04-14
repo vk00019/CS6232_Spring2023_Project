@@ -199,5 +199,11 @@ namespace HospitalManagement.UserControls
                 this.Show();
             }
         }
+
+        private void SearchPatientByUserControl_Load(object sender, EventArgs e)
+        {
+            dobDateTimePicker.MaxDate = DateTime.Now;
+            dobDateTimePicker.Value = DateTime.Now;
+        }
     }
 }
