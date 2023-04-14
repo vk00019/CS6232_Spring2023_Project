@@ -1,24 +1,18 @@
 ﻿using HospitalManagement.Controller;
 using HospitalManagement.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using HospitalManagement.View;
 
 namespace HospitalManagement.UserControls
 {
     public partial class SearchAppointmentByUserControl : UserControl
     {
+        private Appointment _appointment;
         private ManagementController _controller;
         public SearchAppointmentByUserControl()
         {
-            _controller = new ManagementController();
             InitializeComponent();
+            _controller = new ManagementController();
+            _appointment = new Appointment();
         }
 
         private void DobRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -29,6 +23,8 @@ namespace HospitalManagement.UserControls
             lastnameTextBox.Visible = false;
             firstnameLabel.Visible = false;
             firstnametextBox.Visible = false;
+            searchDataGridView.Visible = false;
+            viewEditButton.Visible = false;
         }
 
         private void DobLnRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -39,6 +35,8 @@ namespace HospitalManagement.UserControls
             lastnameTextBox.Visible = true;
             firstnameLabel.Visible = false;
             firstnametextBox.Visible = false;
+            searchDataGridView.Visible = false;
+            viewEditButton.Visible = false;
         }
 
         private void FnLnRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -49,6 +47,8 @@ namespace HospitalManagement.UserControls
             lastnameTextBox.Visible = true;
             firstnameLabel.Visible = true;
             firstnametextBox.Visible = true;
+            searchDataGridView.Visible = false;
+            viewEditButton.Visible = false;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -66,7 +66,8 @@ namespace HospitalManagement.UserControls
                 searchDataGridView.DataSource = appointments;
                 searchDataGridView.Visible = true;
                 searchDataGridView.ClearSelection();
-            } else if (dobLnRadioButton.Checked)
+            }
+            else if (dobLnRadioButton.Checked)
             {
                 var patientsObject = new PersonalDetails
                 {
@@ -95,7 +96,7 @@ namespace HospitalManagement.UserControls
 
         private void searchDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if(e.RowIndex == -1)
+            if (e.RowIndex == -1)
             {
                 viewEditButton.Enabled = false;
             }
@@ -103,7 +104,22 @@ namespace HospitalManagement.UserControls
             {
                 viewEditButton.Visible = true;
                 viewEditButton.Enabled = true;
+                if (searchDataGridView.SelectedRows[0] != null)
+                {
+                    _appointment.AppointmentId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+                    _appointment.PatientId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[1].Value.ToString());
+                    _appointment.DoctorId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[2].Value.ToString());
+                    _appointment.ScheduledTime = DateTime.Parse(searchDataGridView.SelectedRows[0].Cells[3].Value.ToString());
+                    _appointment.Reason = searchDataGridView.SelectedRows[0].Cells[4].Value.ToString();
+                }
             }
+        }
+
+        private void ViewEditButton_Click(object sender, EventArgs e)
+        {
+            using var viewform = new ViewAppointmentForm();
+                viewform.SetAppointment(_appointment);
+            viewform.ShowDialog();
         }
     }
 }

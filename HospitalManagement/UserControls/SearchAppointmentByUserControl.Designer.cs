@@ -49,27 +49,28 @@
             // viewEditButton
             // 
             viewEditButton.AutoSize = true;
-            viewEditButton.Location = new Point(270, 426);
+            viewEditButton.Location = new Point(309, 568);
             viewEditButton.Margin = new Padding(2, 1, 2, 1);
             viewEditButton.Name = "viewEditButton";
-            viewEditButton.Size = new Size(146, 25);
+            viewEditButton.Size = new Size(175, 33);
             viewEditButton.TabIndex = 72;
             viewEditButton.Text = "View/Edit Appointment";
             viewEditButton.UseVisualStyleBackColor = true;
             viewEditButton.Visible = false;
+            viewEditButton.Click += ViewEditButton_Click;
             // 
             // searchDataGridView
             // 
             searchDataGridView.BackgroundColor = SystemColors.ControlLightLight;
             searchDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            searchDataGridView.Location = new Point(46, 256);
+            searchDataGridView.Location = new Point(53, 341);
             searchDataGridView.Margin = new Padding(2, 1, 2, 1);
             searchDataGridView.Name = "searchDataGridView";
             searchDataGridView.ReadOnly = true;
             searchDataGridView.RowHeadersWidth = 82;
             searchDataGridView.RowTemplate.Height = 41;
             searchDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            searchDataGridView.Size = new Size(377, 141);
+            searchDataGridView.Size = new Size(431, 188);
             searchDataGridView.TabIndex = 71;
             searchDataGridView.Visible = false;
             searchDataGridView.CellMouseClick += searchDataGridView_CellMouseClick;
@@ -78,30 +79,30 @@
             // 
             errorLabel.AutoSize = true;
             errorLabel.ForeColor = Color.Red;
-            errorLabel.Location = new Point(138, 218);
+            errorLabel.Location = new Point(158, 291);
             errorLabel.Margin = new Padding(2, 0, 2, 0);
             errorLabel.Name = "errorLabel";
-            errorLabel.Size = new Size(81, 15);
+            errorLabel.Size = new Size(103, 20);
             errorLabel.TabIndex = 70;
             errorLabel.Text = "error message";
             errorLabel.Visible = false;
             // 
             // clearButton
             // 
-            clearButton.Location = new Point(270, 183);
+            clearButton.Location = new Point(309, 244);
             clearButton.Margin = new Padding(2, 1, 2, 1);
             clearButton.Name = "clearButton";
-            clearButton.Size = new Size(81, 22);
+            clearButton.Size = new Size(93, 29);
             clearButton.TabIndex = 69;
             clearButton.Text = "Clear";
             clearButton.UseVisualStyleBackColor = true;
             // 
             // searchButton
             // 
-            searchButton.Location = new Point(112, 183);
+            searchButton.Location = new Point(128, 244);
             searchButton.Margin = new Padding(2, 1, 2, 1);
             searchButton.Name = "searchButton";
-            searchButton.Size = new Size(81, 22);
+            searchButton.Size = new Size(93, 29);
             searchButton.TabIndex = 68;
             searchButton.Text = "Search";
             searchButton.UseVisualStyleBackColor = true;
@@ -110,30 +111,30 @@
             // firstnameLabel
             // 
             firstnameLabel.AutoSize = true;
-            firstnameLabel.Location = new Point(59, 140);
+            firstnameLabel.Location = new Point(67, 187);
             firstnameLabel.Margin = new Padding(2, 0, 2, 0);
             firstnameLabel.Name = "firstnameLabel";
-            firstnameLabel.Size = new Size(95, 15);
+            firstnameLabel.Size = new Size(118, 20);
             firstnameLabel.TabIndex = 67;
             firstnameLabel.Text = "Enter First name:";
             firstnameLabel.Visible = false;
             // 
             // firstnametextBox
             // 
-            firstnametextBox.Location = new Point(197, 139);
+            firstnametextBox.Location = new Point(225, 185);
             firstnametextBox.Margin = new Padding(2, 1, 2, 1);
             firstnametextBox.Name = "firstnametextBox";
-            firstnametextBox.Size = new Size(178, 23);
+            firstnametextBox.Size = new Size(203, 27);
             firstnametextBox.TabIndex = 66;
             firstnametextBox.Visible = false;
             // 
             // lastnameLabel
             // 
             lastnameLabel.AutoSize = true;
-            lastnameLabel.Location = new Point(59, 102);
+            lastnameLabel.Location = new Point(67, 136);
             lastnameLabel.Margin = new Padding(2, 0, 2, 0);
             lastnameLabel.Name = "lastnameLabel";
-            lastnameLabel.Size = new Size(94, 15);
+            lastnameLabel.Size = new Size(117, 20);
             lastnameLabel.TabIndex = 65;
             lastnameLabel.Text = "Enter Last name:";
             lastnameLabel.Visible = false;
@@ -141,40 +142,40 @@
             // dobDateTimePicker
             // 
             dobDateTimePicker.Format = DateTimePickerFormat.Short;
-            dobDateTimePicker.Location = new Point(197, 69);
+            dobDateTimePicker.Location = new Point(225, 92);
             dobDateTimePicker.Margin = new Padding(2, 1, 2, 1);
             dobDateTimePicker.MaxDate = new DateTime(2023, 4, 12, 0, 0, 0, 0);
             dobDateTimePicker.Name = "dobDateTimePicker";
-            dobDateTimePicker.Size = new Size(122, 23);
+            dobDateTimePicker.Size = new Size(139, 27);
             dobDateTimePicker.TabIndex = 64;
             dobDateTimePicker.Value = new DateTime(2023, 4, 12, 0, 0, 0, 0);
             // 
             // lastnameTextBox
             // 
-            lastnameTextBox.Location = new Point(197, 101);
+            lastnameTextBox.Location = new Point(225, 135);
             lastnameTextBox.Margin = new Padding(2, 1, 2, 1);
             lastnameTextBox.Name = "lastnameTextBox";
-            lastnameTextBox.Size = new Size(178, 23);
+            lastnameTextBox.Size = new Size(203, 27);
             lastnameTextBox.TabIndex = 63;
             lastnameTextBox.Visible = false;
             // 
             // dobLabel
             // 
             dobLabel.AutoSize = true;
-            dobLabel.Location = new Point(59, 69);
+            dobLabel.Location = new Point(67, 92);
             dobLabel.Margin = new Padding(2, 0, 2, 0);
             dobLabel.Name = "dobLabel";
-            dobLabel.Size = new Size(106, 15);
+            dobLabel.Size = new Size(135, 20);
             dobLabel.TabIndex = 62;
             dobLabel.Text = "Enter Date of Birth:";
             // 
             // dobLnRadioButton
             // 
             dobLnRadioButton.AutoSize = true;
-            dobLnRadioButton.Location = new Point(133, 31);
+            dobLnRadioButton.Location = new Point(152, 41);
             dobLnRadioButton.Margin = new Padding(2, 1, 2, 1);
             dobLnRadioButton.Name = "dobLnRadioButton";
-            dobLnRadioButton.Size = new Size(171, 19);
+            dobLnRadioButton.Size = new Size(215, 24);
             dobLnRadioButton.TabIndex = 61;
             dobLnRadioButton.Text = "Date of Birth and Last name";
             dobLnRadioButton.UseVisualStyleBackColor = true;
@@ -183,10 +184,10 @@
             // fnLnRadioButton
             // 
             fnLnRadioButton.AutoSize = true;
-            fnLnRadioButton.Location = new Point(331, 31);
+            fnLnRadioButton.Location = new Point(378, 41);
             fnLnRadioButton.Margin = new Padding(2, 1, 2, 1);
             fnLnRadioButton.Name = "fnLnRadioButton";
-            fnLnRadioButton.Size = new Size(129, 19);
+            fnLnRadioButton.Size = new Size(160, 24);
             fnLnRadioButton.TabIndex = 60;
             fnLnRadioButton.Text = "First and Last Name";
             fnLnRadioButton.UseVisualStyleBackColor = true;
@@ -196,10 +197,10 @@
             // 
             dobRadioButton.AutoSize = true;
             dobRadioButton.Checked = true;
-            dobRadioButton.Location = new Point(9, 31);
+            dobRadioButton.Location = new Point(10, 41);
             dobRadioButton.Margin = new Padding(2, 1, 2, 1);
             dobRadioButton.Name = "dobRadioButton";
-            dobRadioButton.Size = new Size(91, 19);
+            dobRadioButton.Size = new Size(115, 24);
             dobRadioButton.TabIndex = 59;
             dobRadioButton.TabStop = true;
             dobRadioButton.Text = "Date of Birth";
@@ -210,16 +211,16 @@
             // 
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            nameLabel.Location = new Point(9, 7);
+            nameLabel.Location = new Point(10, 9);
             nameLabel.Margin = new Padding(2, 0, 2, 0);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(183, 15);
+            nameLabel.Size = new Size(231, 20);
             nameLabel.TabIndex = 58;
             nameLabel.Text = "Search Appointment Based On: ";
             // 
             // SearchAppointmentByUserControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(viewEditButton);
             Controls.Add(searchDataGridView);
@@ -238,7 +239,7 @@
             Controls.Add(nameLabel);
             Margin = new Padding(2, 1, 2, 1);
             Name = "SearchAppointmentByUserControl";
-            Size = new Size(485, 472);
+            Size = new Size(554, 629);
             ((System.ComponentModel.ISupportInitialize)searchDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();

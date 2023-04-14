@@ -56,11 +56,11 @@
             tabControl.Controls.Add(appointmentTab);
             tabControl.Controls.Add(visitTab);
             tabControl.Dock = DockStyle.Bottom;
-            tabControl.Location = new Point(0, 23);
-            tabControl.Margin = new Padding(2);
+            tabControl.Location = new Point(0, 29);
+            tabControl.Margin = new Padding(2, 3, 2, 3);
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
-            tabControl.Size = new Size(581, 586);
+            tabControl.Size = new Size(683, 781);
             tabControl.TabIndex = 0;
             // 
             // patientTab
@@ -69,11 +69,11 @@
             patientTab.Controls.Add(registerPatientUserControl);
             patientTab.Controls.Add(searchPatientButton);
             patientTab.Controls.Add(registerPatientButton);
-            patientTab.Location = new Point(4, 24);
-            patientTab.Margin = new Padding(2);
+            patientTab.Location = new Point(4, 29);
+            patientTab.Margin = new Padding(2, 3, 2, 3);
             patientTab.Name = "patientTab";
-            patientTab.Padding = new Padding(2);
-            patientTab.Size = new Size(573, 558);
+            patientTab.Padding = new Padding(2, 3, 2, 3);
+            patientTab.Size = new Size(675, 748);
             patientTab.TabIndex = 0;
             patientTab.Text = "Patient";
             patientTab.UseVisualStyleBackColor = true;
@@ -83,10 +83,10 @@
             searchPatientByUserControl.AutoSize = true;
             searchPatientByUserControl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             searchPatientByUserControl.BackColor = SystemColors.ControlLightLight;
-            searchPatientByUserControl.Location = new Point(62, 52);
+            searchPatientByUserControl.Location = new Point(71, 69);
             searchPatientByUserControl.Margin = new Padding(2, 1, 2, 1);
             searchPatientByUserControl.Name = "searchPatientByUserControl";
-            searchPatientByUserControl.Size = new Size(473, 211);
+            searchPatientByUserControl.Size = new Size(553, 281);
             searchPatientByUserControl.TabIndex = 3;
             searchPatientByUserControl.Visible = false;
             // 
@@ -95,20 +95,20 @@
             registerPatientUserControl.AutoSize = true;
             registerPatientUserControl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             registerPatientUserControl.BackColor = SystemColors.ControlLightLight;
-            registerPatientUserControl.Location = new Point(115, 62);
+            registerPatientUserControl.Location = new Point(131, 83);
             registerPatientUserControl.Margin = new Padding(1);
             registerPatientUserControl.Name = "registerPatientUserControl";
-            registerPatientUserControl.Size = new Size(367, 460);
+            registerPatientUserControl.Size = new Size(419, 612);
             registerPatientUserControl.TabIndex = 2;
             registerPatientUserControl.Visible = false;
             // 
             // searchPatientButton
             // 
             searchPatientButton.AutoSize = true;
-            searchPatientButton.Location = new Point(317, 18);
-            searchPatientButton.Margin = new Padding(2);
+            searchPatientButton.Location = new Point(362, 24);
+            searchPatientButton.Margin = new Padding(2, 3, 2, 3);
             searchPatientButton.Name = "searchPatientButton";
-            searchPatientButton.Size = new Size(102, 25);
+            searchPatientButton.Size = new Size(128, 40);
             searchPatientButton.TabIndex = 1;
             searchPatientButton.Text = "Search Patient";
             searchPatientButton.UseVisualStyleBackColor = true;
@@ -117,10 +117,10 @@
             // registerPatientButton
             // 
             registerPatientButton.AutoSize = true;
-            registerPatientButton.Location = new Point(144, 18);
-            registerPatientButton.Margin = new Padding(2);
+            registerPatientButton.Location = new Point(165, 24);
+            registerPatientButton.Margin = new Padding(2, 3, 2, 3);
             registerPatientButton.Name = "registerPatientButton";
-            registerPatientButton.Size = new Size(107, 25);
+            registerPatientButton.Size = new Size(139, 40);
             registerPatientButton.TabIndex = 0;
             registerPatientButton.Text = "Register Patient";
             registerPatientButton.UseVisualStyleBackColor = true;
@@ -132,41 +132,41 @@
             appointmentTab.Controls.Add(bookAppointmentUserControl);
             appointmentTab.Controls.Add(searchAppointmentButton);
             appointmentTab.Controls.Add(bookAppointmentButton);
-            appointmentTab.Location = new Point(4, 24);
-            appointmentTab.Margin = new Padding(2);
+            appointmentTab.Location = new Point(4, 29);
+            appointmentTab.Margin = new Padding(2, 3, 2, 3);
             appointmentTab.Name = "appointmentTab";
-            appointmentTab.Padding = new Padding(2);
-            appointmentTab.Size = new Size(590, 558);
+            appointmentTab.Padding = new Padding(2, 3, 2, 3);
+            appointmentTab.Size = new Size(675, 748);
             appointmentTab.TabIndex = 1;
             appointmentTab.Text = "Appointment";
             appointmentTab.UseVisualStyleBackColor = true;
             // 
             // searchAppointmentByUserControl
             // 
-            searchAppointmentByUserControl.Location = new Point(59, 54);
+            searchAppointmentByUserControl.Location = new Point(49, 72);
             searchAppointmentByUserControl.Margin = new Padding(1);
             searchAppointmentByUserControl.Name = "searchAppointmentByUserControl";
-            searchAppointmentByUserControl.Size = new Size(488, 480);
+            searchAppointmentByUserControl.Size = new Size(576, 745);
             searchAppointmentByUserControl.TabIndex = 5;
             searchAppointmentByUserControl.Visible = false;
             // 
             // bookAppointmentUserControl
             // 
             bookAppointmentUserControl.BackColor = SystemColors.ControlLightLight;
-            bookAppointmentUserControl.Location = new Point(72, 74);
+            bookAppointmentUserControl.Location = new Point(82, 99);
             bookAppointmentUserControl.Margin = new Padding(1);
             bookAppointmentUserControl.Name = "bookAppointmentUserControl";
-            bookAppointmentUserControl.Size = new Size(435, 393);
+            bookAppointmentUserControl.Size = new Size(497, 524);
             bookAppointmentUserControl.TabIndex = 4;
             bookAppointmentUserControl.Visible = false;
             // 
             // searchAppointmentButton
             // 
             searchAppointmentButton.AutoSize = true;
-            searchAppointmentButton.Location = new Point(307, 20);
-            searchAppointmentButton.Margin = new Padding(2);
+            searchAppointmentButton.Location = new Point(351, 27);
+            searchAppointmentButton.Margin = new Padding(2, 3, 2, 3);
             searchAppointmentButton.Name = "searchAppointmentButton";
-            searchAppointmentButton.Size = new Size(136, 25);
+            searchAppointmentButton.Size = new Size(177, 40);
             searchAppointmentButton.TabIndex = 3;
             searchAppointmentButton.Text = "Search Appointment";
             searchAppointmentButton.UseVisualStyleBackColor = true;
@@ -175,10 +175,10 @@
             // bookAppointmentButton
             // 
             bookAppointmentButton.AutoSize = true;
-            bookAppointmentButton.Location = new Point(118, 20);
-            bookAppointmentButton.Margin = new Padding(2);
+            bookAppointmentButton.Location = new Point(135, 27);
+            bookAppointmentButton.Margin = new Padding(2, 3, 2, 3);
             bookAppointmentButton.Name = "bookAppointmentButton";
-            bookAppointmentButton.Size = new Size(144, 25);
+            bookAppointmentButton.Size = new Size(189, 40);
             bookAppointmentButton.TabIndex = 2;
             bookAppointmentButton.Text = "Book an Appointment";
             bookAppointmentButton.UseVisualStyleBackColor = true;
@@ -188,10 +188,10 @@
             // 
             visitTab.Controls.Add(searchVisitButton);
             visitTab.Controls.Add(startPatientVisitButton);
-            visitTab.Location = new Point(4, 24);
-            visitTab.Margin = new Padding(2);
+            visitTab.Location = new Point(4, 29);
+            visitTab.Margin = new Padding(2, 3, 2, 3);
             visitTab.Name = "visitTab";
-            visitTab.Size = new Size(590, 558);
+            visitTab.Size = new Size(675, 748);
             visitTab.TabIndex = 2;
             visitTab.Text = "Visit";
             visitTab.UseVisualStyleBackColor = true;
@@ -199,10 +199,10 @@
             // searchVisitButton
             // 
             searchVisitButton.AutoSize = true;
-            searchVisitButton.Location = new Point(304, 20);
-            searchVisitButton.Margin = new Padding(2);
+            searchVisitButton.Location = new Point(347, 27);
+            searchVisitButton.Margin = new Padding(2, 3, 2, 3);
             searchVisitButton.Name = "searchVisitButton";
-            searchVisitButton.Size = new Size(126, 25);
+            searchVisitButton.Size = new Size(165, 40);
             searchVisitButton.TabIndex = 3;
             searchVisitButton.Text = "Search Patient Visit";
             searchVisitButton.UseVisualStyleBackColor = true;
@@ -210,10 +210,10 @@
             // startPatientVisitButton
             // 
             startPatientVisitButton.AutoSize = true;
-            startPatientVisitButton.Location = new Point(131, 20);
-            startPatientVisitButton.Margin = new Padding(2);
+            startPatientVisitButton.Location = new Point(150, 27);
+            startPatientVisitButton.Margin = new Padding(2, 3, 2, 3);
             startPatientVisitButton.Name = "startPatientVisitButton";
-            startPatientVisitButton.Size = new Size(115, 25);
+            startPatientVisitButton.Size = new Size(150, 40);
             startPatientVisitButton.TabIndex = 2;
             startPatientVisitButton.Text = "Start Patient Visit";
             startPatientVisitButton.UseVisualStyleBackColor = true;
@@ -221,10 +221,10 @@
             // logoutLinkLabel
             // 
             logoutLinkLabel.AutoSize = true;
-            logoutLinkLabel.Location = new Point(490, 7);
+            logoutLinkLabel.Location = new Point(560, 9);
             logoutLinkLabel.Margin = new Padding(2, 0, 2, 0);
             logoutLinkLabel.Name = "logoutLinkLabel";
-            logoutLinkLabel.Size = new Size(45, 15);
+            logoutLinkLabel.Size = new Size(56, 20);
             logoutLinkLabel.TabIndex = 11;
             logoutLinkLabel.TabStop = true;
             logoutLinkLabel.Text = "Logout";
@@ -234,21 +234,21 @@
             // 
             usernameLabel.AutoSize = true;
             usernameLabel.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            usernameLabel.Location = new Point(380, 4);
+            usernameLabel.Location = new Point(434, 5);
             usernameLabel.Margin = new Padding(2, 0, 2, 0);
             usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new Size(74, 19);
+            usernameLabel.Size = new Size(87, 23);
             usernameLabel.TabIndex = 10;
             usernameLabel.Text = "username";
             // 
             // MainDashboard
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(598, 562);
+            ClientSize = new Size(683, 810);
             Controls.Add(logoutLinkLabel);
             Controls.Add(tabControl);
             Controls.Add(usernameLabel);

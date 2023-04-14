@@ -25,7 +25,12 @@ namespace HospitalManagement.View
 
         private void SetupForm()
         {
+            doctorComboBox.DataSource = _controller.GetDoctors();
+            doctorComboBox.ValueMember = "doctorID";
+            doctorComboBox.DisplayMember = "Name";
+            doctorComboBox.SelectedValue = _apointment.DoctorId;
             patientTextBox.Text = _apointment.PatientId.ToString();
+            patientTextBox.ReadOnly = true;
             reasonTextBox.Text = _apointment.Reason;
             timePicker.Value = _apointment.ScheduledTime;
             datePicker.Value = _apointment.ScheduledTime;
@@ -41,7 +46,7 @@ namespace HospitalManagement.View
                 errorLabel.Visible = false;
                 var doctor = doctorComboBox.SelectedItem as Doctor;
                 var id = doctor.doctorID;
-                var patientId = Convert.ToInt32(patientTextBox.Text);
+                var patientId = _apointment.PatientId;
                 CheckAllFields();
                 if (!_controller.ValidatePatient(patientId))
                 {
@@ -61,19 +66,25 @@ namespace HospitalManagement.View
                     errorLabel.ForeColor = Color.Red;
                     errorLabel.Visible = true;
                 }
+                else if (!HoursCheck())
+                {
+                    errorLabel.Text = "Can not edit appointment before 24 hours";
+                    errorLabel.ForeColor = Color.Red;
+                    errorLabel.Visible = true;
+                }
                 else
                 {
                     errorLabel.Visible = false;
                     var appointment = new Appointment
                     {
+                        AppointmentId = _apointment.AppointmentId,
                         PatientId = patientId,
                         DoctorId = id,
                         Reason = reasonTextBox.Text,
                         ScheduledTime = appointmentTime
                     };
                     _controller.UpdateAppointment(appointment);
-                    ClearAllFields();
-                    errorLabel.Text = "Appointment booked Successfully";
+                    errorLabel.Text = "Appointment updated Successfully";
                     errorLabel.ForeColor = Color.Green;
                     errorLabel.Visible = true;
                 }
@@ -86,10 +97,37 @@ namespace HospitalManagement.View
             }
         }
 
+        private bool DateChanged()
+        {
+            if (_apointment.ScheduledTime.Year == datePicker.Value.Year &&
+                _apointment.ScheduledTime.Month == datePicker.Value.Month &&
+                _apointment.ScheduledTime.Day == datePicker.Value.Day &&
+                _apointment.ScheduledTime.Hour == timePicker.Value.Hour &&
+                _apointment.ScheduledTime.Minute == timePicker.Value.Minute)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool HoursCheck()
+        {
+            if (_apointment.ScheduledTime.Subtract(DateTime.Now).TotalHours <= 24)
+            {
+                return false;
+            }
+            return true;
+        }
+
         private bool DoctorOpen(int id)
         {
             var appointment = new DateTime(datePicker.Value.Year, datePicker.Value.Month, datePicker.Value.Day,
                 timePicker.Value.Hour, timePicker.Value.Minute, timePicker.Value.Second);
+
+            if (!DateChanged())
+            {
+                return true;
+            }
             foreach (DateTime time in _controller.GetDoctorAppointmentTimes(id))
             {
                 var diff = appointment.Subtract(time).TotalMinutes;
@@ -135,7 +173,22 @@ namespace HospitalManagement.View
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            ClearAllFields();
+            this.Close();
+        }
+
+        private void doctorComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            errorLabel.Visible = false;
+        }
+
+        private void datePicker_ValueChanged(object sender, EventArgs e)
+        {
+            errorLabel.Visible = false;
+        }
+
+        private void timePicker_ValueChanged(object sender, EventArgs e)
+        {
+            errorLabel.Visible = false;
         }
     }
 }

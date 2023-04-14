@@ -84,7 +84,6 @@
             // editButton
             // 
             editButton.AutoSize = true;
-            editButton.Enabled = false;
             editButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             editButton.Location = new Point(94, 441);
             editButton.Margin = new Padding(2, 1, 2, 1);
@@ -118,6 +117,7 @@
             timePicker.Size = new Size(198, 27);
             timePicker.TabIndex = 56;
             timePicker.Value = new DateTime(2023, 4, 8, 21, 1, 25, 0);
+            timePicker.ValueChanged += timePicker_ValueChanged;
             // 
             // datePicker
             // 
@@ -130,6 +130,7 @@
             datePicker.Size = new Size(198, 27);
             datePicker.TabIndex = 55;
             datePicker.Value = new DateTime(2023, 4, 12, 0, 0, 0, 0);
+            datePicker.ValueChanged += datePicker_ValueChanged;
             // 
             // dateLabel
             // 
@@ -172,6 +173,7 @@
             doctorComboBox.Name = "doctorComboBox";
             doctorComboBox.Size = new Size(198, 28);
             doctorComboBox.TabIndex = 51;
+            doctorComboBox.SelectedIndexChanged += doctorComboBox_SelectedIndexChanged;
             // 
             // doctorLabel
             // 

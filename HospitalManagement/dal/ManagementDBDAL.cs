@@ -159,18 +159,19 @@ namespace HospitalManagement.DAL
 
         public void UpdateAppointment(Appointment appointment)
         {
+            var appointmentId = appointment.AppointmentId;
             var patientId = appointment.PatientId;
             var doctorId = appointment.DoctorId;
             var reason = appointment.Reason;
             var date = appointment.ScheduledTime;
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            string query = "UPDATE Appointment SET patientID = @patientId, doctorID = @doctorId, " +
-                "reason = @reason, scheduledDate = @date) ";
+            string query = "UPDATE Appointment SET doctorID = @doctorId, " +
+                "reason = @reason, scheduledDate = @date WHERE appointmentID = @appointmentId ";
             using var command = new SqlCommand(query, connection);
 
-            command.Parameters.Add("@patientId", System.Data.SqlDbType.Int);
-            command.Parameters["@patientId"].Value = patientId;
+            command.Parameters.Add("@appointmentId", System.Data.SqlDbType.Int);
+            command.Parameters["@appointmentId"].Value = appointmentId;
 
             command.Parameters.Add("@doctorId", System.Data.SqlDbType.Int);
             command.Parameters["@doctorId"].Value = doctorId;
