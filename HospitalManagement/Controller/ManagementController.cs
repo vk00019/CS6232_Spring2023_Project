@@ -27,6 +27,11 @@ namespace HospitalManagement.Controller
             return _managementDal.GetStates();
         }
 
+        public List<DateTime> GetDoctorAppointmentTimes(int id)
+        {
+            return _managementDal.GetDoctorAppointmentTimes(id);
+        }
+
         public List<Doctor> GetDoctors()
         {
             return _managementDal.GetDoctors();
