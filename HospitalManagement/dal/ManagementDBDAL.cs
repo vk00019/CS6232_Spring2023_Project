@@ -89,6 +89,35 @@ namespace HospitalManagement.DAL
             return states;
         }
 
+        public List<Doctor> GetDoctors()
+        {
+            var doctors = new List<Doctor>();
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select doctorID, p.pdID, firstName, lastName from Doctor as d, PersonalDetails as p where d.pdID = p.pdID";
+            using var command = new SqlCommand(query, connection);
+            using var reader = command.ExecuteReader();
+            var didOrdinal = reader.GetOrdinal("doctorID");
+            var pdidOrdinal = reader.GetOrdinal("pdID");
+            var firstOrdinal = reader.GetOrdinal("firstName");
+            var lastOrdinal = reader.GetOrdinal("lastName");
+
+            while (reader.Read())
+            {
+                var doctorId = reader.GetInt32(didOrdinal);
+                var firstName = reader.GetString(firstOrdinal);
+                var lastName = reader.GetString(lastOrdinal);
+                var pdID = reader.GetInt32(pdidOrdinal);
+                doctors.Add(new Doctor
+                {
+                    doctorID = doctorId,
+                    pdID = pdID,
+                    Name = firstName + " " + lastName,
+                });
+            }
+            return doctors;
+        }
+
         public bool CheckUser(string username, string password)
         {
             using var connection = DBConnection.GetConnection();

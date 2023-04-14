@@ -6,5 +6,7 @@
 
         public int pdID { get; set; }
 
+        public string Name { get; set; }
+
     }
 }

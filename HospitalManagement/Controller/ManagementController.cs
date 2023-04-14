@@ -27,6 +27,11 @@ namespace HospitalManagement.Controller
             return _managementDal.GetStates();
         }
 
+        public List<Doctor> GetDoctors()
+        {
+            return _managementDal.GetDoctors();
+        }
+
         public bool CheckUser(string username, string password)
         {
             return _managementDal.CheckUser(username,password);

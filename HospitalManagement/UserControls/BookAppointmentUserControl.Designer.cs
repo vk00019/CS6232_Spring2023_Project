@@ -222,6 +222,7 @@
             Margin = new Padding(2, 2, 2, 2);
             Name = "BookAppointmentUserControl";
             Size = new Size(482, 510);
+            Load += BookAppointmentUserControl_Load;
             ResumeLayout(false);
             PerformLayout();
         }
