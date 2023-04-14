@@ -22,6 +22,11 @@ namespace HospitalManagement.Controller
             _managementDal.RegisterPatient(personalDetails);
         }
 
+        public void BookAppointment(Appointment appointment)
+        {
+            _managementDal.BookAppointment(appointment);
+        }
+
         public List<string> GetStates()
         {
             return _managementDal.GetStates();

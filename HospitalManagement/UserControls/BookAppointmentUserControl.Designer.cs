@@ -40,7 +40,7 @@
             doctorLabel = new Label();
             patientTextBox = new TextBox();
             patientLabel = new Label();
-            errorlabel = new Label();
+            errorLabel = new Label();
             headerLabel = new Label();
             SuspendLayout();
             // 
@@ -55,6 +55,7 @@
             clearButton.TabIndex = 25;
             clearButton.Text = "Clear";
             clearButton.UseVisualStyleBackColor = true;
+            clearButton.Click += clearButton_Click;
             // 
             // bookButton
             // 
@@ -92,6 +93,7 @@
             timePicker.Size = new Size(198, 27);
             timePicker.TabIndex = 22;
             timePicker.Value = new DateTime(2023, 4, 8, 21, 1, 25, 0);
+            timePicker.ValueChanged += timePicker_ValueChanged;
             // 
             // datePicker
             // 
@@ -104,6 +106,7 @@
             datePicker.Size = new Size(198, 27);
             datePicker.TabIndex = 21;
             datePicker.Value = new DateTime(2023, 4, 12, 0, 0, 0, 0);
+            datePicker.ValueChanged += datePicker_ValueChanged;
             // 
             // dateLabel
             // 
@@ -124,6 +127,7 @@
             reasonTextBox.Size = new Size(198, 122);
             reasonTextBox.TabIndex = 19;
             reasonTextBox.Text = "";
+            reasonTextBox.TextChanged += reasonTextBox_TextChanged;
             // 
             // reasonLabel
             // 
@@ -145,6 +149,7 @@
             doctorComboBox.Name = "doctorComboBox";
             doctorComboBox.Size = new Size(198, 28);
             doctorComboBox.TabIndex = 17;
+            doctorComboBox.SelectedIndexChanged += doctorComboBox_SelectedIndexChanged;
             // 
             // doctorLabel
             // 
@@ -164,6 +169,7 @@
             patientTextBox.Name = "patientTextBox";
             patientTextBox.Size = new Size(198, 27);
             patientTextBox.TabIndex = 15;
+            patientTextBox.TextChanged += patientTextBox_TextChanged;
             // 
             // patientLabel
             // 
@@ -176,18 +182,18 @@
             patientLabel.TabIndex = 14;
             patientLabel.Text = "Patient: ";
             // 
-            // errorlabel
+            // errorLabel
             // 
-            errorlabel.AutoSize = true;
-            errorlabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            errorlabel.ForeColor = Color.Red;
-            errorlabel.Location = new Point(146, 404);
-            errorlabel.Margin = new Padding(2, 0, 2, 0);
-            errorlabel.Name = "errorlabel";
-            errorlabel.Size = new Size(103, 20);
-            errorlabel.TabIndex = 27;
-            errorlabel.Text = "error message";
-            errorlabel.Visible = false;
+            errorLabel.AutoSize = true;
+            errorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            errorLabel.ForeColor = Color.Red;
+            errorLabel.Location = new Point(146, 404);
+            errorLabel.Margin = new Padding(2, 0, 2, 0);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(103, 20);
+            errorLabel.TabIndex = 27;
+            errorLabel.Text = "error message";
+            errorLabel.Visible = false;
             // 
             // headerLabel
             // 
@@ -206,7 +212,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             Controls.Add(headerLabel);
-            Controls.Add(errorlabel);
+            Controls.Add(errorLabel);
             Controls.Add(clearButton);
             Controls.Add(bookButton);
             Controls.Add(timeLabel);
@@ -241,7 +247,7 @@
         private Label doctorLabel;
         private TextBox patientTextBox;
         private Label patientLabel;
-        private Label errorlabel;
+        private Label errorLabel;
         private Label headerLabel;
     }
 }
