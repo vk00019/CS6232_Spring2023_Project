@@ -96,5 +96,10 @@ namespace HospitalManagement.Controller
         {
             return _managementDal.GetAppointmentsWithDOBAndLastname(patientsObject);
         }
+
+        public List<Appointment> GetAppointmentWithFirstNameAndLastName(PersonalDetails patientsObject)
+        {
+            return _managementDal.GetAppointmentWithFirstNameAndLastName(patientsObject);
+        }
     }
 }

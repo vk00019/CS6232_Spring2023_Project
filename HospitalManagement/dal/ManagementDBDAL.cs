@@ -608,12 +608,14 @@ namespace HospitalManagement.DAL
             connection.Open();
             var query = "select Appointment.appointmentID,Patient.patientID,Appointment.doctorID, Appointment.scheduledDate, Appointment.reason " +
                         "from Appointment,Patient,PersonalDetails " +
-                        "where Appointment.patientID = Patient.patientID and Patient.pdID = PersonalDetails.pdID and PersonalDetails.dateOfBirth = @dateOfBirth";
+                        "where Appointment.patientID = Patient.patientID and Patient.pdID = PersonalDetails.pdID and PersonalDetails.dateOfBirth = @dateOfBirth and PersonalDetails.lastName = @lastName";
 
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@dateOfBirth", SqlDbType.DateTime);
             command.Parameters["@dateOfBirth"].Value = dateOfBirth;
+            command.Parameters.Add("@lastName", SqlDbType.VarChar);
+            command.Parameters["@lastName"].Value = lastName;
             using var reader = command.ExecuteReader();
 
             var patientIdOrdinal = reader.GetOrdinal("patientID");
@@ -639,7 +641,51 @@ namespace HospitalManagement.DAL
                     Reason = reason
                 });
             }
+            return appointments;
+        }
 
+        public List<Appointment> GetAppointmentWithFirstNameAndLastName(PersonalDetails patient)
+        {
+            var firstName = patient.FirstName;
+            var lastName = patient.LastName;
+            List<Appointment> appointments = new List<Appointment>();
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            var query = "select Appointment.appointmentID,Patient.patientID,Appointment.doctorID, Appointment.scheduledDate, Appointment.reason " +
+                        "from Appointment,Patient,PersonalDetails " +
+                        "where Appointment.patientID = Patient.patientID and Patient.pdID = PersonalDetails.pdID and PersonalDetails.firstName = @firstName and PersonalDetails.lastName = @lastName";
+
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@firstName", SqlDbType.VarChar);
+            command.Parameters["@firstName"].Value = firstName;
+            command.Parameters.Add("@lastName", SqlDbType.VarChar);
+            command.Parameters["@lastName"].Value = lastName;
+            using var reader = command.ExecuteReader();
+
+            var patientIdOrdinal = reader.GetOrdinal("patientID");
+            var appointmentIdOrdinal = reader.GetOrdinal("appointmentID");
+            var doctorIdOrdinal = reader.GetOrdinal("doctorID");
+            var scheduledDateOrdinal = reader.GetOrdinal("scheduledDate");
+            var reasonOrdinal = reader.GetOrdinal("reason");
+
+            while (reader.Read())
+            {
+                var patientID = reader.GetInt32(patientIdOrdinal);
+                var appointmentId = reader.GetInt32(appointmentIdOrdinal);
+                var doctorId = reader.GetInt32(doctorIdOrdinal);
+                var scheduledDate = reader.GetDateTime(scheduledDateOrdinal);
+                var reason = reader.GetString(reasonOrdinal);
+
+                appointments.Add(new Appointment
+                {
+                    PatientId = patientID,
+                    AppointmentId = appointmentId,
+                    DoctorId = doctorId,
+                    ScheduledTime = scheduledDate,
+                    Reason = reason
+                });
+            }
             return appointments;
         }
     }

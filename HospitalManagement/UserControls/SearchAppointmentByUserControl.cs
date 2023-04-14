@@ -81,7 +81,15 @@ namespace HospitalManagement.UserControls
             }
             else
             {
-
+                var patientsObject = new PersonalDetails
+                {
+                    FirstName = firstnameLabel.Text,
+                    LastName = lastnameTextBox.Text
+                };
+                appointments = _controller.GetAppointmentWithFirstNameAndLastName(patientsObject);
+                searchDataGridView.DataSource = appointments;
+                searchDataGridView.Visible = true;
+                searchDataGridView.ClearSelection();
             }
         }
 
