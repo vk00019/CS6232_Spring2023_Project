@@ -78,7 +78,7 @@ namespace HospitalManagement.View
             CheckAllFields();
             if (errorLabel.Visible)
             {
-                errorLabel.Text = "*All fields are required to register*";
+                errorLabel.Text = "*All fields are required to edit the details*";
                 errorLabel.ForeColor = Color.Red;
             }
             else

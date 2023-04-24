@@ -28,212 +28,206 @@
         /// </summary>
         private void InitializeComponent()
         {
-            headerLabel = new Label();
-            errorLabel = new Label();
-            cancelButton = new Button();
-            editButton = new Button();
-            timeLabel = new Label();
-            timePicker = new DateTimePicker();
-            datePicker = new DateTimePicker();
-            dateLabel = new Label();
-            reasonTextBox = new RichTextBox();
-            reasonLabel = new Label();
-            doctorComboBox = new ComboBox();
-            doctorLabel = new Label();
-            patientTextBox = new TextBox();
-            patientLabel = new Label();
-            SuspendLayout();
+            this.headerLabel = new System.Windows.Forms.Label();
+            this.errorLabel = new System.Windows.Forms.Label();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
+            this.timeLabel = new System.Windows.Forms.Label();
+            this.timePicker = new System.Windows.Forms.DateTimePicker();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.reasonTextBox = new System.Windows.Forms.RichTextBox();
+            this.reasonLabel = new System.Windows.Forms.Label();
+            this.doctorComboBox = new System.Windows.Forms.ComboBox();
+            this.doctorLabel = new System.Windows.Forms.Label();
+            this.patientTextBox = new System.Windows.Forms.TextBox();
+            this.patientLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // headerLabel
             // 
-            headerLabel.AutoSize = true;
-            headerLabel.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            headerLabel.Location = new Point(113, 19);
-            headerLabel.Margin = new Padding(2, 0, 2, 0);
-            headerLabel.Name = "headerLabel";
-            headerLabel.Size = new Size(226, 23);
-            headerLabel.TabIndex = 61;
-            headerLabel.Text = "View/Edit an Appointment";
+            this.headerLabel.AutoSize = true;
+            this.headerLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.headerLabel.Location = new System.Drawing.Point(184, 30);
+            this.headerLabel.Name = "headerLabel";
+            this.headerLabel.Size = new System.Drawing.Size(359, 37);
+            this.headerLabel.TabIndex = 61;
+            this.headerLabel.Text = "View/Edit an Appointment";
             // 
             // errorLabel
             // 
-            errorLabel.AutoSize = true;
-            errorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            errorLabel.ForeColor = Color.Red;
-            errorLabel.Location = new Point(137, 406);
-            errorLabel.Margin = new Padding(2, 0, 2, 0);
-            errorLabel.Name = "errorLabel";
-            errorLabel.Size = new Size(103, 20);
-            errorLabel.TabIndex = 60;
-            errorLabel.Text = "error message";
-            errorLabel.Visible = false;
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorLabel.Location = new System.Drawing.Point(223, 650);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(165, 32);
+            this.errorLabel.TabIndex = 60;
+            this.errorLabel.Text = "error message";
+            this.errorLabel.Visible = false;
             // 
             // cancelButton
             // 
-            cancelButton.AutoSize = true;
-            cancelButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cancelButton.Location = new Point(295, 441);
-            cancelButton.Margin = new Padding(2, 1, 2, 1);
-            cancelButton.Name = "cancelButton";
-            cancelButton.Size = new Size(92, 39);
-            cancelButton.TabIndex = 59;
-            cancelButton.Text = "Cancel";
-            cancelButton.UseVisualStyleBackColor = true;
-            cancelButton.Click += cancelButton_Click;
+            this.cancelButton.AutoSize = true;
+            this.cancelButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cancelButton.Location = new System.Drawing.Point(479, 706);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(150, 62);
+            this.cancelButton.TabIndex = 59;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // editButton
             // 
-            editButton.AutoSize = true;
-            editButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            editButton.Location = new Point(94, 441);
-            editButton.Margin = new Padding(2, 1, 2, 1);
-            editButton.Name = "editButton";
-            editButton.Size = new Size(92, 39);
-            editButton.TabIndex = 58;
-            editButton.Text = "Edit";
-            editButton.UseVisualStyleBackColor = true;
-            editButton.Click += editButton_Click;
+            this.editButton.AutoSize = true;
+            this.editButton.Enabled = false;
+            this.editButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.editButton.Location = new System.Drawing.Point(153, 706);
+            this.editButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(150, 62);
+            this.editButton.TabIndex = 58;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // timeLabel
             // 
-            timeLabel.AutoSize = true;
-            timeLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            timeLabel.Location = new Point(66, 359);
-            timeLabel.Margin = new Padding(2, 0, 2, 0);
-            timeLabel.Name = "timeLabel";
-            timeLabel.Size = new Size(101, 23);
-            timeLabel.TabIndex = 57;
-            timeLabel.Text = "Select Time:";
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.timeLabel.Location = new System.Drawing.Point(107, 574);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(158, 37);
+            this.timeLabel.TabIndex = 57;
+            this.timeLabel.Text = "Select Time:";
             // 
             // timePicker
             // 
-            timePicker.Format = DateTimePickerFormat.Time;
-            timePicker.Location = new Point(201, 357);
-            timePicker.Margin = new Padding(2, 1, 2, 1);
-            timePicker.MaxDate = new DateTime(2200, 12, 31, 0, 0, 0, 0);
-            timePicker.MinDate = new DateTime(2020, 1, 1, 0, 0, 0, 0);
-            timePicker.Name = "timePicker";
-            timePicker.ShowUpDown = true;
-            timePicker.Size = new Size(198, 27);
-            timePicker.TabIndex = 56;
-            timePicker.Value = new DateTime(2023, 4, 8, 21, 1, 25, 0);
-            timePicker.ValueChanged += timePicker_ValueChanged;
+            this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timePicker.Location = new System.Drawing.Point(327, 571);
+            this.timePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.timePicker.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
+            this.timePicker.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.timePicker.Name = "timePicker";
+            this.timePicker.ShowUpDown = true;
+            this.timePicker.Size = new System.Drawing.Size(319, 39);
+            this.timePicker.TabIndex = 56;
+            this.timePicker.Value = new System.DateTime(2023, 4, 8, 21, 1, 25, 0);
+            this.timePicker.ValueChanged += new System.EventHandler(this.TimePicker_ValueChanged);
             // 
             // datePicker
             // 
-            datePicker.Format = DateTimePickerFormat.Short;
-            datePicker.Location = new Point(201, 311);
-            datePicker.Margin = new Padding(2, 1, 2, 1);
-            datePicker.MaxDate = new DateTime(2200, 12, 31, 0, 0, 0, 0);
-            datePicker.MinDate = new DateTime(2023, 4, 12, 0, 0, 0, 0);
-            datePicker.Name = "datePicker";
-            datePicker.Size = new Size(198, 27);
-            datePicker.TabIndex = 55;
-            datePicker.Value = new DateTime(2023, 4, 12, 0, 0, 0, 0);
-            datePicker.ValueChanged += datePicker_ValueChanged;
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePicker.Location = new System.Drawing.Point(327, 498);
+            this.datePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.datePicker.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
+            this.datePicker.MinDate = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(319, 39);
+            this.datePicker.TabIndex = 55;
+            this.datePicker.Value = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
+            this.datePicker.ValueChanged += new System.EventHandler(this.DatePicker_ValueChanged);
             // 
             // dateLabel
             // 
-            dateLabel.AutoSize = true;
-            dateLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            dateLabel.Location = new Point(66, 311);
-            dateLabel.Margin = new Padding(2, 0, 2, 0);
-            dateLabel.Name = "dateLabel";
-            dateLabel.Size = new Size(100, 23);
-            dateLabel.TabIndex = 54;
-            dateLabel.Text = "Select Date:";
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateLabel.Location = new System.Drawing.Point(107, 498);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(156, 37);
+            this.dateLabel.TabIndex = 54;
+            this.dateLabel.Text = "Select Date:";
             // 
             // reasonTextBox
             // 
-            reasonTextBox.Location = new Point(201, 160);
-            reasonTextBox.Margin = new Padding(2, 1, 2, 1);
-            reasonTextBox.Name = "reasonTextBox";
-            reasonTextBox.Size = new Size(198, 122);
-            reasonTextBox.TabIndex = 53;
-            reasonTextBox.Text = "";
-            reasonTextBox.TextChanged += reasonTextBox_TextChanged;
+            this.reasonTextBox.Location = new System.Drawing.Point(327, 256);
+            this.reasonTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.reasonTextBox.Name = "reasonTextBox";
+            this.reasonTextBox.Size = new System.Drawing.Size(319, 193);
+            this.reasonTextBox.TabIndex = 53;
+            this.reasonTextBox.Text = "";
+            this.reasonTextBox.TextChanged += new System.EventHandler(this.ReasonTextBox_TextChanged);
             // 
             // reasonLabel
             // 
-            reasonLabel.AutoSize = true;
-            reasonLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            reasonLabel.Location = new Point(66, 165);
-            reasonLabel.Margin = new Padding(2, 0, 2, 0);
-            reasonLabel.Name = "reasonLabel";
-            reasonLabel.Size = new Size(69, 23);
-            reasonLabel.TabIndex = 52;
-            reasonLabel.Text = "Reason:";
+            this.reasonLabel.AutoSize = true;
+            this.reasonLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.reasonLabel.Location = new System.Drawing.Point(107, 264);
+            this.reasonLabel.Name = "reasonLabel";
+            this.reasonLabel.Size = new System.Drawing.Size(108, 37);
+            this.reasonLabel.TabIndex = 52;
+            this.reasonLabel.Text = "Reason:";
             // 
             // doctorComboBox
             // 
-            doctorComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            doctorComboBox.FormattingEnabled = true;
-            doctorComboBox.Location = new Point(201, 105);
-            doctorComboBox.Margin = new Padding(2, 1, 2, 1);
-            doctorComboBox.Name = "doctorComboBox";
-            doctorComboBox.Size = new Size(198, 28);
-            doctorComboBox.TabIndex = 51;
-            doctorComboBox.SelectedIndexChanged += doctorComboBox_SelectedIndexChanged;
+            this.doctorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.doctorComboBox.FormattingEnabled = true;
+            this.doctorComboBox.Location = new System.Drawing.Point(327, 168);
+            this.doctorComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.doctorComboBox.Name = "doctorComboBox";
+            this.doctorComboBox.Size = new System.Drawing.Size(319, 40);
+            this.doctorComboBox.TabIndex = 51;
+            this.doctorComboBox.SelectedIndexChanged += new System.EventHandler(this.DoctorComboBox_SelectedIndexChanged);
             // 
             // doctorLabel
             // 
-            doctorLabel.AutoSize = true;
-            doctorLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            doctorLabel.Location = new Point(66, 112);
-            doctorLabel.Margin = new Padding(2, 0, 2, 0);
-            doctorLabel.Name = "doctorLabel";
-            doctorLabel.Size = new Size(66, 23);
-            doctorLabel.TabIndex = 50;
-            doctorLabel.Text = "Doctor:";
+            this.doctorLabel.AutoSize = true;
+            this.doctorLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.doctorLabel.Location = new System.Drawing.Point(107, 179);
+            this.doctorLabel.Name = "doctorLabel";
+            this.doctorLabel.Size = new System.Drawing.Size(104, 37);
+            this.doctorLabel.TabIndex = 50;
+            this.doctorLabel.Text = "Doctor:";
             // 
             // patientTextBox
             // 
-            patientTextBox.Location = new Point(201, 59);
-            patientTextBox.Margin = new Padding(2, 1, 2, 1);
-            patientTextBox.Name = "patientTextBox";
-            patientTextBox.Size = new Size(198, 27);
-            patientTextBox.TabIndex = 49;
-            patientTextBox.TextChanged += patientTextBox_TextChanged;
+            this.patientTextBox.Location = new System.Drawing.Point(327, 94);
+            this.patientTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.patientTextBox.Name = "patientTextBox";
+            this.patientTextBox.Size = new System.Drawing.Size(319, 39);
+            this.patientTextBox.TabIndex = 49;
+            this.patientTextBox.TextChanged += new System.EventHandler(this.PatientTextBox_TextChanged);
             // 
             // patientLabel
             // 
-            patientLabel.AutoSize = true;
-            patientLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            patientLabel.Location = new Point(66, 64);
-            patientLabel.Margin = new Padding(2, 0, 2, 0);
-            patientLabel.Name = "patientLabel";
-            patientLabel.Size = new Size(72, 23);
-            patientLabel.TabIndex = 48;
-            patientLabel.Text = "Patient: ";
+            this.patientLabel.AutoSize = true;
+            this.patientLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.patientLabel.Location = new System.Drawing.Point(107, 102);
+            this.patientLabel.Name = "patientLabel";
+            this.patientLabel.Size = new System.Drawing.Size(112, 37);
+            this.patientLabel.TabIndex = 48;
+            this.patientLabel.Text = "Patient: ";
             // 
             // ViewAppointmentForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(460, 519);
-            Controls.Add(headerLabel);
-            Controls.Add(errorLabel);
-            Controls.Add(cancelButton);
-            Controls.Add(editButton);
-            Controls.Add(timeLabel);
-            Controls.Add(timePicker);
-            Controls.Add(datePicker);
-            Controls.Add(dateLabel);
-            Controls.Add(reasonTextBox);
-            Controls.Add(reasonLabel);
-            Controls.Add(doctorComboBox);
-            Controls.Add(doctorLabel);
-            Controls.Add(patientTextBox);
-            Controls.Add(patientLabel);
-            Margin = new Padding(2);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "ViewAppointmentForm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "View Appointment";
-            Load += ViewAppointmentForm_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(748, 830);
+            this.Controls.Add(this.headerLabel);
+            this.Controls.Add(this.errorLabel);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.editButton);
+            this.Controls.Add(this.timeLabel);
+            this.Controls.Add(this.timePicker);
+            this.Controls.Add(this.datePicker);
+            this.Controls.Add(this.dateLabel);
+            this.Controls.Add(this.reasonTextBox);
+            this.Controls.Add(this.reasonLabel);
+            this.Controls.Add(this.doctorComboBox);
+            this.Controls.Add(this.doctorLabel);
+            this.Controls.Add(this.patientTextBox);
+            this.Controls.Add(this.patientLabel);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ViewAppointmentForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "View Appointment";
+            this.Load += new System.EventHandler(this.ViewAppointmentForm_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

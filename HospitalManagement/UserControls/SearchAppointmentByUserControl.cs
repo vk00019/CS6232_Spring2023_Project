@@ -10,8 +10,8 @@ namespace HospitalManagement.UserControls
     /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class SearchAppointmentByUserControl : UserControl
     {
-        private Appointment _appointment;
-        private ManagementController _controller;
+        private readonly Appointment _appointment;
+        private readonly ManagementController _controller;
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchAppointmentByUserControl"/> class.
         /// </summary>
@@ -61,8 +61,9 @@ namespace HospitalManagement.UserControls
             errorLabel.Visible = false;
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
+        private void SearchButton_Click(object sender, EventArgs e)
         {
+            errorLabel.Visible = false;
             viewEditButton.Visible = true;
             viewEditButton.Enabled = false;
             List<Appointment> appointments;
@@ -73,9 +74,7 @@ namespace HospitalManagement.UserControls
                     DateOfBirth = dobDateTimePicker.Value
                 };
                 appointments = _controller.GetAppointmentWithDob(patientsObject);
-                searchDataGridView.DataSource = appointments;
-                searchDataGridView.Visible = true;
-                searchDataGridView.ClearSelection();
+                CheckForAppointments(appointments);
             }
             else if (dobLnRadioButton.Checked)
             {
@@ -85,10 +84,7 @@ namespace HospitalManagement.UserControls
                     LastName = lastnameTextBox.Text
                 };
                 appointments = _controller.GetAppointmentWithDobAndLastname(patientsObject);
-                searchDataGridView.DataSource = appointments;
-                searchDataGridView.Visible = true;
-                searchDataGridView.ClearSelection();
-
+                CheckForAppointments(appointments);
             }
             else
             {
@@ -98,13 +94,30 @@ namespace HospitalManagement.UserControls
                     LastName = lastnameTextBox.Text
                 };
                 appointments = _controller.GetAppointmentWithFirstNameAndLastName(patientsObject);
-                searchDataGridView.DataSource = appointments;
-                searchDataGridView.Visible = true;
-                searchDataGridView.ClearSelection();
+                CheckForAppointments(appointments);
             }
         }
 
-        private void searchDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void CheckForAppointments(List<Appointment> appointments)
+        {
+            if (appointments.Count > 0)
+            {
+                searchDataGridView.Visible = true;
+                searchDataGridView.DataSource = appointments;
+                searchDataGridView.ClearSelection();
+            }
+            else
+            {
+                searchDataGridView.Visible = false;
+                errorLabel.Text = "There are no appointments available with details provided." + Environment.NewLine +
+                                  "Book an appointment or check the details given again.";
+                errorLabel.Visible = true;
+                errorLabel.ForeColor = Color.Red;
+                viewEditButton.Visible = false;
+            }
+        }
+
+        private void SearchDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex == -1)
             {
@@ -128,10 +141,21 @@ namespace HospitalManagement.UserControls
 
         private void ViewEditButton_Click(object sender, EventArgs e)
         {
-            using var viewform = new ViewAppointmentForm();
-            viewform.SetAppointment(_appointment);
-            viewform.ShowDialog();
+            using var viewForm = new ViewAppointmentForm();
+            viewForm.SetAppointment(_appointment);
+            viewForm.ShowDialog();
             searchDataGridView.Visible = false;
+            viewEditButton.Visible = false;
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            dobDateTimePicker.ResetText();
+            firstnametextBox.Clear();
+            lastnameTextBox.Clear();
+            errorLabel.Visible = false;
+            searchDataGridView.Visible = false;
+            viewEditButton.Visible = false;
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
