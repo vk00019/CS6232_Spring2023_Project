@@ -205,6 +205,8 @@ namespace HospitalManagement.UserControls
                 this.Show();
             }
             searchDataGridView.Visible = false;
+            viewButton.Visible = false;
+            editButton.Visible = false;
         }
 
         private void SearchPatientByUserControl_Load(object sender, EventArgs e)

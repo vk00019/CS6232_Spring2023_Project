@@ -10,7 +10,7 @@ namespace HospitalManagement.View
     public partial class ViewAppointmentForm : Form
     {
         private readonly ManagementController _controller;
-        private Appointment _apointment;
+        private Appointment _appointment;
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewAppointmentForm"/> class.
         /// </summary>
@@ -23,6 +23,7 @@ namespace HospitalManagement.View
         private void ViewAppointmentForm_Load(object sender, EventArgs e)
         {
             SetupForm();
+            editButton.Enabled = false;
         }
 
         /// <summary>
@@ -31,7 +32,7 @@ namespace HospitalManagement.View
         /// <param name="appointment">The appointment.</param>
         public void SetAppointment(Appointment appointment)
         {
-            this._apointment = appointment;
+            _appointment = appointment;
         }
 
         private void SetupForm()
@@ -39,16 +40,16 @@ namespace HospitalManagement.View
             doctorComboBox.DataSource = _controller.GetDoctors();
             doctorComboBox.ValueMember = "doctorID";
             doctorComboBox.DisplayMember = "Name";
-            doctorComboBox.SelectedValue = _apointment.DoctorId;
-            patientTextBox.Text = _apointment.PatientId.ToString();
+            doctorComboBox.SelectedValue = _appointment.DoctorId;
+            patientTextBox.Text = _appointment.PatientId.ToString();
             patientTextBox.ReadOnly = true;
-            reasonTextBox.Text = _apointment.Reason;
-            timePicker.Value = _apointment.ScheduledTime;
-            datePicker.Value = _apointment.ScheduledTime;
+            reasonTextBox.Text = _appointment.Reason;
+            timePicker.Value = _appointment.ScheduledTime;
+            datePicker.Value = _appointment.ScheduledTime;
 
         }
 
-        private void editButton_Click(object sender, EventArgs e)
+        private void EditButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -57,7 +58,7 @@ namespace HospitalManagement.View
                 errorLabel.Visible = false;
                 var doctor = doctorComboBox.SelectedItem as Doctor;
                 var id = doctor.doctorID;
-                var patientId = _apointment.PatientId;
+                var patientId = _appointment.PatientId;
                 CheckAllFields();
                 if (!_controller.ValidatePatient(patientId))
                 {
@@ -82,7 +83,7 @@ namespace HospitalManagement.View
                     errorLabel.Visible = false;
                     var appointment = new Appointment
                     {
-                        AppointmentId = _apointment.AppointmentId,
+                        AppointmentId = _appointment.AppointmentId,
                         PatientId = patientId,
                         DoctorId = id,
                         Reason = reasonTextBox.Text,
@@ -104,11 +105,11 @@ namespace HospitalManagement.View
 
         private bool DateChanged()
         {
-            if (_apointment.ScheduledTime.Year == datePicker.Value.Year &&
-                _apointment.ScheduledTime.Month == datePicker.Value.Month &&
-                _apointment.ScheduledTime.Day == datePicker.Value.Day &&
-                _apointment.ScheduledTime.Hour == timePicker.Value.Hour &&
-                _apointment.ScheduledTime.Minute == timePicker.Value.Minute)
+            if (_appointment.ScheduledTime.Year == datePicker.Value.Year &&
+                _appointment.ScheduledTime.Month == datePicker.Value.Month &&
+                _appointment.ScheduledTime.Day == datePicker.Value.Day &&
+                _appointment.ScheduledTime.Hour == timePicker.Value.Hour &&
+                _appointment.ScheduledTime.Minute == timePicker.Value.Minute)
             {
                 return false;
             }
@@ -117,7 +118,7 @@ namespace HospitalManagement.View
 
         private bool HoursCheck()
         {
-            if (_apointment.ScheduledTime.Subtract(DateTime.Now).TotalHours <= 24)
+            if (_appointment.ScheduledTime.Subtract(DateTime.Now).TotalHours <= 24)
             {
                 return false;
             }
@@ -166,34 +167,39 @@ namespace HospitalManagement.View
             errorLabel.Visible = false;
         }
 
-        private void patientTextBox_TextChanged(object sender, EventArgs e)
+        private void PatientTextBox_TextChanged(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
+            editButton.Enabled = true;
         }
 
-        private void reasonTextBox_TextChanged(object sender, EventArgs e)
+        private void ReasonTextBox_TextChanged(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
+            editButton.Enabled = true;
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void doctorComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void DoctorComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
+            editButton.Enabled = true;
         }
 
-        private void datePicker_ValueChanged(object sender, EventArgs e)
+        private void DatePicker_ValueChanged(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
+            editButton.Enabled = true;
         }
 
-        private void timePicker_ValueChanged(object sender, EventArgs e)
+        private void TimePicker_ValueChanged(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
+            editButton.Enabled = true;
         }
     }
 }
