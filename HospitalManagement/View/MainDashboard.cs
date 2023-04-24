@@ -53,5 +53,17 @@ namespace HospitalManagement.View
             bookAppointmentUserControl.Visible = false;
             searchAppointmentByUserControl.Visible = true;
         }
+
+        private void StartPatientVisitButton_Click(object sender, EventArgs e)
+        {
+            startPatientVisitUserControl.Visible = true;
+            searchPatientVisitByUserControl.Visible = false;
+        }
+
+        private void SearchVisitButton_Click(object sender, EventArgs e)
+        {
+            startPatientVisitUserControl.Visible = false;
+            searchPatientVisitByUserControl.Visible = true;
+        }
     }
 }

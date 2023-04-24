@@ -77,12 +77,6 @@ namespace HospitalManagement.View
                     errorLabel.ForeColor = Color.Red;
                     errorLabel.Visible = true;
                 }
-                else if (!HoursCheck())
-                {
-                    errorLabel.Text = "Can not edit appointment before 24 hours";
-                    errorLabel.ForeColor = Color.Red;
-                    errorLabel.Visible = true;
-                }
                 else
                 {
                     errorLabel.Visible = false;

@@ -67,6 +67,8 @@ namespace HospitalManagement.View
 
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
+            zipCodeTextBox.MaxLength = 5;
+            phoneNumberTextBox.MaxLength = 10;
             editPatientButton.Enabled = true;
         }
 
@@ -130,9 +132,33 @@ namespace HospitalManagement.View
             {
                 errorLabel.Visible = true;
             }
+            if (zipCodeTextBox.Text.Length < 5)
+            {
+                errorLabel.Visible = true;
+            }
+            if (phoneNumberTextBox.Text.Length < 5)
+            {
+                errorLabel.Visible = true;
+            }
             if (string.IsNullOrEmpty(countryTextBox.Text))
             {
                 errorLabel.Visible = true;
+            }
+        }
+
+        private void PhoneNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ZipCodeTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }
