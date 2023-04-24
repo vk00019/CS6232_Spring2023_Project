@@ -169,7 +169,9 @@ namespace HospitalManagement.UserControls
                 editButton.Enabled = true;
                 if (searchDataGridView.SelectedRows[0] != null)
                 {
-                    _patientDetails.PdID = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+                    int personalDetailsId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+
+                    _patientDetails.PdID = _controller.GetPatientId(personalDetailsId);
                     _patientDetails.FirstName = searchDataGridView.SelectedRows[0].Cells[1].Value.ToString();
                     _patientDetails.LastName = searchDataGridView.SelectedRows[0].Cells[2].Value.ToString();
                     _patientDetails.DateOfBirth = DateTime.Parse(searchDataGridView.SelectedRows[0].Cells[3].Value.ToString());

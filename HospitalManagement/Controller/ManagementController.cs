@@ -120,5 +120,10 @@ namespace HospitalManagement.Controller
         {
             return _managementDal.GetFirstAndLastName(username);
         }
+
+        public int GetPatientId(int pdId)
+        {
+            return _managementDal.GetPatientId(pdId);
+        }
     }
 }
