@@ -69,6 +69,12 @@ GO
 INSERT [dbo].[Users] ([userName], [password], [pdID]) VALUES ('test', 'test1234', 2)
 INSERT [dbo].[Users] ([userName], [password], [pdID]) VALUES ('user', 'user1234', 6)
 
+SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[Visit] ON
+INSERT [dbo].[Visit] ([visitID], [appointmentID], [nurseID], [height], [weight], [systolicBP], [diastolicBP], [bodyTemperature], [pulse], [symptoms], [initialDiagnosis]) VALUES (1, 1, 6, 5.10, 180.25, 120, 80, 98.4, 85, 'Mild Headache', 'Body temperature is normal. Need to get an X-Ray done.')
+SET IDENTITY_INSERT [dbo].[Visit] OFF
+
 
 SET ANSI_PADDING OFF
 GO
