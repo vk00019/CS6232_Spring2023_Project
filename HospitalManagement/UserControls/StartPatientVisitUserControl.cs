@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HospitalManagement.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace HospitalManagement.UserControls
         public StartPatientVisitUserControl()
         {
             InitializeComponent();
+        }
+
+        private void routineCheckupButton_Click(object sender, EventArgs e)
+        {
+            using var routine = new RoutineCheckup();
+            routine.ShowDialog();
         }
     }
 }

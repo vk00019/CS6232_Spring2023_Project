@@ -1,6 +1,7 @@
 ﻿using HospitalManagement.Model;
 using System.Data;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace HospitalManagement.DAL
 {
@@ -394,14 +395,14 @@ namespace HospitalManagement.DAL
             var dateOfBirth = patient.DateOfBirth;
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            string query = "select patientID, firstName, lastName, phoneNumber, gender, streetAddress, city, state, zipCode, country " +
+            string query = "select personalDetails.pdID as pdId, firstName, lastName, phoneNumber, gender, streetAddress, city, state, zipCode, country " +
                 "from PersonalDetails, patient where personalDetails.pdID = patient.pdID and dateOfBirth = @dateOfBirth";
             using var command = new SqlCommand(query, connection);
             command.Parameters.Add("@dateOfBirth", System.Data.SqlDbType.DateTime);
             command.Parameters["@dateOfBirth"].Value = dateOfBirth;
             using var reader = command.ExecuteReader();
 
-            var patientIdOrdinal = reader.GetOrdinal("patientID");
+            var patientIdOrdinal = reader.GetOrdinal("pdId");
             var firstNameOrdinal = reader.GetOrdinal("firstName");
             var lastNameOrdinal = reader.GetOrdinal("lastName");
             var phoneNumberOrdinal = reader.GetOrdinal("phoneNumber");
@@ -414,7 +415,7 @@ namespace HospitalManagement.DAL
 
             while (reader.Read())
             {
-                var patientId = reader.GetInt32(patientIdOrdinal);
+                var pdId = reader.GetInt32(patientIdOrdinal);
                 var firstName = reader.GetString(firstNameOrdinal);
                 var lastName = reader.GetString(lastNameOrdinal);
                 var phoneNumber = reader.GetString(phoneNumberOrdinal);
@@ -427,7 +428,7 @@ namespace HospitalManagement.DAL
 
                 patients.Add(new PersonalDetails
                 {
-                    PdID = patientId,
+                    PdID = pdId,
                     FirstName = firstName,
                     LastName = lastName,
                     DateOfBirth = dateOfBirth,
@@ -455,7 +456,7 @@ namespace HospitalManagement.DAL
             var lastNameFromPatient = patient.LastName;
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            string query = "select patientID, firstName, lastName, phoneNumber, gender, streetAddress, city, state, zipCode, country " +
+            string query = "select personalDetails.pdID as pdId, firstName, lastName, phoneNumber, gender, streetAddress, city, state, zipCode, country " +
                 "from PersonalDetails, patient where personalDetails.pdID = patient.pdID and dateOfBirth = @dateOfBirth and lastName = @lastName";
             using var command = new SqlCommand(query, connection);
             command.Parameters.Add("@dateOfBirth", System.Data.SqlDbType.DateTime);
@@ -464,7 +465,7 @@ namespace HospitalManagement.DAL
             command.Parameters["@lastName"].Value = lastNameFromPatient;
             using var reader = command.ExecuteReader();
 
-            var patientIdOrdinal = reader.GetOrdinal("patientID");
+            var patientIdOrdinal = reader.GetOrdinal("pdId");
             var firstNameOrdinal = reader.GetOrdinal("firstName");
             var lastNameOrdinal = reader.GetOrdinal("lastName");
             var phoneNumberOrdinal = reader.GetOrdinal("phoneNumber");
@@ -477,7 +478,7 @@ namespace HospitalManagement.DAL
 
             while (reader.Read())
             {
-                var patientId = reader.GetInt32(patientIdOrdinal);
+                var pdId = reader.GetInt32(patientIdOrdinal);
                 var firstName = reader.GetString(firstNameOrdinal);
                 var lastName = reader.GetString(lastNameOrdinal);
                 var phoneNumber = reader.GetString(phoneNumberOrdinal);
@@ -490,7 +491,7 @@ namespace HospitalManagement.DAL
 
                 patients.Add(new PersonalDetails
                 {
-                    PdID = patientId,
+                    PdID = pdId,
                     FirstName = firstName,
                     LastName = lastName,
                     DateOfBirth = dateOfBirth,
@@ -518,7 +519,7 @@ namespace HospitalManagement.DAL
             var lastNameFromPatient = patient.LastName;
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            string query = "select patientID, firstName, lastName, dateOfBirth, phoneNumber, gender, streetAddress, city, state, zipCode, country " +
+            string query = "select personalDetails.pdID as pdId, firstName, lastName, dateOfBirth, phoneNumber, gender, streetAddress, city, state, zipCode, country " +
                 "from PersonalDetails, patient where personalDetails.pdID = patient.pdID and firstName = @firstName and lastName = @lastName";
             using var command = new SqlCommand(query, connection);
             command.Parameters.Add("@firstName", System.Data.SqlDbType.VarChar);
@@ -527,7 +528,7 @@ namespace HospitalManagement.DAL
             command.Parameters["@lastName"].Value = lastNameFromPatient;
             using var reader = command.ExecuteReader();
 
-            var patientIdOrdinal = reader.GetOrdinal("patientID");
+            var patientIdOrdinal = reader.GetOrdinal("pdId");
             var firstNameOrdinal = reader.GetOrdinal("firstName");
             var lastNameOrdinal = reader.GetOrdinal("lastName");
             var dateOfBirthOrdinal = reader.GetOrdinal("dateOfBirth");
@@ -541,7 +542,7 @@ namespace HospitalManagement.DAL
 
             while (reader.Read())
             {
-                var patientId = reader.GetInt32(patientIdOrdinal);
+                var pdId = reader.GetInt32(patientIdOrdinal);
                 var firstName = reader.GetString(firstNameOrdinal);
                 var lastName = reader.GetString(lastNameOrdinal);
                 var dateOfBirth = reader.GetDateTime(dateOfBirthOrdinal);
@@ -555,7 +556,7 @@ namespace HospitalManagement.DAL
 
                 patients.Add(new PersonalDetails
                 {
-                    PdID = patientId,
+                    PdID = pdId,
                     FirstName = firstName,
                     LastName = lastName,
                     DateOfBirth = dateOfBirth,
@@ -865,6 +866,29 @@ namespace HospitalManagement.DAL
                 name = firstName + " " + lastName;
             }
             return name;
+        }
+
+        public int GetPatientId(int pdId)
+        {
+            int patientId = 0;
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select patientID from Patient, PersonalDetails where " +
+                           "Patient.pdID = PersonalDetails.pdID and Patient.pdID = @pdId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@pdId", SqlDbType.Int);
+            command.Parameters["@pdId"].Value = pdId;
+            using var reader = command.ExecuteReader();
+
+            var patientIdOrdinal = reader.GetOrdinal("patientID");
+
+            while (reader.Read())
+            { 
+                patientId = reader.GetInt32(patientIdOrdinal);
+            }
+
+            return patientId;
         }
     }
 }
