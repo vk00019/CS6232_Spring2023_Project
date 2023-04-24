@@ -64,8 +64,8 @@ namespace HospitalManagement.UserControls
         private void SearchButton_Click(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
-            viewEditButton.Visible = true;
             viewEditButton.Enabled = false;
+            deleteButton.Enabled = false;
             List<Appointment> appointments;
             if (dobRadioButton.Checked)
             {
@@ -105,6 +105,8 @@ namespace HospitalManagement.UserControls
                 searchDataGridView.Visible = true;
                 searchDataGridView.DataSource = appointments;
                 searchDataGridView.ClearSelection();
+                viewEditButton.Visible = true;
+                deleteButton.Visible = true;
             }
             else
             {
@@ -114,6 +116,7 @@ namespace HospitalManagement.UserControls
                 errorLabel.Visible = true;
                 errorLabel.ForeColor = Color.Red;
                 viewEditButton.Visible = false;
+                deleteButton.Visible = false;
             }
         }
 
@@ -122,11 +125,13 @@ namespace HospitalManagement.UserControls
             if (e.RowIndex == -1)
             {
                 viewEditButton.Enabled = false;
+                deleteButton.Enabled = false;
             }
             else
             {
                 viewEditButton.Visible = true;
                 viewEditButton.Enabled = true;
+                deleteButton.Enabled = true;
                 if (searchDataGridView.SelectedRows[0] != null)
                 {
                     _appointment.AppointmentId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
@@ -166,7 +171,7 @@ namespace HospitalManagement.UserControls
                 errorLabel.Text = "Appointment is deleted";
                 errorLabel.ForeColor = Color.Green;
                 errorLabel.Visible = true;
-                searchButton_Click(sender, e);
+                SearchButton_Click(sender, e);
             }
             else
             {
