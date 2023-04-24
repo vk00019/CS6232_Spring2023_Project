@@ -47,6 +47,11 @@ namespace HospitalManagement.Controller
             return (_managementDal.CheckVisit(id));
         }
 
+        public bool CheckAppointment(int id)
+        {
+            return (_managementDal.CheckAppointment(id));
+        }
+
         /// <summary>
         /// This method deletes the appointment with the given id
         /// </summary>
@@ -54,6 +59,11 @@ namespace HospitalManagement.Controller
         public void DeleteAppointment(int id)
         {
             _managementDal.DeleteAppointment(id);
+        }
+
+        public void DeletePatient(int id)
+        {
+            _managementDal.DeletePatient(id);
         }
 
         public bool ValidatePatient(int id)

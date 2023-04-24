@@ -34,6 +34,7 @@ namespace HospitalManagement.UserControls
             viewButton.Visible = false;
             editButton.Visible = false;
             errorLabel.Visible = false;
+            deletePatientButton.Visible = false;
         }
 
         private void DobLnRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -48,6 +49,7 @@ namespace HospitalManagement.UserControls
             viewButton.Visible = false;
             editButton.Visible = false;
             errorLabel.Visible = false;
+            deletePatientButton.Visible = false;
         }
 
         private void FnLnRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -62,6 +64,7 @@ namespace HospitalManagement.UserControls
             viewButton.Visible = false;
             editButton.Visible = false;
             errorLabel.Visible = false;
+            deletePatientButton.Visible = false;
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
@@ -69,8 +72,10 @@ namespace HospitalManagement.UserControls
             errorLabel.Visible = false;
             viewButton.Visible = true;
             editButton.Visible = true;
+            deletePatientButton.Visible = true;
             viewButton.Enabled = false;
             editButton.Enabled = false;
+            deletePatientButton.Enabled = false;
             List<PersonalDetails> patients;
             if (dobRadioButton.Checked)
             {
@@ -100,6 +105,7 @@ namespace HospitalManagement.UserControls
                     errorLabel.ForeColor = Color.Red;
                     viewButton.Visible = false;
                     editButton.Visible = false;
+                    deletePatientButton.Visible = false;
                 }
             }
             else
@@ -121,6 +127,7 @@ namespace HospitalManagement.UserControls
                     errorLabel.ForeColor = Color.Red;
                     viewButton.Visible = false;
                     editButton.Visible = false;
+                    deletePatientButton.Visible = false;
                 }
             }
         }
@@ -142,6 +149,7 @@ namespace HospitalManagement.UserControls
                 errorLabel.ForeColor = Color.Red;
                 viewButton.Visible = false;
                 editButton.Visible = false;
+                deletePatientButton.Visible = false;
             }
         }
 
@@ -154,6 +162,7 @@ namespace HospitalManagement.UserControls
             searchDataGridView.Visible = false;
             viewButton.Visible = false;
             editButton.Visible = false;
+            deletePatientButton.Visible = false;
         }
 
         private void SearchDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -162,11 +171,13 @@ namespace HospitalManagement.UserControls
             {
                 viewButton.Enabled = false;
                 editButton.Enabled = false;
+                deletePatientButton.Enabled = false;
             }
             else
             {
                 viewButton.Enabled = true;
                 editButton.Enabled = true;
+                deletePatientButton.Enabled = true;
                 if (searchDataGridView.SelectedRows[0] != null)
                 {
                     _patientDetails.PdID = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
@@ -207,12 +218,31 @@ namespace HospitalManagement.UserControls
             searchDataGridView.Visible = false;
             viewButton.Visible = false;
             editButton.Visible = false;
+            deletePatientButton.Visible = false;
         }
 
         private void SearchPatientByUserControl_Load(object sender, EventArgs e)
         {
             dobDateTimePicker.MaxDate = DateTime.Now;
             dobDateTimePicker.Value = DateTime.Now.Date;
+        }
+
+        private void deletePatientButton_Click(object sender, EventArgs e)
+        {
+            if (!_controller.CheckAppointment(_patientDetails.PdID))
+            {
+                _controller.DeletePatient(_patientDetails.PdID);
+                errorLabel.Text = "Patient is deleted";
+                errorLabel.ForeColor = Color.Green;
+                errorLabel.Visible = true;
+                SearchButton_Click(sender, e);
+            }
+            else
+            {
+                errorLabel.Text = "Patient can not be deleted as there is an Appointment";
+                errorLabel.ForeColor = Color.Red;
+                errorLabel.Visible = true;
+            }
         }
     }
 }

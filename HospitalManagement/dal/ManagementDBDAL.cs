@@ -266,6 +266,19 @@ namespace HospitalManagement.DAL
             command.ExecuteScalar();
         }
 
+        public void DeletePatient(int id)
+        {
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            //string query = "delete from Patient where pdId = @id";
+            using var command = new SqlCommand("delete_Patient", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.Add("@PersonalDetailsID", System.Data.SqlDbType.Int);
+            command.Parameters["@PersonalDetailsID"].Value = id;
+            //command.ExecuteNonQuery();
+            command.ExecuteScalar();
+        }
+
         /// <summary>
         /// Validates the patient.
         /// </summary>
@@ -356,6 +369,18 @@ namespace HospitalManagement.DAL
             command.Parameters["@id"].Value = id;
             int count = Convert.ToInt32(command.ExecuteScalar());
             return count == 1;
+        }
+
+        public bool CheckAppointment(int id)
+        {
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select count(*) from Appointment, Patient where Patient.patientID = Appointment.patientID and Patient.pdID = @id";
+            using var command = new SqlCommand(query, connection);
+            command.Parameters.Add("@id", System.Data.SqlDbType.Int);
+            command.Parameters["@id"].Value = id;
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            return count >= 1;
         }
 
         /// <summary>
