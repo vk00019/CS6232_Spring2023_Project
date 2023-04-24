@@ -40,6 +40,8 @@
             this.searchAppointmentButton = new System.Windows.Forms.Button();
             this.bookAppointmentButton = new System.Windows.Forms.Button();
             this.visitTab = new System.Windows.Forms.TabPage();
+            this.searchPatientVisitByUserControl = new HospitalManagement.UserControls.SearchPatientVisitByUserControl();
+            this.startPatientVisitUserControl = new HospitalManagement.UserControls.StartPatientVisitUserControl();
             this.searchVisitButton = new System.Windows.Forms.Button();
             this.startPatientVisitButton = new System.Windows.Forms.Button();
             this.logoutLinkLabel = new System.Windows.Forms.LinkLabel();
@@ -131,7 +133,7 @@
             this.appointmentTab.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.appointmentTab.Name = "appointmentTab";
             this.appointmentTab.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.appointmentTab.Size = new System.Drawing.Size(1258, 1262);
+            this.appointmentTab.Size = new System.Drawing.Size(1258, 1316);
             this.appointmentTab.TabIndex = 1;
             this.appointmentTab.Text = "Appointment";
             this.appointmentTab.UseVisualStyleBackColor = true;
@@ -180,15 +182,33 @@
             // 
             // visitTab
             // 
+            this.visitTab.Controls.Add(this.searchPatientVisitByUserControl);
+            this.visitTab.Controls.Add(this.startPatientVisitUserControl);
             this.visitTab.Controls.Add(this.searchVisitButton);
             this.visitTab.Controls.Add(this.startPatientVisitButton);
             this.visitTab.Location = new System.Drawing.Point(8, 46);
             this.visitTab.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.visitTab.Name = "visitTab";
-            this.visitTab.Size = new System.Drawing.Size(1258, 1262);
+            this.visitTab.Size = new System.Drawing.Size(1258, 1316);
             this.visitTab.TabIndex = 2;
             this.visitTab.Text = "Visit";
             this.visitTab.UseVisualStyleBackColor = true;
+            // 
+            // searchPatientVisitByUserControl
+            // 
+            this.searchPatientVisitByUserControl.Location = new System.Drawing.Point(51, 145);
+            this.searchPatientVisitByUserControl.Name = "searchPatientVisitByUserControl";
+            this.searchPatientVisitByUserControl.Size = new System.Drawing.Size(1146, 1126);
+            this.searchPatientVisitByUserControl.TabIndex = 5;
+            this.searchPatientVisitByUserControl.Visible = false;
+            // 
+            // startPatientVisitUserControl
+            // 
+            this.startPatientVisitUserControl.Location = new System.Drawing.Point(244, 197);
+            this.startPatientVisitUserControl.Name = "startPatientVisitUserControl";
+            this.startPatientVisitUserControl.Size = new System.Drawing.Size(748, 686);
+            this.startPatientVisitUserControl.TabIndex = 4;
+            this.startPatientVisitUserControl.Visible = false;
             // 
             // searchVisitButton
             // 
@@ -200,6 +220,7 @@
             this.searchVisitButton.TabIndex = 3;
             this.searchVisitButton.Text = "Search Patient Visit";
             this.searchVisitButton.UseVisualStyleBackColor = true;
+            this.searchVisitButton.Click += new System.EventHandler(this.SearchVisitButton_Click);
             // 
             // startPatientVisitButton
             // 
@@ -211,6 +232,7 @@
             this.startPatientVisitButton.TabIndex = 2;
             this.startPatientVisitButton.Text = "Start Patient Visit";
             this.startPatientVisitButton.UseVisualStyleBackColor = true;
+            this.startPatientVisitButton.Click += new System.EventHandler(this.StartPatientVisitButton_Click);
             // 
             // logoutLinkLabel
             // 
@@ -279,5 +301,7 @@
         private UserControls.BookAppointmentUserControl bookAppointmentUserControl;
         private UserControls.SearchAppointmentByUserControl searchAppointmentByUserControl;
         private UserControls.SearchPatientByUserControl searchPatientByUserControl;
+        private UserControls.StartPatientVisitUserControl startPatientVisitUserControl;
+        private UserControls.SearchPatientVisitByUserControl searchPatientVisitByUserControl;
     }
 }

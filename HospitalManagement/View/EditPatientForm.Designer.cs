@@ -157,6 +157,7 @@
             this.phoneNumberTextBox.Size = new System.Drawing.Size(327, 39);
             this.phoneNumberTextBox.TabIndex = 4;
             this.phoneNumberTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.phoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumberTextBox_KeyPress);
             // 
             // streetAddressTextBox
             // 
@@ -184,6 +185,7 @@
             this.zipCodeTextBox.Size = new System.Drawing.Size(327, 39);
             this.zipCodeTextBox.TabIndex = 10;
             this.zipCodeTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.zipCodeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ZipCodeTextBox_KeyPress);
             // 
             // firstNameTextBox
             // 
