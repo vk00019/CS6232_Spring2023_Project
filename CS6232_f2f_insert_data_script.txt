@@ -61,6 +61,14 @@ GO
 SET IDENTITY_INSERT [dbo].[Tests] ON
 INSERT [dbo].[Tests] ([testID], [testName]) VALUES (1, 'Xray')
 INSERT [dbo].[Tests] ([testID], [testName]) VALUES (2, 'Blood sugar test')
+INSERT [dbo].[Tests] ([testID], [testName]) VALUES (3, 'Blood Plateletes Count Tests')
+INSERT [dbo].[Tests] ([testID], [testName]) VALUES (4, 'Genetic Testing')
+INSERT [dbo].[Tests] ([testID], [testName]) VALUES (5, 'Kidney Tests')
+INSERT [dbo].[Tests] ([testID], [testName]) VALUES (6, 'CT Scan')
+INSERT [dbo].[Tests] ([testID], [testName]) VALUES (7, 'Prenatal Testing')
+INSERT [dbo].[Tests] ([testID], [testName]) VALUES (8, 'Thyroid Tests')
+INSERT [dbo].[Tests] ([testID], [testName]) VALUES (9, 'Urinalysis')
+INSERT [dbo].[Tests] ([testID], [testName]) VALUES (10, 'MRI')
 SET IDENTITY_INSERT [dbo].[Tests] OFF
 
 

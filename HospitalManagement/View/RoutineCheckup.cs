@@ -42,7 +42,7 @@ namespace HospitalManagement.View
                         Symptoms = symptoms
                     };
                     ClearAllFields();
-                    errorLabel.Text = "Patient Registered Successfully";
+                    errorLabel.Text = @"Checkup details updated successfully";
                     errorLabel.ForeColor = Color.Green;
                     errorLabel.Visible = true;
                 }
@@ -57,7 +57,7 @@ namespace HospitalManagement.View
 
         private void CheckAllFields()
         {
-            errorLabel.Text = "*All fields are required*";
+            errorLabel.Text = @"*All fields are required*";
             errorLabel.ForeColor = Color.Red;
             if (string.IsNullOrEmpty(heightTextBox.Text))
             {
