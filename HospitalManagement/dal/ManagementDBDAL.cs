@@ -250,6 +250,22 @@ namespace HospitalManagement.DAL
         }
 
         /// <summary>
+        /// This method deletes the appointment with the given id
+        /// </summary>
+        /// <param name="id"></param>
+        public void DeleteAppointment(int id)
+        {
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "delete from Appointment where appointmentId = @id";
+            using var command = new SqlCommand(query, connection);
+            command.Parameters.Add("@id", System.Data.SqlDbType.Int);
+            command.Parameters["@id"].Value = id;
+
+            command.ExecuteScalar();
+        }
+
+        /// <summary>
         /// Validates the patient.
         /// </summary>
         /// <param name="id">The identifier.</param>
@@ -320,6 +336,23 @@ namespace HospitalManagement.DAL
             command.Parameters["@username"].Value = username;
             command.Parameters.Add("@password", System.Data.SqlDbType.VarChar);
             command.Parameters["@password"].Value = password;
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            return count == 1;
+        }
+
+        /// <summary>
+        /// This method checks if there is a visit assosiated with an appointment
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>True if there is a visit</returns>
+        public bool CheckVisit(int id)
+        {
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select count(*) from Visit where appointmentID = @id";
+            using var command = new SqlCommand(query, connection);
+            command.Parameters.Add("@id", System.Data.SqlDbType.VarChar);
+            command.Parameters["@id"].Value = id;
             int count = Convert.ToInt32(command.ExecuteScalar());
             return count == 1;
         }
@@ -572,7 +605,7 @@ namespace HospitalManagement.DAL
             using var connection = DBConnection.GetConnection();
             connection.Open();
 
-            var query = "select visitID, nurseID, height, weight, systolicBP, diastolic, bodyTemperature, " +
+            var query = "select visitID, nurseID, height, weight, systolicBP, diastolicBP, bodyTemperature, " +
                         "pulse, symptoms, initialDiagnosis, finalDiagnosis from Visit where appointmentID = @appointmentId;";
 
             using var command = new SqlCommand(query, connection);
@@ -585,8 +618,8 @@ namespace HospitalManagement.DAL
             var nurseIdOrdinal = reader.GetOrdinal("nurseID");
             var heightOrdinal = reader.GetOrdinal("height");
             var weightOrdinal = reader.GetOrdinal("weight");
-            var sysOrdinal = reader.GetOrdinal("systolicBp");
-            var diaBpOrdinal = reader.GetOrdinal("diastolic");
+            var sysOrdinal = reader.GetOrdinal("systolicBP");
+            var diaBpOrdinal = reader.GetOrdinal("diastolicBP");
             var tempOrdinal = reader.GetOrdinal("bodyTemperature");
             var pulseOrdinal = reader.GetOrdinal("pulse");
             var symptomsOrdinal = reader.GetOrdinal("symptoms");

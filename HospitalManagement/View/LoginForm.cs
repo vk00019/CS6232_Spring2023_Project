@@ -28,7 +28,7 @@ namespace HospitalManagement.View
         private void LoginButton_Click(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
-            if (_controller.CheckUser(usernameTextBox.Text,passwordTextBox.Text))
+            if (_controller.CheckUser(usernameTextBox.Text, passwordTextBox.Text))
             {
                 using var mainForm = new MainDashboard();
                 var name = "Name: " + _controller.GetFirstAndLastName(usernameTextBox.Text) +

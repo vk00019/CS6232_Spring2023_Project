@@ -32,6 +32,7 @@ namespace HospitalManagement.UserControls
             firstnametextBox.Visible = false;
             searchDataGridView.Visible = false;
             viewEditButton.Visible = false;
+            errorLabel.Visible = false;
         }
 
         private void DobLnRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -44,6 +45,7 @@ namespace HospitalManagement.UserControls
             firstnametextBox.Visible = false;
             searchDataGridView.Visible = false;
             viewEditButton.Visible = false;
+            errorLabel.Visible = false;
         }
 
         private void FnLnRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -56,6 +58,7 @@ namespace HospitalManagement.UserControls
             firstnametextBox.Visible = true;
             searchDataGridView.Visible = false;
             viewEditButton.Visible = false;
+            errorLabel.Visible = false;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -118,6 +121,7 @@ namespace HospitalManagement.UserControls
                     _appointment.DoctorId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[2].Value.ToString());
                     _appointment.ScheduledTime = DateTime.Parse(searchDataGridView.SelectedRows[0].Cells[3].Value.ToString());
                     _appointment.Reason = searchDataGridView.SelectedRows[0].Cells[4].Value.ToString();
+                    errorLabel.Visible = false;
                 }
             }
         }
@@ -128,6 +132,39 @@ namespace HospitalManagement.UserControls
             viewform.SetAppointment(_appointment);
             viewform.ShowDialog();
             searchDataGridView.Visible = false;
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if (!_controller.CheckVisit(_appointment.AppointmentId))
+            {
+                _controller.DeleteAppointment(_appointment.AppointmentId);
+                errorLabel.Text = "Appointment is deleted";
+                errorLabel.ForeColor = Color.Green;
+                errorLabel.Visible = true;
+                searchButton_Click(sender, e);
+            }
+            else
+            {
+                errorLabel.Text = "Appointment can not be deleted as there is a visit";
+                errorLabel.ForeColor = Color.Red;
+                errorLabel.Visible = true;
+            }
+        }
+
+        private void lastnameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            errorLabel.Visible = false;
+        }
+
+        private void firstnametextBox_TextChanged(object sender, EventArgs e)
+        {
+            errorLabel.Visible = false;
+        }
+
+        private void dobDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            errorLabel.Visible = false;
         }
     }
 }

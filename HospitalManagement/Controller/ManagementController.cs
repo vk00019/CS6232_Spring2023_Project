@@ -1,10 +1,5 @@
 ﻿using HospitalManagement.DAL;
 using HospitalManagement.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HospitalManagement.Controller
 {
@@ -40,6 +35,25 @@ namespace HospitalManagement.Controller
         public void UpdateAppointment(Appointment appointment)
         {
             _managementDal.UpdateAppointment(appointment);
+        }
+
+        /// <summary>
+        /// This method checks if there is a visit assosiated with an appointment
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>True if there is a visit</returns>
+        public bool CheckVisit(int id)
+        {
+            return (_managementDal.CheckVisit(id));
+        }
+
+        /// <summary>
+        /// This method deletes the appointment with the given id
+        /// </summary>
+        /// <param name="id"></param>
+        public void DeleteAppointment(int id)
+        {
+            _managementDal.DeleteAppointment(id);
         }
 
         public bool ValidatePatient(int id)

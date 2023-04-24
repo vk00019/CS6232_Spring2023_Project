@@ -28,116 +28,116 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.usernameLabel = new System.Windows.Forms.Label();
-            this.usernameTextBox = new System.Windows.Forms.TextBox();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.passwordTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.errorLabel = new System.Windows.Forms.Label();
-            this.loginButton = new System.Windows.Forms.Button();
-            this.clearButton = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            usernameLabel = new Label();
+            usernameTextBox = new TextBox();
+            passwordLabel = new Label();
+            passwordTextBox = new MaskedTextBox();
+            errorLabel = new Label();
+            loginButton = new Button();
+            clearButton = new Button();
+            SuspendLayout();
             // 
             // usernameLabel
             // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.usernameLabel.Location = new System.Drawing.Point(89, 100);
-            this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(160, 37);
-            this.usernameLabel.TabIndex = 0;
-            this.usernameLabel.Text = "Username: ";
+            usernameLabel.AutoSize = true;
+            usernameLabel.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            usernameLabel.Location = new Point(55, 62);
+            usernameLabel.Margin = new Padding(2, 0, 2, 0);
+            usernameLabel.Name = "usernameLabel";
+            usernameLabel.Size = new Size(99, 23);
+            usernameLabel.TabIndex = 0;
+            usernameLabel.Text = "Username: ";
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(321, 100);
-            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(362, 39);
-            this.usernameTextBox.TabIndex = 1;
-            this.usernameTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            usernameTextBox.Location = new Point(198, 62);
+            usernameTextBox.Margin = new Padding(2, 1, 2, 1);
+            usernameTextBox.Name = "usernameTextBox";
+            usernameTextBox.Size = new Size(224, 27);
+            usernameTextBox.TabIndex = 1;
+            usernameTextBox.TextChanged += TextBox_TextChanged;
             // 
             // passwordLabel
             // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.passwordLabel.Location = new System.Drawing.Point(89, 203);
-            this.passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(146, 37);
-            this.passwordLabel.TabIndex = 2;
-            this.passwordLabel.Text = "Password:";
+            passwordLabel.AutoSize = true;
+            passwordLabel.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            passwordLabel.Location = new Point(55, 127);
+            passwordLabel.Margin = new Padding(2, 0, 2, 0);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new Size(90, 23);
+            passwordLabel.TabIndex = 2;
+            passwordLabel.Text = "Password:";
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(321, 203);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(362, 39);
-            this.passwordTextBox.TabIndex = 4;
-            this.passwordTextBox.UseSystemPasswordChar = true;
-            this.passwordTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            passwordTextBox.Location = new Point(198, 127);
+            passwordTextBox.Margin = new Padding(2, 1, 2, 1);
+            passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.Size = new Size(224, 27);
+            passwordTextBox.TabIndex = 4;
+            passwordTextBox.UseSystemPasswordChar = true;
+            passwordTextBox.TextChanged += TextBox_TextChanged;
             // 
             // errorLabel
             // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(186, 279);
-            this.errorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(165, 32);
-            this.errorLabel.TabIndex = 5;
-            this.errorLabel.Text = "Error Message";
-            this.errorLabel.Visible = false;
+            errorLabel.AutoSize = true;
+            errorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            errorLabel.ForeColor = Color.Red;
+            errorLabel.Location = new Point(114, 174);
+            errorLabel.Margin = new Padding(2, 0, 2, 0);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(103, 20);
+            errorLabel.TabIndex = 5;
+            errorLabel.Text = "Error Message";
+            errorLabel.Visible = false;
             // 
             // loginButton
             // 
-            this.loginButton.AutoSize = true;
-            this.loginButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.loginButton.Location = new System.Drawing.Point(188, 363);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(150, 62);
-            this.loginButton.TabIndex = 6;
-            this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            loginButton.AutoSize = true;
+            loginButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            loginButton.Location = new Point(116, 227);
+            loginButton.Margin = new Padding(2, 1, 2, 1);
+            loginButton.Name = "loginButton";
+            loginButton.Size = new Size(92, 39);
+            loginButton.TabIndex = 6;
+            loginButton.Text = "Login";
+            loginButton.UseVisualStyleBackColor = true;
+            loginButton.Click += LoginButton_Click;
             // 
             // clearButton
             // 
-            this.clearButton.AutoSize = true;
-            this.clearButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.clearButton.Location = new System.Drawing.Point(431, 363);
-            this.clearButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(150, 62);
-            this.clearButton.TabIndex = 7;
-            this.clearButton.Text = "Clear";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            clearButton.AutoSize = true;
+            clearButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            clearButton.Location = new Point(265, 227);
+            clearButton.Margin = new Padding(2, 1, 2, 1);
+            clearButton.Name = "clearButton";
+            clearButton.Size = new Size(92, 39);
+            clearButton.TabIndex = 7;
+            clearButton.Text = "Clear";
+            clearButton.UseVisualStyleBackColor = true;
+            clearButton.Click += ClearButton_Click;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 495);
-            this.Controls.Add(this.clearButton);
-            this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.errorLabel);
-            this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(this.passwordLabel);
-            this.Controls.Add(this.usernameTextBox);
-            this.Controls.Add(this.usernameLabel);
-            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "LoginForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login Form";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = loginButton;
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(484, 309);
+            Controls.Add(clearButton);
+            Controls.Add(loginButton);
+            Controls.Add(errorLabel);
+            Controls.Add(passwordTextBox);
+            Controls.Add(passwordLabel);
+            Controls.Add(usernameTextBox);
+            Controls.Add(usernameLabel);
+            Margin = new Padding(2, 1, 2, 1);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Login Form";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

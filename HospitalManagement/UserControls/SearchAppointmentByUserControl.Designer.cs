@@ -43,6 +43,7 @@
             fnLnRadioButton = new RadioButton();
             dobRadioButton = new RadioButton();
             nameLabel = new Label();
+            deleteButton = new Button();
             ((System.ComponentModel.ISupportInitialize)searchDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -127,6 +128,7 @@
             firstnametextBox.Size = new Size(203, 27);
             firstnametextBox.TabIndex = 66;
             firstnametextBox.Visible = false;
+            firstnametextBox.TextChanged += firstnametextBox_TextChanged;
             // 
             // lastnameLabel
             // 
@@ -149,6 +151,7 @@
             dobDateTimePicker.Size = new Size(139, 27);
             dobDateTimePicker.TabIndex = 64;
             dobDateTimePicker.Value = new DateTime(2023, 4, 12, 0, 0, 0, 0);
+            dobDateTimePicker.ValueChanged += dobDateTimePicker_ValueChanged;
             // 
             // lastnameTextBox
             // 
@@ -158,6 +161,7 @@
             lastnameTextBox.Size = new Size(203, 27);
             lastnameTextBox.TabIndex = 63;
             lastnameTextBox.Visible = false;
+            lastnameTextBox.TextChanged += lastnameTextBox_TextChanged;
             // 
             // dobLabel
             // 
@@ -218,10 +222,23 @@
             nameLabel.TabIndex = 58;
             nameLabel.Text = "Search Appointment Based On: ";
             // 
+            // deleteButton
+            // 
+            deleteButton.AutoSize = true;
+            deleteButton.Location = new Point(53, 568);
+            deleteButton.Margin = new Padding(2, 1, 2, 1);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(175, 33);
+            deleteButton.TabIndex = 73;
+            deleteButton.Text = "Delete Appointment";
+            deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
+            // 
             // SearchAppointmentByUserControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(deleteButton);
             Controls.Add(viewEditButton);
             Controls.Add(searchDataGridView);
             Controls.Add(errorLabel);
@@ -261,5 +278,6 @@
         private RadioButton fnLnRadioButton;
         private RadioButton dobRadioButton;
         private Label nameLabel;
+        private Button deleteButton;
     }
 }
