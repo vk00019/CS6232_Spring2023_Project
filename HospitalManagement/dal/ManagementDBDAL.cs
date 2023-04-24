@@ -100,7 +100,7 @@ namespace HospitalManagement.DAL
             connection.Open();
 
             string query = "Update PersonalDetails set firstName = @firstname, lastName = @lastname, dateOfBirth = @dateOfBirth, " +
-                           " gender = @gender, streetAddress = @street, state = @state, zipCode = @zipCode," +
+                           " gender = @gender, streetAddress = @street, state = @state, zipCode = @zipCode, city = @city, " +
                            " country = @country, phoneNumber = @phoneNumber where " +
                            "pdID = (select pdID from Patient where patientID = @patientId)";
             using var command = new SqlCommand(query, connection);
@@ -770,6 +770,36 @@ namespace HospitalManagement.DAL
                 });
             }
             return appointments;
+        }
+
+        /// <summary>
+        /// Gets the first name and last name of user.
+        /// </summary>
+        /// <param name="username">The username.</param>
+        /// <returns></returns>
+        public string GetFirstAndLastName(string username)
+        {
+            string name = "";
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select firstName, lastName from PersonalDetails, Users " +
+                           "where PersonalDetails.pdID = Users.pdID and Users.userName = @username;";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@username", SqlDbType.VarChar);
+            command.Parameters["@username"].Value = username;
+            using var reader = command.ExecuteReader();
+
+            var firstNameOrdinal = reader.GetOrdinal("firstName");
+            var lastNameOrdinal = reader.GetOrdinal("lastName");
+
+            while (reader.Read())
+            {
+                var firstName = reader.GetString(firstNameOrdinal);
+                var lastName = reader.GetString(lastNameOrdinal);
+                name = firstName + " " + lastName;
+            }
+            return name;
         }
     }
 }

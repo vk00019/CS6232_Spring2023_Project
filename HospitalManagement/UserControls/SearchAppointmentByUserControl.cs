@@ -69,7 +69,7 @@ namespace HospitalManagement.UserControls
                 {
                     DateOfBirth = dobDateTimePicker.Value
                 };
-                appointments = _controller.GetAppointmenttWithDob(patientsObject);
+                appointments = _controller.GetAppointmentWithDob(patientsObject);
                 searchDataGridView.DataSource = appointments;
                 searchDataGridView.Visible = true;
                 searchDataGridView.ClearSelection();

@@ -87,7 +87,7 @@ namespace HospitalManagement.Controller
             _managementDal.UpdatePatientDetails(patientDetails);
         }
 
-        public List<Appointment> GetAppointmenttWithDob(PersonalDetails patientsObject)
+        public List<Appointment> GetAppointmentWithDob(PersonalDetails patientsObject)
         {
             return _managementDal.GetAppointmentsWithDOB(patientsObject);
         }
@@ -100,6 +100,11 @@ namespace HospitalManagement.Controller
         public List<Appointment> GetAppointmentWithFirstNameAndLastName(PersonalDetails patientsObject)
         {
             return _managementDal.GetAppointmentWithFirstNameAndLastName(patientsObject);
+        }
+
+        public string GetFirstAndLastName(string username)
+        {
+            return _managementDal.GetFirstAndLastName(username);
         }
     }
 }

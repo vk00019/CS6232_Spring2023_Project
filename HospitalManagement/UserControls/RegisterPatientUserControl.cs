@@ -97,6 +97,14 @@ namespace HospitalManagement.UserControls
             {
                 errorLabel.Visible = true;
             }
+            if (zipCodeTextBox.Text.Length < 5)
+            {
+                errorLabel.Visible = true;
+            }
+            if (phoneNumberTextBox.Text.Length < 5)
+            {
+                errorLabel.Visible = true;
+            }
             if (string.IsNullOrEmpty(countryTextBox.Text))
             {
                 errorLabel.Visible = true;
