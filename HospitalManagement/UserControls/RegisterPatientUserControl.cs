@@ -25,12 +25,7 @@ namespace HospitalManagement.UserControls
         {
             errorLabel.Visible = false;
             CheckAllFields();
-            if (errorLabel.Visible)
-            {
-                errorLabel.Text = "*All fields are required to register*";
-                errorLabel.ForeColor = Color.Red;
-            }
-            else
+            if (!errorLabel.Visible)
             {
                 errorLabel.Visible = false;
                 var personalDetails = new PersonalDetails
@@ -73,6 +68,10 @@ namespace HospitalManagement.UserControls
 
         private void CheckAllFields()
         {
+            errorLabel.Text = "*All fields are required to register*";
+            errorLabel.ForeColor = Color.Red;
+            phoneNumberErrorLabel.ForeColor = Color.Red;
+            zipCodeErrorLabel.ForeColor = Color.Red;
             if (string.IsNullOrEmpty(firstNameTextBox.Text))
             {
                 errorLabel.Visible = true;
@@ -97,17 +96,19 @@ namespace HospitalManagement.UserControls
             {
                 errorLabel.Visible = true;
             }
-            if (zipCodeTextBox.Text.Length < 5)
-            {
-                errorLabel.Visible = true;
-            }
-            if (phoneNumberTextBox.Text.Length < 5)
-            {
-                errorLabel.Visible = true;
-            }
             if (string.IsNullOrEmpty(countryTextBox.Text))
             {
                 errorLabel.Visible = true;
+            }
+            if (zipCodeTextBox.Text.Length < 5)
+            {
+                zipCodeErrorLabel.Visible = true;
+                zipCodeErrorLabel.Text = "Zip Code cannot be less than 5 digits";
+            }
+            if (phoneNumberTextBox.Text.Length < 10)
+            {
+                phoneNumberErrorLabel.Visible = true;
+                phoneNumberErrorLabel.Text = "Phone number cannot be less than 10 digits";
             }
         }
 
@@ -124,6 +125,8 @@ namespace HospitalManagement.UserControls
             statesComboBox.SelectedIndex = 0;
             birthDayDateTimePicker.ResetText();
             errorLabel.Visible = false;
+            phoneNumberErrorLabel.Visible = false;
+            zipCodeErrorLabel.Visible = false;
         }
 
         private void ZipCodeTextBox_TextChanged(object sender, EventArgs e)

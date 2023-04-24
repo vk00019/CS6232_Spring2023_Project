@@ -28,304 +28,325 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.countryTextBox = new System.Windows.Forms.TextBox();
-            this.countryLabel = new System.Windows.Forms.Label();
-            this.statesComboBox = new System.Windows.Forms.ComboBox();
-            this.genderComboBox = new System.Windows.Forms.ComboBox();
-            this.genderLabel = new System.Windows.Forms.Label();
-            this.birthDayDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.lastNameTextBox = new System.Windows.Forms.TextBox();
-            this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
-            this.streetAddressTextBox = new System.Windows.Forms.TextBox();
-            this.cityTextBox = new System.Windows.Forms.TextBox();
-            this.zipCodeTextBox = new System.Windows.Forms.TextBox();
-            this.firstNameTextBox = new System.Windows.Forms.TextBox();
-            this.errorLabel = new System.Windows.Forms.Label();
-            this.registerPatientButton = new System.Windows.Forms.Button();
-            this.zipCodeLabel = new System.Windows.Forms.Label();
-            this.streetLabel = new System.Windows.Forms.Label();
-            this.cityLabel = new System.Windows.Forms.Label();
-            this.stateLabel = new System.Windows.Forms.Label();
-            this.phoneNumberLabel = new System.Windows.Forms.Label();
-            this.dobLabel = new System.Windows.Forms.Label();
-            this.lastnameLabel = new System.Windows.Forms.Label();
-            this.firstnameLabel = new System.Windows.Forms.Label();
-            this.headerLabel = new System.Windows.Forms.Label();
-            this.clearButton = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            countryTextBox = new TextBox();
+            countryLabel = new Label();
+            statesComboBox = new ComboBox();
+            genderComboBox = new ComboBox();
+            genderLabel = new Label();
+            birthDayDateTimePicker = new DateTimePicker();
+            lastNameTextBox = new TextBox();
+            phoneNumberTextBox = new TextBox();
+            streetAddressTextBox = new TextBox();
+            cityTextBox = new TextBox();
+            zipCodeTextBox = new TextBox();
+            firstNameTextBox = new TextBox();
+            errorLabel = new Label();
+            registerPatientButton = new Button();
+            zipCodeLabel = new Label();
+            streetLabel = new Label();
+            cityLabel = new Label();
+            stateLabel = new Label();
+            phoneNumberLabel = new Label();
+            dobLabel = new Label();
+            lastnameLabel = new Label();
+            firstnameLabel = new Label();
+            headerLabel = new Label();
+            clearButton = new Button();
+            phoneNumberErrorLabel = new Label();
+            zipCodeErrorLabel = new Label();
+            SuspendLayout();
             // 
             // countryTextBox
             // 
-            this.countryTextBox.Location = new System.Drawing.Point(345, 740);
-            this.countryTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.countryTextBox.Name = "countryTextBox";
-            this.countryTextBox.Size = new System.Drawing.Size(327, 39);
-            this.countryTextBox.TabIndex = 8;
+            countryTextBox.Location = new Point(186, 359);
+            countryTextBox.Margin = new Padding(2, 1, 2, 1);
+            countryTextBox.Name = "countryTextBox";
+            countryTextBox.Size = new Size(178, 23);
+            countryTextBox.TabIndex = 8;
             // 
             // countryLabel
             // 
-            this.countryLabel.AutoSize = true;
-            this.countryLabel.Location = new System.Drawing.Point(94, 746);
-            this.countryLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.countryLabel.Name = "countryLabel";
-            this.countryLabel.Size = new System.Drawing.Size(104, 32);
-            this.countryLabel.TabIndex = 44;
-            this.countryLabel.Text = "Country:";
+            countryLabel.AutoSize = true;
+            countryLabel.Location = new Point(51, 362);
+            countryLabel.Margin = new Padding(2, 0, 2, 0);
+            countryLabel.Name = "countryLabel";
+            countryLabel.Size = new Size(53, 15);
+            countryLabel.TabIndex = 44;
+            countryLabel.Text = "Country:";
             // 
             // statesComboBox
             // 
-            this.statesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.statesComboBox.FormattingEnabled = true;
-            this.statesComboBox.Location = new System.Drawing.Point(345, 657);
-            this.statesComboBox.Margin = new System.Windows.Forms.Padding(6);
-            this.statesComboBox.Name = "statesComboBox";
-            this.statesComboBox.Size = new System.Drawing.Size(327, 40);
-            this.statesComboBox.TabIndex = 7;
+            statesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            statesComboBox.FormattingEnabled = true;
+            statesComboBox.Location = new Point(186, 320);
+            statesComboBox.Name = "statesComboBox";
+            statesComboBox.Size = new Size(178, 23);
+            statesComboBox.TabIndex = 7;
             // 
             // genderComboBox
             // 
-            this.genderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.genderComboBox.FormattingEnabled = true;
-            this.genderComboBox.Location = new System.Drawing.Point(345, 414);
-            this.genderComboBox.Margin = new System.Windows.Forms.Padding(6);
-            this.genderComboBox.Name = "genderComboBox";
-            this.genderComboBox.Size = new System.Drawing.Size(327, 40);
-            this.genderComboBox.TabIndex = 4;
+            genderComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            genderComboBox.FormattingEnabled = true;
+            genderComboBox.Location = new Point(186, 204);
+            genderComboBox.Name = "genderComboBox";
+            genderComboBox.Size = new Size(178, 23);
+            genderComboBox.TabIndex = 4;
             // 
             // genderLabel
             // 
-            this.genderLabel.AutoSize = true;
-            this.genderLabel.Location = new System.Drawing.Point(94, 418);
-            this.genderLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.genderLabel.Name = "genderLabel";
-            this.genderLabel.Size = new System.Drawing.Size(97, 32);
-            this.genderLabel.TabIndex = 41;
-            this.genderLabel.Text = "Gender:";
+            genderLabel.AutoSize = true;
+            genderLabel.Location = new Point(51, 207);
+            genderLabel.Name = "genderLabel";
+            genderLabel.Size = new Size(48, 15);
+            genderLabel.TabIndex = 41;
+            genderLabel.Text = "Gender:";
             // 
             // birthDayDateTimePicker
             // 
-            this.birthDayDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.birthDayDateTimePicker.Location = new System.Drawing.Point(345, 260);
-            this.birthDayDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.birthDayDateTimePicker.MaxDate = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
-            this.birthDayDateTimePicker.Name = "birthDayDateTimePicker";
-            this.birthDayDateTimePicker.Size = new System.Drawing.Size(327, 39);
-            this.birthDayDateTimePicker.TabIndex = 2;
-            this.birthDayDateTimePicker.Value = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
+            birthDayDateTimePicker.Format = DateTimePickerFormat.Short;
+            birthDayDateTimePicker.Location = new Point(186, 122);
+            birthDayDateTimePicker.Margin = new Padding(2, 1, 2, 1);
+            birthDayDateTimePicker.MaxDate = new DateTime(2023, 4, 12, 0, 0, 0, 0);
+            birthDayDateTimePicker.Name = "birthDayDateTimePicker";
+            birthDayDateTimePicker.Size = new Size(178, 23);
+            birthDayDateTimePicker.TabIndex = 2;
+            birthDayDateTimePicker.Value = new DateTime(2023, 4, 12, 0, 0, 0, 0);
             // 
             // lastNameTextBox
             // 
-            this.lastNameTextBox.Location = new System.Drawing.Point(345, 179);
-            this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(327, 39);
-            this.lastNameTextBox.TabIndex = 1;
+            lastNameTextBox.Location = new Point(186, 84);
+            lastNameTextBox.Margin = new Padding(2, 1, 2, 1);
+            lastNameTextBox.Name = "lastNameTextBox";
+            lastNameTextBox.Size = new Size(178, 23);
+            lastNameTextBox.TabIndex = 1;
             // 
             // phoneNumberTextBox
             // 
-            this.phoneNumberTextBox.Location = new System.Drawing.Point(345, 339);
-            this.phoneNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.phoneNumberTextBox.Name = "phoneNumberTextBox";
-            this.phoneNumberTextBox.Size = new System.Drawing.Size(327, 39);
-            this.phoneNumberTextBox.TabIndex = 3;
-            this.phoneNumberTextBox.TextChanged += new System.EventHandler(this.PhoneNumberTextBox_TextChanged);
-            this.phoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumberTextBox_KeyPress);
+            phoneNumberTextBox.Location = new Point(186, 159);
+            phoneNumberTextBox.Margin = new Padding(2, 1, 2, 1);
+            phoneNumberTextBox.Name = "phoneNumberTextBox";
+            phoneNumberTextBox.Size = new Size(178, 23);
+            phoneNumberTextBox.TabIndex = 3;
+            phoneNumberTextBox.TextChanged += PhoneNumberTextBox_TextChanged;
+            phoneNumberTextBox.KeyPress += PhoneNumberTextBox_KeyPress;
             // 
             // streetAddressTextBox
             // 
-            this.streetAddressTextBox.Location = new System.Drawing.Point(345, 493);
-            this.streetAddressTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.streetAddressTextBox.Name = "streetAddressTextBox";
-            this.streetAddressTextBox.Size = new System.Drawing.Size(327, 39);
-            this.streetAddressTextBox.TabIndex = 5;
+            streetAddressTextBox.Location = new Point(186, 243);
+            streetAddressTextBox.Margin = new Padding(2, 1, 2, 1);
+            streetAddressTextBox.Name = "streetAddressTextBox";
+            streetAddressTextBox.Size = new Size(178, 23);
+            streetAddressTextBox.TabIndex = 5;
             // 
             // cityTextBox
             // 
-            this.cityTextBox.Location = new System.Drawing.Point(345, 571);
-            this.cityTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.cityTextBox.Name = "cityTextBox";
-            this.cityTextBox.Size = new System.Drawing.Size(327, 39);
-            this.cityTextBox.TabIndex = 6;
+            cityTextBox.Location = new Point(186, 280);
+            cityTextBox.Margin = new Padding(2, 1, 2, 1);
+            cityTextBox.Name = "cityTextBox";
+            cityTextBox.Size = new Size(178, 23);
+            cityTextBox.TabIndex = 6;
             // 
             // zipCodeTextBox
             // 
-            this.zipCodeTextBox.Location = new System.Drawing.Point(345, 817);
-            this.zipCodeTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.zipCodeTextBox.Name = "zipCodeTextBox";
-            this.zipCodeTextBox.Size = new System.Drawing.Size(327, 39);
-            this.zipCodeTextBox.TabIndex = 9;
-            this.zipCodeTextBox.TextChanged += new System.EventHandler(this.ZipCodeTextBox_TextChanged);
-            this.zipCodeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ZipCodeTextBox_KeyPress);
+            zipCodeTextBox.Location = new Point(186, 395);
+            zipCodeTextBox.Margin = new Padding(2, 1, 2, 1);
+            zipCodeTextBox.Name = "zipCodeTextBox";
+            zipCodeTextBox.Size = new Size(178, 23);
+            zipCodeTextBox.TabIndex = 9;
+            zipCodeTextBox.TextChanged += ZipCodeTextBox_TextChanged;
+            zipCodeTextBox.KeyPress += ZipCodeTextBox_KeyPress;
             // 
             // firstNameTextBox
             // 
-            this.firstNameTextBox.Location = new System.Drawing.Point(345, 100);
-            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(327, 39);
-            this.firstNameTextBox.TabIndex = 0;
+            firstNameTextBox.Location = new Point(186, 47);
+            firstNameTextBox.Margin = new Padding(2, 1, 2, 1);
+            firstNameTextBox.Name = "firstNameTextBox";
+            firstNameTextBox.Size = new Size(178, 23);
+            firstNameTextBox.TabIndex = 0;
             // 
             // errorLabel
             // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(213, 879);
-            this.errorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(116, 32);
-            this.errorLabel.TabIndex = 33;
-            this.errorLabel.Text = "errorlabel";
-            this.errorLabel.Visible = false;
+            errorLabel.AutoSize = true;
+            errorLabel.Location = new Point(126, 454);
+            errorLabel.Margin = new Padding(2, 0, 2, 0);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(57, 15);
+            errorLabel.TabIndex = 33;
+            errorLabel.Text = "errorlabel";
+            errorLabel.Visible = false;
             // 
             // registerPatientButton
             // 
-            this.registerPatientButton.AutoSize = true;
-            this.registerPatientButton.Location = new System.Drawing.Point(144, 925);
-            this.registerPatientButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.registerPatientButton.Name = "registerPatientButton";
-            this.registerPatientButton.Size = new System.Drawing.Size(150, 53);
-            this.registerPatientButton.TabIndex = 10;
-            this.registerPatientButton.Text = "Register";
-            this.registerPatientButton.UseVisualStyleBackColor = true;
-            this.registerPatientButton.Click += new System.EventHandler(this.RegisterPatientButton_Click);
+            registerPatientButton.AutoSize = true;
+            registerPatientButton.Location = new Point(83, 476);
+            registerPatientButton.Margin = new Padding(2, 1, 2, 1);
+            registerPatientButton.Name = "registerPatientButton";
+            registerPatientButton.Size = new Size(81, 25);
+            registerPatientButton.TabIndex = 10;
+            registerPatientButton.Text = "Register";
+            registerPatientButton.UseVisualStyleBackColor = true;
+            registerPatientButton.Click += RegisterPatientButton_Click;
             // 
             // zipCodeLabel
             // 
-            this.zipCodeLabel.AutoSize = true;
-            this.zipCodeLabel.Location = new System.Drawing.Point(94, 819);
-            this.zipCodeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.zipCodeLabel.Name = "zipCodeLabel";
-            this.zipCodeLabel.Size = new System.Drawing.Size(105, 32);
-            this.zipCodeLabel.TabIndex = 31;
-            this.zipCodeLabel.Text = "Zipcode:";
+            zipCodeLabel.AutoSize = true;
+            zipCodeLabel.Location = new Point(51, 396);
+            zipCodeLabel.Margin = new Padding(2, 0, 2, 0);
+            zipCodeLabel.Name = "zipCodeLabel";
+            zipCodeLabel.Size = new Size(53, 15);
+            zipCodeLabel.TabIndex = 31;
+            zipCodeLabel.Text = "Zipcode:";
             // 
             // streetLabel
             // 
-            this.streetLabel.AutoSize = true;
-            this.streetLabel.Location = new System.Drawing.Point(94, 497);
-            this.streetLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.streetLabel.Name = "streetLabel";
-            this.streetLabel.Size = new System.Drawing.Size(81, 32);
-            this.streetLabel.TabIndex = 30;
-            this.streetLabel.Text = "Street:";
+            streetLabel.AutoSize = true;
+            streetLabel.Location = new Point(51, 245);
+            streetLabel.Margin = new Padding(2, 0, 2, 0);
+            streetLabel.Name = "streetLabel";
+            streetLabel.Size = new Size(40, 15);
+            streetLabel.TabIndex = 30;
+            streetLabel.Text = "Street:";
             // 
             // cityLabel
             // 
-            this.cityLabel.AutoSize = true;
-            this.cityLabel.Location = new System.Drawing.Point(94, 574);
-            this.cityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.cityLabel.Name = "cityLabel";
-            this.cityLabel.Size = new System.Drawing.Size(60, 32);
-            this.cityLabel.TabIndex = 29;
-            this.cityLabel.Text = "City:";
+            cityLabel.AutoSize = true;
+            cityLabel.Location = new Point(51, 281);
+            cityLabel.Margin = new Padding(2, 0, 2, 0);
+            cityLabel.Name = "cityLabel";
+            cityLabel.Size = new Size(31, 15);
+            cityLabel.TabIndex = 29;
+            cityLabel.Text = "City:";
             // 
             // stateLabel
             // 
-            this.stateLabel.AutoSize = true;
-            this.stateLabel.Location = new System.Drawing.Point(94, 657);
-            this.stateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.stateLabel.Name = "stateLabel";
-            this.stateLabel.Size = new System.Drawing.Size(72, 32);
-            this.stateLabel.TabIndex = 28;
-            this.stateLabel.Text = "State:";
+            stateLabel.AutoSize = true;
+            stateLabel.Location = new Point(51, 320);
+            stateLabel.Margin = new Padding(2, 0, 2, 0);
+            stateLabel.Name = "stateLabel";
+            stateLabel.Size = new Size(36, 15);
+            stateLabel.TabIndex = 28;
+            stateLabel.Text = "State:";
             // 
             // phoneNumberLabel
             // 
-            this.phoneNumberLabel.AutoSize = true;
-            this.phoneNumberLabel.Location = new System.Drawing.Point(94, 341);
-            this.phoneNumberLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.phoneNumberLabel.Name = "phoneNumberLabel";
-            this.phoneNumberLabel.Size = new System.Drawing.Size(182, 32);
-            this.phoneNumberLabel.TabIndex = 27;
-            this.phoneNumberLabel.Text = "Phone Number:";
+            phoneNumberLabel.AutoSize = true;
+            phoneNumberLabel.Location = new Point(51, 162);
+            phoneNumberLabel.Margin = new Padding(2, 0, 2, 0);
+            phoneNumberLabel.Name = "phoneNumberLabel";
+            phoneNumberLabel.Size = new Size(91, 15);
+            phoneNumberLabel.TabIndex = 27;
+            phoneNumberLabel.Text = "Phone Number:";
             // 
             // dobLabel
             // 
-            this.dobLabel.AutoSize = true;
-            this.dobLabel.Location = new System.Drawing.Point(94, 260);
-            this.dobLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.dobLabel.Name = "dobLabel";
-            this.dobLabel.Size = new System.Drawing.Size(155, 32);
-            this.dobLabel.TabIndex = 26;
-            this.dobLabel.Text = "Date of Birth:";
+            dobLabel.AutoSize = true;
+            dobLabel.Location = new Point(51, 128);
+            dobLabel.Margin = new Padding(2, 0, 2, 0);
+            dobLabel.Name = "dobLabel";
+            dobLabel.Size = new Size(76, 15);
+            dobLabel.TabIndex = 26;
+            dobLabel.Text = "Date of Birth:";
             // 
             // lastnameLabel
             // 
-            this.lastnameLabel.AutoSize = true;
-            this.lastnameLabel.Location = new System.Drawing.Point(94, 181);
-            this.lastnameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lastnameLabel.Name = "lastnameLabel";
-            this.lastnameLabel.Size = new System.Drawing.Size(131, 32);
-            this.lastnameLabel.TabIndex = 25;
-            this.lastnameLabel.Text = "Last Name:";
+            lastnameLabel.AutoSize = true;
+            lastnameLabel.Location = new Point(51, 87);
+            lastnameLabel.Margin = new Padding(2, 0, 2, 0);
+            lastnameLabel.Name = "lastnameLabel";
+            lastnameLabel.Size = new Size(66, 15);
+            lastnameLabel.TabIndex = 25;
+            lastnameLabel.Text = "Last Name:";
             // 
             // firstnameLabel
             // 
-            this.firstnameLabel.AutoSize = true;
-            this.firstnameLabel.Location = new System.Drawing.Point(94, 104);
-            this.firstnameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.firstnameLabel.Name = "firstnameLabel";
-            this.firstnameLabel.Size = new System.Drawing.Size(134, 32);
-            this.firstnameLabel.TabIndex = 24;
-            this.firstnameLabel.Text = "First Name:";
+            firstnameLabel.AutoSize = true;
+            firstnameLabel.Location = new Point(51, 50);
+            firstnameLabel.Margin = new Padding(2, 0, 2, 0);
+            firstnameLabel.Name = "firstnameLabel";
+            firstnameLabel.Size = new Size(67, 15);
+            firstnameLabel.TabIndex = 24;
+            firstnameLabel.Text = "First Name:";
             // 
             // headerLabel
             // 
-            this.headerLabel.AutoSize = true;
-            this.headerLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.headerLabel.Location = new System.Drawing.Point(201, 21);
-            this.headerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.headerLabel.Name = "headerLabel";
-            this.headerLabel.Size = new System.Drawing.Size(348, 37);
-            this.headerLabel.TabIndex = 46;
-            this.headerLabel.Text = "Patient Registration Form";
+            headerLabel.AutoSize = true;
+            headerLabel.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            headerLabel.Location = new Point(108, 10);
+            headerLabel.Margin = new Padding(2, 0, 2, 0);
+            headerLabel.Name = "headerLabel";
+            headerLabel.Size = new Size(180, 19);
+            headerLabel.TabIndex = 46;
+            headerLabel.Text = "Patient Registration Form";
             // 
             // clearButton
             // 
-            this.clearButton.AutoSize = true;
-            this.clearButton.Location = new System.Drawing.Point(478, 925);
-            this.clearButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(150, 53);
-            this.clearButton.TabIndex = 11;
-            this.clearButton.Text = "Clear";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            clearButton.AutoSize = true;
+            clearButton.Location = new Point(262, 476);
+            clearButton.Margin = new Padding(2, 1, 2, 1);
+            clearButton.Name = "clearButton";
+            clearButton.Size = new Size(81, 25);
+            clearButton.TabIndex = 11;
+            clearButton.Text = "Clear";
+            clearButton.UseVisualStyleBackColor = true;
+            clearButton.Click += ClearButton_Click;
+            // 
+            // phoneNumberErrorLabel
+            // 
+            phoneNumberErrorLabel.AutoSize = true;
+            phoneNumberErrorLabel.Location = new Point(186, 186);
+            phoneNumberErrorLabel.Name = "phoneNumberErrorLabel";
+            phoneNumberErrorLabel.Size = new Size(38, 15);
+            phoneNumberErrorLabel.TabIndex = 47;
+            phoneNumberErrorLabel.Text = "label1";
+            phoneNumberErrorLabel.Visible = false;
+            // 
+            // zipCodeErrorLabel
+            // 
+            zipCodeErrorLabel.AutoSize = true;
+            zipCodeErrorLabel.Location = new Point(186, 428);
+            zipCodeErrorLabel.Name = "zipCodeErrorLabel";
+            zipCodeErrorLabel.Size = new Size(38, 15);
+            zipCodeErrorLabel.TabIndex = 48;
+            zipCodeErrorLabel.Text = "label1";
+            zipCodeErrorLabel.Visible = false;
             // 
             // RegisterPatientUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.clearButton);
-            this.Controls.Add(this.headerLabel);
-            this.Controls.Add(this.countryTextBox);
-            this.Controls.Add(this.countryLabel);
-            this.Controls.Add(this.statesComboBox);
-            this.Controls.Add(this.genderComboBox);
-            this.Controls.Add(this.genderLabel);
-            this.Controls.Add(this.birthDayDateTimePicker);
-            this.Controls.Add(this.lastNameTextBox);
-            this.Controls.Add(this.phoneNumberTextBox);
-            this.Controls.Add(this.streetAddressTextBox);
-            this.Controls.Add(this.cityTextBox);
-            this.Controls.Add(this.zipCodeTextBox);
-            this.Controls.Add(this.firstNameTextBox);
-            this.Controls.Add(this.errorLabel);
-            this.Controls.Add(this.registerPatientButton);
-            this.Controls.Add(this.zipCodeLabel);
-            this.Controls.Add(this.streetLabel);
-            this.Controls.Add(this.cityLabel);
-            this.Controls.Add(this.stateLabel);
-            this.Controls.Add(this.phoneNumberLabel);
-            this.Controls.Add(this.dobLabel);
-            this.Controls.Add(this.lastnameLabel);
-            this.Controls.Add(this.firstnameLabel);
-            this.Name = "RegisterPatientUserControl";
-            this.Size = new System.Drawing.Size(802, 1042);
-            this.Load += new System.EventHandler(this.RegisterPatientUserControl_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlLightLight;
+            Controls.Add(zipCodeErrorLabel);
+            Controls.Add(phoneNumberErrorLabel);
+            Controls.Add(clearButton);
+            Controls.Add(headerLabel);
+            Controls.Add(countryTextBox);
+            Controls.Add(countryLabel);
+            Controls.Add(statesComboBox);
+            Controls.Add(genderComboBox);
+            Controls.Add(genderLabel);
+            Controls.Add(birthDayDateTimePicker);
+            Controls.Add(lastNameTextBox);
+            Controls.Add(phoneNumberTextBox);
+            Controls.Add(streetAddressTextBox);
+            Controls.Add(cityTextBox);
+            Controls.Add(zipCodeTextBox);
+            Controls.Add(firstNameTextBox);
+            Controls.Add(errorLabel);
+            Controls.Add(registerPatientButton);
+            Controls.Add(zipCodeLabel);
+            Controls.Add(streetLabel);
+            Controls.Add(cityLabel);
+            Controls.Add(stateLabel);
+            Controls.Add(phoneNumberLabel);
+            Controls.Add(dobLabel);
+            Controls.Add(lastnameLabel);
+            Controls.Add(firstnameLabel);
+            Margin = new Padding(2, 1, 2, 1);
+            Name = "RegisterPatientUserControl";
+            Size = new Size(432, 540);
+            Load += RegisterPatientUserControl_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -354,5 +375,7 @@
         private Label firstnameLabel;
         private Label headerLabel;
         private Button clearButton;
+        private Label phoneNumberErrorLabel;
+        private Label zipCodeErrorLabel;
     }
 }
