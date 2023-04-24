@@ -27,56 +27,57 @@ namespace HospitalManagement.DAL
             var gender = personalDetails.Gender;
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            string query = "INSERT INTO PersonalDetails(firstName,lastName,dateOfBirth,gender,streetAddress,city,state,zipCode,country,phoneNumber) " +
-                "VALUES(@firstname,@lastname,@dateOfBirth,@gender,@street,@city,@state,@zipCode,@country,@phoneNumber)";
-            using var command = new SqlCommand(query, connection);
+            //string query = "INSERT INTO PersonalDetails(firstName,lastName,dateOfBirth,gender,streetAddress,city,state,zipCode,country,phoneNumber) " +
+            //    "VALUES(@firstname,@lastname,@dateOfBirth,@gender,@street,@city,@state,@zipCode,@country,@phoneNumber)";
+            using var command = new SqlCommand("register_a_Patient", connection);
+            command.CommandType = CommandType.StoredProcedure;
 
-            string query2 = "INSERT INTO Patient(pdID) "
-                + "values((select pdID from PersonalDetails where firstName = @firstname and lastName = @lastname and dateOfBirth = @dateOfBirth))";
+            //string query2 = "INSERT INTO Patient(pdID) "
+            //    + "values((select pdID from PersonalDetails where firstName = @firstname and lastName = @lastname and dateOfBirth = @dateOfBirth))";
 
-            using var command2 = new SqlCommand(query2, connection);
+            //using var command2 = new SqlCommand(query2, connection);
 
-            command.Parameters.Add("@firstname", System.Data.SqlDbType.VarChar);
-            command.Parameters["@firstname"].Value = firstname;
+            command.Parameters.Add("@Firstname", System.Data.SqlDbType.VarChar);
+            command.Parameters["@Firstname"].Value = firstname;
 
-            command.Parameters.Add("@lastname", System.Data.SqlDbType.VarChar);
-            command.Parameters["@lastname"].Value = lastname;
+            command.Parameters.Add("@Lastname", System.Data.SqlDbType.VarChar);
+            command.Parameters["@Lastname"].Value = lastname;
 
-            command.Parameters.Add("@phoneNumber", System.Data.SqlDbType.VarChar);
-            command.Parameters["@phoneNumber"].Value = phoneNumber;
+            command.Parameters.Add("@PhoneNumber", System.Data.SqlDbType.VarChar);
+            command.Parameters["@PhoneNumber"].Value = phoneNumber;
 
-            command.Parameters.Add("@street", System.Data.SqlDbType.VarChar);
-            command.Parameters["@street"].Value = street;
+            command.Parameters.Add("@Street", System.Data.SqlDbType.VarChar);
+            command.Parameters["@Street"].Value = street;
 
-            command.Parameters.Add("@city", System.Data.SqlDbType.VarChar);
-            command.Parameters["@city"].Value = city;
+            command.Parameters.Add("@City", System.Data.SqlDbType.VarChar);
+            command.Parameters["@City"].Value = city;
 
-            command.Parameters.Add("@country", System.Data.SqlDbType.VarChar);
-            command.Parameters["@country"].Value = country;
+            command.Parameters.Add("@Country", System.Data.SqlDbType.VarChar);
+            command.Parameters["@Country"].Value = country;
 
-            command.Parameters.Add("@zipCode", System.Data.SqlDbType.VarChar);
-            command.Parameters["@zipCode"].Value = zipCode;
+            command.Parameters.Add("@ZipCode", System.Data.SqlDbType.VarChar);
+            command.Parameters["@ZipCode"].Value = zipCode;
 
-            command.Parameters.Add("@state", System.Data.SqlDbType.VarChar);
-            command.Parameters["@state"].Value = state;
+            command.Parameters.Add("@State", System.Data.SqlDbType.VarChar);
+            command.Parameters["@State"].Value = state;
 
-            command.Parameters.Add("@gender", System.Data.SqlDbType.VarChar);
-            command.Parameters["@gender"].Value = gender;
+            command.Parameters.Add("@Gender", System.Data.SqlDbType.VarChar);
+            command.Parameters["@Gender"].Value = gender;
 
-            command.Parameters.Add("@dateOfBirth", System.Data.SqlDbType.DateTime);
-            command.Parameters["@dateOfBirth"].Value = dateOfBirth;
+            command.Parameters.Add("@DateOfBirth", System.Data.SqlDbType.Date);
+            command.Parameters["@DateOfBirth"].Value = dateOfBirth;
 
-            command2.Parameters.Add("@firstname", System.Data.SqlDbType.VarChar);
-            command2.Parameters["@firstname"].Value = firstname;
+            //command2.Parameters.Add("@firstname", System.Data.SqlDbType.VarChar);
+            //command2.Parameters["@firstname"].Value = firstname;
 
-            command2.Parameters.Add("@lastname", System.Data.SqlDbType.VarChar);
-            command2.Parameters["@lastname"].Value = lastname;
+            //command2.Parameters.Add("@lastname", System.Data.SqlDbType.VarChar);
+            //command2.Parameters["@lastname"].Value = lastname;
 
-            command2.Parameters.Add("@dateOfBirth", System.Data.SqlDbType.Date);
-            command2.Parameters["@dateOfBirth"].Value = dateOfBirth;
+            //command2.Parameters.Add("@dateOfBirth", System.Data.SqlDbType.Date);
+            //command2.Parameters["@dateOfBirth"].Value = dateOfBirth;
 
             command.ExecuteNonQuery();
-            command2.ExecuteNonQuery();
+            //command2.ExecuteNonQuery();
         }
 
         /// <summary>

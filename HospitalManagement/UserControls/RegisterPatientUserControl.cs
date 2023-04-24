@@ -123,6 +123,7 @@ namespace HospitalManagement.UserControls
             genderComboBox.SelectedIndex = 0;
             statesComboBox.SelectedIndex = 0;
             birthDayDateTimePicker.ResetText();
+            errorLabel.Visible = false;
         }
 
         private void ZipCodeTextBox_TextChanged(object sender, EventArgs e)
