@@ -30,7 +30,7 @@ namespace HospitalManagement.DAL
             connection.Open();
             //string query = "INSERT INTO PersonalDetails(firstName,lastName,dateOfBirth,gender,streetAddress,city,state,zipCode,country,phoneNumber) " +
             //    "VALUES(@firstname,@lastname,@dateOfBirth,@gender,@street,@city,@state,@zipCode,@country,@phoneNumber)";
-            using var command = new SqlCommand("register_a_Patient", connection);
+            using var command = new SqlCommand("registerPatient", connection);
             command.CommandType = CommandType.StoredProcedure;
 
             //string query2 = "INSERT INTO Patient(pdID) "
@@ -272,7 +272,7 @@ namespace HospitalManagement.DAL
             using var connection = DBConnection.GetConnection();
             connection.Open();
             //string query = "delete from Patient where pdId = @id";
-            using var command = new SqlCommand("delete_Patient", connection);
+            using var command = new SqlCommand("deletePatient", connection);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@PersonalDetailsID", System.Data.SqlDbType.Int);
             command.Parameters["@PersonalDetailsID"].Value = id;
