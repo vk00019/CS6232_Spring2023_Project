@@ -13,5 +13,10 @@
         {
             InitializeComponent();
         }
+
+        private void addDetailsButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
