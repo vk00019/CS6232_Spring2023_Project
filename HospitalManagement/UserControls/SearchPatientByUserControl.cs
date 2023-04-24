@@ -231,9 +231,10 @@ namespace HospitalManagement.UserControls
 
         private void deletePatientButton_Click(object sender, EventArgs e)
         {
-            if (!_controller.CheckAppointment(_patientDetails.PdID))
+            int pdId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+            if (!_controller.CheckAppointment(pdId))
             {
-                _controller.DeletePatient(_patientDetails.PdID);
+                _controller.DeletePatient(pdId);
                 errorLabel.Text = "Patient is deleted";
                 errorLabel.ForeColor = Color.Green;
                 errorLabel.Visible = true;
