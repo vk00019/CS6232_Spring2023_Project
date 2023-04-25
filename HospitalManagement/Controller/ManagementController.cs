@@ -163,5 +163,20 @@ namespace HospitalManagement.Controller
         {
             return _managementDal.GetTodaysAppointments();
         }
+
+        public List<Visit> GetVisitWithDob(PersonalDetails patientsObject)
+        {
+            return _managementDal.GetVisitWithDOB(patientsObject);
+        }
+
+        public List<Visit> GetVisitWithDobAndLastname(PersonalDetails patientsObject)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Visit> GetVisitWithFirstnameAndLastname(PersonalDetails patientsObject)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
