@@ -184,5 +184,15 @@ namespace HospitalManagement.Controller
         {
             return _managementDal.GetVisitWithFirstAndLastName(patientsObject);
         }
+
+        /// <summary>
+        /// Orders the tests.
+        /// </summary>
+        /// <param name="visitId">The visit identifier.</param>
+        /// <param name="testId">The test identifier.</param>
+        public void OrderTests(int visitId, int testId)
+        {
+            _managementDal.OrderTests(visitId, testId);
+        }
     }
 }

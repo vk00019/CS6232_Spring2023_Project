@@ -53,7 +53,13 @@ namespace HospitalManagement.View
 
         private void orderTestsButton_Click(object sender, EventArgs e)
         {
-
+            foreach (var currentTest in _finalTests)
+            {
+                _controller.OrderTests(_visitId, currentTest.Id);
+            }
+            errorLabel.Text = @"Successfully added tests";
+            errorLabel.ForeColor = Color.Green;
+            errorLabel.Visible = true;
         }
 
         private void testsDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

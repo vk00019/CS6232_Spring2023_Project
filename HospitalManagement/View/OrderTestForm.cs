@@ -11,7 +11,7 @@ namespace HospitalManagement.View
     public partial class OrderTestForm : Form
     {
         private int _visitId;
-        private TestList _testList;
+        private int index;
         private List<TestList> _ordered;
         private readonly ManagementController _controller;
         /// <summary>
@@ -21,7 +21,9 @@ namespace HospitalManagement.View
         {
             InitializeComponent();
             _controller = new ManagementController();
+            _ordered = new List<TestList>();
             allTestsComboBox.DataSource = _controller.GetTests();
+            allTestsComboBox.DisplayMember = "Name";
 
         }
 
@@ -62,16 +64,17 @@ namespace HospitalManagement.View
             {
                 deleteButton.Enabled = true;
                 if (testsDataGridView.SelectedRows[0] != null)
-                {
-                    _testList.Id = Int32.Parse(testsDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-                    _testList.Name = testsDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+                { 
+                    index = testsDataGridView.SelectedRows[0].Index;
+                   // MessageBox.Show(index + "");
                 }
             }
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            _ordered.Remove(_testList);
+            _ordered.RemoveAt(index);
+            RefreshList();
         }
 
         private void reviewTestsButton_Click(object sender, EventArgs e)

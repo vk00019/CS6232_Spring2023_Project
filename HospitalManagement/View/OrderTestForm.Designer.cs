@@ -82,6 +82,7 @@
             // 
             // deleteButton
             // 
+            this.deleteButton.Enabled = false;
             this.deleteButton.Location = new System.Drawing.Point(151, 261);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
@@ -104,9 +105,11 @@
             // 
             this.testsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.testsDataGridView.Location = new System.Drawing.Point(59, 119);
+            this.testsDataGridView.MultiSelect = false;
             this.testsDataGridView.Name = "testsDataGridView";
             this.testsDataGridView.ReadOnly = true;
             this.testsDataGridView.RowTemplate.Height = 25;
+            this.testsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.testsDataGridView.Size = new System.Drawing.Size(260, 136);
             this.testsDataGridView.TabIndex = 7;
             this.testsDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.testsDataGridView_CellMouseClick);
@@ -145,6 +148,7 @@
             this.Controls.Add(this.allTestsComboBox);
             this.Controls.Add(this.label1);
             this.Name = "OrderTestForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order Test";
             ((System.ComponentModel.ISupportInitialize)(this.testsDataGridView)).EndInit();
             this.ResumeLayout(false);

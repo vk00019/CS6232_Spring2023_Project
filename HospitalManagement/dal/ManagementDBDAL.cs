@@ -176,6 +176,28 @@ namespace HospitalManagement.DAL
         }
 
         /// <summary>
+        /// Orders the tests.
+        /// </summary>
+        /// <param name="visitId">The visit identifier.</param>
+        /// <param name="testId">The test identifier.</param>
+        public void OrderTests(int visitId, int testId)
+        {
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "INSERT INTO PatientTests(testID, visitID) " +
+                           "VALUES(@testId, @visitId)";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@testId", System.Data.SqlDbType.Int);
+            command.Parameters["@testId"].Value = testId;
+
+            command.Parameters.Add("@visitId", System.Data.SqlDbType.Int);
+            command.Parameters["@visitId"].Value = visitId;
+
+            command.ExecuteNonQuery();
+        }
+
+        /// <summary>
         /// Updates the appointment.
         /// </summary>
         /// <param name="appointment">The appointment.</param>

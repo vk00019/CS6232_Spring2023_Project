@@ -38,7 +38,7 @@ namespace HospitalManagement.UserControls
                 }
                 else if (errorLabel.Visible)
                 {
-                    errorLabel.Text = "*All fields are required to register*";
+                    errorLabel.Text = "*All fields are required to Book an appointment*";
                     errorLabel.ForeColor = Color.Red;
                     errorLabel.Visible = true;
                 }
