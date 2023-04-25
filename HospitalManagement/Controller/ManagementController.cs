@@ -154,14 +154,20 @@ namespace HospitalManagement.Controller
         {
             return _managementDal.GetTests();
         }
-        public int GetNurseId(string username)
-        {
-            return _managementDal.GetNurseId(username);
-        }
 
         public List<Appointment> GetTodaysAppointments()
         {
             return _managementDal.GetTodaysAppointments();
+        }
+
+        public void StartVisit(Visit visit)
+        { 
+            _managementDal.StartVisit(visit);
+        }
+
+        public Visit GetLatestVisit()
+        {
+            return _managementDal.GetLatestVisit();
         }
     }
 }

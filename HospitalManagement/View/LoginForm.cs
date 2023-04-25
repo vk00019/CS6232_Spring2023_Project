@@ -34,9 +34,9 @@ namespace HospitalManagement.View
                 var nurse = _controller.GetNurse(usernameTextBox.Text);
                 var name = "Name: " + nurse.FirstName + " "+ nurse.LastName +
                            " Username: " + usernameTextBox.Text;
-                int nurseId = nurse.NurseId;
-
+               
                 mainForm.SetUsernameLabel(name);
+                mainForm.SetNurse(nurse);
                 this.Hide();
                 var value = mainForm.ShowDialog();
 

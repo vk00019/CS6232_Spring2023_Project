@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalManagement.Controller;
+using HospitalManagement.model;
 using HospitalManagement.Model;
 
 namespace HospitalManagement.View
 {
     public partial class TodaysAppointments : Form
     {
+        private Nurse _nurse;
         private readonly Appointment _appointment;
         private readonly ManagementController _controller;
         public TodaysAppointments()
@@ -23,6 +25,11 @@ namespace HospitalManagement.View
             _appointment = new Appointment();
         }
 
+        public void SetNurse(Nurse nurse)
+        {
+            _nurse = nurse;
+        }
+
         private void CancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
@@ -30,8 +37,14 @@ namespace HospitalManagement.View
 
         private void StartVisitButton_Click(object sender, EventArgs e)
         {
-
+            var visit = new Visit
+            {
+                AppointmentId = _appointment.AppointmentId,
+                NurseId = _nurse.NurseId
+            };
+            _controller.StartVisit(visit);
             DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void AppointmentsDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

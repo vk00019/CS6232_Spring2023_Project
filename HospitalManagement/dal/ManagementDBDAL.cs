@@ -224,7 +224,7 @@ namespace HospitalManagement.DAL
 
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            
+
             string query = "UPDATE Visit SET height = @height, weight = @weight, systolicBP = @systolicBP " +
                            "diastolicBP = @diastolicBP, bodyTemperature = @bodyTemperature, pulse = @pulse, symptoms = @symptoms " +
                            "WHERE visitID = @visitId ";
@@ -237,7 +237,7 @@ namespace HospitalManagement.DAL
             command.Parameters["@weight"].Value = weight;
 
             command.Parameters.Add("@systolicBP", System.Data.SqlDbType.Int);
-            command.Parameters["@systolicBP"].Value = systolicBP;   
+            command.Parameters["@systolicBP"].Value = systolicBP;
 
             command.Parameters.Add("@diastolicBP", System.Data.SqlDbType.Int);
             command.Parameters["@diastolicBP"].Value = diastolicBP;
@@ -903,11 +903,11 @@ namespace HospitalManagement.DAL
             connection.Open();
             var query = "SELECT Appointment.appointmentID, Patient.patientID, Doctor.doctorID, " +
                 "DoctorDetails.firstName AS doctorFirstName, DoctorDetails.lastName AS doctorLastName, " +
-                        " Appointment.scheduledDate, Appointment.reason " + 
-                        " FROM Appointment " + 
-                        " JOIN Patient ON Appointment.patientID = Patient.patientID " + 
-                        " JOIN PersonalDetails AS PatientDetails ON Patient.pdID = PatientDetails.pdID " + 
-                        " JOIN Doctor ON Appointment.doctorID = Doctor.doctorID " + 
+                        " Appointment.scheduledDate, Appointment.reason " +
+                        " FROM Appointment " +
+                        " JOIN Patient ON Appointment.patientID = Patient.patientID " +
+                        " JOIN PersonalDetails AS PatientDetails ON Patient.pdID = PatientDetails.pdID " +
+                        " JOIN Doctor ON Appointment.doctorID = Doctor.doctorID " +
                         " JOIN PersonalDetails AS DoctorDetails ON Doctor.pdID = DoctorDetails.pdID " +
                         " WHERE PatientDetails.firstName = @firstName and PatientDetails.lastName = @lastName";
 
@@ -978,8 +978,8 @@ namespace HospitalManagement.DAL
                 var firstName = reader.GetString(firstNameOrdinal);
                 var lastName = reader.GetString(lastNameOrdinal);
                 var nurseId = reader.GetInt32(nurseIdOrdinal);
-                
-                nurse.FirstName = firstName; 
+
+                nurse.FirstName = firstName;
                 nurse.LastName = lastName;
                 nurse.NurseId = nurseId;
 
@@ -1008,28 +1008,6 @@ namespace HospitalManagement.DAL
             }
 
             return patientId;
-        }
-
-        public int GetNurseId(string username)
-        {
-            int nurseId = 0;
-            using var connection = DBConnection.GetConnection();
-            connection.Open();
-            string query = "select nurseID from Nurse, Users where Users.pdID = nurse.pdID and users.userName = @username";
-            using var command = new SqlCommand(query, connection);
-
-            command.Parameters.Add("@username", SqlDbType.VarChar);
-            command.Parameters["@username"].Value = username;
-            using var reader = command.ExecuteReader();
-
-            var nurseIdOrdinal = reader.GetOrdinal("nurseID");
-
-            while (reader.Read())
-            {
-                nurseId = reader.GetInt32(nurseIdOrdinal);
-            }
-
-            return nurseId;
         }
 
         public List<Appointment> GetTodaysAppointments()
@@ -1066,6 +1044,59 @@ namespace HospitalManagement.DAL
                 });
             }
             return appointments;
+        }
+
+        public void StartVisit(Visit visit)
+        {
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "insert into visit(appointmentID, nurseID)  values (@appointmentId, @nurseId)";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@appointmentId", SqlDbType.Int);
+            command.Parameters["@appointmentId"].Value = visit.AppointmentId;
+
+            command.Parameters.Add("@nurseId", SqlDbType.Int);
+            command.Parameters["@nurseId"].Value = visit.NurseId;
+
+            command.ExecuteNonQuery();
+        }
+
+        public Visit GetLatestVisit()
+        {
+            var visit = new Visit();
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select TOP 1 v.visitID, a.appointmentID, concat(dd.firstName, ' ', dd.lastName) as doctor, " +
+                           "concat(pd.firstName, ' ', pd.lastName) as patient " +
+                           "from Visit as v join Appointment as a on a.appointmentID = v.appointmentID " +
+                           "join Doctor as d on d.doctorID = a.doctorID " +
+                           "join Patient as p on p.patientID = a.patientID " +
+                           "join PersonalDetails as dd on dd.pdID = d.doctorID " +
+                           "join PersonalDetails as pd on pd.pdID = p.pdID " +
+                           "ORDER BY visitID desc";
+            using var command = new SqlCommand(query, connection);
+            using var reader = command.ExecuteReader();
+
+            var visitIdOrdinal = reader.GetOrdinal("visitID");
+            var appointmentIdOrdinal = reader.GetOrdinal("appointmentID");
+            var doctorOrdinal = reader.GetOrdinal("doctor");
+            var patientName = reader.GetOrdinal("patient");
+
+            while (reader.Read())
+            {
+                var appointmentId = reader.GetInt32(appointmentIdOrdinal);
+                var visitId = reader.GetInt32(visitIdOrdinal);
+                var doctor = reader.GetString(doctorOrdinal);
+                var patient = reader.GetString(patientName);
+
+                visit.VisitId = visitId;
+                visit.AppointmentId = appointmentId;
+                visit.DoctorName = doctor;
+                visit.PatientName = patient;
+            }
+
+            return visit;
         }
     }
 }
