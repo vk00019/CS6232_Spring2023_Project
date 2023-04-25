@@ -664,7 +664,7 @@ namespace HospitalManagement.DAL
             connection.Open();
 
             var query =
-                "select appointmentID, patientID, doctorID, scheduledDate, reason from Appointment where patientID = @patientId";
+                "select appointmentID, patientID, Appointment.doctorID,PersonalDetails.firstName AS doctorFirstName, PersonalDetails.lastName AS doctorLastName, scheduledDate, reason from Appointment,PersonalDetails,Doctor where patientID = @patientId and Doctor.pdID = PersonalDetails.pdID and Doctor.doctorID = Appointment.doctorID";
 
             using var command = new SqlCommand(query, connection);
 
@@ -677,6 +677,8 @@ namespace HospitalManagement.DAL
             var doctorIdOrdinal = reader.GetOrdinal("doctorID");
             var scheduledDateOrdinal = reader.GetOrdinal("scheduledDate");
             var reasonOrdinal = reader.GetOrdinal("reason");
+            var doctorFirstOrdinal = reader.GetOrdinal("doctorFirstName");
+            var doctorLastOrdinal = reader.GetOrdinal("doctorLastName");
 
             while (reader.Read())
             {
@@ -685,6 +687,8 @@ namespace HospitalManagement.DAL
                 var doctorId = reader.GetInt32(doctorIdOrdinal);
                 var scheduledDate = reader.GetDateTime(scheduledDateOrdinal);
                 var reason = reader.GetString(reasonOrdinal);
+                var doctorfirstName = reader.GetString(doctorFirstOrdinal);
+                var doctorlastName = reader.GetString(doctorLastOrdinal);
 
                 appointments.Add(new Appointment
                 {
@@ -692,7 +696,8 @@ namespace HospitalManagement.DAL
                     AppointmentId = appointmentId,
                     DoctorId = doctorId,
                     ScheduledTime = scheduledDate,
-                    Reason = reason
+                    Reason = reason,
+                    Name = doctorfirstName + " " + doctorlastName
                 });
             }
 
@@ -1037,8 +1042,8 @@ namespace HospitalManagement.DAL
             List<Appointment> appointments = new List<Appointment>();
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            string query = "select appointmentID, patientID, doctorID, scheduledDate, reason from Appointment " +
-                           "where convert(date, scheduledDate) = convert(date, GETDATE())";
+            string query = "select appointmentID, patientID, Appointment.doctorID,PersonalDetails.firstName AS doctorFirstName, PersonalDetails.lastName AS doctorLastName, scheduledDate, reason from Appointment,Doctor,PersonalDetails " +
+                           "where convert(date, scheduledDate) = convert(date, GETDATE()) and Doctor.pdID = PersonalDetails.pdID and Doctor.doctorID = Appointment.doctorID";
             using var command = new SqlCommand(query, connection);
             using var reader = command.ExecuteReader();
 
@@ -1047,6 +1052,8 @@ namespace HospitalManagement.DAL
             var doctorIdOrdinal = reader.GetOrdinal("doctorID");
             var scheduledDateOrdinal = reader.GetOrdinal("scheduledDate");
             var reasonOrdinal = reader.GetOrdinal("reason");
+            var doctorFirstOrdinal = reader.GetOrdinal("doctorFirstName");
+            var doctorLastOrdinal = reader.GetOrdinal("doctorLastName");
 
             while (reader.Read())
             {
@@ -1055,6 +1062,9 @@ namespace HospitalManagement.DAL
                 var doctorId = reader.GetInt32(doctorIdOrdinal);
                 var scheduledDate = reader.GetDateTime(scheduledDateOrdinal);
                 var reason = reader.GetString(reasonOrdinal);
+                var doctorfirstName = reader.GetString(doctorFirstOrdinal);
+                var doctorlastName = reader.GetString(doctorLastOrdinal);
+
 
                 appointments.Add(new Appointment
                 {
@@ -1062,7 +1072,8 @@ namespace HospitalManagement.DAL
                     AppointmentId = appointmentId,
                     DoctorId = doctorId,
                     ScheduledTime = scheduledDate,
-                    Reason = reason
+                    Reason = reason,
+                    Name = doctorfirstName + " " + doctorlastName
                 });
             }
             return appointments;
