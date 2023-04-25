@@ -1,6 +1,7 @@
 ﻿using HospitalManagement.Controller;
 using HospitalManagement.Model;
 using HospitalManagement.View;
+using System.Windows.Forms;
 
 namespace HospitalManagement.UserControls
 {
@@ -103,7 +104,8 @@ namespace HospitalManagement.UserControls
             if (appointments.Count > 0)
             {
                 searchDataGridView.Visible = true;
-                searchDataGridView.DataSource = appointments;
+                //searchDataGridView.DataSource = appointments;
+                RefreshDataGridView(appointments);
                 searchDataGridView.ClearSelection();
                 viewEditButton.Visible = true;
                 deleteButton.Visible = true;
@@ -117,6 +119,25 @@ namespace HospitalManagement.UserControls
                 errorLabel.ForeColor = Color.Red;
                 viewEditButton.Visible = false;
                 deleteButton.Visible = false;
+            }
+        }
+
+        public void RefreshDataGridView(List<Appointment> appointments)
+        {
+            searchDataGridView.Rows.Clear();
+
+            foreach (Appointment currentIncident in appointments)
+            {
+                DataGridViewRow currentRow = searchDataGridView.Rows[searchDataGridView.Rows.Add()];
+                currentRow.Cells[appointmentID.Index].Value = currentIncident.AppointmentId;
+                searchDataGridView.Columns["appointmentID"].Visible = false;
+                currentRow.Cells[patientID.Index].Value = currentIncident.PatientId;
+                currentRow.Cells[doctorID.Index].Value = currentIncident.DoctorId;
+                searchDataGridView.Columns["doctorID"].Visible = false;
+                currentRow.Cells[doctorName.Index].Value = currentIncident.Name;
+                currentRow.Cells[scheduledDate.Index].Value = currentIncident.ScheduledTime;
+                currentRow.Cells[reason.Index].Value = currentIncident.Reason;
+                
             }
         }
 
@@ -137,8 +158,9 @@ namespace HospitalManagement.UserControls
                     _appointment.AppointmentId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
                     _appointment.PatientId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[1].Value.ToString());
                     _appointment.DoctorId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[2].Value.ToString());
-                    _appointment.ScheduledTime = DateTime.Parse(searchDataGridView.SelectedRows[0].Cells[3].Value.ToString());
-                    _appointment.Reason = searchDataGridView.SelectedRows[0].Cells[4].Value.ToString();
+                    _appointment.Name = searchDataGridView.SelectedRows[0].Cells[3].Value.ToString();
+                    _appointment.ScheduledTime = DateTime.Parse(searchDataGridView.SelectedRows[0].Cells[4].Value.ToString());
+                    _appointment.Reason = searchDataGridView.SelectedRows[0].Cells[5].Value.ToString();
                     errorLabel.Visible = false;
                 }
             }

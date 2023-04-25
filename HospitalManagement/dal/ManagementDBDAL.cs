@@ -800,9 +800,15 @@ namespace HospitalManagement.DAL
             List<Appointment> appointments = new List<Appointment>();
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            var query = "select Appointment.appointmentID,Patient.patientID,Appointment.doctorID, Appointment.scheduledDate, Appointment.reason " +
-                        "from Appointment,Patient,PersonalDetails " +
-                        "where Appointment.patientID = Patient.patientID and Patient.pdID = PersonalDetails.pdID and PersonalDetails.firstName = @firstName and PersonalDetails.lastName = @lastName ";
+            var query = "SELECT Appointment.appointmentID, Patient.patientID, Doctor.doctorID, " +
+                "DoctorDetails.firstName AS doctorFirstName, DoctorDetails.lastName AS doctorLastName, " +
+                        " Appointment.scheduledDate, Appointment.reason " + 
+                        " FROM Appointment " + 
+                        " JOIN Patient ON Appointment.patientID = Patient.patientID " + 
+                        " JOIN PersonalDetails AS PatientDetails ON Patient.pdID = PatientDetails.pdID " + 
+                        " JOIN Doctor ON Appointment.doctorID = Doctor.doctorID " + 
+                        " JOIN PersonalDetails AS DoctorDetails ON Doctor.pdID = DoctorDetails.pdID " +
+                        " WHERE PatientDetails.firstName = @firstName and PatientDetails.lastName = @lastName";
 
             using var command = new SqlCommand(query, connection);
 
@@ -817,6 +823,8 @@ namespace HospitalManagement.DAL
             var doctorIdOrdinal = reader.GetOrdinal("doctorID");
             var scheduledDateOrdinal = reader.GetOrdinal("scheduledDate");
             var reasonOrdinal = reader.GetOrdinal("reason");
+            var doctorFirstOrdinal = reader.GetOrdinal("doctorFirstName");
+            var doctorLastOrdinal = reader.GetOrdinal("doctorLastName");
 
             while (reader.Read())
             {
@@ -825,6 +833,8 @@ namespace HospitalManagement.DAL
                 var doctorId = reader.GetInt32(doctorIdOrdinal);
                 var scheduledDate = reader.GetDateTime(scheduledDateOrdinal);
                 var reason = reader.GetString(reasonOrdinal);
+                var doctorfirstName = reader.GetString(doctorFirstOrdinal);
+                var doctorlastName = reader.GetString(doctorLastOrdinal);
 
                 appointments.Add(new Appointment
                 {
@@ -832,7 +842,8 @@ namespace HospitalManagement.DAL
                     AppointmentId = appointmentId,
                     DoctorId = doctorId,
                     ScheduledTime = scheduledDate,
-                    Reason = reason
+                    Reason = reason,
+                    Name = doctorfirstName + " " + doctorlastName
                 });
             }
             return appointments;
