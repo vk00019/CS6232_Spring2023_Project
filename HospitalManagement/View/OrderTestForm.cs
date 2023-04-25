@@ -11,7 +11,7 @@ namespace HospitalManagement.View
     public partial class OrderTestForm : Form
     {
         private TestList _testList;
-        private List<TestList> ordered;
+        private List<TestList> _ordered;
         private readonly ManagementController _controller;
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderTestForm"/> class.
@@ -32,7 +32,7 @@ namespace HospitalManagement.View
         private void addButton_Click(object sender, EventArgs e)
         {
             var testToAdd = allTestsComboBox.SelectedItem as TestList;
-            ordered.Add(new TestList
+            _ordered.Add(new TestList
             {
                 Id = testToAdd.Id,
                 Name = testToAdd.Name,
@@ -43,7 +43,7 @@ namespace HospitalManagement.View
         private void RefreshList()
         {
             testsDataGridView.DataSource = null;
-            testsDataGridView.DataSource = ordered;
+            testsDataGridView.DataSource = _ordered;
         }
 
         private void testsDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -61,6 +61,34 @@ namespace HospitalManagement.View
                     _testList.Name = testsDataGridView.SelectedRows[0].Cells[1].Value.ToString();
                 }
             }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            _ordered.Remove(_testList);
+        }
+
+        private void reviewTestsButton_Click(object sender, EventArgs e)
+        {
+            if (_ordered.Count > 0)
+            {
+                using var reviewForm = new ReviewTests();
+                reviewForm.SetTests(_ordered);
+                reviewForm.ShowDialog();
+                this.Close();
+
+            }
+            else
+            {
+                errorLabel.Text = @"Please select at least one test";
+                errorLabel.ForeColor = Color.Red;
+                errorLabel.Visible = true;
+            }
+        }
+
+        private void allTestsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            errorLabel.Visible = false;
         }
     }
 }
