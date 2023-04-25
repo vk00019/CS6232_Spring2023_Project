@@ -35,5 +35,12 @@ namespace HospitalManagement.UserControls
             doctorTextBox.Text = _visit.DoctorName;
             patientTextBox.Text = _visit.PatientName;
         }
+
+        private void orderTestsButton_Click(object sender, EventArgs e)
+        {
+            using var orderTests = new OrderTestForm();
+            orderTests.SetVisitId(_visit.VisitId);
+            orderTests.ShowDialog();
+        }
     }
 }

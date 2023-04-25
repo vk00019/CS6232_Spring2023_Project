@@ -10,6 +10,7 @@ namespace HospitalManagement.View
     /// <seealso cref="System.Windows.Forms.Form" />
     public partial class OrderTestForm : Form
     {
+        private int _visitId;
         private TestList _testList;
         private List<TestList> _ordered;
         private readonly ManagementController _controller;
@@ -22,6 +23,11 @@ namespace HospitalManagement.View
             _controller = new ManagementController();
             allTestsComboBox.DataSource = _controller.GetTests();
 
+        }
+
+        public void SetVisitId(int id)
+        {
+            _visitId = id;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -74,6 +80,7 @@ namespace HospitalManagement.View
             {
                 using var reviewForm = new ReviewTests();
                 reviewForm.SetTests(_ordered);
+                reviewForm.SetVisitId(_visitId);
                 reviewForm.ShowDialog();
                 this.Close();
 
