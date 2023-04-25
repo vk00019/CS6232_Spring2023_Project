@@ -1329,5 +1329,56 @@ namespace HospitalManagement.DAL
 
             return visit;
         }
+
+        public void UpdateInitialDiagnosis(Visit visit)
+        {
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "Update Visit set initialDiagnosis = @initialDiagnosis where visitID = @visitId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@initialDiagnosis", SqlDbType.VarChar);
+            command.Parameters["@initialDiagnosis"].Value = visit.InitialDiagnosis;
+
+            command.Parameters.Add("@visitId", SqlDbType.Int);
+            command.Parameters["@visitId"].Value = visit.VisitId;
+
+            command.ExecuteNonQuery();
+        }
+
+        public void UpdateFinalDiagnosis(Visit visit)
+        {
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "Update Visit set finalDiagnosis = @finalDiagnosis where visitID = @visitId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@finalDiagnosis", SqlDbType.VarChar);
+            command.Parameters["@finalDiagnosis"].Value = visit.FinalDiagnosis;
+
+            command.Parameters.Add("@visitId", SqlDbType.Int);
+            command.Parameters["@visitId"].Value = visit.VisitId;
+
+            command.ExecuteNonQuery();
+        }
+
+        public void UpdateDiagnosis(Visit visit)
+        {
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "Update Visit set initialDiagnosis = @initialDiagnosis, finalDiagnosis = @finalDiagnosis where visitID = @visitId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@initialDiagnosis", SqlDbType.VarChar);
+            command.Parameters["@initialDiagnosis"].Value = visit.InitialDiagnosis;
+
+            command.Parameters.Add("@finalDiagnosis", SqlDbType.VarChar);
+            command.Parameters["@finalDiagnosis"].Value = visit.FinalDiagnosis;
+
+            command.Parameters.Add("@visitId", SqlDbType.Int);
+            command.Parameters["@visitId"].Value = visit.VisitId;
+
+            command.ExecuteNonQuery();
+        }
     }
 }

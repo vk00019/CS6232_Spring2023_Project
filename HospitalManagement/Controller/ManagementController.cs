@@ -194,5 +194,20 @@ namespace HospitalManagement.Controller
         {
             _managementDal.OrderTests(visitId, testId);
         }
+
+        public void UpdateInitialDiagnosis(Visit visit)
+        {
+            _managementDal.UpdateInitialDiagnosis(visit);
+        }
+
+        public void UpdateFinalDiagnosis(Visit visit)
+        {
+            _managementDal.UpdateFinalDiagnosis(visit);
+        }
+
+        public void UpdateDiagnosis(Visit visit)
+        {
+            _managementDal.UpdateDiagnosis(visit);
+        }
     }
 }
