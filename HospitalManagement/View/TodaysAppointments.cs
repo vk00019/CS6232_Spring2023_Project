@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using HospitalManagement.Controller;
+﻿using HospitalManagement.Controller;
 using HospitalManagement.model;
 using HospitalManagement.Model;
 
@@ -77,8 +68,6 @@ namespace HospitalManagement.View
             List<Appointment> appointments = _controller.GetTodaysAppointments();
             if (appointments.Count > 0)
             {
-
-                //appointmentsDataGridView.DataSource = appointments;
                 RefreshDataGridView(appointments);
                 appointmentsDataGridView.ClearSelection();
                 msgLabel.Text = "Please select an appointment to start the visit for patient";
@@ -108,8 +97,8 @@ namespace HospitalManagement.View
                 currentRow.Cells[doctorName.Index].Value = currentIncident.Name;
                 currentRow.Cells[ScheduledDate.Index].Value = currentIncident.ScheduledTime;
                 currentRow.Cells[reason.Index].Value = currentIncident.Reason;
-
             }
+            appointmentsDataGridView.ClearSelection();
         }
     }
 }
