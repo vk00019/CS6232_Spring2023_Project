@@ -1,6 +1,7 @@
 ﻿using HospitalManagement.Model;
 using System.Data;
 using System.Data.SqlClient;
+using HospitalManagement.model;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace HospitalManagement.DAL
@@ -658,8 +659,8 @@ namespace HospitalManagement.DAL
                 var visitId = reader.GetInt32(visitIdOrdinal);
                 var nurseId = reader.GetInt32(nurseIdOrdinal);
                 var height = reader.IsDBNull(heightOrdinal) ? -1 : reader.GetDecimal(heightOrdinal);
-                var weight = reader.IsDBNull(weightOrdinal)? -1 : reader.GetDecimal(weightOrdinal);
-                var sysBp = reader.IsDBNull(sysOrdinal)? -1 : reader.GetInt32(sysOrdinal);
+                var weight = reader.IsDBNull(weightOrdinal) ? -1 : reader.GetDecimal(weightOrdinal);
+                var sysBp = reader.IsDBNull(sysOrdinal) ? -1 : reader.GetInt32(sysOrdinal);
                 var diaBp = reader.IsDBNull(diaBpOrdinal) ? -1 : reader.GetInt32(diaBpOrdinal);
                 var temp = reader.IsDBNull(tempOrdinal) ? -1 : reader.GetDecimal(tempOrdinal);
                 var pulse = reader.IsDBNull(pulseOrdinal) ? -1 : reader.GetInt32(pulseOrdinal);
@@ -839,17 +840,18 @@ namespace HospitalManagement.DAL
         }
 
         /// <summary>
-        /// Gets the first name and last name of user.
+        /// Gets the nurse with the user.
         /// </summary>
         /// <param name="username">The username.</param>
         /// <returns></returns>
-        public string GetFirstAndLastName(string username)
+        public Nurse GetNurse(string username)
         {
-            string name = "";
+            var nurse = new Nurse();
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            string query = "select firstName, lastName from PersonalDetails, Users " +
-                           "where PersonalDetails.pdID = Users.pdID and Users.userName = @username;";
+            string query = "select PersonalDetails.firstName, PersonalDetails.lastName ,Nurse.nurseID from " +
+                           "PersonalDetails, Nurse, Users where Users.pdID = nurse.pdID and " +
+                           "PersonalDetails.pdID = Users.pdID and users.userName = @username";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@username", SqlDbType.VarChar);
@@ -858,14 +860,20 @@ namespace HospitalManagement.DAL
 
             var firstNameOrdinal = reader.GetOrdinal("firstName");
             var lastNameOrdinal = reader.GetOrdinal("lastName");
+            var nurseIdOrdinal = reader.GetOrdinal("nurseID");
 
             while (reader.Read())
             {
                 var firstName = reader.GetString(firstNameOrdinal);
                 var lastName = reader.GetString(lastNameOrdinal);
-                name = firstName + " " + lastName;
+                var nurseId = reader.GetInt32(nurseIdOrdinal);
+                
+                nurse.FirstName = firstName; 
+                nurse.LastName = lastName;
+                nurse.NurseId = nurseId;
+
             }
-            return name;
+            return nurse;
         }
 
         public int GetPatientId(int pdId)
@@ -884,11 +892,33 @@ namespace HospitalManagement.DAL
             var patientIdOrdinal = reader.GetOrdinal("patientID");
 
             while (reader.Read())
-            { 
+            {
                 patientId = reader.GetInt32(patientIdOrdinal);
             }
 
             return patientId;
+        }
+
+        public int GetNurseId(string username)
+        {
+            int nurseId = 0;
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select nurseID from Nurse, Users where Users.pdID = nurse.pdID and users.userName = @username";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@username", SqlDbType.VarChar);
+            command.Parameters["@username"].Value = username;
+            using var reader = command.ExecuteReader();
+
+            var nurseIdOrdinal = reader.GetOrdinal("nurseID");
+
+            while (reader.Read())
+            {
+                nurseId = reader.GetInt32(nurseIdOrdinal);
+            }
+
+            return nurseId;
         }
 
         public List<Appointment> GetTodaysAppointments()

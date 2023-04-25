@@ -25,6 +25,11 @@ namespace HospitalManagement.View
             usernameLabel.Text = username;
         }
 
+        public void SetNurseId(int id)
+        {
+
+        }
+
         private void RegisterPatientButton_Click(object sender, EventArgs e)
         {
             registerPatientUserControl.Visible = true;

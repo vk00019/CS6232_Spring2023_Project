@@ -31,8 +31,11 @@ namespace HospitalManagement.View
             if (_controller.CheckUser(usernameTextBox.Text, passwordTextBox.Text))
             {
                 using var mainForm = new MainDashboard();
-                var name = "Name: " + _controller.GetFirstAndLastName(usernameTextBox.Text) +
+                var nurse = _controller.GetNurse(usernameTextBox.Text);
+                var name = "Name: " + nurse.FirstName + " "+ nurse.LastName +
                            " Username: " + usernameTextBox.Text;
+                int nurseId = nurse.NurseId;
+
                 mainForm.SetUsernameLabel(name);
                 this.Hide();
                 var value = mainForm.ShowDialog();

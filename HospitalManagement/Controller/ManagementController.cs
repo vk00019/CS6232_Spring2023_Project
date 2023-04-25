@@ -1,4 +1,5 @@
 ﻿using HospitalManagement.DAL;
+using HospitalManagement.model;
 using HospitalManagement.Model;
 
 namespace HospitalManagement.Controller
@@ -78,7 +79,7 @@ namespace HospitalManagement.Controller
 
         public bool CheckUser(string username, string password)
         {
-            return _managementDal.CheckUser(username,password);
+            return _managementDal.CheckUser(username, password);
         }
 
         public List<PersonalDetails> GetPatientWithDob(PersonalDetails patient)
@@ -107,7 +108,7 @@ namespace HospitalManagement.Controller
         }
 
         public void UpdatePatientDetails(PersonalDetails patientDetails)
-        { 
+        {
             _managementDal.UpdatePatientDetails(patientDetails);
         }
 
@@ -126,14 +127,19 @@ namespace HospitalManagement.Controller
             return _managementDal.GetAppointmentWithFirstNameAndLastName(patientsObject);
         }
 
-        public string GetFirstAndLastName(string username)
+        public Nurse GetNurse(string username)
         {
-            return _managementDal.GetFirstAndLastName(username);
+            return _managementDal.GetNurse(username);
         }
 
         public int GetPatientId(int pdId)
         {
             return _managementDal.GetPatientId(pdId);
+        }
+
+        public int GetNurseId(string username)
+        {
+            return _managementDal.GetNurseId(username);
         }
 
         public List<Appointment> GetTodaysAppointments()
