@@ -89,5 +89,21 @@
         /// The final diagnosis.
         /// </value>
         public string FinalDiagnosis { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the doctor.
+        /// </summary>
+        /// <value>
+        /// The name of the doctor.
+        /// </value>
+        public string DoctorName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the patient.
+        /// </summary>
+        /// <value>
+        /// The name of the patient.
+        /// </value>
+        public string PatientName { get; set; }
     }
 }

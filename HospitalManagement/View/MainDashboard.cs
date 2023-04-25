@@ -1,3 +1,4 @@
+using HospitalManagement.model;
 using HospitalManagement.UserControls;
 
 namespace HospitalManagement.View
@@ -8,12 +9,15 @@ namespace HospitalManagement.View
     /// <seealso cref="System.Windows.Forms.Form" />
     public partial class MainDashboard : Form
     {
+        private Nurse _nurse;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MainDashboard"/> class.
         /// </summary>
         public MainDashboard()
         {
             InitializeComponent();
+            _nurse = new Nurse();
         }
 
         /// <summary>
@@ -25,9 +29,9 @@ namespace HospitalManagement.View
             usernameLabel.Text = username;
         }
 
-        public void SetNurseId(int id)
+        public void SetNurse(Nurse nurse)
         {
-
+            _nurse = nurse;
         }
 
         private void RegisterPatientButton_Click(object sender, EventArgs e)
@@ -62,10 +66,12 @@ namespace HospitalManagement.View
         private void StartPatientVisitButton_Click(object sender, EventArgs e)
         {
             var startForm = new TodaysAppointments();
+            startForm.SetNurse(_nurse);
             startForm.ShowDialog();
             if (startForm.DialogResult == DialogResult.OK)
             {
                 startPatientVisitUserControl.Visible = true;
+                startPatientVisitUserControl.Controls["nurseTextBox"].Text = _nurse.FirstName + " " + _nurse.LastName;
                 searchPatientVisitByUserControl.Visible = false;
             }
             else
