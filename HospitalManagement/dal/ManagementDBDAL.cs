@@ -1149,7 +1149,7 @@ namespace HospitalManagement.DAL
                            "from Visit as v join Appointment as a on a.appointmentID = v.appointmentID " +
                            "join Doctor as d on d.doctorID = a.doctorID " +
                            "join Patient as p on p.patientID = a.patientID " +
-                           "join PersonalDetails as dd on dd.pdID = d.doctorID " +
+                           "join PersonalDetails as dd on dd.pdID = d.pdID " +
                            "join PersonalDetails as pd on pd.pdID = p.pdID " +
                            "ORDER BY visitID desc";
             using var command = new SqlCommand(query, connection);
