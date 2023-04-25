@@ -1,4 +1,5 @@
 ﻿using HospitalManagement.Controller;
+using HospitalManagement.model;
 using HospitalManagement.Model;
 using HospitalManagement.View;
 
@@ -6,11 +7,14 @@ namespace HospitalManagement.UserControls
 {
     public partial class SearchPatientVisitByUserControl : UserControl
     {
+        private Nurse _nurse;
+        private readonly Appointment _appointment;
         private ManagementController _controller;
         public SearchPatientVisitByUserControl()
         {
             InitializeComponent();
             _controller = new ManagementController();
+            _appointment = new Appointment();
         }
 
         private void DobRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -148,7 +152,43 @@ namespace HospitalManagement.UserControls
         {
             using var visitForm = new VisitForm();
             visitForm.ShowDialog();
-            
+            var visit = new Visit
+            {
+                AppointmentId = _appointment.AppointmentId,
+                NurseId = _nurse.NurseId
+            };
+            _controller.StartVisit(visit);
+            //DialogResult = DialogResult.OK;
+            //this.Close();
+
+        }
+
+        private void searchDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                viewButton.Enabled = false;
+            }
+            else
+            {
+                viewButton.Enabled = true;
+                if (searchDataGridView.SelectedRows[0] != null)
+                {
+                    int personalDetailsId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+
+                    //_patientDetails.PdID = _controller.GetPatientId(personalDetailsId);
+                    //_patientDetails.FirstName = searchDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+                    //_patientDetails.LastName = searchDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+                    //_patientDetails.DateOfBirth = DateTime.Parse(searchDataGridView.SelectedRows[0].Cells[3].Value.ToString());
+                    //_patientDetails.PhoneNumber = searchDataGridView.SelectedRows[0].Cells[4].Value.ToString();
+                    //_patientDetails.Gender = searchDataGridView.SelectedRows[0].Cells[5].Value.ToString();
+                    //_patientDetails.Street = searchDataGridView.SelectedRows[0].Cells[6].Value.ToString();
+                    //_patientDetails.City = searchDataGridView.SelectedRows[0].Cells[7].Value.ToString();
+                    //_patientDetails.State = searchDataGridView.SelectedRows[0].Cells[8].Value.ToString();
+                    //_patientDetails.Country = searchDataGridView.SelectedRows[0].Cells[9].Value.ToString();
+                    //_patientDetails.ZipCode = searchDataGridView.SelectedRows[0].Cells[10].Value.ToString();
+                }
+            }
         }
     }
 }

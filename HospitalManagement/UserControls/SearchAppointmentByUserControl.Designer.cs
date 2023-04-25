@@ -30,6 +30,12 @@
         {
             viewEditButton = new Button();
             searchDataGridView = new DataGridView();
+            appointmentID = new DataGridViewTextBoxColumn();
+            patientID = new DataGridViewTextBoxColumn();
+            doctorID = new DataGridViewTextBoxColumn();
+            doctorName = new DataGridViewTextBoxColumn();
+            scheduledDate = new DataGridViewTextBoxColumn();
+            reason = new DataGridViewTextBoxColumn();
             errorLabel = new Label();
             clearButton = new Button();
             searchButton = new Button();
@@ -44,12 +50,6 @@
             dobRadioButton = new RadioButton();
             nameLabel = new Label();
             deleteButton = new Button();
-            appointmentID = new DataGridViewTextBoxColumn();
-            patientID = new DataGridViewTextBoxColumn();
-            doctorID = new DataGridViewTextBoxColumn();
-            doctorName = new DataGridViewTextBoxColumn();
-            scheduledDate = new DataGridViewTextBoxColumn();
-            reason = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)searchDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -68,6 +68,8 @@
             // 
             // searchDataGridView
             // 
+            searchDataGridView.AllowUserToAddRows = false;
+            searchDataGridView.AllowUserToDeleteRows = false;
             searchDataGridView.BackgroundColor = SystemColors.ControlLightLight;
             searchDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             searchDataGridView.Columns.AddRange(new DataGridViewColumn[] { appointmentID, patientID, doctorID, doctorName, scheduledDate, reason });
@@ -82,6 +84,42 @@
             searchDataGridView.TabIndex = 71;
             searchDataGridView.Visible = false;
             searchDataGridView.CellMouseClick += SearchDataGridView_CellMouseClick;
+            // 
+            // appointmentID
+            // 
+            appointmentID.HeaderText = "Appointment ID";
+            appointmentID.Name = "appointmentID";
+            appointmentID.ReadOnly = true;
+            // 
+            // patientID
+            // 
+            patientID.HeaderText = "Patient ID";
+            patientID.Name = "patientID";
+            patientID.ReadOnly = true;
+            // 
+            // doctorID
+            // 
+            doctorID.HeaderText = "DoctorID";
+            doctorID.Name = "doctorID";
+            doctorID.ReadOnly = true;
+            // 
+            // doctorName
+            // 
+            doctorName.HeaderText = "Doctor Name";
+            doctorName.Name = "doctorName";
+            doctorName.ReadOnly = true;
+            // 
+            // scheduledDate
+            // 
+            scheduledDate.HeaderText = "Scheduled Date";
+            scheduledDate.Name = "scheduledDate";
+            scheduledDate.ReadOnly = true;
+            // 
+            // reason
+            // 
+            reason.HeaderText = "Reason";
+            reason.Name = "reason";
+            reason.ReadOnly = true;
             // 
             // errorLabel
             // 
@@ -242,42 +280,6 @@
             deleteButton.UseVisualStyleBackColor = true;
             deleteButton.Visible = false;
             deleteButton.Click += deleteButton_Click;
-            // 
-            // appointmentID
-            // 
-            appointmentID.HeaderText = "Appointment ID";
-            appointmentID.Name = "appointmentID";
-            appointmentID.ReadOnly = true;
-            // 
-            // patientID
-            // 
-            patientID.HeaderText = "Patient ID";
-            patientID.Name = "patientID";
-            patientID.ReadOnly = true;
-            // 
-            // doctorID
-            // 
-            doctorID.HeaderText = "DoctorID";
-            doctorID.Name = "doctorID";
-            doctorID.ReadOnly = true;
-            // 
-            // doctorName
-            // 
-            doctorName.HeaderText = "Doctor Name";
-            doctorName.Name = "doctorName";
-            doctorName.ReadOnly = true;
-            // 
-            // scheduledDate
-            // 
-            scheduledDate.HeaderText = "Scheduled Date";
-            scheduledDate.Name = "scheduledDate";
-            scheduledDate.ReadOnly = true;
-            // 
-            // reason
-            // 
-            reason.HeaderText = "Reason";
-            reason.Name = "reason";
-            reason.ReadOnly = true;
             // 
             // SearchAppointmentByUserControl
             // 

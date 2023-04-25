@@ -128,16 +128,18 @@ namespace HospitalManagement.UserControls
 
             foreach (Appointment currentIncident in appointments)
             {
-                DataGridViewRow currentRow = searchDataGridView.Rows[searchDataGridView.Rows.Add()];
-                currentRow.Cells[appointmentID.Index].Value = currentIncident.AppointmentId;
-                searchDataGridView.Columns["appointmentID"].Visible = false;
-                currentRow.Cells[patientID.Index].Value = currentIncident.PatientId;
-                currentRow.Cells[doctorID.Index].Value = currentIncident.DoctorId;
-                searchDataGridView.Columns["doctorID"].Visible = false;
-                currentRow.Cells[doctorName.Index].Value = currentIncident.Name;
-                currentRow.Cells[scheduledDate.Index].Value = currentIncident.ScheduledTime;
-                currentRow.Cells[reason.Index].Value = currentIncident.Reason;
-                
+                if (currentIncident != null)
+                {
+                    DataGridViewRow currentRow = searchDataGridView.Rows[searchDataGridView.Rows.Add()];
+                    currentRow.Cells[appointmentID.Index].Value = currentIncident.AppointmentId;
+                    searchDataGridView.Columns["appointmentID"].Visible = false;
+                    currentRow.Cells[patientID.Index].Value = currentIncident.PatientId;
+                    currentRow.Cells[doctorID.Index].Value = currentIncident.DoctorId;
+                    searchDataGridView.Columns["doctorID"].Visible = false;
+                    currentRow.Cells[doctorName.Index].Value = currentIncident.Name;
+                    currentRow.Cells[scheduledDate.Index].Value = currentIncident.ScheduledTime;
+                    currentRow.Cells[reason.Index].Value = currentIncident.Reason;
+                }
             }
         }
 
@@ -173,6 +175,7 @@ namespace HospitalManagement.UserControls
             viewForm.ShowDialog();
             searchDataGridView.Visible = false;
             viewEditButton.Visible = false;
+            deleteButton.Visible = false;
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
@@ -183,6 +186,7 @@ namespace HospitalManagement.UserControls
             errorLabel.Visible = false;
             searchDataGridView.Visible = false;
             viewEditButton.Visible = false;
+            deleteButton.Visible = false;
         }
 
         private void deleteButton_Click(object sender, EventArgs e)

@@ -74,6 +74,7 @@
             searchDataGridView.Size = new Size(451, 141);
             searchDataGridView.TabIndex = 71;
             searchDataGridView.Visible = false;
+            searchDataGridView.CellClick += searchDataGridView_CellClick;
             // 
             // errorLabel
             // 
