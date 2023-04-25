@@ -151,6 +151,9 @@ namespace HospitalManagement.Controller
         /// </summary>
         /// <returns>List of tests</returns>
         public List<TestList> GetTests()
+        {
+            return _managementDal.GetTests();
+        }
         public int GetNurseId(string username)
         {
             return _managementDal.GetNurseId(username);
@@ -158,7 +161,7 @@ namespace HospitalManagement.Controller
 
         public List<Appointment> GetTodaysAppointments()
         {
-            return _managementDal.GetTests();
+            return _managementDal.GetTodaysAppointments();
         }
     }
 }
