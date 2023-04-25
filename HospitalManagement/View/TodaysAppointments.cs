@@ -28,14 +28,23 @@ namespace HospitalManagement.View
 
         private void StartVisitButton_Click(object sender, EventArgs e)
         {
-            var visit = new Visit
+            if (_controller.CheckVisit(_appointment.AppointmentId))
             {
-                AppointmentId = _appointment.AppointmentId,
-                NurseId = _nurse.NurseId
-            };
-            _controller.StartVisit(visit);
-            DialogResult = DialogResult.OK;
-            this.Close();
+                msgLabel.Text = "Visit has already been started for this patient's appointment." + Environment.NewLine +
+                                "Please search for visit to edit the details.";
+                msgLabel.Visible = true;
+            }
+            else
+            {
+                var visit = new Visit
+                {
+                    AppointmentId = _appointment.AppointmentId,
+                    NurseId = _nurse.NurseId
+                };
+                _controller.StartVisit(visit);
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void AppointmentsDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
