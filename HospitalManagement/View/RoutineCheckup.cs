@@ -1,4 +1,5 @@
-﻿using HospitalManagement.Model;
+﻿using HospitalManagement.Controller;
+using HospitalManagement.Model;
 
 namespace HospitalManagement.View
 {
@@ -8,12 +9,25 @@ namespace HospitalManagement.View
     /// <seealso cref="System.Windows.Forms.Form" />
     public partial class RoutineCheckup : Form
     {
+        private int _visitId;
+        private readonly ManagementController _controller;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="RoutineCheckup"/> class.
         /// </summary>
         public RoutineCheckup()
         {
             InitializeComponent();
+            _controller = new ManagementController();
+        }
+
+        /// <summary>
+        /// Sets the visit identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        public void SetVisitId(int id)
+        {
+            _visitId = id;
         }
 
         private void addDetailsButton_Click(object sender, EventArgs e)
@@ -33,6 +47,7 @@ namespace HospitalManagement.View
                     var symptoms = symptomsTextBox.Text;
                     var visit = new Visit
                     {
+                        VisitId = _visitId,
                         Height = height,
                         Weight = weight,
                         SystolicBp = sysBp,
@@ -41,6 +56,7 @@ namespace HospitalManagement.View
                         Pulse = pulse,
                         Symptoms = symptoms
                     };
+                    _controller.AddRoutineCheckup(visit);
                     ClearAllFields();
                     errorLabel.Text = @"Checkup details updated successfully";
                     errorLabel.ForeColor = Color.Green;
@@ -99,6 +115,11 @@ namespace HospitalManagement.View
             pulseTextBox.Clear();
             symptomsTextBox.Clear();
             errorLabel.Visible = false;
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

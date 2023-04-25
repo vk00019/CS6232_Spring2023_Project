@@ -135,5 +135,14 @@ namespace HospitalManagement.Controller
         {
             return _managementDal.GetPatientId(pdId);
         }
+
+        /// <summary>
+        /// Adds the routine checkup.
+        /// </summary>
+        /// <param name="visit">The visit.</param>
+        public void AddRoutineCheckup(Visit visit)
+        {
+            _managementDal.AddRoutineCheckup(visit);
+        }
     }
 }
