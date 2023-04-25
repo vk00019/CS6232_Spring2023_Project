@@ -56,8 +56,18 @@ namespace HospitalManagement.View
 
         private void StartPatientVisitButton_Click(object sender, EventArgs e)
         {
-            startPatientVisitUserControl.Visible = true;
-            searchPatientVisitByUserControl.Visible = false;
+            var startForm = new TodaysAppointments();
+            startForm.ShowDialog();
+            if (startForm.DialogResult == DialogResult.OK)
+            {
+                startPatientVisitUserControl.Visible = true;
+                searchPatientVisitByUserControl.Visible = false;
+            }
+            else
+            {
+                startPatientVisitUserControl.Visible = false;
+                searchPatientVisitByUserControl.Visible = false;
+            }
         }
 
         private void SearchVisitButton_Click(object sender, EventArgs e)

@@ -940,5 +940,41 @@ namespace HospitalManagement.DAL
 
             return patientId;
         }
+
+        public List<Appointment> GetTodaysAppointments()
+        {
+            List<Appointment> appointments = new List<Appointment>();
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select appointmentID, patientID, doctorID, scheduledDate, reason from Appointment " +
+                           "where convert(date, scheduledDate) = convert(date, GETDATE())";
+            using var command = new SqlCommand(query, connection);
+            using var reader = command.ExecuteReader();
+
+            var patientIdOrdinal = reader.GetOrdinal("patientID");
+            var appointmentIdOrdinal = reader.GetOrdinal("appointmentID");
+            var doctorIdOrdinal = reader.GetOrdinal("doctorID");
+            var scheduledDateOrdinal = reader.GetOrdinal("scheduledDate");
+            var reasonOrdinal = reader.GetOrdinal("reason");
+
+            while (reader.Read())
+            {
+                var patientId = reader.GetInt32(patientIdOrdinal);
+                var appointmentId = reader.GetInt32(appointmentIdOrdinal);
+                var doctorId = reader.GetInt32(doctorIdOrdinal);
+                var scheduledDate = reader.GetDateTime(scheduledDateOrdinal);
+                var reason = reader.GetString(reasonOrdinal);
+
+                appointments.Add(new Appointment
+                {
+                    PatientId = patientId,
+                    AppointmentId = appointmentId,
+                    DoctorId = doctorId,
+                    ScheduledTime = scheduledDate,
+                    Reason = reason
+                });
+            }
+            return appointments;
+        }
     }
 }
