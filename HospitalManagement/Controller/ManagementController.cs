@@ -184,5 +184,20 @@ namespace HospitalManagement.Controller
         {
             return _managementDal.GetVisitWithFirstAndLastName(patientsObject);
         }
+
+        public void UpdateInitialDiagnosis(Visit visit)
+        {
+            _managementDal.UpdateInitialDiagnosis(visit);
+        }
+
+        public void UpdateFinalDiagnosis(Visit visit)
+        {
+            _managementDal.UpdateFinalDiagnosis(visit);
+        }
+
+        public void UpdateDiagnosis(Visit visit)
+        {
+            _managementDal.UpdateDiagnosis(visit);
+        }
     }
 }
