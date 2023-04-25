@@ -1,4 +1,5 @@
 ﻿using HospitalManagement.DAL;
+using HospitalManagement.model;
 using HospitalManagement.Model;
 
 namespace HospitalManagement.Controller
@@ -143,6 +144,15 @@ namespace HospitalManagement.Controller
         public void AddRoutineCheckup(Visit visit)
         {
             _managementDal.AddRoutineCheckup(visit);
+        }
+
+        /// <summary>
+        /// This method returns list of tests from database
+        /// </summary>
+        /// <returns>List of tests</returns>
+        public List<TestList> GetTests()
+        {
+            return _managementDal.GetTests();
         }
     }
 }

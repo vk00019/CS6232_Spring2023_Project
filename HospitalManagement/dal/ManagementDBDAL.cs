@@ -1,7 +1,7 @@
-﻿using HospitalManagement.Model;
+﻿using HospitalManagement.model;
+using HospitalManagement.Model;
 using System.Data;
 using System.Data.SqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace HospitalManagement.DAL
 {
@@ -383,6 +383,34 @@ namespace HospitalManagement.DAL
                 });
             }
             return doctors;
+        }
+
+        /// <summary>
+        /// This method returns list of tests from database
+        /// </summary>
+        /// <returns>List of tests</returns>
+        public List<TestList> GetTests()
+        {
+            var tests = new List<TestList>();
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select testID, testName from Tests";
+            using var command = new SqlCommand(query, connection);
+            using var reader = command.ExecuteReader();
+            var idOrdinal = reader.GetOrdinal("testID");
+            var nameOrdinal = reader.GetOrdinal("testName");
+
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(idOrdinal);
+                var Name = reader.GetString(nameOrdinal);
+                tests.Add(new TestList
+                {
+                    Id = id,
+                    Name = Name
+                });
+            }
+            return tests;
         }
 
         /// <summary>
