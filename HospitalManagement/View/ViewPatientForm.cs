@@ -93,6 +93,7 @@ namespace HospitalManagement.View
                 }
                 else
                 {
+                    visitsLabel.Visible = true;
                     visitsLabel.Text += Environment.NewLine + "There are no visits available for this appointment." +
                                         Environment.NewLine + "Start a visit for this by going to the visit tab";
                     visitDataGridView.Visible = false;
