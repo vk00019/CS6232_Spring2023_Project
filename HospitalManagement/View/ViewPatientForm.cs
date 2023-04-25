@@ -41,7 +41,8 @@ namespace HospitalManagement.View
             List<Appointment> patientAppointments = _controller.GetPatientAppointments(_patient.PdID);
             if (patientAppointments.Count > 0)
             {
-                appointmentsDataGridView.DataSource = patientAppointments;
+                //appointmentsDataGridView.DataSource = patientAppointments;
+                RefreshDataGridView(patientAppointments);
                 appointmentsDataGridView.ClearSelection();
             }
             else
@@ -54,6 +55,25 @@ namespace HospitalManagement.View
                 visitsLabel.Visible = false;
             }
 
+        }
+
+        public void RefreshDataGridView(List<Appointment> appointments)
+        {
+            appointmentsDataGridView.Rows.Clear();
+
+            foreach (Appointment currentIncident in appointments)
+            {
+                DataGridViewRow currentRow = appointmentsDataGridView.Rows[appointmentsDataGridView.Rows.Add()];
+                currentRow.Cells[appointmentID.Index].Value = currentIncident.AppointmentId;
+                appointmentsDataGridView.Columns["appointmentID"].Visible = false;
+                currentRow.Cells[patientID.Index].Value = currentIncident.PatientId;
+                currentRow.Cells[doctorID.Index].Value = currentIncident.DoctorId;
+                appointmentsDataGridView.Columns["doctorID"].Visible = false;
+                currentRow.Cells[doctorName.Index].Value = currentIncident.Name;
+                currentRow.Cells[scheduledDate.Index].Value = currentIncident.ScheduledTime;
+                currentRow.Cells[reason.Index].Value = currentIncident.Reason;
+
+            }
         }
 
         private void AppointmentsDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

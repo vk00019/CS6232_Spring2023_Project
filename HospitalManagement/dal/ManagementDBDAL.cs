@@ -664,7 +664,7 @@ namespace HospitalManagement.DAL
             connection.Open();
 
             var query =
-                "select appointmentID, patientID, doctorID, scheduledDate, reason from Appointment where patientID = @patientId";
+                "select appointmentID, patientID, Appointment.doctorID,PersonalDetails.firstName AS doctorFirstName, PersonalDetails.lastName AS doctorLastName, scheduledDate, reason from Appointment,PersonalDetails,Doctor where patientID = @patientId and Doctor.pdID = PersonalDetails.pdID and Doctor.doctorID = Appointment.doctorID";
 
             using var command = new SqlCommand(query, connection);
 
@@ -677,6 +677,8 @@ namespace HospitalManagement.DAL
             var doctorIdOrdinal = reader.GetOrdinal("doctorID");
             var scheduledDateOrdinal = reader.GetOrdinal("scheduledDate");
             var reasonOrdinal = reader.GetOrdinal("reason");
+            var doctorFirstOrdinal = reader.GetOrdinal("doctorFirstName");
+            var doctorLastOrdinal = reader.GetOrdinal("doctorLastName");
 
             while (reader.Read())
             {
@@ -685,6 +687,8 @@ namespace HospitalManagement.DAL
                 var doctorId = reader.GetInt32(doctorIdOrdinal);
                 var scheduledDate = reader.GetDateTime(scheduledDateOrdinal);
                 var reason = reader.GetString(reasonOrdinal);
+                var doctorfirstName = reader.GetString(doctorFirstOrdinal);
+                var doctorlastName = reader.GetString(doctorLastOrdinal);
 
                 appointments.Add(new Appointment
                 {
@@ -692,7 +696,8 @@ namespace HospitalManagement.DAL
                     AppointmentId = appointmentId,
                     DoctorId = doctorId,
                     ScheduledTime = scheduledDate,
-                    Reason = reason
+                    Reason = reason,
+                    Name = doctorfirstName + " " + doctorlastName
                 });
             }
 
@@ -1015,8 +1020,8 @@ namespace HospitalManagement.DAL
             List<Appointment> appointments = new List<Appointment>();
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            string query = "select appointmentID, patientID, doctorID, scheduledDate, reason from Appointment " +
-                           "where convert(date, scheduledDate) = convert(date, GETDATE())";
+            string query = "select appointmentID, patientID, Appointment.doctorID,PersonalDetails.firstName AS doctorFirstName, PersonalDetails.lastName AS doctorLastName, scheduledDate, reason from Appointment,Doctor,PersonalDetails " +
+                           "where convert(date, scheduledDate) = convert(date, GETDATE()) and Doctor.pdID = PersonalDetails.pdID and Doctor.doctorID = Appointment.doctorID";
             using var command = new SqlCommand(query, connection);
             using var reader = command.ExecuteReader();
 
@@ -1025,6 +1030,8 @@ namespace HospitalManagement.DAL
             var doctorIdOrdinal = reader.GetOrdinal("doctorID");
             var scheduledDateOrdinal = reader.GetOrdinal("scheduledDate");
             var reasonOrdinal = reader.GetOrdinal("reason");
+            var doctorFirstOrdinal = reader.GetOrdinal("doctorFirstName");
+            var doctorLastOrdinal = reader.GetOrdinal("doctorLastName");
 
             while (reader.Read())
             {
@@ -1033,6 +1040,9 @@ namespace HospitalManagement.DAL
                 var doctorId = reader.GetInt32(doctorIdOrdinal);
                 var scheduledDate = reader.GetDateTime(scheduledDateOrdinal);
                 var reason = reader.GetString(reasonOrdinal);
+                var doctorfirstName = reader.GetString(doctorFirstOrdinal);
+                var doctorlastName = reader.GetString(doctorLastOrdinal);
+
 
                 appointments.Add(new Appointment
                 {
@@ -1040,10 +1050,77 @@ namespace HospitalManagement.DAL
                     AppointmentId = appointmentId,
                     DoctorId = doctorId,
                     ScheduledTime = scheduledDate,
-                    Reason = reason
+                    Reason = reason,
+                    Name = doctorfirstName + " " + doctorlastName
                 });
             }
             return appointments;
+        }
+
+        public List<Visit> GetVisitWithDOB(PersonalDetails patient)
+        {
+            var dateOfBirth = patient.DateOfBirth;
+            List<Visit> appointments = new List<Visit>();
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            var query = "select Visit.appointmentID,Visit.nurseID,Visit.visitID,Visit.height,Visit.weight,Visit.systolicBP,Visit.diastolicBP,Visit.bodyTemperature, "  + 
+                "Visit.pulse, Visit.symptoms, Visit.initialDiagnosis,Visit.finalDiagnosis from Visit,Appointment,PersonalDetails,Patient where PersonalDetails.dateOfBirth = @dateOfBirth and PersonalDetails.pdID = Patient.pdID and Patient.patientID = Appointment.patientID and Visit.appointmentID = Appointment.appointmentID";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@dateOfBirth", SqlDbType.DateTime);
+            command.Parameters["@dateOfBirth"].Value = dateOfBirth;
+            using var reader = command.ExecuteReader();
+
+            var appointmentIdOrdinal = reader.GetOrdinal("appointmentID");
+            var visitIdOrdinal = reader.GetOrdinal("visitID");
+            var nurseIdOrdinal = reader.GetOrdinal("nurseID");
+            var heightOrdinal = reader.GetOrdinal("height");
+            var weightOrdinal = reader.GetOrdinal("weight");
+            var sysOrdinal = reader.GetOrdinal("systolicBP");
+            var diaBpOrdinal = reader.GetOrdinal("diastolicBP");
+            var tempOrdinal = reader.GetOrdinal("bodyTemperature");
+            var pulseOrdinal = reader.GetOrdinal("pulse");
+            var symptomsOrdinal = reader.GetOrdinal("symptoms");
+            var iniOrdinal = reader.GetOrdinal("initialDiagnosis");
+            var finalOrdinal = reader.GetOrdinal("finalDiagnosis");
+
+            while (reader.Read())
+            {
+                var visitId = reader.GetInt32(visitIdOrdinal);
+                var nurseId = reader.GetInt32(nurseIdOrdinal);
+                var appointmentId = reader.GetInt32(appointmentIdOrdinal);
+                var height = reader.IsDBNull(heightOrdinal) ? -1 : reader.GetDecimal(heightOrdinal);
+                var weight = reader.IsDBNull(weightOrdinal) ? -1 : reader.GetDecimal(weightOrdinal);
+                var sysBp = reader.IsDBNull(sysOrdinal) ? -1 : reader.GetInt32(sysOrdinal);
+                var diaBp = reader.IsDBNull(diaBpOrdinal) ? -1 : reader.GetInt32(diaBpOrdinal);
+                var temp = reader.IsDBNull(tempOrdinal) ? -1 : reader.GetDecimal(tempOrdinal);
+                var pulse = reader.IsDBNull(pulseOrdinal) ? -1 : reader.GetInt32(pulseOrdinal);
+                var symptoms = reader.IsDBNull(symptomsOrdinal) ? "" : reader.GetString(symptomsOrdinal);
+                var initial = reader.IsDBNull(iniOrdinal) ? "" : reader.GetString(iniOrdinal);
+                var final = reader.IsDBNull(finalOrdinal)
+                    ? "" : reader.GetString(finalOrdinal);
+
+                appointments.Add(new Visit
+                {
+                    VisitId = visitId,
+                    AppointmentId = appointmentId,
+                    NurseId = nurseId,
+                    Height = height,
+                    Weight = weight,
+                    SystolicBp = sysBp,
+                    DiastolicBp = diaBp,
+                    BodyTemperature = temp,
+                    Pulse = pulse,
+                    Symptoms = symptoms,
+                    InitialDiagnosis = initial,
+                    FinalDiagnosis = final
+                });
+            }
+
+            return appointments;
+
+
+
         }
 
         public void StartVisit(Visit visit)

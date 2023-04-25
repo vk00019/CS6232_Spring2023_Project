@@ -64,8 +64,9 @@ namespace HospitalManagement.View
                     _appointment.AppointmentId = Int32.Parse(appointmentsDataGridView.SelectedRows[0].Cells[0].Value.ToString());
                     _appointment.PatientId = Int32.Parse(appointmentsDataGridView.SelectedRows[0].Cells[1].Value.ToString());
                     _appointment.DoctorId = Int32.Parse(appointmentsDataGridView.SelectedRows[0].Cells[2].Value.ToString());
-                    _appointment.ScheduledTime = DateTime.Parse(appointmentsDataGridView.SelectedRows[0].Cells[3].Value.ToString());
-                    _appointment.Reason = appointmentsDataGridView.SelectedRows[0].Cells[4].Value.ToString();
+                    _appointment.Name = appointmentsDataGridView.SelectedRows[0].Cells[3].Value.ToString();
+                    _appointment.ScheduledTime = DateTime.Parse(appointmentsDataGridView.SelectedRows[0].Cells[4].Value.ToString());
+                    _appointment.Reason = appointmentsDataGridView.SelectedRows[0].Cells[5].Value.ToString();
                     msgLabel.Visible = false;
                 }
             }
@@ -76,7 +77,9 @@ namespace HospitalManagement.View
             List<Appointment> appointments = _controller.GetTodaysAppointments();
             if (appointments.Count > 0)
             {
-                appointmentsDataGridView.DataSource = appointments;
+
+                //appointmentsDataGridView.DataSource = appointments;
+                RefreshDataGridView(appointments);
                 appointmentsDataGridView.ClearSelection();
                 msgLabel.Text = "Please select an appointment to start the visit for patient";
                 msgLabel.Visible = true;
@@ -87,7 +90,26 @@ namespace HospitalManagement.View
                 msgLabel.Text = "It seems there are no appointments available today with any patients.";
                 msgLabel.Visible = true;
             }
-            
+
+        }
+
+        public void RefreshDataGridView(List<Appointment> appointments)
+        {
+            appointmentsDataGridView.Rows.Clear();
+
+            foreach (Appointment currentIncident in appointments)
+            {
+                DataGridViewRow currentRow = appointmentsDataGridView.Rows[appointmentsDataGridView.Rows.Add()];
+                currentRow.Cells[appointmentID.Index].Value = currentIncident.AppointmentId;
+                appointmentsDataGridView.Columns["appointmentID"].Visible = false;
+                currentRow.Cells[patientID.Index].Value = currentIncident.PatientId;
+                currentRow.Cells[doctorID.Index].Value = currentIncident.DoctorId;
+                appointmentsDataGridView.Columns["doctorID"].Visible = false;
+                currentRow.Cells[doctorName.Index].Value = currentIncident.Name;
+                currentRow.Cells[ScheduledDate.Index].Value = currentIncident.ScheduledTime;
+                currentRow.Cells[reason.Index].Value = currentIncident.Reason;
+
+            }
         }
     }
 }
