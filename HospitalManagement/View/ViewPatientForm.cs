@@ -88,6 +88,8 @@ namespace HospitalManagement.View
                 {
                     visitDataGridView.DataSource = patientVisits;
                     visitDataGridView.ClearSelection();
+                    visitDataGridView.Visible = true;
+                    visitsLabel.Visible = false;
                 }
                 else
                 {

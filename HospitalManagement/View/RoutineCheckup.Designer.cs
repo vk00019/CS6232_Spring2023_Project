@@ -28,231 +28,230 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.weightTextBox = new System.Windows.Forms.TextBox();
-            this.diaBPTextBox = new System.Windows.Forms.TextBox();
-            this.tempTextBox = new System.Windows.Forms.TextBox();
-            this.pulseTextBox = new System.Windows.Forms.TextBox();
-            this.heightTextBox = new System.Windows.Forms.TextBox();
-            this.errorLabel = new System.Windows.Forms.Label();
-            this.addDetailsButton = new System.Windows.Forms.Button();
-            this.tempLabel = new System.Windows.Forms.Label();
-            this.pulseLabel = new System.Windows.Forms.Label();
-            this.symptomslabel = new System.Windows.Forms.Label();
-            this.diaBPLabel = new System.Windows.Forms.Label();
-            this.sysBpLabel = new System.Windows.Forms.Label();
-            this.weightLabel = new System.Windows.Forms.Label();
-            this.heightLabel = new System.Windows.Forms.Label();
-            this.headerLabel = new System.Windows.Forms.Label();
-            this.sysBPTextBox = new System.Windows.Forms.TextBox();
-            this.symptomsTextBox = new System.Windows.Forms.RichTextBox();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            weightTextBox = new TextBox();
+            diaBPTextBox = new TextBox();
+            tempTextBox = new TextBox();
+            pulseTextBox = new TextBox();
+            heightTextBox = new TextBox();
+            errorLabel = new Label();
+            addDetailsButton = new Button();
+            tempLabel = new Label();
+            pulseLabel = new Label();
+            symptomslabel = new Label();
+            diaBPLabel = new Label();
+            sysBpLabel = new Label();
+            weightLabel = new Label();
+            heightLabel = new Label();
+            headerLabel = new Label();
+            sysBPTextBox = new TextBox();
+            symptomsTextBox = new RichTextBox();
+            cancelButton = new Button();
+            SuspendLayout();
             // 
             // weightTextBox
             // 
-            this.weightTextBox.Location = new System.Drawing.Point(178, 82);
-            this.weightTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.weightTextBox.Name = "weightTextBox";
-            this.weightTextBox.Size = new System.Drawing.Size(178, 23);
-            this.weightTextBox.TabIndex = 35;
+            weightTextBox.Location = new Point(178, 82);
+            weightTextBox.Margin = new Padding(2, 1, 2, 1);
+            weightTextBox.Name = "weightTextBox";
+            weightTextBox.Size = new Size(178, 23);
+            weightTextBox.TabIndex = 2;
             // 
             // diaBPTextBox
             // 
-            this.diaBPTextBox.Location = new System.Drawing.Point(178, 158);
-            this.diaBPTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.diaBPTextBox.Name = "diaBPTextBox";
-            this.diaBPTextBox.Size = new System.Drawing.Size(178, 23);
-            this.diaBPTextBox.TabIndex = 34;
+            diaBPTextBox.Location = new Point(178, 158);
+            diaBPTextBox.Margin = new Padding(2, 1, 2, 1);
+            diaBPTextBox.Name = "diaBPTextBox";
+            diaBPTextBox.Size = new Size(178, 23);
+            diaBPTextBox.TabIndex = 4;
             // 
             // tempTextBox
             // 
-            this.tempTextBox.Location = new System.Drawing.Point(178, 194);
-            this.tempTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tempTextBox.Name = "tempTextBox";
-            this.tempTextBox.Size = new System.Drawing.Size(178, 23);
-            this.tempTextBox.TabIndex = 33;
+            tempTextBox.Location = new Point(178, 194);
+            tempTextBox.Margin = new Padding(2, 1, 2, 1);
+            tempTextBox.Name = "tempTextBox";
+            tempTextBox.Size = new Size(178, 23);
+            tempTextBox.TabIndex = 5;
             // 
             // pulseTextBox
             // 
-            this.pulseTextBox.Location = new System.Drawing.Point(178, 231);
-            this.pulseTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.pulseTextBox.Name = "pulseTextBox";
-            this.pulseTextBox.Size = new System.Drawing.Size(178, 23);
-            this.pulseTextBox.TabIndex = 32;
+            pulseTextBox.Location = new Point(178, 231);
+            pulseTextBox.Margin = new Padding(2, 1, 2, 1);
+            pulseTextBox.Name = "pulseTextBox";
+            pulseTextBox.Size = new Size(178, 23);
+            pulseTextBox.TabIndex = 6;
             // 
             // heightTextBox
             // 
-            this.heightTextBox.Location = new System.Drawing.Point(178, 46);
-            this.heightTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.heightTextBox.Name = "heightTextBox";
-            this.heightTextBox.Size = new System.Drawing.Size(178, 23);
-            this.heightTextBox.TabIndex = 29;
+            heightTextBox.Location = new Point(178, 46);
+            heightTextBox.Margin = new Padding(2, 1, 2, 1);
+            heightTextBox.Name = "heightTextBox";
+            heightTextBox.Size = new Size(178, 23);
+            heightTextBox.TabIndex = 1;
             // 
             // errorLabel
             // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(73, 349);
-            this.errorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(57, 15);
-            this.errorLabel.TabIndex = 28;
-            this.errorLabel.Text = "errorlabel";
-            this.errorLabel.Visible = false;
+            errorLabel.AutoSize = true;
+            errorLabel.ForeColor = Color.Red;
+            errorLabel.Location = new Point(73, 349);
+            errorLabel.Margin = new Padding(2, 0, 2, 0);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(57, 15);
+            errorLabel.TabIndex = 28;
+            errorLabel.Text = "errorlabel";
+            errorLabel.Visible = false;
             // 
             // addDetailsButton
             // 
-            this.addDetailsButton.Location = new System.Drawing.Point(67, 378);
-            this.addDetailsButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.addDetailsButton.Name = "addDetailsButton";
-            this.addDetailsButton.Size = new System.Drawing.Size(81, 22);
-            this.addDetailsButton.TabIndex = 27;
-            this.addDetailsButton.Text = "Add";
-            this.addDetailsButton.UseVisualStyleBackColor = true;
-            this.addDetailsButton.Click += new System.EventHandler(this.addDetailsButton_Click);
+            addDetailsButton.Location = new Point(67, 378);
+            addDetailsButton.Margin = new Padding(2, 1, 2, 1);
+            addDetailsButton.Name = "addDetailsButton";
+            addDetailsButton.Size = new Size(81, 22);
+            addDetailsButton.TabIndex = 8;
+            addDetailsButton.Text = "Add";
+            addDetailsButton.UseVisualStyleBackColor = true;
+            addDetailsButton.Click += addDetailsButton_Click;
             // 
             // tempLabel
             // 
-            this.tempLabel.AutoSize = true;
-            this.tempLabel.Location = new System.Drawing.Point(42, 195);
-            this.tempLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.tempLabel.Name = "tempLabel";
-            this.tempLabel.Size = new System.Drawing.Size(76, 15);
-            this.tempLabel.TabIndex = 25;
-            this.tempLabel.Text = "Temperature:";
+            tempLabel.AutoSize = true;
+            tempLabel.Location = new Point(42, 195);
+            tempLabel.Margin = new Padding(2, 0, 2, 0);
+            tempLabel.Name = "tempLabel";
+            tempLabel.Size = new Size(76, 15);
+            tempLabel.TabIndex = 25;
+            tempLabel.Text = "Temperature:";
             // 
             // pulseLabel
             // 
-            this.pulseLabel.AutoSize = true;
-            this.pulseLabel.Location = new System.Drawing.Point(42, 232);
-            this.pulseLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.pulseLabel.Name = "pulseLabel";
-            this.pulseLabel.Size = new System.Drawing.Size(38, 15);
-            this.pulseLabel.TabIndex = 24;
-            this.pulseLabel.Text = "Pulse:";
+            pulseLabel.AutoSize = true;
+            pulseLabel.Location = new Point(42, 232);
+            pulseLabel.Margin = new Padding(2, 0, 2, 0);
+            pulseLabel.Name = "pulseLabel";
+            pulseLabel.Size = new Size(38, 15);
+            pulseLabel.TabIndex = 24;
+            pulseLabel.Text = "Pulse:";
             // 
             // symptomslabel
             // 
-            this.symptomslabel.AutoSize = true;
-            this.symptomslabel.Location = new System.Drawing.Point(42, 271);
-            this.symptomslabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.symptomslabel.Name = "symptomslabel";
-            this.symptomslabel.Size = new System.Drawing.Size(67, 15);
-            this.symptomslabel.TabIndex = 23;
-            this.symptomslabel.Text = "Symptoms:";
+            symptomslabel.AutoSize = true;
+            symptomslabel.Location = new Point(42, 271);
+            symptomslabel.Margin = new Padding(2, 0, 2, 0);
+            symptomslabel.Name = "symptomslabel";
+            symptomslabel.Size = new Size(67, 15);
+            symptomslabel.TabIndex = 23;
+            symptomslabel.Text = "Symptoms:";
             // 
             // diaBPLabel
             // 
-            this.diaBPLabel.AutoSize = true;
-            this.diaBPLabel.Location = new System.Drawing.Point(42, 159);
-            this.diaBPLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.diaBPLabel.Name = "diaBPLabel";
-            this.diaBPLabel.Size = new System.Drawing.Size(72, 15);
-            this.diaBPLabel.TabIndex = 22;
-            this.diaBPLabel.Text = "Diastolic BP:";
+            diaBPLabel.AutoSize = true;
+            diaBPLabel.Location = new Point(42, 159);
+            diaBPLabel.Margin = new Padding(2, 0, 2, 0);
+            diaBPLabel.Name = "diaBPLabel";
+            diaBPLabel.Size = new Size(72, 15);
+            diaBPLabel.TabIndex = 22;
+            diaBPLabel.Text = "Diastolic BP:";
             // 
             // sysBpLabel
             // 
-            this.sysBpLabel.AutoSize = true;
-            this.sysBpLabel.Location = new System.Drawing.Point(42, 121);
-            this.sysBpLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.sysBpLabel.Name = "sysBpLabel";
-            this.sysBpLabel.Size = new System.Drawing.Size(44, 15);
-            this.sysBpLabel.TabIndex = 21;
-            this.sysBpLabel.Text = "Sys BP:";
+            sysBpLabel.AutoSize = true;
+            sysBpLabel.Location = new Point(42, 121);
+            sysBpLabel.Margin = new Padding(2, 0, 2, 0);
+            sysBpLabel.Name = "sysBpLabel";
+            sysBpLabel.Size = new Size(44, 15);
+            sysBpLabel.TabIndex = 21;
+            sysBpLabel.Text = "Sys BP:";
             // 
             // weightLabel
             // 
-            this.weightLabel.AutoSize = true;
-            this.weightLabel.Location = new System.Drawing.Point(42, 84);
-            this.weightLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.weightLabel.Name = "weightLabel";
-            this.weightLabel.Size = new System.Drawing.Size(48, 15);
-            this.weightLabel.TabIndex = 20;
-            this.weightLabel.Text = "Weight:";
+            weightLabel.AutoSize = true;
+            weightLabel.Location = new Point(42, 84);
+            weightLabel.Margin = new Padding(2, 0, 2, 0);
+            weightLabel.Name = "weightLabel";
+            weightLabel.Size = new Size(48, 15);
+            weightLabel.TabIndex = 20;
+            weightLabel.Text = "Weight:";
             // 
             // heightLabel
             // 
-            this.heightLabel.AutoSize = true;
-            this.heightLabel.Location = new System.Drawing.Point(42, 48);
-            this.heightLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.heightLabel.Name = "heightLabel";
-            this.heightLabel.Size = new System.Drawing.Size(46, 15);
-            this.heightLabel.TabIndex = 19;
-            this.heightLabel.Text = "Height:";
+            heightLabel.AutoSize = true;
+            heightLabel.Location = new Point(42, 48);
+            heightLabel.Margin = new Padding(2, 0, 2, 0);
+            heightLabel.Name = "heightLabel";
+            heightLabel.Size = new Size(46, 15);
+            heightLabel.TabIndex = 19;
+            heightLabel.Text = "Height:";
             // 
             // headerLabel
             // 
-            this.headerLabel.AutoSize = true;
-            this.headerLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.headerLabel.Location = new System.Drawing.Point(113, 11);
-            this.headerLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.headerLabel.Name = "headerLabel";
-            this.headerLabel.Size = new System.Drawing.Size(146, 19);
-            this.headerLabel.TabIndex = 37;
-            this.headerLabel.Text = "Enter Routine details";
+            headerLabel.AutoSize = true;
+            headerLabel.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            headerLabel.Location = new Point(113, 11);
+            headerLabel.Margin = new Padding(2, 0, 2, 0);
+            headerLabel.Name = "headerLabel";
+            headerLabel.Size = new Size(146, 19);
+            headerLabel.TabIndex = 37;
+            headerLabel.Text = "Enter Routine details";
             // 
             // sysBPTextBox
             // 
-            this.sysBPTextBox.Location = new System.Drawing.Point(178, 120);
-            this.sysBPTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.sysBPTextBox.Name = "sysBPTextBox";
-            this.sysBPTextBox.Size = new System.Drawing.Size(178, 23);
-            this.sysBPTextBox.TabIndex = 38;
+            sysBPTextBox.Location = new Point(178, 120);
+            sysBPTextBox.Margin = new Padding(2, 1, 2, 1);
+            sysBPTextBox.Name = "sysBPTextBox";
+            sysBPTextBox.Size = new Size(178, 23);
+            sysBPTextBox.TabIndex = 3;
             // 
             // symptomsTextBox
             // 
-            this.symptomsTextBox.Location = new System.Drawing.Point(178, 264);
-            this.symptomsTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.symptomsTextBox.Name = "symptomsTextBox";
-            this.symptomsTextBox.Size = new System.Drawing.Size(178, 74);
-            this.symptomsTextBox.TabIndex = 39;
-            this.symptomsTextBox.Text = "";
+            symptomsTextBox.Location = new Point(178, 264);
+            symptomsTextBox.Margin = new Padding(2, 1, 2, 1);
+            symptomsTextBox.Name = "symptomsTextBox";
+            symptomsTextBox.Size = new Size(178, 74);
+            symptomsTextBox.TabIndex = 7;
+            symptomsTextBox.Text = "";
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(233, 378);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(81, 22);
-            this.cancelButton.TabIndex = 40;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            cancelButton.Location = new Point(233, 378);
+            cancelButton.Margin = new Padding(2, 1, 2, 1);
+            cancelButton.Name = "cancelButton";
+            cancelButton.Size = new Size(81, 22);
+            cancelButton.TabIndex = 9;
+            cancelButton.Text = "Cancel";
+            cancelButton.UseVisualStyleBackColor = true;
+            cancelButton.Click += cancelButton_Click;
             // 
             // RoutineCheckup
             // 
-            this.AcceptButton = this.addDetailsButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 409);
-            this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.symptomsTextBox);
-            this.Controls.Add(this.sysBPTextBox);
-            this.Controls.Add(this.headerLabel);
-            this.Controls.Add(this.weightTextBox);
-            this.Controls.Add(this.diaBPTextBox);
-            this.Controls.Add(this.tempTextBox);
-            this.Controls.Add(this.pulseTextBox);
-            this.Controls.Add(this.heightTextBox);
-            this.Controls.Add(this.errorLabel);
-            this.Controls.Add(this.addDetailsButton);
-            this.Controls.Add(this.tempLabel);
-            this.Controls.Add(this.pulseLabel);
-            this.Controls.Add(this.symptomslabel);
-            this.Controls.Add(this.diaBPLabel);
-            this.Controls.Add(this.sysBpLabel);
-            this.Controls.Add(this.weightLabel);
-            this.Controls.Add(this.heightLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "RoutineCheckup";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Routine Checkup Details";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = addDetailsButton;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(405, 409);
+            Controls.Add(cancelButton);
+            Controls.Add(symptomsTextBox);
+            Controls.Add(sysBPTextBox);
+            Controls.Add(headerLabel);
+            Controls.Add(weightTextBox);
+            Controls.Add(diaBPTextBox);
+            Controls.Add(tempTextBox);
+            Controls.Add(pulseTextBox);
+            Controls.Add(heightTextBox);
+            Controls.Add(errorLabel);
+            Controls.Add(addDetailsButton);
+            Controls.Add(tempLabel);
+            Controls.Add(pulseLabel);
+            Controls.Add(symptomslabel);
+            Controls.Add(diaBPLabel);
+            Controls.Add(sysBpLabel);
+            Controls.Add(weightLabel);
+            Controls.Add(heightLabel);
+            Margin = new Padding(2, 1, 2, 1);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "RoutineCheckup";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Routine Checkup Details";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
