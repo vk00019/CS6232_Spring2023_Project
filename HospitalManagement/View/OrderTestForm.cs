@@ -66,7 +66,6 @@ namespace HospitalManagement.View
                 if (testsDataGridView.SelectedRows[0] != null)
                 { 
                     index = testsDataGridView.SelectedRows[0].Index;
-                   // MessageBox.Show(index + "");
                 }
             }
         }
@@ -79,20 +78,26 @@ namespace HospitalManagement.View
 
         private void reviewTestsButton_Click(object sender, EventArgs e)
         {
-            if (_ordered.Count > 0)
+            try
             {
-                using var reviewForm = new ReviewTests();
-                reviewForm.SetTests(_ordered);
-                reviewForm.SetVisitId(_visitId);
-                reviewForm.ShowDialog();
-                this.Close();
-
+                if (_ordered.Count > 0)
+                {
+                    using var reviewForm = new ReviewTests();
+                    reviewForm.SetTests(_ordered);
+                    reviewForm.SetVisitId(_visitId);
+                    reviewForm.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    errorLabel.Text = @"Please select at least one test";
+                    errorLabel.ForeColor = Color.Red;
+                    errorLabel.Visible = true;
+                }
             }
-            else
+            catch (Exception)
             {
-                errorLabel.Text = @"Please select at least one test";
                 errorLabel.ForeColor = Color.Red;
-                errorLabel.Visible = true;
             }
         }
 

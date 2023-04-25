@@ -1,6 +1,8 @@
 ﻿using HospitalManagement.Controller;
 using HospitalManagement.model;
 using HospitalManagement.Model;
+using System;
+using System.Reflection;
 
 namespace HospitalManagement.View
 {
@@ -11,7 +13,7 @@ namespace HospitalManagement.View
     public partial class ReviewTests : Form
     {
 
-        private TestList _testList;
+        private int index;
         private int _visitId;
         private readonly ManagementController _controller;
         private List<TestList> _finalTests;
@@ -22,12 +24,16 @@ namespace HospitalManagement.View
         {
             InitializeComponent();
             _controller = new ManagementController();
+            _finalTests = new List<TestList>();
             RefreshList();
         }
 
         public void SetTests(List<TestList> finalTests)
         {
-            _finalTests = finalTests;
+            foreach (var currentTest in finalTests)
+            {
+                _finalTests.Add(currentTest);
+            }
         }
 
         public void SetVisitId(int id)
@@ -37,8 +43,8 @@ namespace HospitalManagement.View
 
         private void RefreshList()
         {
-            testsDataGridView.DataSource = null;
-            testsDataGridView.DataSource = _finalTests;
+            reviewTestsDataGridView.DataSource = null;
+            reviewTestsDataGridView.DataSource = _finalTests;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -48,7 +54,13 @@ namespace HospitalManagement.View
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-
+            _finalTests.RemoveAt(index);
+            RefreshList();
+            if (_finalTests.Count == 0)
+            {
+                orderTestsButton.Enabled = false;
+                deleteButton.Enabled = false;
+            }
         }
 
         private void orderTestsButton_Click(object sender, EventArgs e)
@@ -62,20 +74,18 @@ namespace HospitalManagement.View
             errorLabel.Visible = true;
         }
 
-        private void testsDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void ReviewTestsDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex == -1)
+            try
             {
-                deleteButton.Enabled = false;
-            }
-            else
-            {
-                deleteButton.Enabled = true;
-                if (testsDataGridView.SelectedRows[0] != null)
+                if (reviewTestsDataGridView.SelectedRows[0] != null)
                 {
-                    _testList.Id = Int32.Parse(testsDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-                    _testList.Name = testsDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+                    index = reviewTestsDataGridView.SelectedRows[0].Index;
                 }
+            }
+            catch (Exception)
+            {
+                errorLabel.ForeColor = Color.Red;
             }
         }
     }

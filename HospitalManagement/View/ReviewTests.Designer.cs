@@ -32,9 +32,9 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.orderTestsButton = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
-            this.testsDataGridView = new System.Windows.Forms.DataGridView();
             this.orderLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.testsDataGridView)).BeginInit();
+            this.reviewTestsDataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.reviewTestsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // cancelButton
@@ -78,17 +78,6 @@
             this.errorLabel.Text = "errorLabel";
             this.errorLabel.Visible = false;
             // 
-            // testsDataGridView
-            // 
-            this.testsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.testsDataGridView.Location = new System.Drawing.Point(88, 41);
-            this.testsDataGridView.Name = "testsDataGridView";
-            this.testsDataGridView.ReadOnly = true;
-            this.testsDataGridView.RowTemplate.Height = 25;
-            this.testsDataGridView.Size = new System.Drawing.Size(260, 136);
-            this.testsDataGridView.TabIndex = 15;
-            this.testsDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.testsDataGridView_CellMouseClick);
-            // 
             // orderLabel
             // 
             this.orderLabel.AutoSize = true;
@@ -98,13 +87,25 @@
             this.orderLabel.TabIndex = 16;
             this.orderLabel.Text = "Select tests to order";
             // 
+            // reviewTestsDataGridView
+            // 
+            this.reviewTestsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reviewTestsDataGridView.Location = new System.Drawing.Point(84, 32);
+            this.reviewTestsDataGridView.MultiSelect = false;
+            this.reviewTestsDataGridView.Name = "reviewTestsDataGridView";
+            this.reviewTestsDataGridView.RowTemplate.Height = 25;
+            this.reviewTestsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.reviewTestsDataGridView.Size = new System.Drawing.Size(264, 150);
+            this.reviewTestsDataGridView.TabIndex = 17;
+            this.reviewTestsDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ReviewTestsDataGridView_CellMouseClick);
+            // 
             // ReviewTests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 246);
+            this.Controls.Add(this.reviewTestsDataGridView);
             this.Controls.Add(this.orderLabel);
-            this.Controls.Add(this.testsDataGridView);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.deleteButton);
@@ -114,7 +115,7 @@
             this.Name = "ReviewTests";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Review Tests";
-            ((System.ComponentModel.ISupportInitialize)(this.testsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reviewTestsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +127,7 @@
         private Button deleteButton;
         private Button orderTestsButton;
         private Label errorLabel;
-        private DataGridView testsDataGridView;
         private Label orderLabel;
+        private DataGridView reviewTestsDataGridView;
     }
 }
