@@ -22,7 +22,6 @@ namespace HospitalManagement.UserControls
             firstnametextBox.Visible = false;
             searchDataGridView.Visible = false;
             viewButton.Visible = false;
-            editButton.Visible = false;
             errorLabel.Visible = false;
         }
 
@@ -36,7 +35,6 @@ namespace HospitalManagement.UserControls
             firstnametextBox.Visible = false;
             searchDataGridView.Visible = false;
             viewButton.Visible = false;
-            editButton.Visible = false;
             errorLabel.Visible = false;
         }
 
@@ -50,7 +48,6 @@ namespace HospitalManagement.UserControls
             firstnametextBox.Visible = true;
             searchDataGridView.Visible = false;
             viewButton.Visible = false;
-            editButton.Visible = false;
             errorLabel.Visible = false;
         }
 
@@ -62,18 +59,15 @@ namespace HospitalManagement.UserControls
             errorLabel.Visible = false;
             searchDataGridView.Visible = false;
             viewButton.Visible = false;
-            editButton.Visible = false;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
             viewButton.Visible = true;
-            editButton.Visible = true;
-            
+
             viewButton.Enabled = false;
-            editButton.Enabled = false;
-            
+
             List<Visit> patients;
             if (dobRadioButton.Checked)
             {
@@ -102,8 +96,7 @@ namespace HospitalManagement.UserControls
                     errorLabel.Visible = true;
                     errorLabel.ForeColor = Color.Red;
                     viewButton.Visible = false;
-                    editButton.Visible = false;
-                   
+
                 }
             }
             else
@@ -124,8 +117,7 @@ namespace HospitalManagement.UserControls
                     errorLabel.Visible = true;
                     errorLabel.ForeColor = Color.Red;
                     viewButton.Visible = false;
-                    editButton.Visible = false;
-                   
+
                 }
             }
         }
@@ -146,9 +138,13 @@ namespace HospitalManagement.UserControls
                 errorLabel.Visible = true;
                 errorLabel.ForeColor = Color.Red;
                 viewButton.Visible = false;
-                editButton.Visible = false;
-                
+
             }
+        }
+
+        private void viewButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

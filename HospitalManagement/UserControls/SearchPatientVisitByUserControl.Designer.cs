@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            editButton = new Button();
             viewButton = new Button();
             searchDataGridView = new DataGridView();
             errorLabel = new Label();
@@ -47,29 +46,18 @@
             ((System.ComponentModel.ISupportInitialize)searchDataGridView).BeginInit();
             SuspendLayout();
             // 
-            // editButton
-            // 
-            editButton.AutoSize = true;
-            editButton.Location = new Point(300, 433);
-            editButton.Margin = new Padding(2, 1, 2, 1);
-            editButton.Name = "editButton";
-            editButton.Size = new Size(83, 25);
-            editButton.TabIndex = 73;
-            editButton.Text = "Edit Patient";
-            editButton.UseVisualStyleBackColor = true;
-            editButton.Visible = false;
-            // 
             // viewButton
             // 
             viewButton.AutoSize = true;
-            viewButton.Location = new Point(144, 433);
+            viewButton.Location = new Point(209, 428);
             viewButton.Margin = new Padding(2, 1, 2, 1);
             viewButton.Name = "viewButton";
-            viewButton.Size = new Size(83, 25);
+            viewButton.Size = new Size(92, 25);
             viewButton.TabIndex = 72;
-            viewButton.Text = "View Patient";
+            viewButton.Text = "View/Edit Visit";
             viewButton.UseVisualStyleBackColor = true;
             viewButton.Visible = false;
+            viewButton.Click += viewButton_Click;
             // 
             // searchDataGridView
             // 
@@ -235,7 +223,6 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(editButton);
             Controls.Add(viewButton);
             Controls.Add(searchDataGridView);
             Controls.Add(errorLabel);
@@ -260,8 +247,6 @@
         }
 
         #endregion
-
-        private Button editButton;
         private Button viewButton;
         private DataGridView searchDataGridView;
         private Label errorLabel;

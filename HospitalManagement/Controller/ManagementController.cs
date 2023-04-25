@@ -171,12 +171,12 @@ namespace HospitalManagement.Controller
 
         public List<Visit> GetVisitWithDobAndLastname(PersonalDetails patientsObject)
         {
-            throw new NotImplementedException();
+            return _managementDal.GetVisitWithDOBAndLastName(patientsObject);
         }
 
         public List<Visit> GetVisitWithFirstnameAndLastname(PersonalDetails patientsObject)
         {
-            throw new NotImplementedException();
+            return _managementDal.GetVisitWithFirstAndLastName(patientsObject);
         }
     }
 }
