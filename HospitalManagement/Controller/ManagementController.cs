@@ -135,5 +135,10 @@ namespace HospitalManagement.Controller
         {
             return _managementDal.GetPatientId(pdId);
         }
+
+        public List<Appointment> GetTodaysAppointments()
+        {
+            return _managementDal.GetTodaysAppointments();
+        }
     }
 }
