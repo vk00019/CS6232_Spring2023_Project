@@ -1,5 +1,6 @@
 ﻿using HospitalManagement.Controller;
 using HospitalManagement.Model;
+using HospitalManagement.View;
 
 namespace HospitalManagement.UserControls
 {
@@ -128,6 +129,7 @@ namespace HospitalManagement.UserControls
             {
                 searchDataGridView.Visible = true;
                 searchDataGridView.DataSource = patients;
+                viewButton.Enabled = true;
                 searchDataGridView.ClearSelection();
             }
             else
@@ -144,7 +146,9 @@ namespace HospitalManagement.UserControls
 
         private void viewButton_Click(object sender, EventArgs e)
         {
-
+            using var visitForm = new VisitForm();
+            visitForm.ShowDialog();
+            
         }
     }
 }
