@@ -18,7 +18,7 @@ namespace HospitalManagement.UserControls
             InitializeComponent();
             _controller = new ManagementController();
         }
-
+        
         private void bookButton_Click(object sender, EventArgs e)
         {
             try

@@ -35,6 +35,7 @@ namespace HospitalManagement.UserControls
             editButton.Visible = false;
             errorLabel.Visible = false;
             deletePatientButton.Visible = false;
+            bookAppointmentButton.Visible = false;
         }
 
         private void DobLnRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -50,6 +51,7 @@ namespace HospitalManagement.UserControls
             editButton.Visible = false;
             errorLabel.Visible = false;
             deletePatientButton.Visible = false;
+            bookAppointmentButton.Visible = false;
         }
 
         private void FnLnRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -65,6 +67,7 @@ namespace HospitalManagement.UserControls
             editButton.Visible = false;
             errorLabel.Visible = false;
             deletePatientButton.Visible = false;
+            bookAppointmentButton.Visible = false;
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
@@ -73,9 +76,11 @@ namespace HospitalManagement.UserControls
             viewButton.Visible = true;
             editButton.Visible = true;
             deletePatientButton.Visible = true;
+            bookAppointmentButton.Visible = true;
             viewButton.Enabled = false;
             editButton.Enabled = false;
             deletePatientButton.Enabled = false;
+            bookAppointmentButton.Enabled = false;
             List<PersonalDetails> patients;
             if (dobRadioButton.Checked)
             {
@@ -106,6 +111,7 @@ namespace HospitalManagement.UserControls
                     viewButton.Visible = false;
                     editButton.Visible = false;
                     deletePatientButton.Visible = false;
+                    bookAppointmentButton.Visible = false;
                 }
             }
             else
@@ -128,6 +134,7 @@ namespace HospitalManagement.UserControls
                     viewButton.Visible = false;
                     editButton.Visible = false;
                     deletePatientButton.Visible = false;
+                    bookAppointmentButton.Visible = false;
                 }
             }
         }
@@ -150,6 +157,7 @@ namespace HospitalManagement.UserControls
                 viewButton.Visible = false;
                 editButton.Visible = false;
                 deletePatientButton.Visible = false;
+                bookAppointmentButton.Visible = false;
             }
         }
 
@@ -163,6 +171,7 @@ namespace HospitalManagement.UserControls
             viewButton.Visible = false;
             editButton.Visible = false;
             deletePatientButton.Visible = false;
+            bookAppointmentButton.Visible = false;
         }
 
         private void SearchDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -171,12 +180,14 @@ namespace HospitalManagement.UserControls
             {
                 viewButton.Enabled = false;
                 editButton.Enabled = false;
+                bookAppointmentButton.Enabled = false;
                 deletePatientButton.Enabled = false;
             }
             else
             {
                 viewButton.Enabled = true;
                 editButton.Enabled = true;
+                bookAppointmentButton.Enabled = true;
                 deletePatientButton.Enabled = true;
                 if (searchDataGridView.SelectedRows[0] != null)
                 {
@@ -229,7 +240,7 @@ namespace HospitalManagement.UserControls
             dobDateTimePicker.Value = DateTime.Now.Date;
         }
 
-        private void deletePatientButton_Click(object sender, EventArgs e)
+        private void DeletePatientButton_Click(object sender, EventArgs e)
         {
             int pdId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
             if (!_controller.CheckAppointment(pdId))
@@ -247,5 +258,15 @@ namespace HospitalManagement.UserControls
                 errorLabel.Visible = true;
             }
         }
+
+        private void BookAppointmentButton_Click(object sender, EventArgs e)
+        {
+            TabControl tabControl = (TabControl)this.Parent.Parent;
+            tabControl.SelectedTab = tabControl.TabPages["appointmentTab"];
+            UserControl bookAppointmentUserControl = (UserControl)tabControl.TabPages["appointmentTab"].Controls["bookAppointmentUserControl"];
+            bookAppointmentUserControl.Visible = true;
+            bookAppointmentUserControl.Controls["patientTextBox"].Text = _patientDetails.PdID.ToString();
+        }
+
     }
 }

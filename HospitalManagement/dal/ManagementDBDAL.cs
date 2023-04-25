@@ -207,6 +207,56 @@ namespace HospitalManagement.DAL
         }
 
         /// <summary>
+        /// Adds the routine checkup.
+        /// </summary>
+        /// <param name="visit">The visit.</param>
+        public void AddRoutineCheckup(Visit visit)
+        {
+            var height = visit.Height;
+            var weight = visit.Weight;
+            var systolicBP = visit.SystolicBp;
+            var diastolicBP = visit.DiastolicBp;
+            var bodyTemperature = visit.BodyTemperature;
+            var pulse = visit.Pulse;
+            var symptoms = visit.Symptoms;
+            var visitId = visit.VisitId;
+
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            
+            string query = "UPDATE Visit SET height = @height, weight = @weight, systolicBP = @systolicBP " +
+                           "diastolicBP = @diastolicBP, bodyTemperature = @bodyTemperature, pulse = @pulse, symptoms = @symptoms " +
+                           "WHERE visitID = @visitId ";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@height", System.Data.SqlDbType.Decimal);
+            command.Parameters["@height"].Value = height;
+
+            command.Parameters.Add("@weight", System.Data.SqlDbType.Decimal);
+            command.Parameters["@weight"].Value = weight;
+
+            command.Parameters.Add("@systolicBP", System.Data.SqlDbType.Int);
+            command.Parameters["@systolicBP"].Value = systolicBP;   
+
+            command.Parameters.Add("@diastolicBP", System.Data.SqlDbType.Int);
+            command.Parameters["@diastolicBP"].Value = diastolicBP;
+
+            command.Parameters.Add("@bodyTemperature", System.Data.SqlDbType.Decimal);
+            command.Parameters["@bodyTemperature"].Value = bodyTemperature;
+
+            command.Parameters.Add("@pulse", System.Data.SqlDbType.Int);
+            command.Parameters["@pulse"].Value = pulse;
+
+            command.Parameters.Add("@symptoms", System.Data.SqlDbType.VarChar);
+            command.Parameters["@symptoms"].Value = symptoms;
+
+            command.Parameters.Add("@visitId", System.Data.SqlDbType.Int);
+            command.Parameters["@visitId"].Value = visitId;
+
+            command.ExecuteNonQuery();
+        }
+
+        /// <summary>
         /// Gets the states.
         /// </summary>
         /// <returns></returns>
@@ -900,6 +950,42 @@ namespace HospitalManagement.DAL
             }
 
             return patientId;
+        }
+
+        public List<Appointment> GetTodaysAppointments()
+        {
+            List<Appointment> appointments = new List<Appointment>();
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select appointmentID, patientID, doctorID, scheduledDate, reason from Appointment " +
+                           "where convert(date, scheduledDate) = convert(date, GETDATE())";
+            using var command = new SqlCommand(query, connection);
+            using var reader = command.ExecuteReader();
+
+            var patientIdOrdinal = reader.GetOrdinal("patientID");
+            var appointmentIdOrdinal = reader.GetOrdinal("appointmentID");
+            var doctorIdOrdinal = reader.GetOrdinal("doctorID");
+            var scheduledDateOrdinal = reader.GetOrdinal("scheduledDate");
+            var reasonOrdinal = reader.GetOrdinal("reason");
+
+            while (reader.Read())
+            {
+                var patientId = reader.GetInt32(patientIdOrdinal);
+                var appointmentId = reader.GetInt32(appointmentIdOrdinal);
+                var doctorId = reader.GetInt32(doctorIdOrdinal);
+                var scheduledDate = reader.GetDateTime(scheduledDateOrdinal);
+                var reason = reader.GetString(reasonOrdinal);
+
+                appointments.Add(new Appointment
+                {
+                    PatientId = patientId,
+                    AppointmentId = appointmentId,
+                    DoctorId = doctorId,
+                    ScheduledTime = scheduledDate,
+                    Reason = reason
+                });
+            }
+            return appointments;
         }
     }
 }
