@@ -24,8 +24,11 @@ namespace HospitalManagement.UserControls
         private void RegisterPatientButton_Click(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
+            phoneNumberErrorLabel.Visible = false;
+            zipCodeErrorLabel.Visible = false;
+
             CheckAllFields();
-            if ((!errorLabel.Visible && !phoneNumberErrorLabel.Visible) && !zipCodeErrorLabel.Visible)
+            if (!errorLabel.Visible && !phoneNumberErrorLabel.Visible && !zipCodeErrorLabel.Visible)
             {
                 errorLabel.Visible = false;
                 var personalDetails = new PersonalDetails
@@ -100,12 +103,12 @@ namespace HospitalManagement.UserControls
             {
                 errorLabel.Visible = true;
             }
-            if (zipCodeTextBox.Text.Length < 5)
+            if (zipCodeTextBox.Text.Length != 5)
             {
                 zipCodeErrorLabel.Visible = true;
                 zipCodeErrorLabel.Text = "Zip Code cannot be less than 5 digits";
             }
-            if (phoneNumberTextBox.Text.Length < 10)
+            if (phoneNumberTextBox.Text.Length != 10)
             {
                 phoneNumberErrorLabel.Visible = true;
                 phoneNumberErrorLabel.Text = "Phone number cannot be less than 10 digits";

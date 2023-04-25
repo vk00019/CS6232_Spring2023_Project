@@ -232,6 +232,7 @@ namespace HospitalManagement.UserControls
             viewButton.Visible = false;
             editButton.Visible = false;
             deletePatientButton.Visible = false;
+            bookAppointmentButton.Visible = false;
         }
 
         private void SearchPatientByUserControl_Load(object sender, EventArgs e)

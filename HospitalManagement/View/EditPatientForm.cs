@@ -132,11 +132,11 @@ namespace HospitalManagement.View
             {
                 errorLabel.Visible = true;
             }
-            if (zipCodeTextBox.Text.Length < 5)
+            if (zipCodeTextBox.Text.Length != 5)
             {
                 errorLabel.Visible = true;
             }
-            if (phoneNumberTextBox.Text.Length < 5)
+            if (phoneNumberTextBox.Text.Length != 10)
             {
                 errorLabel.Visible = true;
             }
