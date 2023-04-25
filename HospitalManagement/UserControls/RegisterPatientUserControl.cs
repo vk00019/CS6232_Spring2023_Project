@@ -25,7 +25,7 @@ namespace HospitalManagement.UserControls
         {
             errorLabel.Visible = false;
             CheckAllFields();
-            if (!errorLabel.Visible || !phoneNumberErrorLabel.Visible || !zipCodeErrorLabel.Visible)
+            if ((!errorLabel.Visible && !phoneNumberErrorLabel.Visible) && !zipCodeErrorLabel.Visible)
             {
                 errorLabel.Visible = false;
                 var personalDetails = new PersonalDetails
