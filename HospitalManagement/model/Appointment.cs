@@ -12,6 +12,7 @@
         /// The appointment identifier.
         /// </value>
         public int AppointmentId { get; set; }
+        public string Name { get; set; }
         /// <summary>
         /// Gets or sets the patient identifier.
         /// </summary>

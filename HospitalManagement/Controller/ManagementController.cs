@@ -137,6 +137,20 @@ namespace HospitalManagement.Controller
             return _managementDal.GetPatientId(pdId);
         }
 
+        /// <summary>
+        /// Adds the routine checkup.
+        /// </summary>
+        /// <param name="visit">The visit.</param>
+        public void AddRoutineCheckup(Visit visit)
+        {
+            _managementDal.AddRoutineCheckup(visit);
+        }
+
+        /// <summary>
+        /// This method returns list of tests from database
+        /// </summary>
+        /// <returns>List of tests</returns>
+        public List<TestList> GetTests()
         public int GetNurseId(string username)
         {
             return _managementDal.GetNurseId(username);
@@ -144,7 +158,7 @@ namespace HospitalManagement.Controller
 
         public List<Appointment> GetTodaysAppointments()
         {
-            return _managementDal.GetTodaysAppointments();
+            return _managementDal.GetTests();
         }
     }
 }
