@@ -72,7 +72,6 @@ namespace HospitalManagement.View
                 currentRow.Cells[doctorName.Index].Value = currentIncident.Name;
                 currentRow.Cells[scheduledDate.Index].Value = currentIncident.ScheduledTime;
                 currentRow.Cells[reason.Index].Value = currentIncident.Reason;
-
             }
         }
 
@@ -94,7 +93,7 @@ namespace HospitalManagement.View
                 else
                 {
                     visitsLabel.Visible = true;
-                    visitsLabel.Text += Environment.NewLine + "There are no visits available for this appointment." +
+                    visitsLabel.Text = Environment.NewLine + "There are no visits available for this appointment." +
                                         Environment.NewLine + "Start a visit for this by going to the visit tab";
                     visitDataGridView.Visible = false;
                     visitsLabel.ForeColor = Color.Red;
