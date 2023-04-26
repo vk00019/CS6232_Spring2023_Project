@@ -209,5 +209,10 @@ namespace HospitalManagement.Controller
         {
             _managementDal.UpdateDiagnosis(visit);
         }
+
+        public List<TestList> GetOrderedTests(int id)
+        {
+            return _managementDal.GetOrderedTests(id);
+        }
     }
 }

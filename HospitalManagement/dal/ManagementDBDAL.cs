@@ -300,6 +300,37 @@ namespace HospitalManagement.DAL
             return states;
         }
 
+        public List<TestList> GetOrderedTests(int visitId)
+        {
+            var orderedTests = new List<TestList>();
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select Tests.testName, Tests.testID from PatientTests, Tests " +
+                           "where PatientTests.testID = Tests.testID and PatientTests.visitID = @visitId " +
+                           "and PatientTests.performedDate IS NULL";
+            using var command = new SqlCommand(query, connection);
+            command.Parameters.Add("@visitId", SqlDbType.Int);
+            command.Parameters["@visitId"].Value = visitId;
+
+            using var reader = command.ExecuteReader();
+
+            var testIdOrdinal = reader.GetOrdinal("testID");
+            var testNameOrdinal = reader.GetOrdinal("testName");
+
+            while (reader.Read())
+            {
+                var testId = reader.GetInt32(testIdOrdinal);
+                var testName = reader.GetString(testNameOrdinal);
+                orderedTests.Add(new TestList
+                {
+                    Id = testId,
+                    Name = testName
+                });
+            }
+
+            return orderedTests;
+        }
+
         /// <summary>
         /// Gets the doctor appointment times.
         /// </summary>

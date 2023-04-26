@@ -47,7 +47,7 @@
             // testResultsListView
             // 
             this.testResultsListView.Location = new System.Drawing.Point(60, 708);
-            this.testResultsListView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.testResultsListView.Margin = new System.Windows.Forms.Padding(6);
             this.testResultsListView.Name = "testResultsListView";
             this.testResultsListView.Size = new System.Drawing.Size(591, 234);
             this.testResultsListView.TabIndex = 14;
@@ -56,7 +56,7 @@
             // addButton
             // 
             this.addButton.Location = new System.Drawing.Point(267, 633);
-            this.addButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.addButton.Margin = new System.Windows.Forms.Padding(6);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(139, 49);
             this.addButton.TabIndex = 13;
@@ -68,7 +68,7 @@
             this.orderedTestsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.orderedTestsComboBox.FormattingEnabled = true;
             this.orderedTestsComboBox.Location = new System.Drawing.Point(301, 96);
-            this.orderedTestsComboBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.orderedTestsComboBox.Margin = new System.Windows.Forms.Padding(6);
             this.orderedTestsComboBox.Name = "orderedTestsComboBox";
             this.orderedTestsComboBox.Size = new System.Drawing.Size(338, 40);
             this.orderedTestsComboBox.TabIndex = 12;
@@ -96,7 +96,7 @@
             // testResultTextBox
             // 
             this.testResultTextBox.Location = new System.Drawing.Point(301, 178);
-            this.testResultTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.testResultTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.testResultTextBox.Name = "testResultTextBox";
             this.testResultTextBox.Size = new System.Drawing.Size(338, 147);
             this.testResultTextBox.TabIndex = 16;
@@ -209,11 +209,12 @@
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.orderedTestsComboBox);
             this.Controls.Add(this.chooseTestsLabel);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TestResultsForm";
             this.Text = "Test Results";
+            this.Load += new System.EventHandler(this.TestResultsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
