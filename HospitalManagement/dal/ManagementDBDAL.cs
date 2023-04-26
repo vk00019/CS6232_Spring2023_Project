@@ -2,6 +2,7 @@
 using HospitalManagement.Model;
 using System.Data;
 using System.Data.SqlClient;
+using System.Numerics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace HospitalManagement.DAL
@@ -1379,6 +1380,54 @@ namespace HospitalManagement.DAL
             command.Parameters["@visitId"].Value = visit.VisitId;
 
             command.ExecuteNonQuery();
+        }
+
+        public Visit GetVisitForEditOrView(int visitid)
+        {
+            var visitID = visitid;
+            var visit = new Visit();
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            var query = "select v.visitID, a.appointmentID, concat(dd.firstName, ' ', dd.lastName) as doctor,concat(nd.firstName, ' ', nd.lastName) as nurse, concat(pd.firstName, ' ', pd.lastName) as patient " +
+                        "from Visit as v " +
+                        "join Appointment as a on a.appointmentID = v.appointmentID " +
+                        "join Doctor as d on d.doctorID = a.doctorID " +
+                        "join Patient as p on p.patientID = a.patientID " +
+                        "join Nurse as n on n.nurseID = v.nurseID " +
+                        "join PersonalDetails as dd on dd.pdID = d.pdID " +
+                        "join PersonalDetails as pd on pd.pdID = p.pdID " +
+                        "join PersonalDetails as nd on nd.pdID = n.pdID " +
+                        "where v.visitID = @visitID ";
+
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@visitID", SqlDbType.Int);
+            command.Parameters["@visitID"].Value = visitID;
+
+            using var reader = command.ExecuteReader();
+
+            var visitIdOrdinal = reader.GetOrdinal("visitID");
+            var appointmentIdOrdinal = reader.GetOrdinal("appointmentID");
+            var doctorOrdinal = reader.GetOrdinal("doctor");
+            var patientName = reader.GetOrdinal("patient");
+            var nurseName = reader.GetOrdinal("nurse");
+
+            while (reader.Read())
+            {
+                var appointmentId = reader.GetInt32(appointmentIdOrdinal);
+                var visitId = reader.GetInt32(visitIdOrdinal);
+                var doctor = reader.GetString(doctorOrdinal);
+                var patient = reader.GetString(patientName);
+                var nurse = reader.GetString(nurseName);
+
+                visit.VisitId = visitId;
+                visit.AppointmentId = appointmentId;
+                visit.DoctorName = doctor;
+                visit.PatientName = patient;
+                visit.NurseName = nurse;
+            }
+
+            return visit;
         }
     }
 }
