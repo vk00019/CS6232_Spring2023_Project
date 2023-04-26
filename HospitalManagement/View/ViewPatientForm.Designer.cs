@@ -28,198 +28,214 @@
         /// </summary>
         private void InitializeComponent()
         {
-            headerLabel = new Label();
-            patientNameLabel = new Label();
-            dobLabel = new Label();
-            appointmentsDataGridView = new DataGridView();
-            nameLabel = new Label();
-            visitsLabel = new Label();
-            visitDataGridView = new DataGridView();
-            cancelButton = new Button();
-            patientIdLabel = new Label();
-            appointmentID = new DataGridViewTextBoxColumn();
-            patientID = new DataGridViewTextBoxColumn();
-            doctorID = new DataGridViewTextBoxColumn();
-            doctorName = new DataGridViewTextBoxColumn();
-            scheduledDate = new DataGridViewTextBoxColumn();
-            reason = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)appointmentsDataGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)visitDataGridView).BeginInit();
-            SuspendLayout();
+            this.headerLabel = new System.Windows.Forms.Label();
+            this.patientNameLabel = new System.Windows.Forms.Label();
+            this.dobLabel = new System.Windows.Forms.Label();
+            this.appointmentsDataGridView = new System.Windows.Forms.DataGridView();
+            this.appointmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scheduledDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.visitsLabel = new System.Windows.Forms.Label();
+            this.visitDataGridView = new System.Windows.Forms.DataGridView();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.patientIdLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitDataGridView)).BeginInit();
+            this.SuspendLayout();
             // 
             // headerLabel
             // 
-            headerLabel.AutoSize = true;
-            headerLabel.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            headerLabel.Location = new Point(179, 14);
-            headerLabel.Margin = new Padding(2, 0, 2, 0);
-            headerLabel.Name = "headerLabel";
-            headerLabel.Size = new Size(139, 19);
-            headerLabel.TabIndex = 0;
-            headerLabel.Text = "Patient Information";
+            this.headerLabel.AutoSize = true;
+            this.headerLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.headerLabel.Location = new System.Drawing.Point(332, 30);
+            this.headerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.headerLabel.Name = "headerLabel";
+            this.headerLabel.Size = new System.Drawing.Size(271, 37);
+            this.headerLabel.TabIndex = 0;
+            this.headerLabel.Text = "Patient Information";
             // 
             // patientNameLabel
             // 
-            patientNameLabel.AutoSize = true;
-            patientNameLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            patientNameLabel.Location = new Point(162, 45);
-            patientNameLabel.Margin = new Padding(2, 0, 2, 0);
-            patientNameLabel.Name = "patientNameLabel";
-            patientNameLabel.Size = new Size(92, 19);
-            patientNameLabel.TabIndex = 1;
-            patientNameLabel.Text = "Patient Name";
+            this.patientNameLabel.AutoSize = true;
+            this.patientNameLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.patientNameLabel.Location = new System.Drawing.Point(301, 96);
+            this.patientNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.patientNameLabel.Name = "patientNameLabel";
+            this.patientNameLabel.Size = new System.Drawing.Size(177, 37);
+            this.patientNameLabel.TabIndex = 1;
+            this.patientNameLabel.Text = "Patient Name";
             // 
             // dobLabel
             // 
-            dobLabel.AutoSize = true;
-            dobLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            dobLabel.Location = new Point(431, 45);
-            dobLabel.Margin = new Padding(2, 0, 2, 0);
-            dobLabel.Name = "dobLabel";
-            dobLabel.Size = new Size(82, 19);
-            dobLabel.TabIndex = 2;
-            dobLabel.Text = "Patient Dob";
+            this.dobLabel.AutoSize = true;
+            this.dobLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dobLabel.Location = new System.Drawing.Point(800, 96);
+            this.dobLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dobLabel.Name = "dobLabel";
+            this.dobLabel.Size = new System.Drawing.Size(157, 37);
+            this.dobLabel.TabIndex = 2;
+            this.dobLabel.Text = "Patient Dob";
             // 
             // appointmentsDataGridView
             // 
-            appointmentsDataGridView.AllowUserToAddRows = false;
-            appointmentsDataGridView.AllowUserToDeleteRows = false;
-            appointmentsDataGridView.BackgroundColor = SystemColors.ControlLightLight;
-            appointmentsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            appointmentsDataGridView.Columns.AddRange(new DataGridViewColumn[] { appointmentID, patientID, doctorID, doctorName, scheduledDate, reason });
-            appointmentsDataGridView.Location = new Point(26, 107);
-            appointmentsDataGridView.Margin = new Padding(2, 1, 2, 1);
-            appointmentsDataGridView.MultiSelect = false;
-            appointmentsDataGridView.Name = "appointmentsDataGridView";
-            appointmentsDataGridView.ReadOnly = true;
-            appointmentsDataGridView.RowHeadersWidth = 82;
-            appointmentsDataGridView.RowTemplate.Height = 41;
-            appointmentsDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            appointmentsDataGridView.Size = new Size(494, 141);
-            appointmentsDataGridView.TabIndex = 3;
-            appointmentsDataGridView.CellMouseClick += AppointmentsDataGridView_CellMouseClick;
-            // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            nameLabel.Location = new Point(26, 82);
-            nameLabel.Margin = new Padding(2, 0, 2, 0);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(140, 19);
-            nameLabel.TabIndex = 4;
-            nameLabel.Text = "List of Appointments:";
-            // 
-            // visitsLabel
-            // 
-            visitsLabel.AutoSize = true;
-            visitsLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            visitsLabel.Location = new Point(26, 262);
-            visitsLabel.Margin = new Padding(2, 0, 2, 0);
-            visitsLabel.Name = "visitsLabel";
-            visitsLabel.Size = new Size(294, 19);
-            visitsLabel.TabIndex = 6;
-            visitsLabel.Text = "Select an Appointment to view the visit details:";
-            // 
-            // visitDataGridView
-            // 
-            visitDataGridView.AllowUserToAddRows = false;
-            visitDataGridView.AllowUserToDeleteRows = false;
-            visitDataGridView.BackgroundColor = SystemColors.ControlLightLight;
-            visitDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            visitDataGridView.Location = new Point(26, 286);
-            visitDataGridView.Margin = new Padding(2, 1, 2, 1);
-            visitDataGridView.Name = "visitDataGridView";
-            visitDataGridView.ReadOnly = true;
-            visitDataGridView.RowHeadersWidth = 82;
-            visitDataGridView.RowTemplate.Height = 41;
-            visitDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            visitDataGridView.Size = new Size(494, 141);
-            visitDataGridView.TabIndex = 5;
-            // 
-            // cancelButton
-            // 
-            cancelButton.Location = new Point(387, 458);
-            cancelButton.Margin = new Padding(2, 1, 2, 1);
-            cancelButton.Name = "cancelButton";
-            cancelButton.Size = new Size(81, 22);
-            cancelButton.TabIndex = 7;
-            cancelButton.Text = "Cancel";
-            cancelButton.UseVisualStyleBackColor = true;
-            cancelButton.Click += CancelButton_Click;
-            // 
-            // patientIdLabel
-            // 
-            patientIdLabel.AutoSize = true;
-            patientIdLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            patientIdLabel.Location = new Point(26, 45);
-            patientIdLabel.Margin = new Padding(2, 0, 2, 0);
-            patientIdLabel.Name = "patientIdLabel";
-            patientIdLabel.Size = new Size(70, 19);
-            patientIdLabel.TabIndex = 8;
-            patientIdLabel.Text = "Patient ID";
+            this.appointmentsDataGridView.AllowUserToAddRows = false;
+            this.appointmentsDataGridView.AllowUserToDeleteRows = false;
+            this.appointmentsDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.appointmentsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.appointmentsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.appointmentID,
+            this.patientID,
+            this.doctorID,
+            this.doctorName,
+            this.scheduledDate,
+            this.reason});
+            this.appointmentsDataGridView.Location = new System.Drawing.Point(48, 228);
+            this.appointmentsDataGridView.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.appointmentsDataGridView.MultiSelect = false;
+            this.appointmentsDataGridView.Name = "appointmentsDataGridView";
+            this.appointmentsDataGridView.ReadOnly = true;
+            this.appointmentsDataGridView.RowHeadersWidth = 82;
+            this.appointmentsDataGridView.RowTemplate.Height = 41;
+            this.appointmentsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.appointmentsDataGridView.Size = new System.Drawing.Size(917, 301);
+            this.appointmentsDataGridView.TabIndex = 3;
             // 
             // appointmentID
             // 
-            appointmentID.HeaderText = "Appointment ID";
-            appointmentID.Name = "appointmentID";
-            appointmentID.ReadOnly = true;
+            this.appointmentID.HeaderText = "Appointment ID";
+            this.appointmentID.MinimumWidth = 10;
+            this.appointmentID.Name = "appointmentID";
+            this.appointmentID.ReadOnly = true;
+            this.appointmentID.Width = 200;
             // 
             // patientID
             // 
-            patientID.HeaderText = "Patient ID";
-            patientID.Name = "patientID";
-            patientID.ReadOnly = true;
+            this.patientID.HeaderText = "Patient ID";
+            this.patientID.MinimumWidth = 10;
+            this.patientID.Name = "patientID";
+            this.patientID.ReadOnly = true;
+            this.patientID.Width = 200;
             // 
             // doctorID
             // 
-            doctorID.HeaderText = "Doctor ID";
-            doctorID.Name = "doctorID";
-            doctorID.ReadOnly = true;
+            this.doctorID.HeaderText = "Doctor ID";
+            this.doctorID.MinimumWidth = 10;
+            this.doctorID.Name = "doctorID";
+            this.doctorID.ReadOnly = true;
+            this.doctorID.Width = 200;
             // 
             // doctorName
             // 
-            doctorName.HeaderText = "Doctor Name";
-            doctorName.Name = "doctorName";
-            doctorName.ReadOnly = true;
+            this.doctorName.HeaderText = "Doctor Name";
+            this.doctorName.MinimumWidth = 10;
+            this.doctorName.Name = "doctorName";
+            this.doctorName.ReadOnly = true;
+            this.doctorName.Width = 200;
             // 
             // scheduledDate
             // 
-            scheduledDate.HeaderText = "Scheduled Date";
-            scheduledDate.Name = "scheduledDate";
-            scheduledDate.ReadOnly = true;
+            this.scheduledDate.HeaderText = "Scheduled Date";
+            this.scheduledDate.MinimumWidth = 10;
+            this.scheduledDate.Name = "scheduledDate";
+            this.scheduledDate.ReadOnly = true;
+            this.scheduledDate.Width = 200;
             // 
             // reason
             // 
-            reason.HeaderText = "Reason";
-            reason.Name = "reason";
-            reason.ReadOnly = true;
+            this.reason.HeaderText = "Reason";
+            this.reason.MinimumWidth = 10;
+            this.reason.Name = "reason";
+            this.reason.ReadOnly = true;
+            this.reason.Width = 200;
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nameLabel.Location = new System.Drawing.Point(48, 175);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(269, 37);
+            this.nameLabel.TabIndex = 4;
+            this.nameLabel.Text = "List of Appointments:";
+            // 
+            // visitsLabel
+            // 
+            this.visitsLabel.AutoSize = true;
+            this.visitsLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.visitsLabel.Location = new System.Drawing.Point(48, 559);
+            this.visitsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.visitsLabel.Name = "visitsLabel";
+            this.visitsLabel.Size = new System.Drawing.Size(570, 37);
+            this.visitsLabel.TabIndex = 6;
+            this.visitsLabel.Text = "Select an Appointment to view the visit details:";
+            // 
+            // visitDataGridView
+            // 
+            this.visitDataGridView.AllowUserToAddRows = false;
+            this.visitDataGridView.AllowUserToDeleteRows = false;
+            this.visitDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.visitDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.visitDataGridView.Location = new System.Drawing.Point(48, 610);
+            this.visitDataGridView.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.visitDataGridView.Name = "visitDataGridView";
+            this.visitDataGridView.ReadOnly = true;
+            this.visitDataGridView.RowHeadersWidth = 82;
+            this.visitDataGridView.RowTemplate.Height = 41;
+            this.visitDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.visitDataGridView.Size = new System.Drawing.Size(917, 301);
+            this.visitDataGridView.TabIndex = 5;
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(719, 977);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(150, 47);
+            this.cancelButton.TabIndex = 7;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            // 
+            // patientIdLabel
+            // 
+            this.patientIdLabel.AutoSize = true;
+            this.patientIdLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.patientIdLabel.Location = new System.Drawing.Point(48, 96);
+            this.patientIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.patientIdLabel.Name = "patientIdLabel";
+            this.patientIdLabel.Size = new System.Drawing.Size(132, 37);
+            this.patientIdLabel.TabIndex = 8;
+            this.patientIdLabel.Text = "Patient ID";
             // 
             // ViewPatientForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(572, 351);
-            Controls.Add(patientIdLabel);
-            Controls.Add(cancelButton);
-            Controls.Add(visitsLabel);
-            Controls.Add(visitDataGridView);
-            Controls.Add(nameLabel);
-            Controls.Add(appointmentsDataGridView);
-            Controls.Add(dobLabel);
-            Controls.Add(patientNameLabel);
-            Controls.Add(headerLabel);
-            Margin = new Padding(2, 1, 2, 1);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "ViewPatientForm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "View Patient Information";
-            Load += ViewPatientForm_Load;
-            ((System.ComponentModel.ISupportInitialize)appointmentsDataGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)visitDataGridView).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1062, 1061);
+            this.Controls.Add(this.patientIdLabel);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.visitsLabel);
+            this.Controls.Add(this.visitDataGridView);
+            this.Controls.Add(this.nameLabel);
+            this.Controls.Add(this.appointmentsDataGridView);
+            this.Controls.Add(this.dobLabel);
+            this.Controls.Add(this.patientNameLabel);
+            this.Controls.Add(this.headerLabel);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ViewPatientForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "View Patient Information";
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitDataGridView)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
