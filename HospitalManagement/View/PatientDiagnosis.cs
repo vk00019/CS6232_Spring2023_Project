@@ -43,14 +43,23 @@ namespace HospitalManagement.View
             if (_final && _initial)
             {
                 _controller.UpdateDiagnosis(visit);
+                errorLabel.Text = "Diagnosis updated";
+                errorLabel.Visible = true;
+                errorLabel.ForeColor = Color.Green;
             }
             else if (_initial)
             {
                 _controller.UpdateInitialDiagnosis(visit);
+                errorLabel.Text = "Initial diagnosis updated";
+                errorLabel.Visible = true;
+                errorLabel.ForeColor = Color.Green;
             }
             else if (_final)
             {
                 _controller.UpdateFinalDiagnosis(visit);
+                errorLabel.Text = "Final Diagnosis updated";
+                errorLabel.Visible = true;
+                errorLabel.ForeColor = Color.Green;
             }
         }
 
