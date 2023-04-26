@@ -103,6 +103,7 @@
             this.appointmentsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.appointmentsDataGridView.Size = new System.Drawing.Size(917, 301);
             this.appointmentsDataGridView.TabIndex = 3;
+            this.appointmentsDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.AppointmentsDataGridView_CellMouseClick);
             // 
             // appointmentID
             // 
@@ -199,6 +200,7 @@
             this.cancelButton.TabIndex = 7;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // patientIdLabel
             // 
@@ -231,6 +233,7 @@
             this.Name = "ViewPatientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Patient Information";
+            this.Load += new System.EventHandler(this.ViewPatientForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitDataGridView)).EndInit();
             this.ResumeLayout(false);

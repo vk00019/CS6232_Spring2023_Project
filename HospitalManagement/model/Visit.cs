@@ -105,5 +105,7 @@
         /// The name of the patient.
         /// </value>
         public string PatientName { get; set; }
+
+        public string NurseName { get; set; }
     }
 }

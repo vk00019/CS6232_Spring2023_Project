@@ -7,15 +7,13 @@ namespace HospitalManagement.UserControls
 {
     public partial class SearchPatientVisitByUserControl : UserControl
     {
-        private readonly Nurse _nurse;
-        private readonly Appointment _appointment;
+        private Visit _visit;
         private readonly ManagementController _controller;
         public SearchPatientVisitByUserControl()
         {
             InitializeComponent();
             _controller = new ManagementController();
-            _appointment = new Appointment();
-            _nurse = new Nurse();
+            _visit = new Visit();
         }
 
         private void DobRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -151,13 +149,15 @@ namespace HospitalManagement.UserControls
         private void ViewButton_Click(object sender, EventArgs e)
         {
             using var visitForm = new VisitForm();
-            visitForm.ShowDialog();
+            
             var visit = new Visit
             {
-                AppointmentId = _appointment.AppointmentId,
-                NurseId = _nurse.NurseId
+                VisitId = _visit.VisitId,
+                NurseId = _visit.NurseId,
+                AppointmentId = _visit.AppointmentId
             };
-            _controller.StartVisit(visit);
+            visitForm.SetVisit(visit);
+            visitForm.ShowDialog();
             if (visitForm.DialogResult == DialogResult.OK)
             {
                 this.Show();
@@ -175,11 +175,10 @@ namespace HospitalManagement.UserControls
                 viewButton.Enabled = true;
                 if (searchDataGridView.SelectedRows[0] != null)
                 {
-                    int personalDetailsId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-
+                    _visit.VisitId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
                     //_patientDetails.PdID = _controller.GetPatientId(personalDetailsId);
-                    //_patientDetails.FirstName = searchDataGridView.SelectedRows[0].Cells[1].Value.ToString();
-                    //_patientDetails.LastName = searchDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+                    _visit.AppointmentId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[1].Value.ToString());
+                    _visit.NurseId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[2].Value.ToString());
                     //_patientDetails.DateOfBirth = DateTime.Parse(searchDataGridView.SelectedRows[0].Cells[3].Value.ToString());
                     //_patientDetails.PhoneNumber = searchDataGridView.SelectedRows[0].Cells[4].Value.ToString();
                     //_patientDetails.Gender = searchDataGridView.SelectedRows[0].Cells[5].Value.ToString();

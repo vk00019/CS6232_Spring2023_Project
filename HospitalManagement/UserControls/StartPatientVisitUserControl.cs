@@ -35,6 +35,13 @@ namespace HospitalManagement.UserControls
             orderTests.ShowDialog();
         }
 
+        private void testResultsButton_Click(object sender, EventArgs e)
+        {
+            using var testResults = new TestResultsForm();
+            testResults.SetVisitId(_visit.VisitId);
+            testResults.ShowDialog();
+        }
+
         private void diagnosisButton_Click(object sender, EventArgs e)
         {
             using var diagnosis = new PatientDiagnosis();
