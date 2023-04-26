@@ -11,6 +11,7 @@ namespace HospitalManagement.View
     {
         private PersonalDetails _patient;
         private readonly ManagementController _controller;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewPatientForm"/> class.
         /// </summary>
@@ -19,6 +20,7 @@ namespace HospitalManagement.View
             InitializeComponent();
             _controller = new ManagementController();
         }
+
         /// <summary>
         /// Sets the patient details.
         /// </summary>
@@ -41,7 +43,6 @@ namespace HospitalManagement.View
             List<Appointment> patientAppointments = _controller.GetPatientAppointments(_patient.PdID);
             if (patientAppointments.Count > 0)
             {
-                //appointmentsDataGridView.DataSource = patientAppointments;
                 RefreshDataGridView(patientAppointments);
                 appointmentsDataGridView.ClearSelection();
             }

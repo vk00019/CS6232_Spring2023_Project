@@ -57,7 +57,7 @@
             viewButton.Text = "View/Edit Visit";
             viewButton.UseVisualStyleBackColor = true;
             viewButton.Visible = false;
-            viewButton.Click += viewButton_Click;
+            viewButton.Click += ViewButton_Click;
             // 
             // searchDataGridView
             // 
@@ -74,7 +74,7 @@
             searchDataGridView.Size = new Size(451, 141);
             searchDataGridView.TabIndex = 71;
             searchDataGridView.Visible = false;
-            searchDataGridView.CellClick += searchDataGridView_CellClick;
+            searchDataGridView.CellClick += SearchDataGridView_CellClick;
             // 
             // errorLabel
             // 
@@ -108,7 +108,7 @@
             searchButton.TabIndex = 68;
             searchButton.Text = "Search";
             searchButton.UseVisualStyleBackColor = true;
-            searchButton.Click += searchButton_Click;
+            searchButton.Click += SearchButton_Click;
             // 
             // firstnameLabel
             // 

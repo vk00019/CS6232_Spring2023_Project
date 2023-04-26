@@ -7,14 +7,15 @@ namespace HospitalManagement.UserControls
 {
     public partial class SearchPatientVisitByUserControl : UserControl
     {
-        private Nurse _nurse;
+        private readonly Nurse _nurse;
         private readonly Appointment _appointment;
-        private ManagementController _controller;
+        private readonly ManagementController _controller;
         public SearchPatientVisitByUserControl()
         {
             InitializeComponent();
             _controller = new ManagementController();
             _appointment = new Appointment();
+            _nurse = new Nurse();
         }
 
         private void DobRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -66,11 +67,10 @@ namespace HospitalManagement.UserControls
             viewButton.Visible = false;
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
+        private void SearchButton_Click(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
             viewButton.Visible = true;
-
             viewButton.Enabled = false;
 
             List<Visit> patients;
@@ -148,7 +148,7 @@ namespace HospitalManagement.UserControls
             }
         }
 
-        private void viewButton_Click(object sender, EventArgs e)
+        private void ViewButton_Click(object sender, EventArgs e)
         {
             using var visitForm = new VisitForm();
             visitForm.ShowDialog();
@@ -158,12 +158,13 @@ namespace HospitalManagement.UserControls
                 NurseId = _nurse.NurseId
             };
             _controller.StartVisit(visit);
-            //DialogResult = DialogResult.OK;
-            //this.Close();
-
+            if (visitForm.DialogResult == DialogResult.OK)
+            {
+                this.Show();
+            }
         }
 
-        private void searchDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void SearchDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1)
             {
