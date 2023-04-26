@@ -64,7 +64,7 @@ namespace HospitalManagement.View
             {
                 deleteButton.Enabled = true;
                 if (testsDataGridView.SelectedRows[0] != null)
-                { 
+                {
                     index = testsDataGridView.SelectedRows[0].Index;
                 }
             }
@@ -78,26 +78,19 @@ namespace HospitalManagement.View
 
         private void reviewTestsButton_Click(object sender, EventArgs e)
         {
-            try
+            if (_ordered.Count > 0)
             {
-                if (_ordered.Count > 0)
-                {
-                    using var reviewForm = new ReviewTests();
-                    reviewForm.SetTests(_ordered);
-                    reviewForm.SetVisitId(_visitId);
-                    reviewForm.ShowDialog();
-                    this.Close();
-                }
-                else
-                {
-                    errorLabel.Text = @"Please select at least one test";
-                    errorLabel.ForeColor = Color.Red;
-                    errorLabel.Visible = true;
-                }
+                using var reviewForm = new ReviewTests();
+                reviewForm.SetTests(_ordered);
+                reviewForm.SetVisitId(_visitId);
+                reviewForm.ShowDialog();
+                this.Close();
             }
-            catch (Exception)
+            else
             {
+                errorLabel.Text = @"Please select at least one test";
                 errorLabel.ForeColor = Color.Red;
+                errorLabel.Visible = true;
             }
         }
 

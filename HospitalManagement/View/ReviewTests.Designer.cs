@@ -39,9 +39,10 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(273, 188);
+            this.cancelButton.Location = new System.Drawing.Point(507, 401);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(139, 49);
             this.cancelButton.TabIndex = 13;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(180, 188);
+            this.deleteButton.Location = new System.Drawing.Point(334, 401);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.Size = new System.Drawing.Size(139, 49);
             this.deleteButton.TabIndex = 12;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -60,9 +62,10 @@
             // orderTestsButton
             // 
             this.orderTestsButton.AutoSize = true;
-            this.orderTestsButton.Location = new System.Drawing.Point(84, 188);
+            this.orderTestsButton.Location = new System.Drawing.Point(156, 401);
+            this.orderTestsButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.orderTestsButton.Name = "orderTestsButton";
-            this.orderTestsButton.Size = new System.Drawing.Size(82, 25);
+            this.orderTestsButton.Size = new System.Drawing.Size(152, 53);
             this.orderTestsButton.TabIndex = 11;
             this.orderTestsButton.Text = "Order Tests";
             this.orderTestsButton.UseVisualStyleBackColor = true;
@@ -71,9 +74,10 @@
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(195, 220);
+            this.errorLabel.Location = new System.Drawing.Point(362, 469);
+            this.errorLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(60, 15);
+            this.errorLabel.Size = new System.Drawing.Size(121, 32);
             this.errorLabel.TabIndex = 14;
             this.errorLabel.Text = "errorLabel";
             this.errorLabel.Visible = false;
@@ -81,35 +85,40 @@
             // orderLabel
             // 
             this.orderLabel.AutoSize = true;
-            this.orderLabel.Location = new System.Drawing.Point(160, 9);
+            this.orderLabel.Location = new System.Drawing.Point(297, 19);
+            this.orderLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.orderLabel.Name = "orderLabel";
-            this.orderLabel.Size = new System.Drawing.Size(110, 15);
+            this.orderLabel.Size = new System.Drawing.Size(227, 32);
             this.orderLabel.TabIndex = 16;
             this.orderLabel.Text = "Select tests to order";
             // 
             // reviewTestsDataGridView
             // 
+            this.reviewTestsDataGridView.AllowUserToAddRows = false;
             this.reviewTestsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reviewTestsDataGridView.Location = new System.Drawing.Point(84, 32);
+            this.reviewTestsDataGridView.Location = new System.Drawing.Point(156, 68);
+            this.reviewTestsDataGridView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.reviewTestsDataGridView.MultiSelect = false;
             this.reviewTestsDataGridView.Name = "reviewTestsDataGridView";
+            this.reviewTestsDataGridView.RowHeadersWidth = 82;
             this.reviewTestsDataGridView.RowTemplate.Height = 25;
             this.reviewTestsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.reviewTestsDataGridView.Size = new System.Drawing.Size(264, 150);
+            this.reviewTestsDataGridView.Size = new System.Drawing.Size(490, 320);
             this.reviewTestsDataGridView.TabIndex = 17;
             this.reviewTestsDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ReviewTestsDataGridView_CellMouseClick);
             // 
             // ReviewTests
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 246);
+            this.ClientSize = new System.Drawing.Size(806, 525);
             this.Controls.Add(this.reviewTestsDataGridView);
             this.Controls.Add(this.orderLabel);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.orderTestsButton);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ReviewTests";

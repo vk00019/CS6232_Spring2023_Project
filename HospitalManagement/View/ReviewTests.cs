@@ -2,6 +2,7 @@
 using HospitalManagement.model;
 using HospitalManagement.Model;
 using System;
+using System.ComponentModel;
 using System.Reflection;
 
 namespace HospitalManagement.View
@@ -16,7 +17,7 @@ namespace HospitalManagement.View
         private int index;
         private int _visitId;
         private readonly ManagementController _controller;
-        private List<TestList> _finalTests;
+        private BindingList<TestList> _finalTests;
         /// <summary>
         /// Initializes a new instance of the <see cref="ReviewTests"/> class.
         /// </summary>
@@ -24,7 +25,7 @@ namespace HospitalManagement.View
         {
             InitializeComponent();
             _controller = new ManagementController();
-            _finalTests = new List<TestList>();
+            _finalTests = new BindingList<TestList>();
             RefreshList();
         }
 
@@ -76,16 +77,12 @@ namespace HospitalManagement.View
 
         private void ReviewTestsDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            try
+            if (e.RowIndex != -1)
             {
-                if (reviewTestsDataGridView.SelectedRows[0] != null)
+                if (reviewTestsDataGridView.SelectedRows[0] != null || reviewTestsDataGridView.SelectedRows.Count <= 0)
                 {
                     index = reviewTestsDataGridView.SelectedRows[0].Index;
                 }
-            }
-            catch (Exception)
-            {
-                errorLabel.ForeColor = Color.Red;
             }
         }
     }
