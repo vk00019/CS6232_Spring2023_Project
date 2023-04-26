@@ -17,6 +17,7 @@ namespace HospitalManagement.UserControls
         private void routineCheckupButton_Click(object sender, EventArgs e)
         {
             using var routine = new RoutineCheckup();
+            routine.SetVisitId(_visit.VisitId);
             routine.ShowDialog();
         }
 
@@ -32,6 +33,13 @@ namespace HospitalManagement.UserControls
             using var orderTests = new OrderTestForm();
             orderTests.SetVisitId(_visit.VisitId);
             orderTests.ShowDialog();
+        }
+
+        private void testResultsButton_Click(object sender, EventArgs e)
+        {
+            using var testResults = new TestResultsForm();
+            testResults.SetVisitId(_visit.VisitId);
+            testResults.ShowDialog();
         }
     }
 }

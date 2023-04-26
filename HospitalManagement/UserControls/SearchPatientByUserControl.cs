@@ -265,6 +265,7 @@ namespace HospitalManagement.UserControls
             TabControl tabControl = (TabControl)this.Parent.Parent;
             tabControl.SelectedTab = tabControl.TabPages["appointmentTab"];
             UserControl bookAppointmentUserControl = (UserControl)tabControl.TabPages["appointmentTab"].Controls["bookAppointmentUserControl"];
+            tabControl.TabPages["appointmentTab"].Controls["searchAppointmentByUserControl"].Visible = false;
             bookAppointmentUserControl.Visible = true;
             bookAppointmentUserControl.Controls["patientTextBox"].Text = _patientDetails.PdID.ToString();
         }

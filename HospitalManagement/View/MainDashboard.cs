@@ -70,9 +70,9 @@ namespace HospitalManagement.View
             startForm.ShowDialog();
             if (startForm.DialogResult == DialogResult.OK)
             {
+                searchPatientVisitByUserControl.Visible = false;
                 startPatientVisitUserControl.Visible = true;
                 startPatientVisitUserControl.Controls["nurseTextBox"].Text = _nurse.FirstName + " " + _nurse.LastName;
-                searchPatientVisitByUserControl.Visible = false;
             }
             else
             {

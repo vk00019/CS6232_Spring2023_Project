@@ -7,7 +7,7 @@ INSERT [dbo].[PersonalDetails] ([pdID], [firstName], [lastName], [dateOfBirth], 
 INSERT [dbo].[PersonalDetails] ([pdID], [firstName], [lastName], [dateOfBirth], [gender], [streetAddress], [city], [state], [zipCode], [country], [phoneNumber]) VALUES (3, 'Steve', 'Bernard', '12-12-1988', 'Male', '24-Town Hills', 'Brewman', 'Tennesse', '30115', 'United States', '9987654321') 
 INSERT [dbo].[PersonalDetails] ([pdID], [firstName], [lastName], [dateOfBirth], [gender], [streetAddress], [city], [state], [zipCode], [country], [phoneNumber]) VALUES (4, 'Tim', 'Cook', '9-5-1995', 'Male', '9-New Hills', 'Cary', 'North Carolina', '30224', 'United States', '8529637417')
 INSERT [dbo].[PersonalDetails] ([pdID], [firstName], [lastName], [dateOfBirth], [gender], [streetAddress], [city], [state], [zipCode], [country], [phoneNumber]) VALUES (5, 'Jack', 'Sparrow', '1-7-1992', 'Male', '23-North Street', 'Colombia', 'Florida', '30414', 'United States', '7418529631') 
-INSERT [dbo].[PersonalDetails] ([pdID], [firstName], [lastName], [dateOfBirth], [gender], [streetAddress], [city], [state], [zipCode], [country], [phoneNumber]) VALUES (6, 'Heiley', 'Jr', '11-5-1991', 'Female', '2-Up Mountain Parkway', 'Orlando', 'Florida', '30329', 'United States', '3216549874')
+INSERT [dbo].[PersonalDetails] ([pdID], [firstName], [lastName], [dateOfBirth], [gender], [streetAddress], [city], [state], [zipCode], [country], [phoneNumber]) VALUES (6, 'Hailey', 'Jr', '11-5-1991', 'Female', '2-Up Mountain Parkway', 'Orlando', 'Florida', '30329', 'United States', '3216549874')
 INSERT [dbo].[PersonalDetails] ([pdID], [firstName], [lastName], [dateOfBirth], [gender], [streetAddress], [city], [state], [zipCode], [country], [phoneNumber]) VALUES (7, 'Yasmin', 'Habibi', '9-2-1995', 'Female', '2564-Brewman Road', 'Douglasville', 'Georgia', '30455', 'United States', '9874561234') 
 INSERT [dbo].[PersonalDetails] ([pdID], [firstName], [lastName], [dateOfBirth], [gender], [streetAddress], [city], [state], [zipCode], [country], [phoneNumber]) VALUES (8, 'Mike', 'John', '9-8-1985', 'Male', '65-South Street', 'Greenland', 'South Carolina', '30824', 'United States', '6541239877')
 SET IDENTITY_INSERT [dbo].[PersonalDetails] OFF
@@ -80,7 +80,7 @@ INSERT [dbo].[Users] ([userName], [password], [pdID]) VALUES ('user', 'user1234'
 SET ANSI_PADDING OFF
 GO
 SET IDENTITY_INSERT [dbo].[Visit] ON
-INSERT [dbo].[Visit] ([visitID], [appointmentID], [nurseID], [height], [weight], [systolicBP], [diastolicBP], [bodyTemperature], [pulse], [symptoms], [initialDiagnosis]) VALUES (1, 1, 6, 5.10, 180.25, 120, 80, 98.4, 85, 'Mild Headache', 'Body temperature is normal. Need to get an X-Ray done.')
+INSERT [dbo].[Visit] ([visitID], [appointmentID], [nurseID], [height], [weight], [systolicBP], [diastolicBP], [bodyTemperature], [pulse], [symptoms], [initialDiagnosis]) VALUES (1, 1, 1, 5.10, 180.25, 120, 80, 98.4, 85, 'Mild Headache', 'Body temperature is normal. Need to get an X-Ray done.')
 SET IDENTITY_INSERT [dbo].[Visit] OFF
 
 
