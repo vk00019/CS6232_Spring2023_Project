@@ -35,9 +35,25 @@ namespace HospitalManagement.View
         private void VisitForm_Load(object sender, EventArgs e)
         {
             var visit = _controller.GetVisitForEditOrView(_visit.VisitId);
+
             doctorTextBox.Text = visit.DoctorName;
             nurseTextBox.Text = visit.NurseName;
             patientTextBox.Text = visit.PatientName;
+        }
+
+        private void routineCheckupButton_Click(object sender, EventArgs e)
+        {
+            using var routineCheckUp = new RoutineCheckup();
+            routineCheckUp.SetFields(_visit);
+            routineCheckUp.ShowDialog();
+        }
+
+        private void diagnosisButton_Click(object sender, EventArgs e)
+        {
+            using var diagnosis = new PatientDiagnosis();
+            diagnosis.SetVisit(_visit);
+            diagnosis.SetTextBoxes(_visit);
+            diagnosis.ShowDialog();
         }
     }
 }

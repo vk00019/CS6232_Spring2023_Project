@@ -1460,5 +1460,25 @@ namespace HospitalManagement.DAL
 
             return visit;
         }
+
+        public bool IsFinalDiagnosisAvailable(int id)
+        {
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "SELECT CASE WHEN finalDiagnosis IS NOT NULL THEN 'true' ELSE 'false' END AS FinalDiagnosis "
+                + " FROM Visit "
+                + " WHERE Visit.visitID = @id";
+            using var command = new SqlCommand(query, connection);
+            command.Parameters.Add("@id", System.Data.SqlDbType.VarChar);
+            command.Parameters["@id"].Value = id;
+            using var reader = command.ExecuteReader();
+            var finalDiagnosisOrdinal = reader.GetOrdinal("FinalDiagnosis");
+            var finalDiagnosis = new Boolean();
+            while (reader.Read())
+            {
+                finalDiagnosis = Convert.ToBoolean(reader.GetString(finalDiagnosisOrdinal));
+            }
+            return finalDiagnosis;
+        }
     }
 }

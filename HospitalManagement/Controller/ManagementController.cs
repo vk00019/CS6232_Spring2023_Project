@@ -219,5 +219,10 @@ namespace HospitalManagement.Controller
         {
             return _managementDal.GetOrderedTests(id);
         }
+
+        public bool IsFinalDiagnosisAvailable(int id)
+        {
+            return _managementDal.IsFinalDiagnosisAvailable(id);
+        }
     }
 }

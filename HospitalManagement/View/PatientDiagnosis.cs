@@ -11,7 +11,7 @@ namespace HospitalManagement.View
     {
         private bool _initial;
         private bool _final;
-        private int _visitId;
+        private Visit _visit;
         private readonly ManagementController _controller;
         /// <summary>
         /// Initializes a new instance of the <see cref="PatientDiagnosis"/> class.
@@ -24,9 +24,9 @@ namespace HospitalManagement.View
             _initial = false;
         }
 
-        public void SetVisitId(int id)
+        public void SetVisit(Visit visit)
         {
-            _visitId = id;
+            _visit = visit;
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace HospitalManagement.View
             var final = finalDiagnosisRichTextBox.Text;
             var visit = new Visit
             {
-                VisitId = _visitId,
+                VisitId = _visit.VisitId,
                 InitialDiagnosis = initial,
                 FinalDiagnosis = final
             };
@@ -52,6 +52,23 @@ namespace HospitalManagement.View
             {
                 _controller.UpdateFinalDiagnosis(visit);
             }
+        }
+
+        public void SetTextBoxes(Visit visit)
+        {
+            initialDiagnosisRichTextBox.Text = visit.InitialDiagnosis;
+            finalDiagnosisRichTextBox.Text = visit.FinalDiagnosis;
+            if (_controller.IsFinalDiagnosisAvailable(visit.VisitId))
+            {
+                DisableAllFields();
+            }
+        }
+
+        private void DisableAllFields()
+        {
+            initialDiagnosisRichTextBox.ReadOnly = true;
+            finalDiagnosisRichTextBox.ReadOnly = true;
+            addButton.Enabled = false;
         }
 
         private void initialDiagnosisRichTextBox_TextChanged(object sender, EventArgs e)

@@ -71,6 +71,33 @@ namespace HospitalManagement.View
             }
         }
 
+        public void SetFields(Visit visit)
+        {
+            heightTextBox.Text = visit.Height.ToString();
+            weightTextBox.Text = visit.Weight.ToString();
+            sysBPTextBox.Text = visit.SystolicBp.ToString();
+            diaBPTextBox.Text = visit.DiastolicBp.ToString();
+            tempTextBox.Text = visit.BodyTemperature.ToString();
+            pulseTextBox.Text = visit.Pulse.ToString();
+            symptomsTextBox.Text = visit.Symptoms.ToString();
+            if (_controller.IsFinalDiagnosisAvailable(visit.VisitId))
+            {
+                DisableAllFields();
+            }
+        }
+
+        private void DisableAllFields()
+        {
+            heightTextBox.ReadOnly = true;
+            weightTextBox.ReadOnly = true;
+            sysBPTextBox.ReadOnly = true;
+            diaBPTextBox.ReadOnly = true;
+            tempTextBox.ReadOnly = true;
+            pulseTextBox.ReadOnly = true;
+            symptomsTextBox.ReadOnly = true;
+            addDetailsButton.Enabled = false;
+        }
+
         private void CheckAllFields()
         {
             errorLabel.Text = @"*All fields are required*";

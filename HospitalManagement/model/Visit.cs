@@ -5,6 +5,13 @@
     /// </summary>
     public class Visit
     {
+
+        public Visit()
+        {
+            InitialDiagnosis = "";
+            FinalDiagnosis = "";
+            Symptoms = "";
+        }
         /// <summary>
         /// Gets or sets the visit identifier.
         /// </summary>

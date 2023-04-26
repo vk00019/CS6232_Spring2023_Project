@@ -81,6 +81,7 @@
             routineCheckupButton.TabIndex = 4;
             routineCheckupButton.Text = "Routine Checkup";
             routineCheckupButton.UseVisualStyleBackColor = true;
+            routineCheckupButton.Click += routineCheckupButton_Click;
             // 
             // orderTestsButton
             // 
@@ -103,6 +104,7 @@
             diagnosisButton.TabIndex = 6;
             diagnosisButton.Text = "Diagnosis";
             diagnosisButton.UseVisualStyleBackColor = true;
+            diagnosisButton.Click += diagnosisButton_Click;
             // 
             // testResultsButton
             // 

@@ -154,7 +154,9 @@ namespace HospitalManagement.UserControls
             {
                 VisitId = _visit.VisitId,
                 NurseId = _visit.NurseId,
-                AppointmentId = _visit.AppointmentId
+                AppointmentId = _visit.AppointmentId,
+                InitialDiagnosis = _visit.InitialDiagnosis,
+                FinalDiagnosis = _visit.FinalDiagnosis
             };
             visitForm.SetVisit(visit);
             visitForm.ShowDialog();
@@ -186,7 +188,8 @@ namespace HospitalManagement.UserControls
                     //_patientDetails.City = searchDataGridView.SelectedRows[0].Cells[7].Value.ToString();
                     //_patientDetails.State = searchDataGridView.SelectedRows[0].Cells[8].Value.ToString();
                     //_patientDetails.Country = searchDataGridView.SelectedRows[0].Cells[9].Value.ToString();
-                    //_patientDetails.ZipCode = searchDataGridView.SelectedRows[0].Cells[10].Value.ToString();
+                    _visit.InitialDiagnosis = searchDataGridView.SelectedRows[0].Cells[10].Value.ToString();
+                    _visit.FinalDiagnosis = searchDataGridView.SelectedRows[0].Cells[11].Value.ToString();
                 }
             }
         }
