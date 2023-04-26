@@ -28,95 +28,102 @@
         /// </summary>
         private void InitializeComponent()
         {
-            initialDiagnosisRichTextBox = new RichTextBox();
-            label1 = new Label();
-            finalDiagnosisRichTextBox = new RichTextBox();
-            label2 = new Label();
-            addButton = new Button();
-            cancelButton = new Button();
-            errorLabel = new Label();
-            SuspendLayout();
+            this.initialDiagnosisRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.finalDiagnosisRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.addButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.errorLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // initialDiagnosisRichTextBox
             // 
-            initialDiagnosisRichTextBox.Location = new Point(107, 65);
-            initialDiagnosisRichTextBox.Name = "initialDiagnosisRichTextBox";
-            initialDiagnosisRichTextBox.Size = new Size(239, 96);
-            initialDiagnosisRichTextBox.TabIndex = 0;
-            initialDiagnosisRichTextBox.Text = "";
+            this.initialDiagnosisRichTextBox.Location = new System.Drawing.Point(107, 65);
+            this.initialDiagnosisRichTextBox.Name = "initialDiagnosisRichTextBox";
+            this.initialDiagnosisRichTextBox.Size = new System.Drawing.Size(239, 96);
+            this.initialDiagnosisRichTextBox.TabIndex = 0;
+            this.initialDiagnosisRichTextBox.Text = "";
+            this.initialDiagnosisRichTextBox.TextChanged += new System.EventHandler(this.initialDiagnosisRichTextBox_TextChanged);
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(107, 39);
-            label1.Name = "label1";
-            label1.Size = new Size(93, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Initial Diagnosis:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(107, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Initial Diagnosis:";
             // 
             // finalDiagnosisRichTextBox
             // 
-            finalDiagnosisRichTextBox.Location = new Point(107, 209);
-            finalDiagnosisRichTextBox.Name = "finalDiagnosisRichTextBox";
-            finalDiagnosisRichTextBox.Size = new Size(239, 96);
-            finalDiagnosisRichTextBox.TabIndex = 2;
-            finalDiagnosisRichTextBox.Text = "";
+            this.finalDiagnosisRichTextBox.Location = new System.Drawing.Point(107, 209);
+            this.finalDiagnosisRichTextBox.Name = "finalDiagnosisRichTextBox";
+            this.finalDiagnosisRichTextBox.Size = new System.Drawing.Size(239, 96);
+            this.finalDiagnosisRichTextBox.TabIndex = 2;
+            this.finalDiagnosisRichTextBox.Text = "";
+            this.finalDiagnosisRichTextBox.TextChanged += new System.EventHandler(this.finalDiagnosisRichTextBox_TextChanged);
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(107, 184);
-            label2.Name = "label2";
-            label2.Size = new Size(89, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Final Diagnosis:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(107, 184);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Final Diagnosis:";
             // 
             // addButton
             // 
-            addButton.Location = new Point(121, 341);
-            addButton.Name = "addButton";
-            addButton.Size = new Size(75, 23);
-            addButton.TabIndex = 4;
-            addButton.Text = "Add";
-            addButton.UseVisualStyleBackColor = true;
+            this.addButton.Enabled = false;
+            this.addButton.Location = new System.Drawing.Point(121, 341);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 4;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // cancelButton
             // 
-            cancelButton.Location = new Point(253, 341);
-            cancelButton.Name = "cancelButton";
-            cancelButton.Size = new Size(75, 23);
-            cancelButton.TabIndex = 5;
-            cancelButton.Text = "Cancel";
-            cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(253, 341);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 5;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // errorLabel
             // 
-            errorLabel.AutoSize = true;
-            errorLabel.Location = new Point(156, 316);
-            errorLabel.Name = "errorLabel";
-            errorLabel.Size = new Size(38, 15);
-            errorLabel.TabIndex = 6;
-            errorLabel.Text = "label3";
-            errorLabel.Visible = false;
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Location = new System.Drawing.Point(156, 316);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(60, 15);
+            this.errorLabel.TabIndex = 6;
+            this.errorLabel.Text = "errorLabel";
+            this.errorLabel.Visible = false;
             // 
             // PatientDiagnosis
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(479, 385);
-            Controls.Add(errorLabel);
-            Controls.Add(cancelButton);
-            Controls.Add(addButton);
-            Controls.Add(label2);
-            Controls.Add(finalDiagnosisRichTextBox);
-            Controls.Add(label1);
-            Controls.Add(initialDiagnosisRichTextBox);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "PatientDiagnosis";
-            Text = "Patient Diagnosis";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(479, 385);
+            this.Controls.Add(this.errorLabel);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.finalDiagnosisRichTextBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.initialDiagnosisRichTextBox);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "PatientDiagnosis";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Patient Diagnosis";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

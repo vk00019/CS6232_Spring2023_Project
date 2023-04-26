@@ -34,5 +34,12 @@ namespace HospitalManagement.UserControls
             orderTests.SetVisitId(_visit.VisitId);
             orderTests.ShowDialog();
         }
+
+        private void diagnosisButton_Click(object sender, EventArgs e)
+        {
+            using var diagnosis = new PatientDiagnosis();
+            diagnosis.SetVisitId(_visit.VisitId);
+            diagnosis.ShowDialog();
+        }
     }
 }
