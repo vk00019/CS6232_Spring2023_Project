@@ -1,6 +1,7 @@
 ﻿using HospitalManagement.Controller;
 using HospitalManagement.model;
 using HospitalManagement.Model;
+using System.ComponentModel;
 
 namespace HospitalManagement.View
 {
@@ -12,8 +13,8 @@ namespace HospitalManagement.View
     {
         private int _visitId;
         private int index;
-        private List<TestList> _ordered;
-        private List<TestList> _list;
+        private BindingList<TestList> _ordered;
+        private BindingList<TestList> _list;
         private readonly ManagementController _controller;
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderTestForm"/> class.
@@ -22,8 +23,9 @@ namespace HospitalManagement.View
         {
             InitializeComponent();
             _controller = new ManagementController();
-            _ordered = new List<TestList>();
-            _list = _controller.GetTests();
+            _ordered = new BindingList<TestList>();
+            _list = new BindingList<TestList>();
+            UpdateTestList();
             RefreshList();
 
         }
@@ -41,11 +43,7 @@ namespace HospitalManagement.View
         private void addButton_Click(object sender, EventArgs e)
         {
             var testToAdd = allTestsComboBox.SelectedItem as TestList;
-            _ordered.Add(new TestList
-            {
-                Id = testToAdd.Id,
-                Name = testToAdd.Name,
-            });
+            _ordered.Add(testToAdd);
             _list.Remove(testToAdd);
             RefreshList();
         }
@@ -60,14 +58,10 @@ namespace HospitalManagement.View
 
         private void testsDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex == -1)
-            {
-                deleteButton.Enabled = false;
-            }
-            else
+            if (e.RowIndex != -1)
             {
                 deleteButton.Enabled = true;
-                if (testsDataGridView.SelectedRows[0] != null)
+                if (testsDataGridView.SelectedRows[0] != null || testsDataGridView.SelectedRows.Count <= 0)
                 {
                     index = testsDataGridView.SelectedRows[0].Index;
                 }
@@ -102,6 +96,14 @@ namespace HospitalManagement.View
         private void allTestsComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
+        }
+
+        private void UpdateTestList()
+        {
+            foreach (var test in _controller.GetTests())
+            {
+                _list.Add(test);
+            }
         }
     }
 }
