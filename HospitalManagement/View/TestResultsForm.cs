@@ -42,13 +42,19 @@ namespace HospitalManagement.View
 
         private void TestResultsForm_Load(object sender, EventArgs e)
         {
+            SetOrderTests();
+            normalComboBox.DataSource = GetNormalityList();
+            datePicker.MaxDate = DateTime.Today;
+            datePicker.MinDate = DateTime.MinValue;
+            datePicker.Value = DateTime.Today;
+        }
+
+        private void SetOrderTests()
+        {
             List<TestList> testLists = _controller.GetOrderedTests(_visitId);
             orderedTestsComboBox.DataSource = testLists;
             orderedTestsComboBox.DisplayMember = "Name";
             orderedTestsComboBox.ValueMember = "Id";
-
-            normalComboBox.DataSource = GetNormalityList();
-            datePicker.MaxDate = DateTime.Today;
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -81,6 +87,7 @@ namespace HospitalManagement.View
                 errorLabel.Visible = true;
                 errorLabel.Text = "Test result added successfully";
                 errorLabel.ForeColor = Color.Green;
+                SetOrderTests();
             }
         }
 

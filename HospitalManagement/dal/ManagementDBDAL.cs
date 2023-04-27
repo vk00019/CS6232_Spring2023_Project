@@ -1545,8 +1545,8 @@ namespace HospitalManagement.DAL
         {
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            string query = "Update PatientTests set testID = @testId, result = @result, " +
-                           "performedDate = @performedDate, abnormal = @normal where visitID = @visitId";
+            string query = "Update PatientTests set result = @result, performedDate = @performedDate, abnormal = @normal " +
+                           "where visitID = @visitId and testID = @testId";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@testId", SqlDbType.Int);
@@ -1554,6 +1554,12 @@ namespace HospitalManagement.DAL
 
             command.Parameters.Add("@result", SqlDbType.VarChar);
             command.Parameters["@result"].Value = patientTest.Result;
+
+            command.Parameters.Add("@normal", SqlDbType.VarChar);
+            command.Parameters["@normal"].Value = patientTest.Normality;
+
+            command.Parameters.Add("@visitId", SqlDbType.Int);
+            command.Parameters["@visitId"].Value = patientTest.VisitId;
 
             command.Parameters.Add("@performedDate", SqlDbType.DateTime);
             command.Parameters["@performedDate"].Value = patientTest.PerformedDate;
