@@ -20,12 +20,10 @@ namespace HospitalManagement.View
             _controller = new ManagementController();
         }
 
-        public void SetVisit(Visit visitID)
+        public void SetVisit(Visit visit)
         {
-            _visit = visitID;
+            _visit = visit;
         }
-
-
 
         private void CancelButton_Click(object sender, EventArgs e)
         {

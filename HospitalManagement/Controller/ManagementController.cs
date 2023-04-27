@@ -224,5 +224,10 @@ namespace HospitalManagement.Controller
         {
             return _managementDal.IsFinalDiagnosisAvailable(id);
         }
+
+        public Visit GetEverything(int id)
+        {
+            return _managementDal.GetEverything(id);
+        }
     }
 }

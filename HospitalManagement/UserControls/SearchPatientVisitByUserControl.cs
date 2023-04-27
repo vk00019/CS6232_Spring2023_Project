@@ -156,7 +156,6 @@ namespace HospitalManagement.UserControls
                 NurseId = _visit.NurseId,
                 AppointmentId = _visit.AppointmentId,
                 InitialDiagnosis = _visit.InitialDiagnosis,
-                FinalDiagnosis = _visit.FinalDiagnosis,
                 Height = _visit.Height,
                 Weight = _visit.Weight,
                 SystolicBp = _visit.SystolicBp,
@@ -187,11 +186,11 @@ namespace HospitalManagement.UserControls
                     _visit.VisitId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
                     _visit.AppointmentId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[1].Value.ToString());
                     _visit.NurseId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[2].Value.ToString());
-                    _visit.Height = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[3].Value.ToString());
-                    _visit.Weight = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[4].Value.ToString());
+                    _visit.Height = (decimal)Double.Parse(searchDataGridView.SelectedRows[0].Cells[3].Value.ToString());
+                    _visit.Weight = (decimal)Double.Parse(searchDataGridView.SelectedRows[0].Cells[4].Value.ToString());
                     _visit.SystolicBp = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[5].Value.ToString());
                     _visit.DiastolicBp = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[6].Value.ToString());
-                    _visit.BodyTemperature = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[7].Value.ToString());
+                    _visit.BodyTemperature = (decimal)Double.Parse(searchDataGridView.SelectedRows[0].Cells[7].Value.ToString());
                     _visit.Pulse = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[8].Value.ToString());
                     _visit.Symptoms = searchDataGridView.SelectedRows[0].Cells[9].Value.ToString();
                     _visit.InitialDiagnosis = searchDataGridView.SelectedRows[0].Cells[10].Value.ToString();

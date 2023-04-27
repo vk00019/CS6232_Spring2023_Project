@@ -19,6 +19,7 @@ namespace HospitalManagement.View
         {
             InitializeComponent();
             _controller = new ManagementController();
+            EnableAllfields();
         }
 
         /// <summary>
@@ -73,13 +74,14 @@ namespace HospitalManagement.View
 
         public void SetFields(Visit visit)
         {
-            heightTextBox.Text = visit.Height.ToString();
-            weightTextBox.Text = visit.Weight.ToString();
-            sysBPTextBox.Text = visit.SystolicBp.ToString();
-            diaBPTextBox.Text = visit.DiastolicBp.ToString();
-            tempTextBox.Text = visit.BodyTemperature.ToString();
-            pulseTextBox.Text = visit.Pulse.ToString();
-            symptomsTextBox.Text = visit.Symptoms.ToString();
+            var newVisit = _controller.GetEverything(visit.VisitId);
+            heightTextBox.Text = newVisit.Height.ToString();
+            weightTextBox.Text = newVisit.Weight.ToString();
+            sysBPTextBox.Text = newVisit.SystolicBp.ToString();
+            diaBPTextBox.Text = newVisit.DiastolicBp.ToString();
+            tempTextBox.Text = newVisit.BodyTemperature.ToString();
+            pulseTextBox.Text = newVisit.Pulse.ToString();
+            symptomsTextBox.Text = newVisit.Symptoms.ToString();
             if (_controller.IsFinalDiagnosisAvailable(visit.VisitId))
             {
                 DisableAllFields();
@@ -96,6 +98,18 @@ namespace HospitalManagement.View
             pulseTextBox.ReadOnly = true;
             symptomsTextBox.ReadOnly = true;
             addDetailsButton.Enabled = false;
+        }
+
+        private void EnableAllfields()
+        {
+            heightTextBox.ReadOnly = false;
+            weightTextBox.ReadOnly = false;
+            sysBPTextBox.ReadOnly = false;
+            diaBPTextBox.ReadOnly = false;
+            tempTextBox.ReadOnly = false;
+            pulseTextBox.ReadOnly = false;
+            symptomsTextBox.ReadOnly = false;
+            addDetailsButton.Enabled = true;
         }
 
         private void CheckAllFields()
