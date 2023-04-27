@@ -2,8 +2,6 @@
 using HospitalManagement.Model;
 using System.Data;
 using System.Data.SqlClient;
-using System.Numerics;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace HospitalManagement.DAL
 {
@@ -1565,6 +1563,46 @@ namespace HospitalManagement.DAL
             command.Parameters["@performedDate"].Value = patientTest.PerformedDate;
 
             command.ExecuteNonQuery();
+        }
+
+        public List<PatientTest> GePatientTestsResults(int visitId)
+        {
+            List<PatientTest> tests = new List<PatientTest>();
+
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select Tests.testName, result, performedDate, abnormal " +
+                           "from PatientTests, Tests where PatientTests.testID = Tests.testID " +
+                           "and PatientTests.visitID = @visitId and result IS NOT NULL and " +
+                           "performedDate IS NOT NULL and abnormal IS NOT NULL";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@visitId", SqlDbType.Int);
+            command.Parameters["@visitId"].Value = visitId;
+            using var reader = command.ExecuteReader();
+
+            var nameOrdinal = reader.GetOrdinal("testName");
+            var resultOrdinal = reader.GetOrdinal("result");
+            var dateOrdinal = reader.GetOrdinal("performedDate");
+            var normalOrdinal = reader.GetOrdinal("abnormal");
+
+            while (reader.Read())
+            {
+                var testName = reader.GetString(nameOrdinal);
+                var result = reader.GetString(resultOrdinal);
+                var date = reader.GetDateTime(dateOrdinal);
+                var normal = reader.GetString(normalOrdinal);
+
+                tests.Add(new PatientTest
+                {
+                    TestName = testName,
+                    Result = result,
+                    PerformedDate = date,
+                    Normality = normal
+                });
+            }
+
+            return tests;
         }
     }
 }
