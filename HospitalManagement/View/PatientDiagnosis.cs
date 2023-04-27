@@ -46,6 +46,7 @@ namespace HospitalManagement.View
                 errorLabel.Text = "Diagnosis updated";
                 errorLabel.Visible = true;
                 errorLabel.ForeColor = Color.Green;
+                DisableAllFields();
             }
             else if (_initial)
             {
@@ -60,6 +61,7 @@ namespace HospitalManagement.View
                 errorLabel.Text = "Final Diagnosis updated";
                 errorLabel.Visible = true;
                 errorLabel.ForeColor = Color.Green;
+                DisableAllFields();
             }
         }
 
