@@ -52,7 +52,11 @@ namespace HospitalManagement.UserControls
             using var diagnosis = new PatientDiagnosis();
             diagnosis.SetVisit(_visit);
             diagnosis.SetTextBoxes(_visit);
-            diagnosis.ShowDialog();
+            var result = diagnosis.ShowDialog();
+            if (result == DialogResult.Yes)
+            {
+                orderTestsButton.Enabled = false;
+            }
         }
     }
 }

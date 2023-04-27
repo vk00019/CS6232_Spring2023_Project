@@ -28,260 +28,264 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.patientTab = new System.Windows.Forms.TabPage();
-            this.searchPatientByUserControl = new HospitalManagement.UserControls.SearchPatientByUserControl();
-            this.registerPatientUserControl = new HospitalManagement.UserControls.RegisterPatientUserControl();
-            this.searchPatientButton = new System.Windows.Forms.Button();
-            this.registerPatientButton = new System.Windows.Forms.Button();
-            this.appointmentTab = new System.Windows.Forms.TabPage();
-            this.searchAppointmentByUserControl = new HospitalManagement.UserControls.SearchAppointmentByUserControl();
-            this.bookAppointmentUserControl = new HospitalManagement.UserControls.BookAppointmentUserControl();
-            this.searchAppointmentButton = new System.Windows.Forms.Button();
-            this.bookAppointmentButton = new System.Windows.Forms.Button();
-            this.visitTab = new System.Windows.Forms.TabPage();
-            this.searchPatientVisitByUserControl = new HospitalManagement.UserControls.SearchPatientVisitByUserControl();
-            this.startPatientVisitUserControl = new HospitalManagement.UserControls.StartPatientVisitUserControl();
-            this.searchVisitButton = new System.Windows.Forms.Button();
-            this.startPatientVisitButton = new System.Windows.Forms.Button();
-            this.logoutLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.usernameLabel = new System.Windows.Forms.Label();
-            this.tabControl.SuspendLayout();
-            this.patientTab.SuspendLayout();
-            this.appointmentTab.SuspendLayout();
-            this.visitTab.SuspendLayout();
-            this.SuspendLayout();
+            tabControl = new TabControl();
+            patientTab = new TabPage();
+            searchPatientByUserControl = new UserControls.SearchPatientByUserControl();
+            registerPatientUserControl = new UserControls.RegisterPatientUserControl();
+            searchPatientButton = new Button();
+            registerPatientButton = new Button();
+            appointmentTab = new TabPage();
+            searchAppointmentByUserControl = new UserControls.SearchAppointmentByUserControl();
+            bookAppointmentUserControl = new UserControls.BookAppointmentUserControl();
+            searchAppointmentButton = new Button();
+            bookAppointmentButton = new Button();
+            visitTab = new TabPage();
+            searchPatientVisitByUserControl = new UserControls.SearchPatientVisitByUserControl();
+            startPatientVisitUserControl = new UserControls.StartPatientVisitUserControl();
+            searchVisitButton = new Button();
+            startPatientVisitButton = new Button();
+            logoutLinkLabel = new LinkLabel();
+            usernameLabel = new Label();
+            tabControl.SuspendLayout();
+            patientTab.SuspendLayout();
+            appointmentTab.SuspendLayout();
+            visitTab.SuspendLayout();
+            SuspendLayout();
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.patientTab);
-            this.tabControl.Controls.Add(this.appointmentTab);
-            this.tabControl.Controls.Add(this.visitTab);
-            this.tabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl.Location = new System.Drawing.Point(0, 89);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1274, 1370);
-            this.tabControl.TabIndex = 0;
+            tabControl.Controls.Add(patientTab);
+            tabControl.Controls.Add(appointmentTab);
+            tabControl.Controls.Add(visitTab);
+            tabControl.Dock = DockStyle.Bottom;
+            tabControl.Location = new Point(0, 29);
+            tabControl.Margin = new Padding(2, 3, 2, 3);
+            tabControl.Name = "tabControl";
+            tabControl.SelectedIndex = 0;
+            tabControl.Size = new Size(740, 856);
+            tabControl.TabIndex = 0;
             // 
             // patientTab
             // 
-            this.patientTab.Controls.Add(this.searchPatientByUserControl);
-            this.patientTab.Controls.Add(this.registerPatientUserControl);
-            this.patientTab.Controls.Add(this.searchPatientButton);
-            this.patientTab.Controls.Add(this.registerPatientButton);
-            this.patientTab.Location = new System.Drawing.Point(8, 46);
-            this.patientTab.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.patientTab.Name = "patientTab";
-            this.patientTab.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.patientTab.Size = new System.Drawing.Size(1258, 1316);
-            this.patientTab.TabIndex = 0;
-            this.patientTab.Text = "Patient";
-            this.patientTab.UseVisualStyleBackColor = true;
+            patientTab.Controls.Add(searchPatientByUserControl);
+            patientTab.Controls.Add(registerPatientUserControl);
+            patientTab.Controls.Add(searchPatientButton);
+            patientTab.Controls.Add(registerPatientButton);
+            patientTab.Location = new Point(4, 29);
+            patientTab.Margin = new Padding(2, 3, 2, 3);
+            patientTab.Name = "patientTab";
+            patientTab.Padding = new Padding(2, 3, 2, 3);
+            patientTab.Size = new Size(732, 823);
+            patientTab.TabIndex = 0;
+            patientTab.Text = "Patient";
+            patientTab.UseVisualStyleBackColor = true;
             // 
             // searchPatientByUserControl
             // 
-            this.searchPatientByUserControl.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.searchPatientByUserControl.Location = new System.Drawing.Point(77, 125);
-            this.searchPatientByUserControl.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.searchPatientByUserControl.Name = "searchPatientByUserControl";
-            this.searchPatientByUserControl.Size = new System.Drawing.Size(1026, 1089);
-            this.searchPatientByUserControl.TabIndex = 3;
-            this.searchPatientByUserControl.Visible = false;
+            searchPatientByUserControl.BackColor = SystemColors.ControlLightLight;
+            searchPatientByUserControl.Location = new Point(47, 78);
+            searchPatientByUserControl.Margin = new Padding(2, 1, 2, 1);
+            searchPatientByUserControl.Name = "searchPatientByUserControl";
+            searchPatientByUserControl.Size = new Size(631, 681);
+            searchPatientByUserControl.TabIndex = 3;
+            searchPatientByUserControl.Visible = false;
             // 
             // registerPatientUserControl
             // 
-            this.registerPatientUserControl.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.registerPatientUserControl.Location = new System.Drawing.Point(103, 143);
-            this.registerPatientUserControl.Name = "registerPatientUserControl";
-            this.registerPatientUserControl.Size = new System.Drawing.Size(1014, 1091);
-            this.registerPatientUserControl.TabIndex = 2;
-            this.registerPatientUserControl.Visible = false;
+            registerPatientUserControl.BackColor = SystemColors.ControlLightLight;
+            registerPatientUserControl.Location = new Point(63, 89);
+            registerPatientUserControl.Margin = new Padding(1);
+            registerPatientUserControl.Name = "registerPatientUserControl";
+            registerPatientUserControl.Size = new Size(624, 682);
+            registerPatientUserControl.TabIndex = 2;
+            registerPatientUserControl.Visible = false;
             // 
             // searchPatientButton
             // 
-            this.searchPatientButton.AutoSize = true;
-            this.searchPatientButton.Location = new System.Drawing.Point(650, 38);
-            this.searchPatientButton.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.searchPatientButton.Name = "searchPatientButton";
-            this.searchPatientButton.Size = new System.Drawing.Size(284, 67);
-            this.searchPatientButton.TabIndex = 1;
-            this.searchPatientButton.Text = "Search Patient";
-            this.searchPatientButton.UseVisualStyleBackColor = true;
-            this.searchPatientButton.Click += new System.EventHandler(this.SearchPatientButton_Click);
+            searchPatientButton.AutoSize = true;
+            searchPatientButton.Location = new Point(400, 24);
+            searchPatientButton.Margin = new Padding(2, 3, 2, 3);
+            searchPatientButton.Name = "searchPatientButton";
+            searchPatientButton.Size = new Size(175, 42);
+            searchPatientButton.TabIndex = 1;
+            searchPatientButton.Text = "Search Patient";
+            searchPatientButton.UseVisualStyleBackColor = true;
+            searchPatientButton.Click += SearchPatientButton_Click;
             // 
             // registerPatientButton
             // 
-            this.registerPatientButton.AutoSize = true;
-            this.registerPatientButton.Location = new System.Drawing.Point(268, 38);
-            this.registerPatientButton.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.registerPatientButton.Name = "registerPatientButton";
-            this.registerPatientButton.Size = new System.Drawing.Size(307, 67);
-            this.registerPatientButton.TabIndex = 0;
-            this.registerPatientButton.Text = "Register Patient";
-            this.registerPatientButton.UseVisualStyleBackColor = true;
-            this.registerPatientButton.Click += new System.EventHandler(this.RegisterPatientButton_Click);
+            registerPatientButton.AutoSize = true;
+            registerPatientButton.Location = new Point(165, 24);
+            registerPatientButton.Margin = new Padding(2, 3, 2, 3);
+            registerPatientButton.Name = "registerPatientButton";
+            registerPatientButton.Size = new Size(189, 42);
+            registerPatientButton.TabIndex = 0;
+            registerPatientButton.Text = "Register Patient";
+            registerPatientButton.UseVisualStyleBackColor = true;
+            registerPatientButton.Click += RegisterPatientButton_Click;
             // 
             // appointmentTab
             // 
-            this.appointmentTab.Controls.Add(this.searchAppointmentByUserControl);
-            this.appointmentTab.Controls.Add(this.bookAppointmentUserControl);
-            this.appointmentTab.Controls.Add(this.searchAppointmentButton);
-            this.appointmentTab.Controls.Add(this.bookAppointmentButton);
-            this.appointmentTab.Location = new System.Drawing.Point(8, 46);
-            this.appointmentTab.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.appointmentTab.Name = "appointmentTab";
-            this.appointmentTab.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.appointmentTab.Size = new System.Drawing.Size(1258, 1316);
-            this.appointmentTab.TabIndex = 1;
-            this.appointmentTab.Text = "Appointment";
-            this.appointmentTab.UseVisualStyleBackColor = true;
+            appointmentTab.Controls.Add(searchAppointmentByUserControl);
+            appointmentTab.Controls.Add(bookAppointmentUserControl);
+            appointmentTab.Controls.Add(searchAppointmentButton);
+            appointmentTab.Controls.Add(bookAppointmentButton);
+            appointmentTab.Location = new Point(4, 29);
+            appointmentTab.Margin = new Padding(2, 3, 2, 3);
+            appointmentTab.Name = "appointmentTab";
+            appointmentTab.Padding = new Padding(2, 3, 2, 3);
+            appointmentTab.Size = new Size(782, 823);
+            appointmentTab.TabIndex = 1;
+            appointmentTab.Text = "Appointment";
+            appointmentTab.UseVisualStyleBackColor = true;
             // 
             // searchAppointmentByUserControl
             // 
-            this.searchAppointmentByUserControl.Location = new System.Drawing.Point(113, 137);
-            this.searchAppointmentByUserControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.searchAppointmentByUserControl.Name = "searchAppointmentByUserControl";
-            this.searchAppointmentByUserControl.Size = new System.Drawing.Size(1028, 1082);
-            this.searchAppointmentByUserControl.TabIndex = 5;
-            this.searchAppointmentByUserControl.Visible = false;
+            searchAppointmentByUserControl.Location = new Point(70, 86);
+            searchAppointmentByUserControl.Margin = new Padding(2, 1, 2, 1);
+            searchAppointmentByUserControl.Name = "searchAppointmentByUserControl";
+            searchAppointmentByUserControl.Size = new Size(633, 676);
+            searchAppointmentByUserControl.TabIndex = 5;
+            searchAppointmentByUserControl.Visible = false;
             // 
             // bookAppointmentUserControl
             // 
-            this.bookAppointmentUserControl.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bookAppointmentUserControl.Location = new System.Drawing.Point(205, 137);
-            this.bookAppointmentUserControl.Name = "bookAppointmentUserControl";
-            this.bookAppointmentUserControl.Size = new System.Drawing.Size(846, 1008);
-            this.bookAppointmentUserControl.TabIndex = 4;
-            this.bookAppointmentUserControl.Visible = false;
+            bookAppointmentUserControl.BackColor = SystemColors.ControlLightLight;
+            bookAppointmentUserControl.Location = new Point(126, 86);
+            bookAppointmentUserControl.Margin = new Padding(1);
+            bookAppointmentUserControl.Name = "bookAppointmentUserControl";
+            bookAppointmentUserControl.Size = new Size(521, 630);
+            bookAppointmentUserControl.TabIndex = 4;
+            bookAppointmentUserControl.Visible = false;
             // 
             // searchAppointmentButton
             // 
-            this.searchAppointmentButton.AutoSize = true;
-            this.searchAppointmentButton.Location = new System.Drawing.Point(634, 43);
-            this.searchAppointmentButton.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.searchAppointmentButton.Name = "searchAppointmentButton";
-            this.searchAppointmentButton.Size = new System.Drawing.Size(355, 67);
-            this.searchAppointmentButton.TabIndex = 3;
-            this.searchAppointmentButton.Text = "Search Appointment";
-            this.searchAppointmentButton.UseVisualStyleBackColor = true;
-            this.searchAppointmentButton.Click += new System.EventHandler(this.SearchAppointmentButton_Click);
+            searchAppointmentButton.AutoSize = true;
+            searchAppointmentButton.Location = new Point(390, 27);
+            searchAppointmentButton.Margin = new Padding(2, 3, 2, 3);
+            searchAppointmentButton.Name = "searchAppointmentButton";
+            searchAppointmentButton.Size = new Size(218, 42);
+            searchAppointmentButton.TabIndex = 3;
+            searchAppointmentButton.Text = "Search Appointment";
+            searchAppointmentButton.UseVisualStyleBackColor = true;
+            searchAppointmentButton.Click += SearchAppointmentButton_Click;
             // 
             // bookAppointmentButton
             // 
-            this.bookAppointmentButton.AutoSize = true;
-            this.bookAppointmentButton.Location = new System.Drawing.Point(219, 43);
-            this.bookAppointmentButton.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.bookAppointmentButton.Name = "bookAppointmentButton";
-            this.bookAppointmentButton.Size = new System.Drawing.Size(335, 67);
-            this.bookAppointmentButton.TabIndex = 2;
-            this.bookAppointmentButton.Text = "Book an Appointment";
-            this.bookAppointmentButton.UseVisualStyleBackColor = true;
-            this.bookAppointmentButton.Click += new System.EventHandler(this.BookAppointmentButton_Click);
+            bookAppointmentButton.AutoSize = true;
+            bookAppointmentButton.Location = new Point(135, 27);
+            bookAppointmentButton.Margin = new Padding(2, 3, 2, 3);
+            bookAppointmentButton.Name = "bookAppointmentButton";
+            bookAppointmentButton.Size = new Size(206, 42);
+            bookAppointmentButton.TabIndex = 2;
+            bookAppointmentButton.Text = "Book an Appointment";
+            bookAppointmentButton.UseVisualStyleBackColor = true;
+            bookAppointmentButton.Click += BookAppointmentButton_Click;
             // 
             // visitTab
             // 
-            this.visitTab.Controls.Add(this.searchPatientVisitByUserControl);
-            this.visitTab.Controls.Add(this.startPatientVisitUserControl);
-            this.visitTab.Controls.Add(this.searchVisitButton);
-            this.visitTab.Controls.Add(this.startPatientVisitButton);
-            this.visitTab.Location = new System.Drawing.Point(8, 46);
-            this.visitTab.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.visitTab.Name = "visitTab";
-            this.visitTab.Size = new System.Drawing.Size(1258, 1316);
-            this.visitTab.TabIndex = 2;
-            this.visitTab.Text = "Visit";
-            this.visitTab.UseVisualStyleBackColor = true;
+            visitTab.Controls.Add(searchPatientVisitByUserControl);
+            visitTab.Controls.Add(startPatientVisitUserControl);
+            visitTab.Controls.Add(searchVisitButton);
+            visitTab.Controls.Add(startPatientVisitButton);
+            visitTab.Location = new Point(4, 29);
+            visitTab.Margin = new Padding(2, 3, 2, 3);
+            visitTab.Name = "visitTab";
+            visitTab.Size = new Size(782, 823);
+            visitTab.TabIndex = 2;
+            visitTab.Text = "Visit";
+            visitTab.UseVisualStyleBackColor = true;
             // 
             // searchPatientVisitByUserControl
             // 
-            this.searchPatientVisitByUserControl.Location = new System.Drawing.Point(51, 145);
-            this.searchPatientVisitByUserControl.Name = "searchPatientVisitByUserControl";
-            this.searchPatientVisitByUserControl.Size = new System.Drawing.Size(1146, 1126);
-            this.searchPatientVisitByUserControl.TabIndex = 5;
-            this.searchPatientVisitByUserControl.Visible = false;
+            searchPatientVisitByUserControl.Location = new Point(31, 91);
+            searchPatientVisitByUserControl.Margin = new Padding(1);
+            searchPatientVisitByUserControl.Name = "searchPatientVisitByUserControl";
+            searchPatientVisitByUserControl.Size = new Size(705, 704);
+            searchPatientVisitByUserControl.TabIndex = 5;
+            searchPatientVisitByUserControl.Visible = false;
             // 
             // startPatientVisitUserControl
             // 
-            this.startPatientVisitUserControl.Location = new System.Drawing.Point(244, 197);
-            this.startPatientVisitUserControl.Name = "startPatientVisitUserControl";
-            this.startPatientVisitUserControl.Size = new System.Drawing.Size(748, 686);
-            this.startPatientVisitUserControl.TabIndex = 4;
-            this.startPatientVisitUserControl.Visible = false;
+            startPatientVisitUserControl.Location = new Point(150, 123);
+            startPatientVisitUserControl.Margin = new Padding(1);
+            startPatientVisitUserControl.Name = "startPatientVisitUserControl";
+            startPatientVisitUserControl.Size = new Size(460, 429);
+            startPatientVisitUserControl.TabIndex = 4;
+            startPatientVisitUserControl.Visible = false;
             // 
             // searchVisitButton
             // 
-            this.searchVisitButton.AutoSize = true;
-            this.searchVisitButton.Location = new System.Drawing.Point(650, 43);
-            this.searchVisitButton.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.searchVisitButton.Name = "searchVisitButton";
-            this.searchVisitButton.Size = new System.Drawing.Size(329, 67);
-            this.searchVisitButton.TabIndex = 3;
-            this.searchVisitButton.Text = "Search Patient Visit";
-            this.searchVisitButton.UseVisualStyleBackColor = true;
-            this.searchVisitButton.Click += new System.EventHandler(this.SearchVisitButton_Click);
+            searchVisitButton.AutoSize = true;
+            searchVisitButton.Location = new Point(400, 27);
+            searchVisitButton.Margin = new Padding(2, 3, 2, 3);
+            searchVisitButton.Name = "searchVisitButton";
+            searchVisitButton.Size = new Size(202, 42);
+            searchVisitButton.TabIndex = 3;
+            searchVisitButton.Text = "Search Patient Visit";
+            searchVisitButton.UseVisualStyleBackColor = true;
+            searchVisitButton.Click += SearchVisitButton_Click;
             // 
             // startPatientVisitButton
             // 
-            this.startPatientVisitButton.AutoSize = true;
-            this.startPatientVisitButton.Location = new System.Drawing.Point(244, 43);
-            this.startPatientVisitButton.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.startPatientVisitButton.Name = "startPatientVisitButton";
-            this.startPatientVisitButton.Size = new System.Drawing.Size(314, 67);
-            this.startPatientVisitButton.TabIndex = 2;
-            this.startPatientVisitButton.Text = "Start Patient Visit";
-            this.startPatientVisitButton.UseVisualStyleBackColor = true;
-            this.startPatientVisitButton.Click += new System.EventHandler(this.StartPatientVisitButton_Click);
+            startPatientVisitButton.AutoSize = true;
+            startPatientVisitButton.Location = new Point(150, 27);
+            startPatientVisitButton.Margin = new Padding(2, 3, 2, 3);
+            startPatientVisitButton.Name = "startPatientVisitButton";
+            startPatientVisitButton.Size = new Size(193, 42);
+            startPatientVisitButton.TabIndex = 2;
+            startPatientVisitButton.Text = "Start Patient Visit";
+            startPatientVisitButton.UseVisualStyleBackColor = true;
+            startPatientVisitButton.Click += StartPatientVisitButton_Click;
             // 
             // logoutLinkLabel
             // 
-            this.logoutLinkLabel.AutoSize = true;
-            this.logoutLinkLabel.Location = new System.Drawing.Point(1060, 15);
-            this.logoutLinkLabel.Name = "logoutLinkLabel";
-            this.logoutLinkLabel.Size = new System.Drawing.Size(89, 32);
-            this.logoutLinkLabel.TabIndex = 11;
-            this.logoutLinkLabel.TabStop = true;
-            this.logoutLinkLabel.Text = "Logout";
-            this.logoutLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogoutLinkLabel_LinkClicked);
+            logoutLinkLabel.AutoSize = true;
+            logoutLinkLabel.Location = new Point(652, 9);
+            logoutLinkLabel.Margin = new Padding(2, 0, 2, 0);
+            logoutLinkLabel.Name = "logoutLinkLabel";
+            logoutLinkLabel.Size = new Size(56, 20);
+            logoutLinkLabel.TabIndex = 11;
+            logoutLinkLabel.TabStop = true;
+            logoutLinkLabel.Text = "Logout";
+            logoutLinkLabel.LinkClicked += LogoutLinkLabel_LinkClicked;
             // 
             // usernameLabel
             // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.usernameLabel.Location = new System.Drawing.Point(461, 10);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(142, 37);
-            this.usernameLabel.TabIndex = 10;
-            this.usernameLabel.Text = "username";
+            usernameLabel.AutoSize = true;
+            usernameLabel.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            usernameLabel.Location = new Point(284, 6);
+            usernameLabel.Margin = new Padding(2, 0, 2, 0);
+            usernameLabel.Name = "usernameLabel";
+            usernameLabel.Size = new Size(87, 23);
+            usernameLabel.TabIndex = 10;
+            usernameLabel.Text = "username";
             // 
             // MainDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1274, 1459);
-            this.Controls.Add(this.logoutLinkLabel);
-            this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.usernameLabel);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "MainDashboard";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Hospital Management Dashboard";
-            this.tabControl.ResumeLayout(false);
-            this.patientTab.ResumeLayout(false);
-            this.patientTab.PerformLayout();
-            this.appointmentTab.ResumeLayout(false);
-            this.appointmentTab.PerformLayout();
-            this.visitTab.ResumeLayout(false);
-            this.visitTab.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ClientSize = new Size(761, 857);
+            Controls.Add(logoutLinkLabel);
+            Controls.Add(tabControl);
+            Controls.Add(usernameLabel);
+            Margin = new Padding(2, 1, 2, 1);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "MainDashboard";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Hospital Management Dashboard";
+            tabControl.ResumeLayout(false);
+            patientTab.ResumeLayout(false);
+            patientTab.PerformLayout();
+            appointmentTab.ResumeLayout(false);
+            appointmentTab.PerformLayout();
+            visitTab.ResumeLayout(false);
+            visitTab.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

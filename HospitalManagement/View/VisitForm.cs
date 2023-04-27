@@ -60,7 +60,7 @@ namespace HospitalManagement.View
             using var diagnosis = new PatientDiagnosis();
             diagnosis.SetVisit(_visit);
             diagnosis.SetTextBoxes(_visit);
-            diagnosis.ShowDialog();
+            var result = diagnosis.ShowDialog();
         }
 
         private void testResultsButton_Click(object sender, EventArgs e)

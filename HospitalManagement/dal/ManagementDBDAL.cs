@@ -1127,8 +1127,12 @@ namespace HospitalManagement.DAL
             List<Visit> appointments = new List<Visit>();
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            var query = "select Visit.appointmentID,Visit.nurseID,Visit.visitID,Visit.height,Visit.weight,Visit.systolicBP,Visit.diastolicBP,Visit.bodyTemperature, "  + 
-                "Visit.pulse, Visit.symptoms, Visit.initialDiagnosis,Visit.finalDiagnosis from Visit,Appointment,PersonalDetails,Patient where PersonalDetails.dateOfBirth = @dateOfBirth and PersonalDetails.pdID = Patient.pdID and Patient.patientID = Appointment.patientID and Visit.appointmentID = Appointment.appointmentID";
+            var query = "select Visit.appointmentID, Visit.nurseID, Visit.visitID, Visit.height, Visit.weight," +
+                "Visit.systolicBP, Visit.diastolicBP, Visit.bodyTemperature, Appointment.scheduledDate, " + 
+                "Visit.pulse, Visit.symptoms, Visit.initialDiagnosis, Visit.finalDiagnosis " +
+                "from Visit, Appointment, PersonalDetails, Patient " +
+                "where PersonalDetails.dateOfBirth = @dateOfBirth and PersonalDetails.pdID = Patient.pdID " +
+                "and Patient.patientID = Appointment.patientID and Visit.appointmentID = Appointment.appointmentID";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@dateOfBirth", SqlDbType.DateTime);
@@ -1199,8 +1203,12 @@ namespace HospitalManagement.DAL
             List<Visit> appointments = new List<Visit>();
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            var query = "select Visit.appointmentID,Visit.nurseID,Visit.visitID,Visit.height,Appointment.scheduledDate,Visit.weight,Visit.systolicBP,Visit.diastolicBP,Visit.bodyTemperature, " +
-                "Visit.pulse, Visit.symptoms, Visit.initialDiagnosis,Visit.finalDiagnosis from Visit,Appointment,PersonalDetails,Patient where PersonalDetails.dateOfBirth = @dateOfBirth and PersonalDetails.lastName = @lastName and PersonalDetails.pdID = Patient.pdID and Patient.patientID = Appointment.patientID and Visit.appointmentID = Appointment.appointmentID";
+            var query = "select Visit.appointmentID,Visit.nurseID,Visit.visitID,Visit.height," +
+                "Appointment.scheduledDate,Visit.weight,Visit.systolicBP,Visit.diastolicBP,Visit.bodyTemperature, " +
+                "Visit.pulse, Visit.symptoms, Visit.initialDiagnosis,Visit.finalDiagnosis " +
+                "from Visit,Appointment,PersonalDetails,Patient where PersonalDetails.dateOfBirth = @dateOfBirth " +
+                "and PersonalDetails.lastName = @lastName and PersonalDetails.pdID = Patient.pdID " +
+                "and Patient.patientID = Appointment.patientID and Visit.appointmentID = Appointment.appointmentID";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@dateOfBirth", SqlDbType.DateTime);
@@ -1273,8 +1281,12 @@ namespace HospitalManagement.DAL
             List<Visit> appointments = new List<Visit>();
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            var query = "select Visit.appointmentID,Visit.nurseID,Visit.visitID,Appointment.scheduledDate,Visit.height,Visit.weight,Visit.systolicBP,Visit.diastolicBP,Visit.bodyTemperature, " +
-                "Visit.pulse, Visit.symptoms, Visit.initialDiagnosis,Visit.finalDiagnosis from Visit,Appointment,PersonalDetails,Patient where PersonalDetails.firstName = @firstName and PersonalDetails.lastName = @lastName and PersonalDetails.pdID = Patient.pdID and Patient.patientID = Appointment.patientID and Visit.appointmentID = Appointment.appointmentID";
+            var query = "select Visit.appointmentID,Visit.nurseID,Visit.visitID,Appointment.scheduledDate," +
+                "Visit.height,Visit.weight,Visit.systolicBP,Visit.diastolicBP,Visit.bodyTemperature, " +
+                "Visit.pulse, Visit.symptoms, Visit.initialDiagnosis,Visit.finalDiagnosis " +
+                "from Visit,Appointment,PersonalDetails,Patient where PersonalDetails.firstName = @firstName " +
+                "and PersonalDetails.lastName = @lastName and PersonalDetails.pdID = Patient.pdID " +
+                "and Patient.patientID = Appointment.patientID and Visit.appointmentID = Appointment.appointmentID";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("lastName", SqlDbType.VarChar);
