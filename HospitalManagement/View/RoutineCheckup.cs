@@ -64,7 +64,7 @@ namespace HospitalManagement.View
                     errorLabel.Visible = true;
                 }
             }
-            catch (ArgumentException)
+            catch (Exception)
             {
                 errorLabel.Text = @"Please enter only digits greater than 0";
                 errorLabel.ForeColor = Color.Red;
@@ -80,6 +80,8 @@ namespace HospitalManagement.View
 
         public void SetFields(Visit visit)
         {
+
+
             var newVisit = _controller.GetEverything(visit.VisitId);
             heightTextBox.Text = newVisit.Height.ToString();
             weightTextBox.Text = newVisit.Weight.ToString();
@@ -92,6 +94,13 @@ namespace HospitalManagement.View
             {
                 DisableAllFields();
             }
+
+            if (heightTextBox.Text.Equals(-1) || weightTextBox.Text.Equals(-1) || sysBPTextBox.Text.Equals(-1) ||
+            diaBPTextBox.Text.Equals(-1) || tempTextBox.Text.Equals(-1) || pulseTextBox.Text.Equals(-1))
+            {
+                ClearAllFields();
+            }
+
         }
 
         private void DisableAllFields()

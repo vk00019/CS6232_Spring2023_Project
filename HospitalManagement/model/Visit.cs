@@ -47,9 +47,13 @@
 
             set
             {
-                if (value <= 0)
+                if(value == -1)
                 {
-                    throw new ArgumentException("");
+                    _height = 0;
+                }
+                else if (value < 0)
+                {
+                    throw new Exception("");
                 }
                 _height = value;
             }
@@ -67,9 +71,13 @@
 
             set
             {
-                if (value <= 0)
+                if (value == -1)
                 {
-                    throw new ArgumentException("");
+                    _weight = 0;
+                }
+                else if (value < 0)
+                {
+                    throw new Exception("");
                 }
                 _weight = value;
             }
@@ -87,9 +95,13 @@
 
             set
             {
-                if (value <= 0)
+                if (value == -1)
                 {
-                    throw new ArgumentException("");
+                    _systolicBp = 0;
+                }
+                else if (value < 0)
+                {
+                    throw new Exception("");
                 }
                 _systolicBp = value;
             }
@@ -107,9 +119,13 @@
 
             set
             {
-                if (value <= 0)
+                if (value == -1)
                 {
-                    throw new ArgumentException("");
+                    _diastolicBp = 0;
+                }
+                else if (value < 0)
+                {
+                    throw new Exception("");
                 }
                 _diastolicBp = value;
             }
@@ -127,9 +143,13 @@
 
             set
             {
-                if (value <= 0)
+                if (value == -1)
                 {
-                    throw new ArgumentException("");
+                    _bodyTempterature = 0;
+                }
+                else if (value < 0)
+                {
+                    throw new Exception("");
                 }
                 _bodyTempterature = value;
             }
@@ -147,9 +167,13 @@
 
             set
             {
-                if (value <= 0)
+                if (value == -1)
                 {
-                    throw new ArgumentException("");
+                    _pulse = 0;
+                }
+                else if (value < 0)
+                {
+                    throw new Exception("");
                 }
                 _pulse = value;
             }
