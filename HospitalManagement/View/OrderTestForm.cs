@@ -17,6 +17,7 @@ namespace HospitalManagement.View
         private BindingList<TestList> _ordered;
         private BindingList<TestList> _list;
         private readonly ManagementController _controller;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderTestForm"/> class.
         /// </summary>
@@ -26,7 +27,6 @@ namespace HospitalManagement.View
             _controller = new ManagementController();
             _ordered = new BindingList<TestList>();
             _list = new BindingList<TestList>();
-
         }
 
         public void SetVisitId(int id)
@@ -119,30 +119,6 @@ namespace HospitalManagement.View
                     _list.Add(test);
                 }
             }
-
-            //foreach (var ordered in _controller.GetOrderedTests(_visitId))
-            //{
-            //    _list.Remove(ordered);
-            //}
-
-            //for (int i = 0; i < _controller.GetOrderedTests(_visitId).Count; i++)
-            //{
-            //    var ordered = _controller.GetOrderedTests(_visitId)[i];
-            //    foreach (var current in _list)
-            //    {
-            //        if (!current.Name.Equals(ordered.Name))
-            //        {
-            //            _list.Remove(current);
-            //        }
-            //    }
-            //}
-
-            //var list = _controller.GetTests().Except(_controller.GetOrderedTests(_visitId));
-
-            //foreach (var test in list)
-            //{
-            //    _list.Add(test);
-            //}
         }
 
         private void OrderTestForm_Load(object sender, EventArgs e)
