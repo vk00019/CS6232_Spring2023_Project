@@ -1,8 +1,6 @@
 ﻿using HospitalManagement.Controller;
 using HospitalManagement.model;
-using HospitalManagement.Model;
 using System.ComponentModel;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace HospitalManagement.View
 {
