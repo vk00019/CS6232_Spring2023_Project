@@ -159,6 +159,7 @@
             Name = "OrderTestForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Order Test";
+            Load += OrderTestForm_Load;
             ((System.ComponentModel.ISupportInitialize)testsDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
