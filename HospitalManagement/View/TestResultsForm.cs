@@ -47,6 +47,10 @@ namespace HospitalManagement.View
 
             datePicker.MaxDate = DateTime.Now;
             datePicker.Value = DateTime.Today;
+            if (_controller.IsFinalDiagnosisAvailable(_visitId))
+            {
+                addButton.Enabled = false;
+            }
             timePicker.Value = DateTime.Now;
             RefreshDataGridView();
         }

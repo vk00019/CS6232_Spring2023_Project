@@ -37,6 +37,14 @@ namespace HospitalManagement.View
             doctorTextBox.Text = visit.DoctorName;
             nurseTextBox.Text = visit.NurseName;
             patientTextBox.Text = visit.PatientName;
+            if (_controller.IsFinalDiagnosisAvailable(_visit.VisitId))
+            {
+                orderTestsButton.Enabled = false;
+            }
+            else
+            {
+                orderTestsButton.Enabled = true;
+            }
         }
 
         private void routineCheckupButton_Click(object sender, EventArgs e)
