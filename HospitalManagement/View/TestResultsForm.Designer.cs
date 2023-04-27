@@ -28,198 +28,186 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.testResultsListView = new System.Windows.Forms.ListView();
-            this.addButton = new System.Windows.Forms.Button();
-            this.orderedTestsComboBox = new System.Windows.Forms.ComboBox();
-            this.chooseTestsLabel = new System.Windows.Forms.Label();
-            this.resultLabel = new System.Windows.Forms.Label();
-            this.testResultTextBox = new System.Windows.Forms.RichTextBox();
-            this.normalComboBox = new System.Windows.Forms.ComboBox();
-            this.normalLabel = new System.Windows.Forms.Label();
-            this.dateLabel = new System.Windows.Forms.Label();
-            this.timePicker = new System.Windows.Forms.DateTimePicker();
-            this.datePicker = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.headerLabel = new System.Windows.Forms.Label();
-            this.errorLabel = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            testResultsListView = new ListView();
+            addButton = new Button();
+            orderedTestsComboBox = new ComboBox();
+            chooseTestsLabel = new Label();
+            resultLabel = new Label();
+            testResultTextBox = new RichTextBox();
+            normalComboBox = new ComboBox();
+            normalLabel = new Label();
+            dateLabel = new Label();
+            timePicker = new DateTimePicker();
+            datePicker = new DateTimePicker();
+            label1 = new Label();
+            headerLabel = new Label();
+            errorLabel = new Label();
+            SuspendLayout();
             // 
             // testResultsListView
             // 
-            this.testResultsListView.Location = new System.Drawing.Point(60, 708);
-            this.testResultsListView.Margin = new System.Windows.Forms.Padding(6);
-            this.testResultsListView.Name = "testResultsListView";
-            this.testResultsListView.Size = new System.Drawing.Size(591, 234);
-            this.testResultsListView.TabIndex = 14;
-            this.testResultsListView.UseCompatibleStateImageBehavior = false;
+            testResultsListView.Location = new Point(32, 332);
+            testResultsListView.Name = "testResultsListView";
+            testResultsListView.Size = new Size(320, 112);
+            testResultsListView.TabIndex = 14;
+            testResultsListView.UseCompatibleStateImageBehavior = false;
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(267, 633);
-            this.addButton.Margin = new System.Windows.Forms.Padding(6);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(139, 49);
-            this.addButton.TabIndex = 13;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            addButton.Location = new Point(144, 297);
+            addButton.Name = "addButton";
+            addButton.Size = new Size(75, 23);
+            addButton.TabIndex = 13;
+            addButton.Text = "Add";
+            addButton.UseVisualStyleBackColor = true;
             // 
             // orderedTestsComboBox
             // 
-            this.orderedTestsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.orderedTestsComboBox.FormattingEnabled = true;
-            this.orderedTestsComboBox.Location = new System.Drawing.Point(301, 96);
-            this.orderedTestsComboBox.Margin = new System.Windows.Forms.Padding(6);
-            this.orderedTestsComboBox.Name = "orderedTestsComboBox";
-            this.orderedTestsComboBox.Size = new System.Drawing.Size(338, 40);
-            this.orderedTestsComboBox.TabIndex = 12;
+            orderedTestsComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            orderedTestsComboBox.FormattingEnabled = true;
+            orderedTestsComboBox.Location = new Point(162, 45);
+            orderedTestsComboBox.Name = "orderedTestsComboBox";
+            orderedTestsComboBox.Size = new Size(184, 23);
+            orderedTestsComboBox.TabIndex = 12;
             // 
             // chooseTestsLabel
             // 
-            this.chooseTestsLabel.AutoSize = true;
-            this.chooseTestsLabel.Location = new System.Drawing.Point(111, 96);
-            this.chooseTestsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.chooseTestsLabel.Name = "chooseTestsLabel";
-            this.chooseTestsLabel.Size = new System.Drawing.Size(158, 32);
-            this.chooseTestsLabel.TabIndex = 11;
-            this.chooseTestsLabel.Text = "Choose Tests:";
+            chooseTestsLabel.AutoSize = true;
+            chooseTestsLabel.Location = new Point(60, 45);
+            chooseTestsLabel.Name = "chooseTestsLabel";
+            chooseTestsLabel.Size = new Size(78, 15);
+            chooseTestsLabel.TabIndex = 11;
+            chooseTestsLabel.Text = "Choose Tests:";
             // 
             // resultLabel
             // 
-            this.resultLabel.AutoSize = true;
-            this.resultLabel.Location = new System.Drawing.Point(137, 216);
-            this.resultLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(132, 32);
-            this.resultLabel.TabIndex = 15;
-            this.resultLabel.Text = "Test Result:";
+            resultLabel.AutoSize = true;
+            resultLabel.Location = new Point(74, 101);
+            resultLabel.Name = "resultLabel";
+            resultLabel.Size = new Size(65, 15);
+            resultLabel.TabIndex = 15;
+            resultLabel.Text = "Test Result:";
             // 
             // testResultTextBox
             // 
-            this.testResultTextBox.Location = new System.Drawing.Point(301, 178);
-            this.testResultTextBox.Margin = new System.Windows.Forms.Padding(6);
-            this.testResultTextBox.Name = "testResultTextBox";
-            this.testResultTextBox.Size = new System.Drawing.Size(338, 147);
-            this.testResultTextBox.TabIndex = 16;
-            this.testResultTextBox.Text = "";
+            testResultTextBox.Location = new Point(162, 83);
+            testResultTextBox.Name = "testResultTextBox";
+            testResultTextBox.Size = new Size(184, 71);
+            testResultTextBox.TabIndex = 16;
+            testResultTextBox.Text = "";
             // 
             // normalComboBox
             // 
-            this.normalComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.normalComboBox.FormattingEnabled = true;
-            this.normalComboBox.Location = new System.Drawing.Point(301, 372);
-            this.normalComboBox.Margin = new System.Windows.Forms.Padding(6);
-            this.normalComboBox.Name = "normalComboBox";
-            this.normalComboBox.Size = new System.Drawing.Size(338, 40);
-            this.normalComboBox.TabIndex = 18;
+            normalComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            normalComboBox.FormattingEnabled = true;
+            normalComboBox.Location = new Point(162, 174);
+            normalComboBox.Name = "normalComboBox";
+            normalComboBox.Size = new Size(184, 23);
+            normalComboBox.TabIndex = 18;
             // 
             // normalLabel
             // 
-            this.normalLabel.AutoSize = true;
-            this.normalLabel.Location = new System.Drawing.Point(60, 375);
-            this.normalLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.normalLabel.Name = "normalLabel";
-            this.normalLabel.Size = new System.Drawing.Size(211, 32);
-            this.normalLabel.TabIndex = 17;
-            this.normalLabel.Text = "Choose Normality:";
+            normalLabel.AutoSize = true;
+            normalLabel.Location = new Point(32, 176);
+            normalLabel.Name = "normalLabel";
+            normalLabel.Size = new Size(106, 15);
+            normalLabel.TabIndex = 17;
+            normalLabel.Text = "Choose Normality:";
             // 
             // dateLabel
             // 
-            this.dateLabel.AutoSize = true;
-            this.dateLabel.Location = new System.Drawing.Point(31, 451);
-            this.dateLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(258, 32);
-            this.dateLabel.TabIndex = 19;
-            this.dateLabel.Text = "Select Performed Date:";
+            dateLabel.AutoSize = true;
+            dateLabel.Location = new Point(17, 211);
+            dateLabel.Name = "dateLabel";
+            dateLabel.Size = new Size(127, 15);
+            dateLabel.TabIndex = 19;
+            dateLabel.Text = "Select Performed Date:";
             // 
             // timePicker
             // 
-            this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timePicker.Location = new System.Drawing.Point(301, 529);
-            this.timePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.timePicker.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
-            this.timePicker.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
-            this.timePicker.Name = "timePicker";
-            this.timePicker.ShowUpDown = true;
-            this.timePicker.Size = new System.Drawing.Size(338, 39);
-            this.timePicker.TabIndex = 24;
-            this.timePicker.Value = new System.DateTime(2023, 4, 8, 21, 1, 25, 0);
+            timePicker.Format = DateTimePickerFormat.Time;
+            timePicker.Location = new Point(162, 248);
+            timePicker.Margin = new Padding(2, 1, 2, 1);
+            timePicker.MaxDate = new DateTime(2200, 12, 31, 0, 0, 0, 0);
+            timePicker.MinDate = new DateTime(2020, 1, 1, 0, 0, 0, 0);
+            timePicker.Name = "timePicker";
+            timePicker.ShowUpDown = true;
+            timePicker.Size = new Size(184, 23);
+            timePicker.TabIndex = 24;
+            timePicker.Value = new DateTime(2023, 4, 8, 21, 1, 25, 0);
             // 
             // datePicker
             // 
-            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePicker.Location = new System.Drawing.Point(301, 451);
-            this.datePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.datePicker.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
-            this.datePicker.MinDate = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
-            this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(338, 39);
-            this.datePicker.TabIndex = 23;
-            this.datePicker.Value = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
+            datePicker.Format = DateTimePickerFormat.Short;
+            datePicker.Location = new Point(162, 211);
+            datePicker.Margin = new Padding(2, 1, 2, 1);
+            datePicker.MaxDate = new DateTime(2200, 12, 31, 0, 0, 0, 0);
+            datePicker.MinDate = new DateTime(2023, 4, 12, 0, 0, 0, 0);
+            datePicker.Name = "datePicker";
+            datePicker.Size = new Size(184, 23);
+            datePicker.TabIndex = 23;
+            datePicker.Value = new DateTime(2023, 4, 12, 0, 0, 0, 0);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 529);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 32);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Select Performed Time:";
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 248);
+            label1.Name = "label1";
+            label1.Size = new Size(129, 15);
+            label1.TabIndex = 25;
+            label1.Text = "Select Performed Time:";
             // 
             // headerLabel
             // 
-            this.headerLabel.AutoSize = true;
-            this.headerLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.headerLabel.Location = new System.Drawing.Point(183, 24);
-            this.headerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.headerLabel.Name = "headerLabel";
-            this.headerLabel.Size = new System.Drawing.Size(333, 37);
-            this.headerLabel.TabIndex = 49;
-            this.headerLabel.Text = "Add Patient\'s Test Result";
+            headerLabel.AutoSize = true;
+            headerLabel.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            headerLabel.Location = new Point(99, 11);
+            headerLabel.Margin = new Padding(2, 0, 2, 0);
+            headerLabel.Name = "headerLabel";
+            headerLabel.Size = new Size(171, 19);
+            headerLabel.TabIndex = 49;
+            headerLabel.Text = "Add Patient's Test Result";
             // 
             // errorLabel
             // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(93, 584);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(165, 32);
-            this.errorLabel.TabIndex = 50;
-            this.errorLabel.Text = "error message";
-            this.errorLabel.Visible = false;
+            errorLabel.AutoSize = true;
+            errorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            errorLabel.ForeColor = Color.Red;
+            errorLabel.Location = new Point(50, 274);
+            errorLabel.Margin = new Padding(2, 0, 2, 0);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(81, 15);
+            errorLabel.TabIndex = 50;
+            errorLabel.Text = "error message";
+            errorLabel.Visible = false;
             // 
             // TestResultsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 969);
-            this.Controls.Add(this.errorLabel);
-            this.Controls.Add(this.headerLabel);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.timePicker);
-            this.Controls.Add(this.datePicker);
-            this.Controls.Add(this.dateLabel);
-            this.Controls.Add(this.normalComboBox);
-            this.Controls.Add(this.normalLabel);
-            this.Controls.Add(this.testResultTextBox);
-            this.Controls.Add(this.resultLabel);
-            this.Controls.Add(this.testResultsListView);
-            this.Controls.Add(this.addButton);
-            this.Controls.Add(this.orderedTestsComboBox);
-            this.Controls.Add(this.chooseTestsLabel);
-            this.Margin = new System.Windows.Forms.Padding(6);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "TestResultsForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Test Results";
-            this.Load += new System.EventHandler(this.TestResultsForm_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(391, 351);
+            Controls.Add(errorLabel);
+            Controls.Add(headerLabel);
+            Controls.Add(label1);
+            Controls.Add(timePicker);
+            Controls.Add(datePicker);
+            Controls.Add(dateLabel);
+            Controls.Add(normalComboBox);
+            Controls.Add(normalLabel);
+            Controls.Add(testResultTextBox);
+            Controls.Add(resultLabel);
+            Controls.Add(testResultsListView);
+            Controls.Add(addButton);
+            Controls.Add(orderedTestsComboBox);
+            Controls.Add(chooseTestsLabel);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "TestResultsForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Test Results";
+            Load += TestResultsForm_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

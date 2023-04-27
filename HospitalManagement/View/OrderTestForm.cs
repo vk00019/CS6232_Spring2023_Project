@@ -13,6 +13,7 @@ namespace HospitalManagement.View
         private int _visitId;
         private int index;
         private List<TestList> _ordered;
+        private List<TestList> _list;
         private readonly ManagementController _controller;
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderTestForm"/> class.
@@ -22,8 +23,8 @@ namespace HospitalManagement.View
             InitializeComponent();
             _controller = new ManagementController();
             _ordered = new List<TestList>();
-            allTestsComboBox.DataSource = _controller.GetTests();
-            allTestsComboBox.DisplayMember = "Name";
+            _list = _controller.GetTests();
+            RefreshList();
 
         }
 
@@ -45,6 +46,7 @@ namespace HospitalManagement.View
                 Id = testToAdd.Id,
                 Name = testToAdd.Name,
             });
+            _list.Remove(testToAdd);
             RefreshList();
         }
 
@@ -52,6 +54,8 @@ namespace HospitalManagement.View
         {
             testsDataGridView.DataSource = null;
             testsDataGridView.DataSource = _ordered;
+            allTestsComboBox.DataSource = _list;
+            allTestsComboBox.DisplayMember = "Name";
         }
 
         private void testsDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -72,6 +76,7 @@ namespace HospitalManagement.View
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
+            _list.Add(_ordered[index]);
             _ordered.RemoveAt(index);
             RefreshList();
         }

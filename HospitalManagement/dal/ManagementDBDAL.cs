@@ -248,7 +248,7 @@ namespace HospitalManagement.DAL
             using var connection = DBConnection.GetConnection();
             connection.Open();
 
-            string query = "UPDATE Visit SET height = @height, weight = @weight, systolicBP = @systolicBP " +
+            string query = "UPDATE Visit SET height = @height, weight = @weight, systolicBP = @systolicBP, " +
                            "diastolicBP = @diastolicBP, bodyTemperature = @bodyTemperature, pulse = @pulse, symptoms = @symptoms " +
                            "WHERE visitID = @visitId ";
             using var command = new SqlCommand(query, connection);
