@@ -58,7 +58,6 @@ namespace HospitalManagement.View
                         Symptoms = symptoms
                     };
                     _controller.AddRoutineCheckup(visit);
-                    ClearAllFields();
                     errorLabel.Text = @"Checkup details updated successfully";
                     errorLabel.ForeColor = Color.Green;
                     errorLabel.Visible = true;

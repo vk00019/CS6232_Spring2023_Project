@@ -234,5 +234,10 @@ namespace HospitalManagement.Controller
         {
             _managementDal.UpdatePatientTests(patientTest);
         }
+
+        public List<PatientTest> GePatientTestsResults(int id)
+        {
+            return _managementDal.GePatientTestsResults(id);
+        }
     }
 }

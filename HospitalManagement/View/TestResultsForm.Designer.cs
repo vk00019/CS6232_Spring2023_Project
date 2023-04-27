@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.testResultsListView = new System.Windows.Forms.ListView();
             this.addButton = new System.Windows.Forms.Button();
             this.orderedTestsComboBox = new System.Windows.Forms.ComboBox();
             this.chooseTestsLabel = new System.Windows.Forms.Label();
@@ -43,20 +42,17 @@
             this.headerLabel = new System.Windows.Forms.Label();
             this.errorLabel = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Button();
+            this.testsResultsDataGridView = new System.Windows.Forms.DataGridView();
+            this.testNameDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testResultDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.performedAtDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.normalityDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.testsResultsDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // testResultsListView
-            // 
-            this.testResultsListView.Location = new System.Drawing.Point(59, 708);
-            this.testResultsListView.Margin = new System.Windows.Forms.Padding(6);
-            this.testResultsListView.Name = "testResultsListView";
-            this.testResultsListView.Size = new System.Drawing.Size(591, 234);
-            this.testResultsListView.TabIndex = 14;
-            this.testResultsListView.UseCompatibleStateImageBehavior = false;
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(267, 634);
+            this.addButton.Location = new System.Drawing.Point(167, 666);
             this.addButton.Margin = new System.Windows.Forms.Padding(6);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(139, 49);
@@ -140,7 +136,7 @@
             this.timePicker.Location = new System.Drawing.Point(301, 529);
             this.timePicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.timePicker.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
-            this.timePicker.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.timePicker.MinDate = new System.DateTime(1899, 1, 1, 0, 0, 0, 0);
             this.timePicker.Name = "timePicker";
             this.timePicker.ShowUpDown = true;
             this.timePicker.Size = new System.Drawing.Size(338, 39);
@@ -153,11 +149,11 @@
             this.datePicker.Location = new System.Drawing.Point(301, 450);
             this.datePicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.datePicker.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
-            this.datePicker.MinDate = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
+            this.datePicker.MinDate = new System.DateTime(1799, 1, 17, 0, 0, 0, 0);
             this.datePicker.Name = "datePicker";
             this.datePicker.Size = new System.Drawing.Size(338, 39);
             this.datePicker.TabIndex = 23;
-            this.datePicker.Value = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
+            this.datePicker.Value = new System.DateTime(2023, 4, 26, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -195,7 +191,7 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(452, 961);
+            this.closeButton.Location = new System.Drawing.Point(472, 666);
             this.closeButton.Margin = new System.Windows.Forms.Padding(6);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(139, 49);
@@ -204,11 +200,66 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
+            // testsResultsDataGridView
+            // 
+            this.testsResultsDataGridView.AllowUserToAddRows = false;
+            this.testsResultsDataGridView.AllowUserToDeleteRows = false;
+            this.testsResultsDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.testsResultsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.testsResultsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.testNameDgv,
+            this.testResultDgv,
+            this.performedAtDgv,
+            this.normalityDgv});
+            this.testsResultsDataGridView.Location = new System.Drawing.Point(32, 741);
+            this.testsResultsDataGridView.MultiSelect = false;
+            this.testsResultsDataGridView.Name = "testsResultsDataGridView";
+            this.testsResultsDataGridView.ReadOnly = true;
+            this.testsResultsDataGridView.RowHeadersWidth = 82;
+            this.testsResultsDataGridView.RowTemplate.Height = 41;
+            this.testsResultsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.testsResultsDataGridView.Size = new System.Drawing.Size(652, 260);
+            this.testsResultsDataGridView.TabIndex = 52;
+            this.testsResultsDataGridView.Visible = false;
+            // 
+            // testNameDgv
+            // 
+            this.testNameDgv.HeaderText = "Test Name";
+            this.testNameDgv.MinimumWidth = 10;
+            this.testNameDgv.Name = "testNameDgv";
+            this.testNameDgv.ReadOnly = true;
+            this.testNameDgv.Width = 200;
+            // 
+            // testResultDgv
+            // 
+            this.testResultDgv.HeaderText = "Test Result";
+            this.testResultDgv.MinimumWidth = 10;
+            this.testResultDgv.Name = "testResultDgv";
+            this.testResultDgv.ReadOnly = true;
+            this.testResultDgv.Width = 200;
+            // 
+            // performedAtDgv
+            // 
+            this.performedAtDgv.HeaderText = "Performed At";
+            this.performedAtDgv.MinimumWidth = 10;
+            this.performedAtDgv.Name = "performedAtDgv";
+            this.performedAtDgv.ReadOnly = true;
+            this.performedAtDgv.Width = 200;
+            // 
+            // normalityDgv
+            // 
+            this.normalityDgv.HeaderText = "Normality";
+            this.normalityDgv.MinimumWidth = 10;
+            this.normalityDgv.Name = "normalityDgv";
+            this.normalityDgv.ReadOnly = true;
+            this.normalityDgv.Width = 200;
+            // 
             // TestResultsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 1025);
+            this.Controls.Add(this.testsResultsDataGridView);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.headerLabel);
@@ -220,7 +271,6 @@
             this.Controls.Add(this.normalLabel);
             this.Controls.Add(this.testResultTextBox);
             this.Controls.Add(this.resultLabel);
-            this.Controls.Add(this.testResultsListView);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.orderedTestsComboBox);
             this.Controls.Add(this.chooseTestsLabel);
@@ -231,14 +281,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Test Results";
             this.Load += new System.EventHandler(this.TestResultsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.testsResultsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private ListView testResultsListView;
         private Button addButton;
         private ComboBox orderedTestsComboBox;
         private Label chooseTestsLabel;
@@ -253,5 +302,10 @@
         private Label headerLabel;
         private Label errorLabel;
         private Button closeButton;
+        private DataGridView testsResultsDataGridView;
+        private DataGridViewTextBoxColumn testNameDgv;
+        private DataGridViewTextBoxColumn testResultDgv;
+        private DataGridViewTextBoxColumn performedAtDgv;
+        private DataGridViewTextBoxColumn normalityDgv;
     }
 }

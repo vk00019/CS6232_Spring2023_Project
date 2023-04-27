@@ -2,6 +2,7 @@
 using HospitalManagement.model;
 using HospitalManagement.Model;
 using System.ComponentModel;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace HospitalManagement.View
 {
@@ -25,8 +26,6 @@ namespace HospitalManagement.View
             _controller = new ManagementController();
             _ordered = new BindingList<TestList>();
             _list = new BindingList<TestList>();
-            UpdateTestList();
-            RefreshList();
 
         }
 
@@ -102,8 +101,54 @@ namespace HospitalManagement.View
         {
             foreach (var test in _controller.GetTests())
             {
-                _list.Add(test);
+                bool adder = false;
+                foreach (var ordered in _controller.GetOrderedTests(_visitId))
+                {
+                    if (test.Name.Equals(ordered.Name))
+                    {
+                        adder = false;
+                        break;
+                    }
+                    else
+                    {
+                        adder = true;
+                    }
+                }
+                if (adder)
+                {
+                    _list.Add(test);
+                }
             }
+
+            //foreach (var ordered in _controller.GetOrderedTests(_visitId))
+            //{
+            //    _list.Remove(ordered);
+            //}
+
+            //for (int i = 0; i < _controller.GetOrderedTests(_visitId).Count; i++)
+            //{
+            //    var ordered = _controller.GetOrderedTests(_visitId)[i];
+            //    foreach (var current in _list)
+            //    {
+            //        if (!current.Name.Equals(ordered.Name))
+            //        {
+            //            _list.Remove(current);
+            //        }
+            //    }
+            //}
+
+            //var list = _controller.GetTests().Except(_controller.GetOrderedTests(_visitId));
+
+            //foreach (var test in list)
+            //{
+            //    _list.Add(test);
+            //}
+        }
+
+        private void OrderTestForm_Load(object sender, EventArgs e)
+        {
+            UpdateTestList();
+            RefreshList();
         }
     }
 }
