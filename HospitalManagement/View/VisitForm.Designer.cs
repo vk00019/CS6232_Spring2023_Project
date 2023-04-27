@@ -28,159 +28,162 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            routineCheckupButton = new Button();
-            orderTestsButton = new Button();
-            diagnosisButton = new Button();
-            testResultsButton = new Button();
-            doctorTextBox = new TextBox();
-            nurseTextBox = new TextBox();
-            patientTextBox = new TextBox();
-            cancelButton = new Button();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.routineCheckupButton = new System.Windows.Forms.Button();
+            this.orderTestsButton = new System.Windows.Forms.Button();
+            this.diagnosisButton = new System.Windows.Forms.Button();
+            this.testResultsButton = new System.Windows.Forms.Button();
+            this.doctorTextBox = new System.Windows.Forms.TextBox();
+            this.nurseTextBox = new System.Windows.Forms.TextBox();
+            this.patientTextBox = new System.Windows.Forms.TextBox();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(29, 55);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(46, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Doctor:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(54, 117);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 32);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Doctor:";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(29, 93);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(41, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Nurse:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(54, 198);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 32);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Nurse:";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(29, 130);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(47, 15);
-            label3.TabIndex = 3;
-            label3.Text = "Patient:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(54, 277);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 32);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Patient:";
             // 
             // routineCheckupButton
             // 
-            routineCheckupButton.AutoSize = true;
-            routineCheckupButton.Location = new Point(28, 178);
-            routineCheckupButton.Margin = new Padding(2, 1, 2, 1);
-            routineCheckupButton.Name = "routineCheckupButton";
-            routineCheckupButton.Size = new Size(111, 25);
-            routineCheckupButton.TabIndex = 4;
-            routineCheckupButton.Text = "Routine Checkup";
-            routineCheckupButton.UseVisualStyleBackColor = true;
-            routineCheckupButton.Click += routineCheckupButton_Click;
+            this.routineCheckupButton.AutoSize = true;
+            this.routineCheckupButton.Location = new System.Drawing.Point(52, 380);
+            this.routineCheckupButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.routineCheckupButton.Name = "routineCheckupButton";
+            this.routineCheckupButton.Size = new System.Drawing.Size(206, 53);
+            this.routineCheckupButton.TabIndex = 4;
+            this.routineCheckupButton.Text = "Routine Checkup";
+            this.routineCheckupButton.UseVisualStyleBackColor = true;
+            this.routineCheckupButton.Click += new System.EventHandler(this.routineCheckupButton_Click);
             // 
             // orderTestsButton
             // 
-            orderTestsButton.AutoSize = true;
-            orderTestsButton.Location = new Point(192, 178);
-            orderTestsButton.Margin = new Padding(2, 1, 2, 1);
-            orderTestsButton.Name = "orderTestsButton";
-            orderTestsButton.Size = new Size(111, 25);
-            orderTestsButton.TabIndex = 5;
-            orderTestsButton.Text = "Order Tests";
-            orderTestsButton.UseVisualStyleBackColor = true;
+            this.orderTestsButton.AutoSize = true;
+            this.orderTestsButton.Location = new System.Drawing.Point(357, 380);
+            this.orderTestsButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.orderTestsButton.Name = "orderTestsButton";
+            this.orderTestsButton.Size = new System.Drawing.Size(206, 53);
+            this.orderTestsButton.TabIndex = 5;
+            this.orderTestsButton.Text = "Order Tests";
+            this.orderTestsButton.UseVisualStyleBackColor = true;
+            this.orderTestsButton.Click += new System.EventHandler(this.orderTestsButton_Click);
             // 
             // diagnosisButton
             // 
-            diagnosisButton.AutoSize = true;
-            diagnosisButton.Location = new Point(28, 225);
-            diagnosisButton.Margin = new Padding(2, 1, 2, 1);
-            diagnosisButton.Name = "diagnosisButton";
-            diagnosisButton.Size = new Size(111, 25);
-            diagnosisButton.TabIndex = 6;
-            diagnosisButton.Text = "Diagnosis";
-            diagnosisButton.UseVisualStyleBackColor = true;
-            diagnosisButton.Click += diagnosisButton_Click;
+            this.diagnosisButton.AutoSize = true;
+            this.diagnosisButton.Location = new System.Drawing.Point(52, 480);
+            this.diagnosisButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.diagnosisButton.Name = "diagnosisButton";
+            this.diagnosisButton.Size = new System.Drawing.Size(206, 53);
+            this.diagnosisButton.TabIndex = 6;
+            this.diagnosisButton.Text = "Diagnosis";
+            this.diagnosisButton.UseVisualStyleBackColor = true;
+            this.diagnosisButton.Click += new System.EventHandler(this.diagnosisButton_Click);
             // 
             // testResultsButton
             // 
-            testResultsButton.AutoSize = true;
-            testResultsButton.Location = new Point(192, 225);
-            testResultsButton.Margin = new Padding(2, 1, 2, 1);
-            testResultsButton.Name = "testResultsButton";
-            testResultsButton.Size = new Size(111, 25);
-            testResultsButton.TabIndex = 7;
-            testResultsButton.Text = "Test Results";
-            testResultsButton.UseVisualStyleBackColor = true;
+            this.testResultsButton.AutoSize = true;
+            this.testResultsButton.Location = new System.Drawing.Point(357, 480);
+            this.testResultsButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.testResultsButton.Name = "testResultsButton";
+            this.testResultsButton.Size = new System.Drawing.Size(206, 53);
+            this.testResultsButton.TabIndex = 7;
+            this.testResultsButton.Text = "Test Results";
+            this.testResultsButton.UseVisualStyleBackColor = true;
+            this.testResultsButton.Click += new System.EventHandler(this.testResultsButton_Click);
             // 
             // doctorTextBox
             // 
-            doctorTextBox.Location = new Point(122, 54);
-            doctorTextBox.Margin = new Padding(2, 1, 2, 1);
-            doctorTextBox.Name = "doctorTextBox";
-            doctorTextBox.ReadOnly = true;
-            doctorTextBox.Size = new Size(162, 23);
-            doctorTextBox.TabIndex = 8;
+            this.doctorTextBox.Location = new System.Drawing.Point(227, 115);
+            this.doctorTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.doctorTextBox.Name = "doctorTextBox";
+            this.doctorTextBox.ReadOnly = true;
+            this.doctorTextBox.Size = new System.Drawing.Size(297, 39);
+            this.doctorTextBox.TabIndex = 8;
             // 
             // nurseTextBox
             // 
-            nurseTextBox.Location = new Point(122, 91);
-            nurseTextBox.Margin = new Padding(2, 1, 2, 1);
-            nurseTextBox.Name = "nurseTextBox";
-            nurseTextBox.ReadOnly = true;
-            nurseTextBox.Size = new Size(162, 23);
-            nurseTextBox.TabIndex = 9;
+            this.nurseTextBox.Location = new System.Drawing.Point(227, 194);
+            this.nurseTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.nurseTextBox.Name = "nurseTextBox";
+            this.nurseTextBox.ReadOnly = true;
+            this.nurseTextBox.Size = new System.Drawing.Size(297, 39);
+            this.nurseTextBox.TabIndex = 9;
             // 
             // patientTextBox
             // 
-            patientTextBox.Location = new Point(122, 129);
-            patientTextBox.Margin = new Padding(2, 1, 2, 1);
-            patientTextBox.Name = "patientTextBox";
-            patientTextBox.ReadOnly = true;
-            patientTextBox.Size = new Size(162, 23);
-            patientTextBox.TabIndex = 10;
+            this.patientTextBox.Location = new System.Drawing.Point(227, 275);
+            this.patientTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.patientTextBox.Name = "patientTextBox";
+            this.patientTextBox.ReadOnly = true;
+            this.patientTextBox.Size = new System.Drawing.Size(297, 39);
+            this.patientTextBox.TabIndex = 10;
             // 
             // cancelButton
             // 
-            cancelButton.AutoSize = true;
-            cancelButton.Location = new Point(116, 264);
-            cancelButton.Margin = new Padding(2, 1, 2, 1);
-            cancelButton.Name = "cancelButton";
-            cancelButton.Size = new Size(81, 25);
-            cancelButton.TabIndex = 13;
-            cancelButton.Text = "Cancel";
-            cancelButton.UseVisualStyleBackColor = true;
-            cancelButton.Click += CancelButton_Click;
+            this.cancelButton.AutoSize = true;
+            this.cancelButton.Location = new System.Drawing.Point(215, 563);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(150, 53);
+            this.cancelButton.TabIndex = 13;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // VisitForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(341, 310);
-            Controls.Add(cancelButton);
-            Controls.Add(patientTextBox);
-            Controls.Add(nurseTextBox);
-            Controls.Add(doctorTextBox);
-            Controls.Add(testResultsButton);
-            Controls.Add(diagnosisButton);
-            Controls.Add(orderTestsButton);
-            Controls.Add(routineCheckupButton);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Margin = new Padding(2, 1, 2, 1);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "VisitForm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Visit Information";
-            Load += VisitForm_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(633, 661);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.patientTextBox);
+            this.Controls.Add(this.nurseTextBox);
+            this.Controls.Add(this.doctorTextBox);
+            this.Controls.Add(this.testResultsButton);
+            this.Controls.Add(this.diagnosisButton);
+            this.Controls.Add(this.orderTestsButton);
+            this.Controls.Add(this.routineCheckupButton);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "VisitForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Visit Information";
+            this.Load += new System.EventHandler(this.VisitForm_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

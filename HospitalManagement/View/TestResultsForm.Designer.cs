@@ -62,6 +62,7 @@
             this.addButton.TabIndex = 13;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // orderedTestsComboBox
             // 
@@ -213,6 +214,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TestResultsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Test Results";
             this.Load += new System.EventHandler(this.TestResultsForm_Load);
             this.ResumeLayout(false);
