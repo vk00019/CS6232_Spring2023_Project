@@ -59,6 +59,16 @@ namespace HospitalManagement.View
             string testResult = testResultTextBox.Text;
             string normality = normalComboBox.SelectedText;
 
+            var patientTest = new PatientTest
+            {
+                VisitId = _visitId,
+                TestId = selectedTest.Id,
+                TestName = selectedTest.Name,
+                PerformedDate = performedDateTime,
+                Result = testResult,
+                Normality = normality
+            };
+
         }
     }
 }
