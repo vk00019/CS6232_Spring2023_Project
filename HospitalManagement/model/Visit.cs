@@ -20,6 +20,7 @@
         /// The visit identifier.
         /// </value>
         public int VisitId { get; set; }
+        public DateTime AppointmentDate { get; set; }
         /// <summary>
         /// Gets or sets the appointment identifier.
         /// </summary>
@@ -220,5 +221,6 @@
         public string PatientName { get; set; }
 
         public string NurseName { get; set; }
+        
     }
 }

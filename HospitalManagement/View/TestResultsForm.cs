@@ -47,6 +47,10 @@ namespace HospitalManagement.View
             datePicker.MaxDate = DateTime.Today;
             datePicker.MinDate = DateTime.MinValue;
             datePicker.Value = DateTime.Today;
+            if (_controller.IsFinalDiagnosisAvailable(_visitId))
+            {
+                addButton.Enabled = false;
+            }
         }
 
         private void SetOrderTests()

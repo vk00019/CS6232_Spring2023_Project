@@ -133,6 +133,17 @@ namespace HospitalManagement.UserControls
                 searchDataGridView.DataSource = patients;
                 viewButton.Enabled = true;
                 searchDataGridView.ClearSelection();
+                searchDataGridView.Columns["nurseID"].Visible = false;
+                searchDataGridView.Columns["height"].Visible = false;
+                searchDataGridView.Columns["weight"].Visible = false;
+                searchDataGridView.Columns["systolicBp"].Visible = false;
+                searchDataGridView.Columns["diastolicBp"].Visible = false;
+                searchDataGridView.Columns["bodytemperature"].Visible = false;
+                searchDataGridView.Columns["pulse"].Visible = false;
+                searchDataGridView.Columns["symptoms"].Visible = false;
+                searchDataGridView.Columns["DoctorName"].Visible = false;
+                searchDataGridView.Columns["PatientName"].Visible = false;
+                searchDataGridView.Columns["NurseName"].Visible = false;
             }
             else
             {
@@ -184,17 +195,18 @@ namespace HospitalManagement.UserControls
                 if (searchDataGridView.SelectedRows[0] != null)
                 {
                     _visit.VisitId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-                    _visit.AppointmentId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[1].Value.ToString());
-                    _visit.NurseId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[2].Value.ToString());
-                    _visit.Height = (decimal)Double.Parse(searchDataGridView.SelectedRows[0].Cells[3].Value.ToString());
-                    _visit.Weight = (decimal)Double.Parse(searchDataGridView.SelectedRows[0].Cells[4].Value.ToString());
-                    _visit.SystolicBp = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[5].Value.ToString());
-                    _visit.DiastolicBp = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[6].Value.ToString());
-                    _visit.BodyTemperature = (decimal)Double.Parse(searchDataGridView.SelectedRows[0].Cells[7].Value.ToString());
-                    _visit.Pulse = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[8].Value.ToString());
-                    _visit.Symptoms = searchDataGridView.SelectedRows[0].Cells[9].Value.ToString();
-                    _visit.InitialDiagnosis = searchDataGridView.SelectedRows[0].Cells[10].Value.ToString();
-                    _visit.FinalDiagnosis = searchDataGridView.SelectedRows[0].Cells[11].Value.ToString();
+                    _visit.AppointmentDate = DateTime.Parse(searchDataGridView.SelectedRows[0].Cells[1].Value.ToString());
+                    _visit.AppointmentId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[2].Value.ToString());
+                    _visit.NurseId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[3].Value.ToString());
+                    _visit.Height = (decimal)Double.Parse(searchDataGridView.SelectedRows[0].Cells[4].Value.ToString());
+                    _visit.Weight = (decimal)Double.Parse(searchDataGridView.SelectedRows[0].Cells[5].Value.ToString());
+                    _visit.SystolicBp = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[6].Value.ToString());
+                    _visit.DiastolicBp = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[7].Value.ToString());
+                    _visit.BodyTemperature = (decimal)Double.Parse(searchDataGridView.SelectedRows[0].Cells[8].Value.ToString());
+                    _visit.Pulse = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[9].Value.ToString());
+                    _visit.Symptoms = searchDataGridView.SelectedRows[0].Cells[10].Value.ToString();
+                    _visit.InitialDiagnosis = searchDataGridView.SelectedRows[0].Cells[11].Value.ToString();
+                    _visit.FinalDiagnosis = searchDataGridView.SelectedRows[0].Cells[12].Value.ToString();
                 }
             }
         }

@@ -1137,6 +1137,7 @@ namespace HospitalManagement.DAL
             var symptomsOrdinal = reader.GetOrdinal("symptoms");
             var iniOrdinal = reader.GetOrdinal("initialDiagnosis");
             var finalOrdinal = reader.GetOrdinal("finalDiagnosis");
+            var dateOrdinal = reader.GetOrdinal("scheduledDate");
 
             while (reader.Read())
             {
@@ -1151,8 +1152,8 @@ namespace HospitalManagement.DAL
                 var pulse = reader.IsDBNull(pulseOrdinal) ? -1 : reader.GetInt32(pulseOrdinal);
                 var symptoms = reader.IsDBNull(symptomsOrdinal) ? "" : reader.GetString(symptomsOrdinal);
                 var initial = reader.IsDBNull(iniOrdinal) ? "" : reader.GetString(iniOrdinal);
-                var final = reader.IsDBNull(finalOrdinal)
-                    ? "" : reader.GetString(finalOrdinal);
+                var final = reader.IsDBNull(finalOrdinal) ? "" : reader.GetString(finalOrdinal);
+                var date = reader.GetDateTime(dateOrdinal);
 
                 appointments.Add(new Visit
                 {
@@ -1167,7 +1168,8 @@ namespace HospitalManagement.DAL
                     Pulse = pulse,
                     Symptoms = symptoms,
                     InitialDiagnosis = initial,
-                    FinalDiagnosis = final
+                    FinalDiagnosis = final,
+                    AppointmentDate = date
                 });
             }
 
@@ -1181,7 +1183,7 @@ namespace HospitalManagement.DAL
             List<Visit> appointments = new List<Visit>();
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            var query = "select Visit.appointmentID,Visit.nurseID,Visit.visitID,Visit.height,Visit.weight,Visit.systolicBP,Visit.diastolicBP,Visit.bodyTemperature, " +
+            var query = "select Visit.appointmentID,Visit.nurseID,Visit.visitID,Visit.height,Appointment.scheduledDate,Visit.weight,Visit.systolicBP,Visit.diastolicBP,Visit.bodyTemperature, " +
                 "Visit.pulse, Visit.symptoms, Visit.initialDiagnosis,Visit.finalDiagnosis from Visit,Appointment,PersonalDetails,Patient where PersonalDetails.dateOfBirth = @dateOfBirth and PersonalDetails.lastName = @lastName and PersonalDetails.pdID = Patient.pdID and Patient.patientID = Appointment.patientID and Visit.appointmentID = Appointment.appointmentID";
             using var command = new SqlCommand(query, connection);
 
@@ -1203,6 +1205,7 @@ namespace HospitalManagement.DAL
             var symptomsOrdinal = reader.GetOrdinal("symptoms");
             var iniOrdinal = reader.GetOrdinal("initialDiagnosis");
             var finalOrdinal = reader.GetOrdinal("finalDiagnosis");
+            var dateOrdinal = reader.GetOrdinal("scheduledDate");
 
             while (reader.Read())
             {
@@ -1218,6 +1221,7 @@ namespace HospitalManagement.DAL
                 var symptoms = reader.IsDBNull(symptomsOrdinal) ? "" : reader.GetString(symptomsOrdinal);
                 var initial = reader.IsDBNull(iniOrdinal) ? "" : reader.GetString(iniOrdinal);
                 var final = reader.IsDBNull(finalOrdinal) ? "" : reader.GetString(finalOrdinal);
+                var date = reader.GetDateTime(dateOrdinal);
 
                 appointments.Add(new Visit
                 {
@@ -1232,7 +1236,8 @@ namespace HospitalManagement.DAL
                     Pulse = pulse,
                     Symptoms = symptoms,
                     InitialDiagnosis = initial,
-                    FinalDiagnosis = final
+                    FinalDiagnosis = final,
+                    AppointmentDate = date
                 });
             }
 
@@ -1247,7 +1252,7 @@ namespace HospitalManagement.DAL
             List<Visit> appointments = new List<Visit>();
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            var query = "select Visit.appointmentID,Visit.nurseID,Visit.visitID,Visit.height,Visit.weight,Visit.systolicBP,Visit.diastolicBP,Visit.bodyTemperature, " +
+            var query = "select Visit.appointmentID,Visit.nurseID,Visit.visitID,Appointment.scheduledDate,Visit.height,Visit.weight,Visit.systolicBP,Visit.diastolicBP,Visit.bodyTemperature, " +
                 "Visit.pulse, Visit.symptoms, Visit.initialDiagnosis,Visit.finalDiagnosis from Visit,Appointment,PersonalDetails,Patient where PersonalDetails.firstName = @firstName and PersonalDetails.lastName = @lastName and PersonalDetails.pdID = Patient.pdID and Patient.patientID = Appointment.patientID and Visit.appointmentID = Appointment.appointmentID";
             using var command = new SqlCommand(query, connection);
 
@@ -1269,6 +1274,7 @@ namespace HospitalManagement.DAL
             var symptomsOrdinal = reader.GetOrdinal("symptoms");
             var iniOrdinal = reader.GetOrdinal("initialDiagnosis");
             var finalOrdinal = reader.GetOrdinal("finalDiagnosis");
+            var dateOrdinal = reader.GetOrdinal("scheduledDate");
 
             while (reader.Read())
             {
@@ -1283,8 +1289,8 @@ namespace HospitalManagement.DAL
                 var pulse = reader.IsDBNull(pulseOrdinal) ? -1 : reader.GetInt32(pulseOrdinal);
                 var symptoms = reader.IsDBNull(symptomsOrdinal) ? "" : reader.GetString(symptomsOrdinal);
                 var initial = reader.IsDBNull(iniOrdinal) ? "" : reader.GetString(iniOrdinal);
-                var final = reader.IsDBNull(finalOrdinal)
-                    ? "" : reader.GetString(finalOrdinal);
+                var final = reader.IsDBNull(finalOrdinal) ? "" : reader.GetString(finalOrdinal);
+                var date = reader.GetDateTime(dateOrdinal);
 
                 appointments.Add(new Visit
                 {
@@ -1299,7 +1305,8 @@ namespace HospitalManagement.DAL
                     Pulse = pulse,
                     Symptoms = symptoms,
                     InitialDiagnosis = initial,
-                    FinalDiagnosis = final
+                    FinalDiagnosis = final,
+                    AppointmentDate = date
                 });
             }
 
