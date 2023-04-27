@@ -64,6 +64,12 @@ namespace HospitalManagement.View
                     errorLabel.Visible = true;
                 }
             }
+            catch (ArgumentException)
+            {
+                errorLabel.Text = @"Please enter only digits greater than 0";
+                errorLabel.ForeColor = Color.Red;
+                errorLabel.Visible = true;
+            }
             catch
             {
                 errorLabel.Text = @"Please enter only numbers for all fields expect for symptoms";

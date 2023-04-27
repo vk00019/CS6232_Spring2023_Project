@@ -6,6 +6,7 @@
     public class Visit
     {
 
+        
         public Visit()
         {
             InitialDiagnosis = "";
@@ -39,49 +40,130 @@
         /// <value>
         /// The height.
         /// </value>
-        public decimal Height { get; set; }
+        private decimal _height;
+        public decimal Height
+        {
+            get => _height;
+
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("");
+                }
+                _height = value;
+            }
+        }
         /// <summary>
         /// Gets or sets the weight.
         /// </summary>
         /// <value>
         /// The weight.
         /// </value>
-        public decimal Weight { get; set; }
+        private decimal _weight;
+        public decimal Weight
+        {
+            get => _weight;
+
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("");
+                }
+                _weight = value;
+            }
+        }
         /// <summary>
         /// Gets or sets the systolic bp.
         /// </summary>
         /// <value>
         /// The systolic bp.
         /// </value>
-        public int SystolicBp { get; set; }
+        private decimal _systolicBp;
+        public decimal SystolicBp
+        {
+            get => _systolicBp;
+
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("");
+                }
+                _systolicBp = value;
+            }
+        }
         /// <summary>
         /// Gets or sets the diastolic bp.
         /// </summary>
         /// <value>
         /// The diastolic bp.
         /// </value>
-        public int DiastolicBp { get; set; }
+        private decimal _diastolicBp;
+        public decimal DiastolicBp
+        {
+            get => _diastolicBp;
+
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("");
+                }
+                _diastolicBp = value;
+            }
+        }
         /// <summary>
         /// Gets or sets the body temperature.
         /// </summary>
         /// <value>
         /// The body temperature.
         /// </value>
-        public decimal BodyTemperature { get; set; }
+        private decimal _bodyTempterature;
+        public decimal BodyTemperature
+        {
+            get => _bodyTempterature;
+
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("");
+                }
+                _bodyTempterature = value;
+            }
+        }
         /// <summary>
         /// Gets or sets the pulse.
         /// </summary>
         /// <value>
         /// The pulse.
         /// </value>
-        public int Pulse { get; set; }
+        private decimal _pulse;
+        public decimal Pulse
+        {
+            get => _pulse;
+
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("");
+                }
+                _pulse = value;
+            }
+        }
         /// <summary>
         /// Gets or sets the symptoms.
         /// </summary>
         /// <value>
         /// The symptoms.
         /// </value>
-        public string Symptoms { get; set; }
+        public string Symptoms
+        {
+            get; set;
+        }
         /// <summary>
         /// Gets or sets the initial diagnosis.
         /// </summary>
