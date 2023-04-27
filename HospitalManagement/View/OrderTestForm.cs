@@ -114,11 +114,12 @@ namespace HospitalManagement.View
                         adder = true;
                     }
                 }
-                if (adder)
+                if (_controller.GetOrderedTests(_visitId).Count == 0 || adder)
                 {
                     _list.Add(test);
                 }
             }
+
         }
 
         private void OrderTestForm_Load(object sender, EventArgs e)
