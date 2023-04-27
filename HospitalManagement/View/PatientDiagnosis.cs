@@ -46,6 +46,7 @@ namespace HospitalManagement.View
                 errorLabel.Text = "Diagnosis updated";
                 errorLabel.Visible = true;
                 errorLabel.ForeColor = Color.Green;
+                DisableAllFields();
             }
             else if (_initial)
             {
@@ -60,13 +61,15 @@ namespace HospitalManagement.View
                 errorLabel.Text = "Final Diagnosis updated";
                 errorLabel.Visible = true;
                 errorLabel.ForeColor = Color.Green;
+                DisableAllFields();
             }
         }
 
         public void SetTextBoxes(Visit visit)
         {
-            initialDiagnosisRichTextBox.Text = visit.InitialDiagnosis;
-            finalDiagnosisRichTextBox.Text = visit.FinalDiagnosis;
+            var newVisit = _controller.GetEverything(visit.VisitId);
+            initialDiagnosisRichTextBox.Text = newVisit.InitialDiagnosis;
+            finalDiagnosisRichTextBox.Text = newVisit.FinalDiagnosis;
             if (_controller.IsFinalDiagnosisAvailable(visit.VisitId))
             {
                 DisableAllFields();

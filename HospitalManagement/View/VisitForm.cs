@@ -18,7 +18,6 @@ namespace HospitalManagement.View
         {
             InitializeComponent();
             _controller = new ManagementController();
-            _visit = new Visit();
         }
 
         public void SetVisit(Visit visit)
@@ -43,6 +42,7 @@ namespace HospitalManagement.View
         private void routineCheckupButton_Click(object sender, EventArgs e)
         {
             using var routineCheckUp = new RoutineCheckup();
+            routineCheckUp.SetVisitId(_visit.VisitId);
             routineCheckUp.SetFields(_visit);
             routineCheckUp.ShowDialog();
         }

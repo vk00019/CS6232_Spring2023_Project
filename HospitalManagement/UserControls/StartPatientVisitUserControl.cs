@@ -18,6 +18,7 @@ namespace HospitalManagement.UserControls
         {
             using var routine = new RoutineCheckup();
             routine.SetVisitId(_visit.VisitId);
+            routine.SetFields(_visit);
             routine.ShowDialog();
         }
 
@@ -46,6 +47,7 @@ namespace HospitalManagement.UserControls
         {
             using var diagnosis = new PatientDiagnosis();
             diagnosis.SetVisit(_visit);
+            diagnosis.SetTextBoxes(_visit);
             diagnosis.ShowDialog();
         }
     }

@@ -2,8 +2,6 @@
 using HospitalManagement.Model;
 using System.Data;
 using System.Data.SqlClient;
-using System.Numerics;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace HospitalManagement.DAL
 {
@@ -30,8 +28,6 @@ namespace HospitalManagement.DAL
             var gender = personalDetails.Gender;
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            //string query = "INSERT INTO PersonalDetails(firstName,lastName,dateOfBirth,gender,streetAddress,city,state,zipCode,country,phoneNumber) " +
-            //    "VALUES(@firstname,@lastname,@dateOfBirth,@gender,@street,@city,@state,@zipCode,@country,@phoneNumber)";
             using var command = new SqlCommand("registerPatient", connection);
             command.CommandType = CommandType.StoredProcedure;
 
@@ -1468,7 +1464,7 @@ namespace HospitalManagement.DAL
                 + " FROM Visit "
                 + " WHERE Visit.visitID = @id";
             using var command = new SqlCommand(query, connection);
-            command.Parameters.Add("@id", System.Data.SqlDbType.VarChar);
+            command.Parameters.Add("@id", System.Data.SqlDbType.Int);
             command.Parameters["@id"].Value = id;
             using var reader = command.ExecuteReader();
             var finalDiagnosisOrdinal = reader.GetOrdinal("FinalDiagnosis");
@@ -1541,6 +1537,72 @@ namespace HospitalManagement.DAL
             }
 
             return visit;
+        }
+
+        public void UpdatePatientTests(PatientTest patientTest)
+        {
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "Update PatientTests set result = @result, performedDate = @performedDate, abnormal = @normal " +
+                           "where visitID = @visitId and testID = @testId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@testId", SqlDbType.Int);
+            command.Parameters["@testId"].Value = patientTest.TestId;
+
+            command.Parameters.Add("@result", SqlDbType.VarChar);
+            command.Parameters["@result"].Value = patientTest.Result;
+
+            command.Parameters.Add("@normal", SqlDbType.VarChar);
+            command.Parameters["@normal"].Value = patientTest.Normality;
+
+            command.Parameters.Add("@visitId", SqlDbType.Int);
+            command.Parameters["@visitId"].Value = patientTest.VisitId;
+
+            command.Parameters.Add("@performedDate", SqlDbType.DateTime);
+            command.Parameters["@performedDate"].Value = patientTest.PerformedDate;
+
+            command.ExecuteNonQuery();
+        }
+
+        public List<PatientTest> GePatientTestsResults(int visitId)
+        {
+            List<PatientTest> tests = new List<PatientTest>();
+
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "select Tests.testName, result, performedDate, abnormal " +
+                           "from PatientTests, Tests where PatientTests.testID = Tests.testID " +
+                           "and PatientTests.visitID = @visitId and result IS NOT NULL and " +
+                           "performedDate IS NOT NULL and abnormal IS NOT NULL";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@visitId", SqlDbType.Int);
+            command.Parameters["@visitId"].Value = visitId;
+            using var reader = command.ExecuteReader();
+
+            var nameOrdinal = reader.GetOrdinal("testName");
+            var resultOrdinal = reader.GetOrdinal("result");
+            var dateOrdinal = reader.GetOrdinal("performedDate");
+            var normalOrdinal = reader.GetOrdinal("abnormal");
+
+            while (reader.Read())
+            {
+                var testName = reader.GetString(nameOrdinal);
+                var result = reader.GetString(resultOrdinal);
+                var date = reader.GetDateTime(dateOrdinal);
+                var normal = reader.GetString(normalOrdinal);
+
+                tests.Add(new PatientTest
+                {
+                    TestName = testName,
+                    Result = result,
+                    PerformedDate = date,
+                    Normality = normal
+                });
+            }
+
+            return tests;
         }
     }
 }
