@@ -142,7 +142,6 @@
             orderTestsButton.TabIndex = 15;
             orderTestsButton.Text = "Order Tests";
             orderTestsButton.UseVisualStyleBackColor = true;
-            orderTestsButton.Click += orderTestsButton_Click;
             // 
             // routineCheckupButton
             // 
@@ -163,7 +162,6 @@
             routineCheckupButton.TabIndex = 14;
             routineCheckupButton.Text = "Routine Checkup";
             routineCheckupButton.UseVisualStyleBackColor = true;
-            routineCheckupButton.Click += routineCheckupButton_Click;
             // 
             // label3
             // 

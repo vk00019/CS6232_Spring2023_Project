@@ -93,6 +93,8 @@ namespace HospitalManagement.View
                 errorLabel.Visible = true;
                 errorLabel.Text = "Test result added successfully";
                 errorLabel.ForeColor = Color.Green;
+                testResultTextBox.Clear();
+                orderedTestsComboBox.SelectedIndex = 0;
                 SetOrderTests();
                 RefreshDataGridView();
             }

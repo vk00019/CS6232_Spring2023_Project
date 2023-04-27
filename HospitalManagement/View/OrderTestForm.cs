@@ -32,11 +32,6 @@ namespace HospitalManagement.View
             _visitId = id;
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void addButton_Click(object sender, EventArgs e)
         {
             var testToAdd = allTestsComboBox.SelectedItem as TestList;
