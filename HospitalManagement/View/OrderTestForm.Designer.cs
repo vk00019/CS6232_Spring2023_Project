@@ -28,132 +28,140 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.allTestsComboBox = new System.Windows.Forms.ComboBox();
-            this.addButton = new System.Windows.Forms.Button();
-            this.reviewTestsButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.testsDataGridView = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.errorLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.testsDataGridView)).BeginInit();
-            this.SuspendLayout();
+            label1 = new Label();
+            allTestsComboBox = new ComboBox();
+            addButton = new Button();
+            reviewTestsButton = new Button();
+            deleteButton = new Button();
+            cancelButton = new Button();
+            testsDataGridView = new DataGridView();
+            label2 = new Label();
+            errorLabel = new Label();
+            ((System.ComponentModel.ISupportInitialize)testsDataGridView).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Choose Tests:";
+            label1.AutoSize = true;
+            label1.Location = new Point(106, 43);
+            label1.Name = "label1";
+            label1.Size = new Size(97, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Choose Tests:";
             // 
             // allTestsComboBox
             // 
-            this.allTestsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.allTestsComboBox.FormattingEnabled = true;
-            this.allTestsComboBox.Location = new System.Drawing.Point(93, 53);
-            this.allTestsComboBox.Name = "allTestsComboBox";
-            this.allTestsComboBox.Size = new System.Drawing.Size(184, 23);
-            this.allTestsComboBox.TabIndex = 1;
-            this.allTestsComboBox.SelectedIndexChanged += new System.EventHandler(this.allTestsComboBox_SelectedIndexChanged);
+            allTestsComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            allTestsComboBox.FormattingEnabled = true;
+            allTestsComboBox.Location = new Point(106, 71);
+            allTestsComboBox.Margin = new Padding(3, 4, 3, 4);
+            allTestsComboBox.Name = "allTestsComboBox";
+            allTestsComboBox.Size = new Size(210, 28);
+            allTestsComboBox.TabIndex = 1;
+            allTestsComboBox.SelectedIndexChanged += allTestsComboBox_SelectedIndexChanged;
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(146, 90);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
-            this.addButton.TabIndex = 2;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            addButton.Location = new Point(167, 120);
+            addButton.Margin = new Padding(3, 4, 3, 4);
+            addButton.Name = "addButton";
+            addButton.Size = new Size(86, 31);
+            addButton.TabIndex = 2;
+            addButton.Text = "Add";
+            addButton.UseVisualStyleBackColor = true;
+            addButton.Click += addButton_Click;
             // 
             // reviewTestsButton
             // 
-            this.reviewTestsButton.AutoSize = true;
-            this.reviewTestsButton.Location = new System.Drawing.Point(55, 261);
-            this.reviewTestsButton.Name = "reviewTestsButton";
-            this.reviewTestsButton.Size = new System.Drawing.Size(82, 25);
-            this.reviewTestsButton.TabIndex = 4;
-            this.reviewTestsButton.Text = "Review Tests";
-            this.reviewTestsButton.UseVisualStyleBackColor = true;
-            this.reviewTestsButton.Click += new System.EventHandler(this.reviewTestsButton_Click);
+            reviewTestsButton.AutoSize = true;
+            reviewTestsButton.Location = new Point(63, 348);
+            reviewTestsButton.Margin = new Padding(3, 4, 3, 4);
+            reviewTestsButton.Name = "reviewTestsButton";
+            reviewTestsButton.Size = new Size(102, 33);
+            reviewTestsButton.TabIndex = 4;
+            reviewTestsButton.Text = "Review Tests";
+            reviewTestsButton.UseVisualStyleBackColor = true;
+            reviewTestsButton.Click += reviewTestsButton_Click;
             // 
             // deleteButton
             // 
-            this.deleteButton.Enabled = false;
-            this.deleteButton.Location = new System.Drawing.Point(151, 261);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteButton.TabIndex = 5;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            deleteButton.Enabled = false;
+            deleteButton.Location = new Point(173, 348);
+            deleteButton.Margin = new Padding(3, 4, 3, 4);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(86, 31);
+            deleteButton.TabIndex = 5;
+            deleteButton.Text = "Delete";
+            deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(244, 261);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 6;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            cancelButton.Location = new Point(279, 348);
+            cancelButton.Margin = new Padding(3, 4, 3, 4);
+            cancelButton.Name = "cancelButton";
+            cancelButton.Size = new Size(86, 31);
+            cancelButton.TabIndex = 6;
+            cancelButton.Text = "Cancel";
+            cancelButton.UseVisualStyleBackColor = true;
+            cancelButton.Click += cancelButton_Click;
             // 
             // testsDataGridView
             // 
-            this.testsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.testsDataGridView.Location = new System.Drawing.Point(59, 119);
-            this.testsDataGridView.MultiSelect = false;
-            this.testsDataGridView.Name = "testsDataGridView";
-            this.testsDataGridView.ReadOnly = true;
-            this.testsDataGridView.RowTemplate.Height = 25;
-            this.testsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.testsDataGridView.Size = new System.Drawing.Size(260, 136);
-            this.testsDataGridView.TabIndex = 7;
-            this.testsDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.testsDataGridView_CellMouseClick);
+            testsDataGridView.AllowUserToAddRows = false;
+            testsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            testsDataGridView.Location = new Point(67, 159);
+            testsDataGridView.Margin = new Padding(3, 4, 3, 4);
+            testsDataGridView.MultiSelect = false;
+            testsDataGridView.Name = "testsDataGridView";
+            testsDataGridView.ReadOnly = true;
+            testsDataGridView.RowHeadersWidth = 51;
+            testsDataGridView.RowTemplate.Height = 25;
+            testsDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            testsDataGridView.Size = new Size(297, 181);
+            testsDataGridView.TabIndex = 7;
+            testsDataGridView.CellMouseClick += testsDataGridView_CellMouseClick;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(136, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 15);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Add tests to review";
+            label2.AutoSize = true;
+            label2.Location = new Point(155, 12);
+            label2.Name = "label2";
+            label2.Size = new Size(136, 20);
+            label2.TabIndex = 8;
+            label2.Text = "Add tests to review";
             // 
             // errorLabel
             // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(161, 296);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(60, 15);
-            this.errorLabel.TabIndex = 15;
-            this.errorLabel.Text = "errorLabel";
-            this.errorLabel.Visible = false;
+            errorLabel.AutoSize = true;
+            errorLabel.Location = new Point(184, 395);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(77, 20);
+            errorLabel.TabIndex = 15;
+            errorLabel.Text = "errorLabel";
+            errorLabel.Visible = false;
             // 
             // OrderTestForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 332);
-            this.Controls.Add(this.errorLabel);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.testsDataGridView);
-            this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.deleteButton);
-            this.Controls.Add(this.reviewTestsButton);
-            this.Controls.Add(this.addButton);
-            this.Controls.Add(this.allTestsComboBox);
-            this.Controls.Add(this.label1);
-            this.Name = "OrderTestForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Order Test";
-            ((System.ComponentModel.ISupportInitialize)(this.testsDataGridView)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(437, 443);
+            Controls.Add(errorLabel);
+            Controls.Add(label2);
+            Controls.Add(testsDataGridView);
+            Controls.Add(cancelButton);
+            Controls.Add(deleteButton);
+            Controls.Add(reviewTestsButton);
+            Controls.Add(addButton);
+            Controls.Add(allTestsComboBox);
+            Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "OrderTestForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Order Test";
+            ((System.ComponentModel.ISupportInitialize)testsDataGridView).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

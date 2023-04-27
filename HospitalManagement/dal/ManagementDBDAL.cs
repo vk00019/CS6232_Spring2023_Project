@@ -1217,8 +1217,7 @@ namespace HospitalManagement.DAL
                 var pulse = reader.IsDBNull(pulseOrdinal) ? -1 : reader.GetInt32(pulseOrdinal);
                 var symptoms = reader.IsDBNull(symptomsOrdinal) ? "" : reader.GetString(symptomsOrdinal);
                 var initial = reader.IsDBNull(iniOrdinal) ? "" : reader.GetString(iniOrdinal);
-                var final = reader.IsDBNull(finalOrdinal)
-                    ? "" : reader.GetString(finalOrdinal);
+                var final = reader.IsDBNull(finalOrdinal) ? "" : reader.GetString(finalOrdinal);
 
                 appointments.Add(new Visit
                 {
@@ -1477,6 +1476,69 @@ namespace HospitalManagement.DAL
                 finalDiagnosis = Convert.ToBoolean(reader.GetString(finalDiagnosisOrdinal));
             }
             return finalDiagnosis;
+        }
+
+        public Visit GetEverything(int id)
+        {
+
+            var visit = new Visit();
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            var query = "select Visit.appointmentID,Visit.nurseID,Visit.visitID,Visit.height,Visit.weight,Visit.systolicBP,Visit.diastolicBP,Visit.bodyTemperature, " +
+                "Visit.pulse, Visit.symptoms, Visit.initialDiagnosis,Visit.finalDiagnosis from Visit where Visit.visitID = @id";
+            using var command = new SqlCommand(query, connection);
+
+            
+            command.Parameters.Add("@id", SqlDbType.VarChar);
+            command.Parameters["@id"].Value = id;
+            using var reader = command.ExecuteReader();
+
+            var appointmentIdOrdinal = reader.GetOrdinal("appointmentID");
+            var visitIdOrdinal = reader.GetOrdinal("visitID");
+            var nurseIdOrdinal = reader.GetOrdinal("nurseID");
+            var heightOrdinal = reader.GetOrdinal("height");
+            var weightOrdinal = reader.GetOrdinal("weight");
+            var sysOrdinal = reader.GetOrdinal("systolicBP");
+            var diaBpOrdinal = reader.GetOrdinal("diastolicBP");
+            var tempOrdinal = reader.GetOrdinal("bodyTemperature");
+            var pulseOrdinal = reader.GetOrdinal("pulse");
+            var symptomsOrdinal = reader.GetOrdinal("symptoms");
+            var iniOrdinal = reader.GetOrdinal("initialDiagnosis");
+            var finalOrdinal = reader.GetOrdinal("finalDiagnosis");
+
+            while (reader.Read())
+            {
+                var visitId = reader.GetInt32(visitIdOrdinal);
+                var nurseId = reader.GetInt32(nurseIdOrdinal);
+                var appointmentId = reader.GetInt32(appointmentIdOrdinal);
+                var height = reader.IsDBNull(heightOrdinal) ? -1 : reader.GetDecimal(heightOrdinal);
+                var weight = reader.IsDBNull(weightOrdinal) ? -1 : reader.GetDecimal(weightOrdinal);
+                var sysBp = reader.IsDBNull(sysOrdinal) ? -1 : reader.GetInt32(sysOrdinal);
+                var diaBp = reader.IsDBNull(diaBpOrdinal) ? -1 : reader.GetInt32(diaBpOrdinal);
+                var temp = reader.IsDBNull(tempOrdinal) ? -1 : reader.GetDecimal(tempOrdinal);
+                var pulse = reader.IsDBNull(pulseOrdinal) ? -1 : reader.GetInt32(pulseOrdinal);
+                var symptoms = reader.IsDBNull(symptomsOrdinal) ? "" : reader.GetString(symptomsOrdinal);
+                var initial = reader.IsDBNull(iniOrdinal) ? "" : reader.GetString(iniOrdinal);
+                var final = reader.IsDBNull(finalOrdinal) ? "" : reader.GetString(finalOrdinal);
+
+                visit = new Visit
+                {
+                    VisitId = visitId,
+                    AppointmentId = appointmentId,
+                    NurseId = nurseId,
+                    Height = height,
+                    Weight = weight,
+                    SystolicBp = sysBp,
+                    DiastolicBp = diaBp,
+                    BodyTemperature = temp,
+                    Pulse = pulse,
+                    Symptoms = symptoms,
+                    InitialDiagnosis = initial,
+                    FinalDiagnosis = final
+                };
+            }
+
+            return visit;
         }
 
         public void UpdatePatientTests(PatientTest patientTest)

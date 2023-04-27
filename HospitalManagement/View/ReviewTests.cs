@@ -29,7 +29,7 @@ namespace HospitalManagement.View
             RefreshList();
         }
 
-        public void SetTests(List<TestList> finalTests)
+        public void SetTests(BindingList<TestList> finalTests)
         {
             foreach (var currentTest in finalTests)
             {
@@ -70,9 +70,8 @@ namespace HospitalManagement.View
             {
                 _controller.OrderTests(_visitId, currentTest.Id);
             }
-            errorLabel.Text = @"Successfully added tests";
-            errorLabel.ForeColor = Color.Green;
-            errorLabel.Visible = true;
+            this.Close();
+            MessageBox.Show("Sucessfully ordered the tests");
         }
 
         private void ReviewTestsDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
