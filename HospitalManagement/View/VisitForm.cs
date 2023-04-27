@@ -10,7 +10,7 @@ namespace HospitalManagement.View
     public partial class VisitForm : Form
     {
         private Visit _visit;
-        private ManagementController _controller;
+        private readonly ManagementController _controller;
         /// <summary>
         /// Initializes a new instance of the <see cref="VisitForm"/> class.
         /// </summary>
@@ -18,6 +18,7 @@ namespace HospitalManagement.View
         {
             InitializeComponent();
             _controller = new ManagementController();
+            _visit = new Visit();
         }
 
         public void SetVisit(Visit visit)
@@ -52,6 +53,20 @@ namespace HospitalManagement.View
             diagnosis.SetVisit(_visit);
             diagnosis.SetTextBoxes(_visit);
             diagnosis.ShowDialog();
+        }
+
+        private void testResultsButton_Click(object sender, EventArgs e)
+        {
+            using var testResults = new TestResultsForm();
+            testResults.SetVisitId(_visit.VisitId);
+            testResults.ShowDialog();
+        }
+
+        private void orderTestsButton_Click(object sender, EventArgs e)
+        {
+            using var orderTests = new OrderTestForm();
+            orderTests.SetVisitId(_visit.VisitId);
+            orderTests.ShowDialog();
         }
     }
 }
