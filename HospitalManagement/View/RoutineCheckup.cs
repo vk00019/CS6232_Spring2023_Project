@@ -43,7 +43,7 @@ namespace HospitalManagement.View
                     var weight = Convert.ToDecimal(weightTextBox.Text);
                     var sysBp = Convert.ToInt32(sysBPTextBox.Text);
                     var diaBp = Convert.ToInt32(diaBPTextBox.Text);
-                    var temperature = Convert.ToInt32(tempTextBox.Text);
+                    var temperature = Convert.ToDecimal(tempTextBox.Text);
                     var pulse = Convert.ToInt32(pulseTextBox.Text);
                     var symptoms = symptomsTextBox.Text;
                     var visit = new Visit

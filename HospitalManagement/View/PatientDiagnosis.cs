@@ -65,8 +65,9 @@ namespace HospitalManagement.View
 
         public void SetTextBoxes(Visit visit)
         {
-            initialDiagnosisRichTextBox.Text = visit.InitialDiagnosis;
-            finalDiagnosisRichTextBox.Text = visit.FinalDiagnosis;
+            var newVisit = _controller.GetEverything(visit.VisitId);
+            initialDiagnosisRichTextBox.Text = newVisit.InitialDiagnosis;
+            finalDiagnosisRichTextBox.Text = newVisit.FinalDiagnosis;
             if (_controller.IsFinalDiagnosisAvailable(visit.VisitId))
             {
                 DisableAllFields();
