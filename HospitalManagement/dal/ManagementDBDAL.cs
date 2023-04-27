@@ -30,8 +30,6 @@ namespace HospitalManagement.DAL
             var gender = personalDetails.Gender;
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            //string query = "INSERT INTO PersonalDetails(firstName,lastName,dateOfBirth,gender,streetAddress,city,state,zipCode,country,phoneNumber) " +
-            //    "VALUES(@firstname,@lastname,@dateOfBirth,@gender,@street,@city,@state,@zipCode,@country,@phoneNumber)";
             using var command = new SqlCommand("registerPatient", connection);
             command.CommandType = CommandType.StoredProcedure;
 
@@ -1469,7 +1467,7 @@ namespace HospitalManagement.DAL
                 + " FROM Visit "
                 + " WHERE Visit.visitID = @id";
             using var command = new SqlCommand(query, connection);
-            command.Parameters.Add("@id", System.Data.SqlDbType.VarChar);
+            command.Parameters.Add("@id", System.Data.SqlDbType.Int);
             command.Parameters["@id"].Value = id;
             using var reader = command.ExecuteReader();
             var finalDiagnosisOrdinal = reader.GetOrdinal("FinalDiagnosis");
@@ -1479,6 +1477,26 @@ namespace HospitalManagement.DAL
                 finalDiagnosis = Convert.ToBoolean(reader.GetString(finalDiagnosisOrdinal));
             }
             return finalDiagnosis;
+        }
+
+        public void UpdatePatientTests(PatientTest patientTest)
+        {
+            using var connection = DBConnection.GetConnection();
+            connection.Open();
+            string query = "Update PatientTests set testID = @testId, result = @result, " +
+                           "performedDate = @performedDate, abnormal = @normal where visitID = @visitId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@testId", SqlDbType.Int);
+            command.Parameters["@testId"].Value = patientTest.TestId;
+
+            command.Parameters.Add("@result", SqlDbType.VarChar);
+            command.Parameters["@result"].Value = patientTest.Result;
+
+            command.Parameters.Add("@performedDate", SqlDbType.DateTime);
+            command.Parameters["@performedDate"].Value = patientTest.PerformedDate;
+
+            command.ExecuteNonQuery();
         }
     }
 }

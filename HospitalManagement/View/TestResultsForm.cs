@@ -51,24 +51,50 @@ namespace HospitalManagement.View
             datePicker.MaxDate = DateTime.Today;
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        private void AddButton_Click(object sender, EventArgs e)
         {
-            var performedDateTime = new DateTime(datePicker.Value.Year, datePicker.Value.Month, datePicker.Value.Day,
-                timePicker.Value.Hour, timePicker.Value.Minute, timePicker.Value.Second);
-            var selectedTest = orderedTestsComboBox.SelectedItem as TestList;
-            string testResult = testResultTextBox.Text;
-            string normality = normalComboBox.SelectedText;
-
-            var patientTest = new PatientTest
+            errorLabel.Visible = false;
+            CheckAllFields();
+            if (errorLabel.Visible)
             {
-                VisitId = _visitId,
-                TestId = selectedTest.Id,
-                TestName = selectedTest.Name,
-                PerformedDate = performedDateTime,
-                Result = testResult,
-                Normality = normality
-            };
+                errorLabel.Text = "Please fill all the fields above";
+                errorLabel.ForeColor = Color.Red;
+            }
+            else
+            {
+                var performedDateTime = new DateTime(datePicker.Value.Year, datePicker.Value.Month, datePicker.Value.Day,
+                    timePicker.Value.Hour, timePicker.Value.Minute, timePicker.Value.Second);
+                var selectedTest = orderedTestsComboBox.SelectedItem as TestList;
+                string testResult = testResultTextBox.Text;
+                string normality = normalComboBox.SelectedText;
 
+                var patientTest = new PatientTest
+                {
+                    VisitId = _visitId,
+                    TestId = selectedTest.Id,
+                    TestName = selectedTest.Name,
+                    PerformedDate = performedDateTime,
+                    Result = testResult,
+                    Normality = normality
+                };
+                _controller.UpdatePatientTests(patientTest);
+                errorLabel.Visible = true;
+                errorLabel.Text = "Test result added successfully";
+                errorLabel.ForeColor = Color.Green;
+            }
+        }
+
+        private void CheckAllFields()
+        {
+            if (string.IsNullOrEmpty(testResultTextBox.Text))
+            {
+                errorLabel.Visible = true;
+            }
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

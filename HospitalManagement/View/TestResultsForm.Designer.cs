@@ -63,7 +63,7 @@
             this.addButton.TabIndex = 13;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.addButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // orderedTestsComboBox
             // 
@@ -202,6 +202,7 @@
             this.closeButton.TabIndex = 51;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // TestResultsForm
             // 

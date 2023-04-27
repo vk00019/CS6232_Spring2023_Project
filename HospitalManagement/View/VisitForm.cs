@@ -18,7 +18,6 @@ namespace HospitalManagement.View
         {
             InitializeComponent();
             _controller = new ManagementController();
-            _visit = new Visit();
         }
 
         public void SetVisit(Visit visit)

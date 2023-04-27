@@ -224,5 +224,10 @@ namespace HospitalManagement.Controller
         {
             return _managementDal.IsFinalDiagnosisAvailable(id);
         }
+
+        public void UpdatePatientTests(PatientTest patientTest)
+        {
+            _managementDal.UpdatePatientTests(patientTest);
+        }
     }
 }
