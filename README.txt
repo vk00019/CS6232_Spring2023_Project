@@ -15,3 +15,6 @@ Stored Procedures added in the root folder
 
 ---------
 
+-Faced Multiple issues to pass the Visit id/ Visit object around the multiple forms like 
+	routine checkup, order test, test results, diagnosis forms
+(Hopefully Everything cleared now!!)

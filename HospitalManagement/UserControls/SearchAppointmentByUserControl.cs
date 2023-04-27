@@ -1,7 +1,6 @@
 ﻿using HospitalManagement.Controller;
 using HospitalManagement.Model;
 using HospitalManagement.View;
-using System.Windows.Forms;
 
 namespace HospitalManagement.UserControls
 {
@@ -13,6 +12,7 @@ namespace HospitalManagement.UserControls
     {
         private readonly Appointment _appointment;
         private readonly ManagementController _controller;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchAppointmentByUserControl"/> class.
         /// </summary>

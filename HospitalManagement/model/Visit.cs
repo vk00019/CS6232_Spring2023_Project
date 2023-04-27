@@ -5,14 +5,16 @@
     /// </summary>
     public class Visit
     {
-
-        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Visit"/> class.
+        /// </summary>
         public Visit()
         {
             InitialDiagnosis = "";
             FinalDiagnosis = "";
             Symptoms = "";
         }
+
         /// <summary>
         /// Gets or sets the visit identifier.
         /// </summary>

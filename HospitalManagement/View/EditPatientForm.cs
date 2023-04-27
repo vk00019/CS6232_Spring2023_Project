@@ -12,6 +12,7 @@ namespace HospitalManagement.View
         private PersonalDetails _patient;
         private List<string> _gender;
         private readonly ManagementController _controller;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="EditPatientForm"/> class.
         /// </summary>

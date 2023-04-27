@@ -1,5 +1,4 @@
 ﻿using HospitalManagement.Controller;
-using HospitalManagement.model;
 using HospitalManagement.Model;
 using HospitalManagement.View;
 

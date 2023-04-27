@@ -8,6 +8,10 @@ namespace HospitalManagement.UserControls
     {
         private readonly ManagementController _controller;
         private Visit _visit;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StartPatientVisitUserControl"/> class.
+        /// </summary>
         public StartPatientVisitUserControl()
         {
             InitializeComponent();

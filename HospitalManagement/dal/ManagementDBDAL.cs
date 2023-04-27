@@ -31,11 +31,6 @@ namespace HospitalManagement.DAL
             using var command = new SqlCommand("registerPatient", connection);
             command.CommandType = CommandType.StoredProcedure;
 
-            //string query2 = "INSERT INTO Patient(pdID) "
-            //    + "values((select pdID from PersonalDetails where firstName = @firstname and lastName = @lastname and dateOfBirth = @dateOfBirth))";
-
-            //using var command2 = new SqlCommand(query2, connection);
-
             command.Parameters.Add("@Firstname", System.Data.SqlDbType.VarChar);
             command.Parameters["@Firstname"].Value = firstname;
 
@@ -66,17 +61,7 @@ namespace HospitalManagement.DAL
             command.Parameters.Add("@DateOfBirth", System.Data.SqlDbType.Date);
             command.Parameters["@DateOfBirth"].Value = dateOfBirth;
 
-            //command2.Parameters.Add("@firstname", System.Data.SqlDbType.VarChar);
-            //command2.Parameters["@firstname"].Value = firstname;
-
-            //command2.Parameters.Add("@lastname", System.Data.SqlDbType.VarChar);
-            //command2.Parameters["@lastname"].Value = lastname;
-
-            //command2.Parameters.Add("@dateOfBirth", System.Data.SqlDbType.Date);
-            //command2.Parameters["@dateOfBirth"].Value = dateOfBirth;
-
             command.ExecuteNonQuery();
-            //command2.ExecuteNonQuery();
         }
 
         /// <summary>
@@ -297,6 +282,11 @@ namespace HospitalManagement.DAL
             return states;
         }
 
+        /// <summary>
+        /// Gets the patient ordered tests as a list.
+        /// </summary>
+        /// <param name="visitId">The visit identifier.</param>
+        /// <returns></returns>
         public List<TestList> GetOrderedTests(int visitId)
         {
             var orderedTests = new List<TestList>();
@@ -368,6 +358,10 @@ namespace HospitalManagement.DAL
             command.ExecuteScalar();
         }
 
+        /// <summary>
+        /// Deletes the patient.
+        /// </summary>
+        /// <param name="id">The patient id.</param>
         public void DeletePatient(int id)
         {
             using var connection = DBConnection.GetConnection();
@@ -485,7 +479,7 @@ namespace HospitalManagement.DAL
         }
 
         /// <summary>
-        /// This method checks if there is a visit assosiated with an appointment
+        /// This method checks if there is a visit associated with an appointment
         /// </summary>
         /// <param name="id"></param>
         /// <returns>True if there is a visit</returns>
@@ -501,6 +495,11 @@ namespace HospitalManagement.DAL
             return count == 1;
         }
 
+        /// <summary>
+        /// Checks the appointment.
+        /// </summary>
+        /// <param name="id">The patient's pdId.</param>
+        /// <returns></returns>
         public bool CheckAppointment(int id)
         {
             using var connection = DBConnection.GetConnection();
@@ -1042,6 +1041,11 @@ namespace HospitalManagement.DAL
             return nurse;
         }
 
+        /// <summary>
+        /// Gets the patient id.
+        /// </summary>
+        /// <param name="pdId">The patient's pdId.</param>
+        /// <returns> Patient's id</returns>
         public int GetPatientId(int pdId)
         {
             int patientId = 0;
@@ -1065,6 +1069,10 @@ namespace HospitalManagement.DAL
             return patientId;
         }
 
+        /// <summary>
+        /// Gets the today's appointments.
+        /// </summary>
+        /// <returns></returns>
         public List<Appointment> GetTodaysAppointments()
         {
             List<Appointment> appointments = new List<Appointment>();
@@ -1107,6 +1115,11 @@ namespace HospitalManagement.DAL
             return appointments;
         }
 
+        /// <summary>
+        /// Gets the visit with dob.
+        /// </summary>
+        /// <param name="patient">The personal details object.</param>
+        /// <returns></returns>
         public List<Visit> GetVisitWithDOB(PersonalDetails patient)
         {
             var dateOfBirth = patient.DateOfBirth;
@@ -1172,6 +1185,11 @@ namespace HospitalManagement.DAL
             return appointments;
         }
 
+        /// <summary>
+        /// Gets the visit with dob and last name
+        /// </summary>
+        /// <param name="patient">The patient.</param>
+        /// <returns></returns>
         public List<Visit> GetVisitWithDOBAndLastName(PersonalDetails patient)
         {
             var dateOfBirth = patient.DateOfBirth;
@@ -1237,7 +1255,12 @@ namespace HospitalManagement.DAL
             return appointments;
         }
 
-        internal List<Visit> GetVisitWithFirstAndLastName(PersonalDetails patient)
+        /// <summary>
+        /// Gets the visit with first and last name.
+        /// </summary>
+        /// <param name="patient">The patient.</param>
+        /// <returns></returns>
+        public List<Visit> GetVisitWithFirstAndLastName(PersonalDetails patient)
         {
 
             var firstName = patient.FirstName;
@@ -1304,6 +1327,10 @@ namespace HospitalManagement.DAL
             return appointments;
         }
 
+        /// <summary>
+        /// Starts the visit.
+        /// </summary>
+        /// <param name="visit">The visit.</param>
         public void StartVisit(Visit visit)
         {
             using var connection = DBConnection.GetConnection();
@@ -1320,6 +1347,10 @@ namespace HospitalManagement.DAL
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Gets the latest visit.
+        /// </summary>
+        /// <returns></returns>
         public Visit GetLatestVisit()
         {
             var visit = new Visit();
@@ -1357,6 +1388,10 @@ namespace HospitalManagement.DAL
             return visit;
         }
 
+        /// <summary>
+        /// Updates the initial diagnosis.
+        /// </summary>
+        /// <param name="visit">The visit.</param>
         public void UpdateInitialDiagnosis(Visit visit)
         {
             using var connection = DBConnection.GetConnection();
@@ -1373,6 +1408,10 @@ namespace HospitalManagement.DAL
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Updates the final diagnosis.
+        /// </summary>
+        /// <param name="visit">The visit.</param>
         public void UpdateFinalDiagnosis(Visit visit)
         {
             using var connection = DBConnection.GetConnection();
@@ -1389,6 +1428,10 @@ namespace HospitalManagement.DAL
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Updates the diagnosis.
+        /// </summary>
+        /// <param name="visit">The visit.</param>
         public void UpdateDiagnosis(Visit visit)
         {
             using var connection = DBConnection.GetConnection();
@@ -1408,6 +1451,11 @@ namespace HospitalManagement.DAL
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Gets the visit for edit or view.
+        /// </summary>
+        /// <param name="visitid">The visitid.</param>
+        /// <returns></returns>
         public Visit GetVisitForEditOrView(int visitid)
         {
             var visitID = visitid;
@@ -1456,6 +1504,13 @@ namespace HospitalManagement.DAL
             return visit;
         }
 
+        /// <summary>
+        /// Determines whether [final diagnosis available] with given visit id.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>
+        ///   <c>true</c> if [is final diagnosis available] [the specified identifier]; otherwise, <c>false</c>.
+        /// </returns>
         public bool IsFinalDiagnosisAvailable(int id)
         {
             using var connection = DBConnection.GetConnection();
@@ -1476,6 +1531,11 @@ namespace HospitalManagement.DAL
             return finalDiagnosis;
         }
 
+        /// <summary>
+        /// Gets the everything of visit.
+        /// </summary>
+        /// <param name="id">The visit id.</param>
+        /// <returns></returns>
         public Visit GetEverything(int id)
         {
 
@@ -1539,6 +1599,10 @@ namespace HospitalManagement.DAL
             return visit;
         }
 
+        /// <summary>
+        /// Updates the patient tests.
+        /// </summary>
+        /// <param name="patientTest">The patient test.</param>
         public void UpdatePatientTests(PatientTest patientTest)
         {
             using var connection = DBConnection.GetConnection();
@@ -1565,6 +1629,11 @@ namespace HospitalManagement.DAL
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Ges the patient tests results.
+        /// </summary>
+        /// <param name="visitId">The visit id.</param>
+        /// <returns></returns>
         public List<PatientTest> GePatientTestsResults(int visitId)
         {
             List<PatientTest> tests = new List<PatientTest>();

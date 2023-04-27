@@ -12,6 +12,7 @@ namespace HospitalManagement.UserControls
     {
         private readonly ManagementController _controller;
         private readonly PersonalDetails _patientDetails;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchPatientByUserControl"/> class.
         /// </summary>
