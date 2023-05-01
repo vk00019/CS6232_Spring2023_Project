@@ -46,6 +46,7 @@ namespace HospitalManagement.View
         {
             reviewTestsDataGridView.DataSource = null;
             reviewTestsDataGridView.DataSource = _finalTests;
+            reviewTestsDataGridView.ClearSelection();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -56,6 +57,7 @@ namespace HospitalManagement.View
         private void deleteButton_Click(object sender, EventArgs e)
         {
             _finalTests.RemoveAt(index);
+            deleteButton.Enabled = false;
             RefreshList();
             if (_finalTests.Count == 0)
             {

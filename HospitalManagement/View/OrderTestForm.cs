@@ -46,6 +46,7 @@ namespace HospitalManagement.View
             testsDataGridView.DataSource = _ordered;
             allTestsComboBox.DataSource = _list;
             allTestsComboBox.DisplayMember = "Name";
+            testsDataGridView.ClearSelection();
         }
 
         private void testsDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -64,6 +65,7 @@ namespace HospitalManagement.View
         {
             _list.Add(_ordered[index]);
             _ordered.RemoveAt(index);
+            deleteButton.Enabled = false;
             RefreshList();
         }
 
