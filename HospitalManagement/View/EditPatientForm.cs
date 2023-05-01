@@ -76,13 +76,10 @@ namespace HospitalManagement.View
         private void EditPatientButton_Click(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
+            zipErrorLabel.Visible = false;
+            phoneErrorLabel.Visible = false;
             CheckAllFields();
-            if (errorLabel.Visible)
-            {
-                errorLabel.Text = "*All fields are required to edit the details*";
-                errorLabel.ForeColor = Color.Red;
-            }
-            else
+            if (!errorLabel.Visible && !phoneErrorLabel.Visible && !zipErrorLabel.Visible)
             {
                 errorLabel.Visible = false;
                 var personalDetails = new PersonalDetails
@@ -109,6 +106,8 @@ namespace HospitalManagement.View
 
         private void CheckAllFields()
         {
+            errorLabel.Text = "*All fields are required to register*";
+            errorLabel.ForeColor = Color.Red;
             if (string.IsNullOrEmpty(firstNameTextBox.Text))
             {
                 errorLabel.Visible = true;
@@ -135,11 +134,15 @@ namespace HospitalManagement.View
             }
             if (zipCodeTextBox.Text.Length != 5)
             {
-                errorLabel.Visible = true;
+                zipErrorLabel.Visible = true;
+                zipErrorLabel.ForeColor = Color.Red;
+                zipErrorLabel.Text = "Zip Code must be 5 digits";
             }
             if (phoneNumberTextBox.Text.Length != 10)
             {
-                errorLabel.Visible = true;
+                phoneErrorLabel.Visible = true;
+                phoneErrorLabel.ForeColor = Color.Red;
+                phoneErrorLabel.Text = "Phone number must be 10 digits";
             }
             if (string.IsNullOrEmpty(countryTextBox.Text))
             {

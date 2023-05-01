@@ -28,285 +28,293 @@
         /// </summary>
         private void InitializeComponent()
         {
-            viewEditButton = new Button();
-            searchDataGridView = new DataGridView();
-            appointmentID = new DataGridViewTextBoxColumn();
-            patientID = new DataGridViewTextBoxColumn();
-            doctorID = new DataGridViewTextBoxColumn();
-            doctorName = new DataGridViewTextBoxColumn();
-            scheduledDate = new DataGridViewTextBoxColumn();
-            reason = new DataGridViewTextBoxColumn();
-            errorLabel = new Label();
-            clearButton = new Button();
-            searchButton = new Button();
-            firstnameLabel = new Label();
-            firstnametextBox = new TextBox();
-            lastnameLabel = new Label();
-            dobDateTimePicker = new DateTimePicker();
-            lastnameTextBox = new TextBox();
-            dobLabel = new Label();
-            dobLnRadioButton = new RadioButton();
-            fnLnRadioButton = new RadioButton();
-            dobRadioButton = new RadioButton();
-            nameLabel = new Label();
-            deleteButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)searchDataGridView).BeginInit();
-            SuspendLayout();
+            this.viewEditButton = new System.Windows.Forms.Button();
+            this.searchDataGridView = new System.Windows.Forms.DataGridView();
+            this.appointmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scheduledDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorLabel = new System.Windows.Forms.Label();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.firstnameLabel = new System.Windows.Forms.Label();
+            this.firstnametextBox = new System.Windows.Forms.TextBox();
+            this.lastnameLabel = new System.Windows.Forms.Label();
+            this.dobDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.lastnameTextBox = new System.Windows.Forms.TextBox();
+            this.dobLabel = new System.Windows.Forms.Label();
+            this.dobLnRadioButton = new System.Windows.Forms.RadioButton();
+            this.fnLnRadioButton = new System.Windows.Forms.RadioButton();
+            this.dobRadioButton = new System.Windows.Forms.RadioButton();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.deleteButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.searchDataGridView)).BeginInit();
+            this.SuspendLayout();
             // 
             // viewEditButton
             // 
-            viewEditButton.AutoSize = true;
-            viewEditButton.Location = new Point(270, 426);
-            viewEditButton.Margin = new Padding(2, 1, 2, 1);
-            viewEditButton.Name = "viewEditButton";
-            viewEditButton.Size = new Size(153, 25);
-            viewEditButton.TabIndex = 72;
-            viewEditButton.Text = "View/Edit Appointment";
-            viewEditButton.UseVisualStyleBackColor = true;
-            viewEditButton.Visible = false;
-            viewEditButton.Click += ViewEditButton_Click;
+            this.viewEditButton.AutoSize = true;
+            this.viewEditButton.Location = new System.Drawing.Point(501, 909);
+            this.viewEditButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.viewEditButton.Name = "viewEditButton";
+            this.viewEditButton.Size = new System.Drawing.Size(284, 53);
+            this.viewEditButton.TabIndex = 72;
+            this.viewEditButton.Text = "View/Edit Appointment";
+            this.viewEditButton.UseVisualStyleBackColor = true;
+            this.viewEditButton.Visible = false;
             // 
             // searchDataGridView
             // 
-            searchDataGridView.AllowUserToAddRows = false;
-            searchDataGridView.AllowUserToDeleteRows = false;
-            searchDataGridView.BackgroundColor = SystemColors.ControlLightLight;
-            searchDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            searchDataGridView.Columns.AddRange(new DataGridViewColumn[] { appointmentID, patientID, doctorID, doctorName, scheduledDate, reason });
-            searchDataGridView.Location = new Point(46, 256);
-            searchDataGridView.Margin = new Padding(2, 1, 2, 1);
-            searchDataGridView.Name = "searchDataGridView";
-            searchDataGridView.ReadOnly = true;
-            searchDataGridView.RowHeadersWidth = 82;
-            searchDataGridView.RowTemplate.Height = 41;
-            searchDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            searchDataGridView.Size = new Size(377, 141);
-            searchDataGridView.TabIndex = 71;
-            searchDataGridView.Visible = false;
-            searchDataGridView.CellMouseClick += SearchDataGridView_CellMouseClick;
+            this.searchDataGridView.AllowUserToAddRows = false;
+            this.searchDataGridView.AllowUserToDeleteRows = false;
+            this.searchDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.searchDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.searchDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.appointmentID,
+            this.patientID,
+            this.doctorID,
+            this.doctorName,
+            this.scheduledDate,
+            this.reason});
+            this.searchDataGridView.Location = new System.Drawing.Point(85, 546);
+            this.searchDataGridView.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.searchDataGridView.Name = "searchDataGridView";
+            this.searchDataGridView.ReadOnly = true;
+            this.searchDataGridView.RowHeadersWidth = 82;
+            this.searchDataGridView.RowTemplate.Height = 41;
+            this.searchDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.searchDataGridView.Size = new System.Drawing.Size(700, 301);
+            this.searchDataGridView.TabIndex = 71;
+            this.searchDataGridView.Visible = false;
             // 
             // appointmentID
             // 
-            appointmentID.HeaderText = "Appointment ID";
-            appointmentID.Name = "appointmentID";
-            appointmentID.ReadOnly = true;
+            this.appointmentID.HeaderText = "Appointment ID";
+            this.appointmentID.MinimumWidth = 10;
+            this.appointmentID.Name = "appointmentID";
+            this.appointmentID.ReadOnly = true;
+            this.appointmentID.Width = 200;
             // 
             // patientID
             // 
-            patientID.HeaderText = "Patient ID";
-            patientID.Name = "patientID";
-            patientID.ReadOnly = true;
+            this.patientID.HeaderText = "Patient ID";
+            this.patientID.MinimumWidth = 10;
+            this.patientID.Name = "patientID";
+            this.patientID.ReadOnly = true;
+            this.patientID.Width = 200;
             // 
             // doctorID
             // 
-            doctorID.HeaderText = "DoctorID";
-            doctorID.Name = "doctorID";
-            doctorID.ReadOnly = true;
+            this.doctorID.HeaderText = "DoctorID";
+            this.doctorID.MinimumWidth = 10;
+            this.doctorID.Name = "doctorID";
+            this.doctorID.ReadOnly = true;
+            this.doctorID.Width = 200;
             // 
             // doctorName
             // 
-            doctorName.HeaderText = "Doctor Name";
-            doctorName.Name = "doctorName";
-            doctorName.ReadOnly = true;
+            this.doctorName.HeaderText = "Doctor Name";
+            this.doctorName.MinimumWidth = 10;
+            this.doctorName.Name = "doctorName";
+            this.doctorName.ReadOnly = true;
+            this.doctorName.Width = 200;
             // 
             // scheduledDate
             // 
-            scheduledDate.HeaderText = "Scheduled Date";
-            scheduledDate.Name = "scheduledDate";
-            scheduledDate.ReadOnly = true;
+            this.scheduledDate.HeaderText = "Scheduled Date";
+            this.scheduledDate.MinimumWidth = 10;
+            this.scheduledDate.Name = "scheduledDate";
+            this.scheduledDate.ReadOnly = true;
+            this.scheduledDate.Width = 200;
             // 
             // reason
             // 
-            reason.HeaderText = "Reason";
-            reason.Name = "reason";
-            reason.ReadOnly = true;
+            this.reason.HeaderText = "Reason";
+            this.reason.MinimumWidth = 10;
+            this.reason.Name = "reason";
+            this.reason.ReadOnly = true;
+            this.reason.Width = 200;
             // 
             // errorLabel
             // 
-            errorLabel.AutoSize = true;
-            errorLabel.ForeColor = Color.Red;
-            errorLabel.Location = new Point(138, 218);
-            errorLabel.Margin = new Padding(2, 0, 2, 0);
-            errorLabel.Name = "errorLabel";
-            errorLabel.Size = new Size(81, 15);
-            errorLabel.TabIndex = 70;
-            errorLabel.Text = "error message";
-            errorLabel.Visible = false;
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorLabel.Location = new System.Drawing.Point(85, 471);
+            this.errorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(165, 32);
+            this.errorLabel.TabIndex = 70;
+            this.errorLabel.Text = "error message";
+            this.errorLabel.Visible = false;
             // 
             // clearButton
             // 
-            clearButton.Location = new Point(270, 183);
-            clearButton.Margin = new Padding(2, 1, 2, 1);
-            clearButton.Name = "clearButton";
-            clearButton.Size = new Size(81, 22);
-            clearButton.TabIndex = 69;
-            clearButton.Text = "Clear";
-            clearButton.UseVisualStyleBackColor = true;
-            clearButton.Click += ClearButton_Click;
+            this.clearButton.Location = new System.Drawing.Point(501, 390);
+            this.clearButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(150, 47);
+            this.clearButton.TabIndex = 69;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
             // 
             // searchButton
             // 
-            searchButton.Location = new Point(112, 183);
-            searchButton.Margin = new Padding(2, 1, 2, 1);
-            searchButton.Name = "searchButton";
-            searchButton.Size = new Size(81, 22);
-            searchButton.TabIndex = 68;
-            searchButton.Text = "Search";
-            searchButton.UseVisualStyleBackColor = true;
-            searchButton.Click += SearchButton_Click;
+            this.searchButton.Location = new System.Drawing.Point(208, 390);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(150, 47);
+            this.searchButton.TabIndex = 68;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
             // 
             // firstnameLabel
             // 
-            firstnameLabel.AutoSize = true;
-            firstnameLabel.Location = new Point(59, 140);
-            firstnameLabel.Margin = new Padding(2, 0, 2, 0);
-            firstnameLabel.Name = "firstnameLabel";
-            firstnameLabel.Size = new Size(95, 15);
-            firstnameLabel.TabIndex = 67;
-            firstnameLabel.Text = "Enter First name:";
-            firstnameLabel.Visible = false;
+            this.firstnameLabel.AutoSize = true;
+            this.firstnameLabel.Location = new System.Drawing.Point(110, 299);
+            this.firstnameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.firstnameLabel.Name = "firstnameLabel";
+            this.firstnameLabel.Size = new System.Drawing.Size(192, 32);
+            this.firstnameLabel.TabIndex = 67;
+            this.firstnameLabel.Text = "Enter First name:";
+            this.firstnameLabel.Visible = false;
             // 
             // firstnametextBox
             // 
-            firstnametextBox.Location = new Point(197, 139);
-            firstnametextBox.Margin = new Padding(2, 1, 2, 1);
-            firstnametextBox.Name = "firstnametextBox";
-            firstnametextBox.Size = new Size(178, 23);
-            firstnametextBox.TabIndex = 66;
-            firstnametextBox.Visible = false;
-            firstnametextBox.TextChanged += firstnametextBox_TextChanged;
+            this.firstnametextBox.Location = new System.Drawing.Point(366, 297);
+            this.firstnametextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.firstnametextBox.Name = "firstnametextBox";
+            this.firstnametextBox.Size = new System.Drawing.Size(327, 39);
+            this.firstnametextBox.TabIndex = 66;
+            this.firstnametextBox.Visible = false;
             // 
             // lastnameLabel
             // 
-            lastnameLabel.AutoSize = true;
-            lastnameLabel.Location = new Point(59, 102);
-            lastnameLabel.Margin = new Padding(2, 0, 2, 0);
-            lastnameLabel.Name = "lastnameLabel";
-            lastnameLabel.Size = new Size(94, 15);
-            lastnameLabel.TabIndex = 65;
-            lastnameLabel.Text = "Enter Last name:";
-            lastnameLabel.Visible = false;
+            this.lastnameLabel.AutoSize = true;
+            this.lastnameLabel.Location = new System.Drawing.Point(110, 218);
+            this.lastnameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lastnameLabel.Name = "lastnameLabel";
+            this.lastnameLabel.Size = new System.Drawing.Size(189, 32);
+            this.lastnameLabel.TabIndex = 65;
+            this.lastnameLabel.Text = "Enter Last name:";
+            this.lastnameLabel.Visible = false;
             // 
             // dobDateTimePicker
             // 
-            dobDateTimePicker.Format = DateTimePickerFormat.Short;
-            dobDateTimePicker.Location = new Point(197, 69);
-            dobDateTimePicker.Margin = new Padding(2, 1, 2, 1);
-            dobDateTimePicker.MaxDate = new DateTime(2023, 4, 12, 0, 0, 0, 0);
-            dobDateTimePicker.Name = "dobDateTimePicker";
-            dobDateTimePicker.Size = new Size(122, 23);
-            dobDateTimePicker.TabIndex = 64;
-            dobDateTimePicker.Value = new DateTime(2023, 4, 12, 0, 0, 0, 0);
-            dobDateTimePicker.ValueChanged += dobDateTimePicker_ValueChanged;
+            this.dobDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dobDateTimePicker.Location = new System.Drawing.Point(366, 147);
+            this.dobDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.dobDateTimePicker.MaxDate = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
+            this.dobDateTimePicker.Name = "dobDateTimePicker";
+            this.dobDateTimePicker.Size = new System.Drawing.Size(223, 39);
+            this.dobDateTimePicker.TabIndex = 64;
+            this.dobDateTimePicker.Value = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
             // 
             // lastnameTextBox
             // 
-            lastnameTextBox.Location = new Point(197, 101);
-            lastnameTextBox.Margin = new Padding(2, 1, 2, 1);
-            lastnameTextBox.Name = "lastnameTextBox";
-            lastnameTextBox.Size = new Size(178, 23);
-            lastnameTextBox.TabIndex = 63;
-            lastnameTextBox.Visible = false;
-            lastnameTextBox.TextChanged += lastnameTextBox_TextChanged;
+            this.lastnameTextBox.Location = new System.Drawing.Point(366, 215);
+            this.lastnameTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lastnameTextBox.Name = "lastnameTextBox";
+            this.lastnameTextBox.Size = new System.Drawing.Size(327, 39);
+            this.lastnameTextBox.TabIndex = 63;
+            this.lastnameTextBox.Visible = false;
             // 
             // dobLabel
             // 
-            dobLabel.AutoSize = true;
-            dobLabel.Location = new Point(59, 69);
-            dobLabel.Margin = new Padding(2, 0, 2, 0);
-            dobLabel.Name = "dobLabel";
-            dobLabel.Size = new Size(106, 15);
-            dobLabel.TabIndex = 62;
-            dobLabel.Text = "Enter Date of Birth:";
+            this.dobLabel.AutoSize = true;
+            this.dobLabel.Location = new System.Drawing.Point(110, 147);
+            this.dobLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dobLabel.Name = "dobLabel";
+            this.dobLabel.Size = new System.Drawing.Size(217, 32);
+            this.dobLabel.TabIndex = 62;
+            this.dobLabel.Text = "Enter Date of Birth:";
             // 
             // dobLnRadioButton
             // 
-            dobLnRadioButton.AutoSize = true;
-            dobLnRadioButton.Location = new Point(133, 31);
-            dobLnRadioButton.Margin = new Padding(2, 1, 2, 1);
-            dobLnRadioButton.Name = "dobLnRadioButton";
-            dobLnRadioButton.Size = new Size(171, 19);
-            dobLnRadioButton.TabIndex = 61;
-            dobLnRadioButton.Text = "Date of Birth and Last name";
-            dobLnRadioButton.UseVisualStyleBackColor = true;
-            dobLnRadioButton.CheckedChanged += DobLnRadioButton_CheckedChanged;
+            this.dobLnRadioButton.AutoSize = true;
+            this.dobLnRadioButton.Location = new System.Drawing.Point(247, 66);
+            this.dobLnRadioButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.dobLnRadioButton.Name = "dobLnRadioButton";
+            this.dobLnRadioButton.Size = new System.Drawing.Size(343, 36);
+            this.dobLnRadioButton.TabIndex = 61;
+            this.dobLnRadioButton.Text = "Date of Birth and Last name";
+            this.dobLnRadioButton.UseVisualStyleBackColor = true;
             // 
             // fnLnRadioButton
             // 
-            fnLnRadioButton.AutoSize = true;
-            fnLnRadioButton.Location = new Point(331, 31);
-            fnLnRadioButton.Margin = new Padding(2, 1, 2, 1);
-            fnLnRadioButton.Name = "fnLnRadioButton";
-            fnLnRadioButton.Size = new Size(129, 19);
-            fnLnRadioButton.TabIndex = 60;
-            fnLnRadioButton.Text = "First and Last Name";
-            fnLnRadioButton.UseVisualStyleBackColor = true;
-            fnLnRadioButton.CheckedChanged += FnLnRadioButton_CheckedChanged;
+            this.fnLnRadioButton.AutoSize = true;
+            this.fnLnRadioButton.Location = new System.Drawing.Point(615, 66);
+            this.fnLnRadioButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.fnLnRadioButton.Name = "fnLnRadioButton";
+            this.fnLnRadioButton.Size = new System.Drawing.Size(255, 36);
+            this.fnLnRadioButton.TabIndex = 60;
+            this.fnLnRadioButton.Text = "First and Last Name";
+            this.fnLnRadioButton.UseVisualStyleBackColor = true;
             // 
             // dobRadioButton
             // 
-            dobRadioButton.AutoSize = true;
-            dobRadioButton.Checked = true;
-            dobRadioButton.Location = new Point(9, 31);
-            dobRadioButton.Margin = new Padding(2, 1, 2, 1);
-            dobRadioButton.Name = "dobRadioButton";
-            dobRadioButton.Size = new Size(91, 19);
-            dobRadioButton.TabIndex = 59;
-            dobRadioButton.TabStop = true;
-            dobRadioButton.Text = "Date of Birth";
-            dobRadioButton.UseVisualStyleBackColor = true;
-            dobRadioButton.CheckedChanged += DobRadioButton_CheckedChanged;
+            this.dobRadioButton.AutoSize = true;
+            this.dobRadioButton.Checked = true;
+            this.dobRadioButton.Location = new System.Drawing.Point(17, 66);
+            this.dobRadioButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.dobRadioButton.Name = "dobRadioButton";
+            this.dobRadioButton.Size = new System.Drawing.Size(181, 36);
+            this.dobRadioButton.TabIndex = 59;
+            this.dobRadioButton.TabStop = true;
+            this.dobRadioButton.Text = "Date of Birth";
+            this.dobRadioButton.UseVisualStyleBackColor = true;
             // 
             // nameLabel
             // 
-            nameLabel.AutoSize = true;
-            nameLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            nameLabel.Location = new Point(9, 7);
-            nameLabel.Margin = new Padding(2, 0, 2, 0);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(183, 15);
-            nameLabel.TabIndex = 58;
-            nameLabel.Text = "Search Appointment Based On: ";
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nameLabel.Location = new System.Drawing.Point(17, 15);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(376, 32);
+            this.nameLabel.TabIndex = 58;
+            this.nameLabel.Text = "Search Appointment Based On: ";
             // 
             // deleteButton
             // 
-            deleteButton.AutoSize = true;
-            deleteButton.Location = new Point(46, 427);
-            deleteButton.Margin = new Padding(1);
-            deleteButton.Name = "deleteButton";
-            deleteButton.Size = new Size(136, 25);
-            deleteButton.TabIndex = 73;
-            deleteButton.Text = "Delete Appointment";
-            deleteButton.UseVisualStyleBackColor = true;
-            deleteButton.Visible = false;
-            deleteButton.Click += deleteButton_Click;
+            this.deleteButton.AutoSize = true;
+            this.deleteButton.Location = new System.Drawing.Point(85, 911);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(253, 53);
+            this.deleteButton.TabIndex = 73;
+            this.deleteButton.Text = "Delete Appointment";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Visible = false;
             // 
             // SearchAppointmentByUserControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(deleteButton);
-            Controls.Add(viewEditButton);
-            Controls.Add(searchDataGridView);
-            Controls.Add(errorLabel);
-            Controls.Add(clearButton);
-            Controls.Add(searchButton);
-            Controls.Add(firstnameLabel);
-            Controls.Add(firstnametextBox);
-            Controls.Add(lastnameLabel);
-            Controls.Add(dobDateTimePicker);
-            Controls.Add(lastnameTextBox);
-            Controls.Add(dobLabel);
-            Controls.Add(dobLnRadioButton);
-            Controls.Add(fnLnRadioButton);
-            Controls.Add(dobRadioButton);
-            Controls.Add(nameLabel);
-            Margin = new Padding(2, 1, 2, 1);
-            Name = "SearchAppointmentByUserControl";
-            Size = new Size(485, 472);
-            ((System.ComponentModel.ISupportInitialize)searchDataGridView).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.viewEditButton);
+            this.Controls.Add(this.searchDataGridView);
+            this.Controls.Add(this.errorLabel);
+            this.Controls.Add(this.clearButton);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.firstnameLabel);
+            this.Controls.Add(this.firstnametextBox);
+            this.Controls.Add(this.lastnameLabel);
+            this.Controls.Add(this.dobDateTimePicker);
+            this.Controls.Add(this.lastnameTextBox);
+            this.Controls.Add(this.dobLabel);
+            this.Controls.Add(this.dobLnRadioButton);
+            this.Controls.Add(this.fnLnRadioButton);
+            this.Controls.Add(this.dobRadioButton);
+            this.Controls.Add(this.nameLabel);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.Name = "SearchAppointmentByUserControl";
+            this.Size = new System.Drawing.Size(901, 1007);
+            ((System.ComponentModel.ISupportInitialize)(this.searchDataGridView)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

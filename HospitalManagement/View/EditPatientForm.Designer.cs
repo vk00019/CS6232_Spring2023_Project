@@ -52,12 +52,14 @@
             this.dobLabel = new System.Windows.Forms.Label();
             this.lastnameLabel = new System.Windows.Forms.Label();
             this.firstnameLabel = new System.Windows.Forms.Label();
+            this.phoneErrorLabel = new System.Windows.Forms.Label();
+            this.zipErrorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cancelButton
             // 
             this.cancelButton.AutoSize = true;
-            this.cancelButton.Location = new System.Drawing.Point(483, 913);
+            this.cancelButton.Location = new System.Drawing.Point(477, 1009);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(150, 53);
@@ -79,7 +81,7 @@
             // 
             // countryTextBox
             // 
-            this.countryTextBox.Location = new System.Drawing.Point(350, 728);
+            this.countryTextBox.Location = new System.Drawing.Point(350, 772);
             this.countryTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.countryTextBox.Name = "countryTextBox";
             this.countryTextBox.Size = new System.Drawing.Size(327, 39);
@@ -89,7 +91,7 @@
             // countryLabel
             // 
             this.countryLabel.AutoSize = true;
-            this.countryLabel.Location = new System.Drawing.Point(99, 734);
+            this.countryLabel.Location = new System.Drawing.Point(99, 778);
             this.countryLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.countryLabel.Name = "countryLabel";
             this.countryLabel.Size = new System.Drawing.Size(104, 32);
@@ -100,7 +102,7 @@
             // 
             this.statesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.statesComboBox.FormattingEnabled = true;
-            this.statesComboBox.Location = new System.Drawing.Point(350, 645);
+            this.statesComboBox.Location = new System.Drawing.Point(350, 689);
             this.statesComboBox.Margin = new System.Windows.Forms.Padding(6);
             this.statesComboBox.Name = "statesComboBox";
             this.statesComboBox.Size = new System.Drawing.Size(327, 40);
@@ -111,7 +113,7 @@
             // 
             this.genderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genderComboBox.FormattingEnabled = true;
-            this.genderComboBox.Location = new System.Drawing.Point(350, 402);
+            this.genderComboBox.Location = new System.Drawing.Point(350, 446);
             this.genderComboBox.Margin = new System.Windows.Forms.Padding(6);
             this.genderComboBox.Name = "genderComboBox";
             this.genderComboBox.Size = new System.Drawing.Size(327, 40);
@@ -121,7 +123,7 @@
             // genderLabel
             // 
             this.genderLabel.AutoSize = true;
-            this.genderLabel.Location = new System.Drawing.Point(99, 406);
+            this.genderLabel.Location = new System.Drawing.Point(99, 450);
             this.genderLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.genderLabel.Name = "genderLabel";
             this.genderLabel.Size = new System.Drawing.Size(97, 32);
@@ -161,7 +163,7 @@
             // 
             // streetAddressTextBox
             // 
-            this.streetAddressTextBox.Location = new System.Drawing.Point(350, 481);
+            this.streetAddressTextBox.Location = new System.Drawing.Point(350, 525);
             this.streetAddressTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.streetAddressTextBox.Name = "streetAddressTextBox";
             this.streetAddressTextBox.Size = new System.Drawing.Size(327, 39);
@@ -170,7 +172,7 @@
             // 
             // cityTextBox
             // 
-            this.cityTextBox.Location = new System.Drawing.Point(350, 559);
+            this.cityTextBox.Location = new System.Drawing.Point(350, 603);
             this.cityTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cityTextBox.Name = "cityTextBox";
             this.cityTextBox.Size = new System.Drawing.Size(327, 39);
@@ -179,7 +181,7 @@
             // 
             // zipCodeTextBox
             // 
-            this.zipCodeTextBox.Location = new System.Drawing.Point(350, 805);
+            this.zipCodeTextBox.Location = new System.Drawing.Point(350, 849);
             this.zipCodeTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.zipCodeTextBox.Name = "zipCodeTextBox";
             this.zipCodeTextBox.Size = new System.Drawing.Size(327, 39);
@@ -199,7 +201,7 @@
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(218, 867);
+            this.errorLabel.Location = new System.Drawing.Point(212, 963);
             this.errorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(116, 32);
@@ -211,7 +213,7 @@
             // 
             this.editPatientButton.AutoSize = true;
             this.editPatientButton.Enabled = false;
-            this.editPatientButton.Location = new System.Drawing.Point(149, 913);
+            this.editPatientButton.Location = new System.Drawing.Point(143, 1009);
             this.editPatientButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.editPatientButton.Name = "editPatientButton";
             this.editPatientButton.Size = new System.Drawing.Size(150, 53);
@@ -223,7 +225,7 @@
             // zipCodeLabel
             // 
             this.zipCodeLabel.AutoSize = true;
-            this.zipCodeLabel.Location = new System.Drawing.Point(99, 807);
+            this.zipCodeLabel.Location = new System.Drawing.Point(99, 851);
             this.zipCodeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.zipCodeLabel.Name = "zipCodeLabel";
             this.zipCodeLabel.Size = new System.Drawing.Size(105, 32);
@@ -233,7 +235,7 @@
             // streetLabel
             // 
             this.streetLabel.AutoSize = true;
-            this.streetLabel.Location = new System.Drawing.Point(99, 485);
+            this.streetLabel.Location = new System.Drawing.Point(99, 529);
             this.streetLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.streetLabel.Name = "streetLabel";
             this.streetLabel.Size = new System.Drawing.Size(81, 32);
@@ -243,7 +245,7 @@
             // cityLabel
             // 
             this.cityLabel.AutoSize = true;
-            this.cityLabel.Location = new System.Drawing.Point(99, 562);
+            this.cityLabel.Location = new System.Drawing.Point(99, 606);
             this.cityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cityLabel.Name = "cityLabel";
             this.cityLabel.Size = new System.Drawing.Size(60, 32);
@@ -253,7 +255,7 @@
             // stateLabel
             // 
             this.stateLabel.AutoSize = true;
-            this.stateLabel.Location = new System.Drawing.Point(99, 645);
+            this.stateLabel.Location = new System.Drawing.Point(99, 689);
             this.stateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.stateLabel.Name = "stateLabel";
             this.stateLabel.Size = new System.Drawing.Size(72, 32);
@@ -300,11 +302,35 @@
             this.firstnameLabel.TabIndex = 48;
             this.firstnameLabel.Text = "First Name:";
             // 
+            // phoneErrorLabel
+            // 
+            this.phoneErrorLabel.AutoSize = true;
+            this.phoneErrorLabel.Location = new System.Drawing.Point(165, 396);
+            this.phoneErrorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.phoneErrorLabel.Name = "phoneErrorLabel";
+            this.phoneErrorLabel.Size = new System.Drawing.Size(116, 32);
+            this.phoneErrorLabel.TabIndex = 69;
+            this.phoneErrorLabel.Text = "errorlabel";
+            this.phoneErrorLabel.Visible = false;
+            // 
+            // zipErrorLabel
+            // 
+            this.zipErrorLabel.AutoSize = true;
+            this.zipErrorLabel.Location = new System.Drawing.Point(177, 910);
+            this.zipErrorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.zipErrorLabel.Name = "zipErrorLabel";
+            this.zipErrorLabel.Size = new System.Drawing.Size(116, 32);
+            this.zipErrorLabel.TabIndex = 70;
+            this.zipErrorLabel.Text = "errorlabel";
+            this.zipErrorLabel.Visible = false;
+            // 
             // EditPatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 1010);
+            this.ClientSize = new System.Drawing.Size(826, 1108);
+            this.Controls.Add(this.zipErrorLabel);
+            this.Controls.Add(this.phoneErrorLabel);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.headerLabel);
             this.Controls.Add(this.countryTextBox);
@@ -366,5 +392,7 @@
         private Label dobLabel;
         private Label lastnameLabel;
         private Label firstnameLabel;
+        private Label phoneErrorLabel;
+        private Label zipErrorLabel;
     }
 }
