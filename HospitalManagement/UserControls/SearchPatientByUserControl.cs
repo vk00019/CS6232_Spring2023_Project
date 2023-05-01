@@ -247,15 +247,28 @@ namespace HospitalManagement.UserControls
             int pdId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
             if (!_controller.CheckAppointment(pdId))
             {
-                _controller.DeletePatient(pdId);
-                errorLabel.Text = "Patient is deleted";
-                errorLabel.ForeColor = Color.Green;
-                errorLabel.Visible = true;
-                SearchButton_Click(sender, e);
+                string message =
+                    "Are you sure to delete this patient?";
+                string caption = "Delete Patient!!";
+                var result = MessageBox.Show(message, caption, MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    _controller.DeletePatient(pdId);
+                    errorLabel.Text = "Patient is deleted";
+                    errorLabel.ForeColor = Color.Green;
+                    errorLabel.Visible = true;
+                    SearchButton_Click(sender, e);
+                }
+                else
+                {
+                    errorLabel.Text = "Patient can not be deleted as the operation is not confirmed.";
+                    errorLabel.ForeColor = Color.Red;
+                    errorLabel.Visible = true;
+                }
             }
             else
             {
-                errorLabel.Text = "Patient can not be deleted as there is an Appointment";
+                errorLabel.Text = "Patient can not be deleted as there is an Appointment associated with them.";
                 errorLabel.ForeColor = Color.Red;
                 errorLabel.Visible = true;
             }
