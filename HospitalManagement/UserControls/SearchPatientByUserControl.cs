@@ -247,11 +247,10 @@ namespace HospitalManagement.UserControls
             int pdId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
             if (!_controller.CheckAppointment(pdId))
             {
-                string message =
-                    "Are you sure to delete this patient?";
+                string message = "Are you sure to delete this patient?";
                 string caption = "Delete Patient!!";
-                var result = MessageBox.Show(message, caption, MessageBoxButtons.OKCancel);
-                if (result == DialogResult.OK)
+                var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
                     _controller.DeletePatient(pdId);
                     errorLabel.Text = "Patient is deleted";

@@ -193,11 +193,23 @@ namespace HospitalManagement.UserControls
         {
             if (!_controller.CheckVisit(_appointment.AppointmentId))
             {
-                _controller.DeleteAppointment(_appointment.AppointmentId);
-                errorLabel.Text = "Appointment is deleted";
-                errorLabel.ForeColor = Color.Green;
-                errorLabel.Visible = true;
-                SearchButton_Click(sender, e);
+                string message = "Are you sure to delete this appointment?";
+                string caption = "Delete Appointment!!";
+                var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    _controller.DeleteAppointment(_appointment.AppointmentId);
+                    errorLabel.Text = "Appointment is deleted";
+                    errorLabel.ForeColor = Color.Green;
+                    errorLabel.Visible = true;
+                    SearchButton_Click(sender, e);
+                }
+                else
+                {
+                    errorLabel.Text = "Appointment can not be deleted as the operation is cancelled or not confirmed";
+                    errorLabel.ForeColor = Color.Red;
+                    errorLabel.Visible = true;
+                }
             }
             else
             {
