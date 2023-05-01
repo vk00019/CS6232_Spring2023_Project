@@ -61,6 +61,10 @@ namespace HospitalManagement.View
             diagnosis.SetVisit(_visit);
             diagnosis.SetTextBoxes(_visit);
             var result = diagnosis.ShowDialog();
+            if (result == DialogResult.Yes)
+            {
+                orderTestsButton.Enabled = false;
+            }
         }
 
         private void testResultsButton_Click(object sender, EventArgs e)
