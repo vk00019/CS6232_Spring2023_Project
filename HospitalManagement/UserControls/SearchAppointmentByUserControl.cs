@@ -104,7 +104,6 @@ namespace HospitalManagement.UserControls
             if (appointments.Count > 0)
             {
                 searchDataGridView.Visible = true;
-                //searchDataGridView.DataSource = appointments;
                 RefreshDataGridView(appointments);
                 searchDataGridView.ClearSelection();
                 viewEditButton.Visible = true;
@@ -173,9 +172,7 @@ namespace HospitalManagement.UserControls
             using var viewForm = new ViewAppointmentForm();
             viewForm.SetAppointment(_appointment);
             viewForm.ShowDialog();
-            searchDataGridView.Visible = false;
-            viewEditButton.Visible = false;
-            deleteButton.Visible = false;
+            SearchButton_Click(sender, e);
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
@@ -213,7 +210,7 @@ namespace HospitalManagement.UserControls
             }
             else
             {
-                errorLabel.Text = "Appointment can not be deleted as there is a visit";
+                errorLabel.Text = "Appointment can not be deleted as there is a visit associated with it";
                 errorLabel.ForeColor = Color.Red;
                 errorLabel.Visible = true;
             }

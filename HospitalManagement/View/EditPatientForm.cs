@@ -84,7 +84,7 @@ namespace HospitalManagement.View
                 errorLabel.Visible = false;
                 var personalDetails = new PersonalDetails
                 {
-                    PdID = _patient.PdID,
+                    PersonId = _patient.PersonId,
                     FirstName = firstNameTextBox.Text,
                     LastName = lastNameTextBox.Text,
                     DateOfBirth = birthDayDateTimePicker.Value,

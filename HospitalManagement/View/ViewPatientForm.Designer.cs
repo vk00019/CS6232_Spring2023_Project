@@ -43,6 +43,16 @@
             this.visitDataGridView = new System.Windows.Forms.DataGridView();
             this.cancelButton = new System.Windows.Forms.Button();
             this.patientIdLabel = new System.Windows.Forms.Label();
+            this.visitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.height = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sysBp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diBp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bodyTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pulse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.symptoms = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.initialDiagnosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finalDiagnosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -181,6 +191,17 @@
             this.visitDataGridView.AllowUserToDeleteRows = false;
             this.visitDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.visitDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.visitDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.visitId,
+            this.height,
+            this.weight,
+            this.sysBp,
+            this.diBp,
+            this.bodyTemp,
+            this.pulse,
+            this.symptoms,
+            this.initialDiagnosis,
+            this.finalDiagnosis});
             this.visitDataGridView.Location = new System.Drawing.Point(48, 610);
             this.visitDataGridView.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.visitDataGridView.Name = "visitDataGridView";
@@ -212,6 +233,86 @@
             this.patientIdLabel.Size = new System.Drawing.Size(132, 37);
             this.patientIdLabel.TabIndex = 8;
             this.patientIdLabel.Text = "Patient ID";
+            // 
+            // visitId
+            // 
+            this.visitId.HeaderText = "Visit Id";
+            this.visitId.MinimumWidth = 10;
+            this.visitId.Name = "visitId";
+            this.visitId.ReadOnly = true;
+            this.visitId.Width = 200;
+            // 
+            // height
+            // 
+            this.height.HeaderText = "Height";
+            this.height.MinimumWidth = 10;
+            this.height.Name = "height";
+            this.height.ReadOnly = true;
+            this.height.Width = 200;
+            // 
+            // weight
+            // 
+            this.weight.HeaderText = "Weight";
+            this.weight.MinimumWidth = 10;
+            this.weight.Name = "weight";
+            this.weight.ReadOnly = true;
+            this.weight.Width = 200;
+            // 
+            // sysBp
+            // 
+            this.sysBp.HeaderText = "Systolic BP";
+            this.sysBp.MinimumWidth = 10;
+            this.sysBp.Name = "sysBp";
+            this.sysBp.ReadOnly = true;
+            this.sysBp.Width = 200;
+            // 
+            // diBp
+            // 
+            this.diBp.HeaderText = "Diastolic BP";
+            this.diBp.MinimumWidth = 10;
+            this.diBp.Name = "diBp";
+            this.diBp.ReadOnly = true;
+            this.diBp.Width = 200;
+            // 
+            // bodyTemp
+            // 
+            this.bodyTemp.HeaderText = "Body Temperature";
+            this.bodyTemp.MinimumWidth = 10;
+            this.bodyTemp.Name = "bodyTemp";
+            this.bodyTemp.ReadOnly = true;
+            this.bodyTemp.Width = 200;
+            // 
+            // pulse
+            // 
+            this.pulse.HeaderText = "Pulse";
+            this.pulse.MinimumWidth = 10;
+            this.pulse.Name = "pulse";
+            this.pulse.ReadOnly = true;
+            this.pulse.Width = 200;
+            // 
+            // symptoms
+            // 
+            this.symptoms.HeaderText = "Symptoms";
+            this.symptoms.MinimumWidth = 10;
+            this.symptoms.Name = "symptoms";
+            this.symptoms.ReadOnly = true;
+            this.symptoms.Width = 200;
+            // 
+            // initialDiagnosis
+            // 
+            this.initialDiagnosis.HeaderText = "Initial Diagnosis";
+            this.initialDiagnosis.MinimumWidth = 10;
+            this.initialDiagnosis.Name = "initialDiagnosis";
+            this.initialDiagnosis.ReadOnly = true;
+            this.initialDiagnosis.Width = 200;
+            // 
+            // finalDiagnosis
+            // 
+            this.finalDiagnosis.HeaderText = "Final Diagnosis";
+            this.finalDiagnosis.MinimumWidth = 10;
+            this.finalDiagnosis.Name = "finalDiagnosis";
+            this.finalDiagnosis.ReadOnly = true;
+            this.finalDiagnosis.Width = 200;
             // 
             // ViewPatientForm
             // 
@@ -258,5 +359,15 @@
         private DataGridViewTextBoxColumn doctorName;
         private DataGridViewTextBoxColumn scheduledDate;
         private DataGridViewTextBoxColumn reason;
+        private DataGridViewTextBoxColumn visitId;
+        private DataGridViewTextBoxColumn height;
+        private DataGridViewTextBoxColumn weight;
+        private DataGridViewTextBoxColumn sysBp;
+        private DataGridViewTextBoxColumn diBp;
+        private DataGridViewTextBoxColumn bodyTemp;
+        private DataGridViewTextBoxColumn pulse;
+        private DataGridViewTextBoxColumn symptoms;
+        private DataGridViewTextBoxColumn initialDiagnosis;
+        private DataGridViewTextBoxColumn finalDiagnosis;
     }
 }

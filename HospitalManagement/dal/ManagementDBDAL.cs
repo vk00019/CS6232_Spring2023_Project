@@ -91,7 +91,7 @@ namespace HospitalManagement.DAL
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@patientId", SqlDbType.Int);
-            command.Parameters["@patientId"].Value = patientDetails.PdID;
+            command.Parameters["@patientId"].Value = patientDetails.PersonId;
 
             command.Parameters.Add("@firstname", SqlDbType.VarChar);
             command.Parameters["@firstname"].Value = firstname;
@@ -556,7 +556,7 @@ namespace HospitalManagement.DAL
 
                 patients.Add(new PersonalDetails
                 {
-                    PdID = pdId,
+                    PersonId = pdId,
                     FirstName = firstName,
                     LastName = lastName,
                     DateOfBirth = dateOfBirth,
@@ -619,7 +619,7 @@ namespace HospitalManagement.DAL
 
                 patients.Add(new PersonalDetails
                 {
-                    PdID = pdId,
+                    PersonId = pdId,
                     FirstName = firstName,
                     LastName = lastName,
                     DateOfBirth = dateOfBirth,
@@ -684,7 +684,7 @@ namespace HospitalManagement.DAL
 
                 patients.Add(new PersonalDetails
                 {
-                    PdID = pdId,
+                    PersonId = pdId,
                     FirstName = firstName,
                     LastName = lastName,
                     DateOfBirth = dateOfBirth,

@@ -38,12 +38,12 @@ namespace HospitalManagement.View
         private void ViewPatientForm_Load(object sender, EventArgs e)
         {
             patientNameLabel.Text = "Patient's Name: " + _patient.FirstName + " " + _patient.LastName;
-            patientIdLabel.Text = "Id: " + _patient.PdID;
+            patientIdLabel.Text = "Id: " + _patient.PersonId;
             dobLabel.Text = "Dob: " + _patient.DateOfBirth.ToShortDateString();
-            List<Appointment> patientAppointments = _controller.GetPatientAppointments(_patient.PdID);
+            List<Appointment> patientAppointments = _controller.GetPatientAppointments(_patient.PersonId);
             if (patientAppointments.Count > 0)
             {
-                RefreshDataGridView(patientAppointments);
+                RefreshAppointmentsDataGridView(patientAppointments);
                 appointmentsDataGridView.ClearSelection();
             }
             else
@@ -58,7 +58,7 @@ namespace HospitalManagement.View
 
         }
 
-        public void RefreshDataGridView(List<Appointment> appointments)
+        public void RefreshAppointmentsDataGridView(List<Appointment> appointments)
         {
             appointmentsDataGridView.Rows.Clear();
 
@@ -76,6 +76,25 @@ namespace HospitalManagement.View
             }
         }
 
+        private void RefreshVisitDataGridView(List<Visit> patientVisits)
+        {
+            visitDataGridView.Rows.Clear();
+            foreach (Visit currentVisit in patientVisits)
+            {
+                DataGridViewRow currentRow = visitDataGridView.Rows[visitDataGridView.Rows.Add()];
+                currentRow.Cells[visitId.Index].Value = currentVisit.VisitId;
+                currentRow.Cells[height.Index].Value = currentVisit.Height;
+                currentRow.Cells[weight.Index].Value = currentVisit.Weight;
+                currentRow.Cells[sysBp.Index].Value = currentVisit.SystolicBp;
+                currentRow.Cells[diBp.Index].Value = currentVisit.DiastolicBp;
+                currentRow.Cells[bodyTemp.Index].Value = currentVisit.BodyTemperature;
+                currentRow.Cells[pulse.Index].Value = currentVisit.Pulse;
+                currentRow.Cells[symptoms.Index].Value = currentVisit.Symptoms;
+                currentRow.Cells[initialDiagnosis.Index].Value = currentVisit.InitialDiagnosis;
+                currentRow.Cells[finalDiagnosis.Index].Value = currentVisit.FinalDiagnosis;
+            }
+        }
+
         private void AppointmentsDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             List<Visit> patientVisits = new List<Visit>();
@@ -86,7 +105,7 @@ namespace HospitalManagement.View
                 patientVisits = _controller.GetPatientVisits(appointmentId);
                 if (patientVisits.Count > 0)
                 {
-                    visitDataGridView.DataSource = patientVisits;
+                    RefreshVisitDataGridView(patientVisits);
                     visitDataGridView.ClearSelection();
                     visitDataGridView.Visible = true;
                     visitsLabel.Visible = false;

@@ -194,7 +194,7 @@ namespace HospitalManagement.UserControls
                 {
                     int personalDetailsId = Int32.Parse(searchDataGridView.SelectedRows[0].Cells[0].Value.ToString());
 
-                    _patientDetails.PdID = _controller.GetPatientId(personalDetailsId);
+                    _patientDetails.PersonId = _controller.GetPatientId(personalDetailsId);
                     _patientDetails.FirstName = searchDataGridView.SelectedRows[0].Cells[1].Value.ToString();
                     _patientDetails.LastName = searchDataGridView.SelectedRows[0].Cells[2].Value.ToString();
                     _patientDetails.DateOfBirth = DateTime.Parse(searchDataGridView.SelectedRows[0].Cells[3].Value.ToString());
@@ -280,7 +280,7 @@ namespace HospitalManagement.UserControls
             UserControl bookAppointmentUserControl = (UserControl)tabControl.TabPages["appointmentTab"].Controls["bookAppointmentUserControl"];
             tabControl.TabPages["appointmentTab"].Controls["searchAppointmentByUserControl"].Visible = false;
             bookAppointmentUserControl.Visible = true;
-            bookAppointmentUserControl.Controls["patientTextBox"].Text = _patientDetails.PdID.ToString();
+            bookAppointmentUserControl.Controls["patientTextBox"].Text = _patientDetails.PersonId.ToString();
         }
 
     }

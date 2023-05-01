@@ -64,6 +64,7 @@
             this.viewEditButton.Text = "View/Edit Appointment";
             this.viewEditButton.UseVisualStyleBackColor = true;
             this.viewEditButton.Visible = false;
+            this.viewEditButton.Click += new System.EventHandler(this.ViewEditButton_Click);
             // 
             // searchDataGridView
             // 
@@ -88,6 +89,7 @@
             this.searchDataGridView.Size = new System.Drawing.Size(700, 301);
             this.searchDataGridView.TabIndex = 71;
             this.searchDataGridView.Visible = false;
+            this.searchDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SearchDataGridView_CellMouseClick);
             // 
             // appointmentID
             // 
@@ -158,6 +160,7 @@
             this.clearButton.TabIndex = 69;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // searchButton
             // 
@@ -168,6 +171,7 @@
             this.searchButton.TabIndex = 68;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // firstnameLabel
             // 
@@ -240,6 +244,7 @@
             this.dobLnRadioButton.TabIndex = 61;
             this.dobLnRadioButton.Text = "Date of Birth and Last name";
             this.dobLnRadioButton.UseVisualStyleBackColor = true;
+            this.dobLnRadioButton.CheckedChanged += new System.EventHandler(this.DobLnRadioButton_CheckedChanged);
             // 
             // fnLnRadioButton
             // 
@@ -251,6 +256,7 @@
             this.fnLnRadioButton.TabIndex = 60;
             this.fnLnRadioButton.Text = "First and Last Name";
             this.fnLnRadioButton.UseVisualStyleBackColor = true;
+            this.fnLnRadioButton.CheckedChanged += new System.EventHandler(this.FnLnRadioButton_CheckedChanged);
             // 
             // dobRadioButton
             // 
@@ -264,6 +270,7 @@
             this.dobRadioButton.TabStop = true;
             this.dobRadioButton.Text = "Date of Birth";
             this.dobRadioButton.UseVisualStyleBackColor = true;
+            this.dobRadioButton.CheckedChanged += new System.EventHandler(this.DobRadioButton_CheckedChanged);
             // 
             // nameLabel
             // 
@@ -280,13 +287,14 @@
             // 
             this.deleteButton.AutoSize = true;
             this.deleteButton.Location = new System.Drawing.Point(85, 911);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(2);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(253, 53);
             this.deleteButton.TabIndex = 73;
             this.deleteButton.Text = "Delete Appointment";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Visible = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // SearchAppointmentByUserControl
             // 

@@ -11,7 +11,7 @@
         /// <value>
         /// The pd identifier.
         /// </value>
-        public int PdID { get; set; }
+        public int PersonId { get; set; }
         /// <summary>
         /// Gets or sets the first name.
         /// </summary>
