@@ -37,6 +37,7 @@ namespace HospitalManagement.View
             var testToAdd = allTestsComboBox.SelectedItem as TestList;
             _ordered.Add(testToAdd);
             _list.Remove(testToAdd);
+            errorLabel.Visible = false;
             RefreshList();
         }
 
@@ -76,8 +77,15 @@ namespace HospitalManagement.View
                 using var reviewForm = new ReviewTests();
                 reviewForm.SetTests(_ordered);
                 reviewForm.SetVisitId(_visitId);
-                reviewForm.ShowDialog();
-                this.Close();
+                var value = reviewForm.ShowDialog();
+                if (value != DialogResult.Cancel)
+                {
+                    this.Close();
+                }
+                else
+                {
+                    this.Show();
+                }
             }
             else
             {

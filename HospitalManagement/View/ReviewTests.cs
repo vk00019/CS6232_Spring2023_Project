@@ -51,7 +51,7 @@ namespace HospitalManagement.View
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult = DialogResult.Cancel;
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -72,6 +72,7 @@ namespace HospitalManagement.View
             {
                 _controller.OrderTests(_visitId, currentTest.Id);
             }
+            DialogResult = DialogResult.OK;
             this.Close();
             MessageBox.Show("Sucessfully ordered the tests");
         }
