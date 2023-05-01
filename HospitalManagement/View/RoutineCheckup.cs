@@ -11,6 +11,7 @@ namespace HospitalManagement.View
     {
         private int _visitId;
         private readonly ManagementController _controller;
+        private bool _error;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RoutineCheckup"/> class.
@@ -20,6 +21,7 @@ namespace HospitalManagement.View
             InitializeComponent();
             _controller = new ManagementController();
             EnableAllfields();
+            _error = false;
         }
 
         /// <summary>
@@ -37,7 +39,7 @@ namespace HospitalManagement.View
             {
                 errorLabel.Visible = false;
                 CheckAllFields();
-                if (!errorLabel.Visible)
+                if (!errorLabel.Visible && !_error)
                 {
                     var height = Convert.ToDecimal(heightTextBox.Text);
                     var weight = Convert.ToDecimal(weightTextBox.Text);
@@ -131,31 +133,52 @@ namespace HospitalManagement.View
             errorLabel.ForeColor = Color.Red;
             if (string.IsNullOrEmpty(heightTextBox.Text))
             {
-                errorLabel.Visible = true;
+                heightErrorLabel.Visible = true;
+                heightErrorLabel.Text = "Please enter Height";
+                heightErrorLabel.ForeColor = Color.Red;
+                _error = true;
             }
             if (string.IsNullOrEmpty(weightTextBox.Text))
             {
-                errorLabel.Visible = true;
+                weightErrorLabel.Visible = true;
+                weightErrorLabel.Text = "Please enter Weight";
+                weightErrorLabel.ForeColor = Color.Red;
+                _error = true;
             }
             if (string.IsNullOrEmpty(diaBPTextBox.Text))
             {
-                errorLabel.Visible = true;
+                diastolicErrorLabel.Visible = true;
+                diastolicErrorLabel.Text = "Please enter Diastolic BP";
+                diastolicErrorLabel.ForeColor = Color.Red;
+                _error = true;
             }
             if (string.IsNullOrEmpty(sysBPTextBox.Text))
             {
-                errorLabel.Visible = true;
+                systolicErrorLabel.Visible = true;
+                systolicErrorLabel.Text = "Please enter Systolic BP";
+                systolicErrorLabel.ForeColor = Color.Red;
+                _error = true;
             }
             if (string.IsNullOrEmpty(tempTextBox.Text))
             {
-                errorLabel.Visible = true;
+                temperatureErrorLabel.Visible = true;
+                temperatureErrorLabel.Text = "Please enter Temperature";
+                temperatureErrorLabel.ForeColor = Color.Red;
+                _error = true;
             }
             if (string.IsNullOrEmpty(pulseTextBox.Text))
             {
-                errorLabel.Visible = true;
+                pulseErrorLabel.Visible = true;
+                pulseErrorLabel.Text = "Please enter Pulse";
+                pulseErrorLabel.ForeColor = Color.Red;
+                _error = true;
             }
             if (string.IsNullOrEmpty(symptomsTextBox.Text))
             {
-                errorLabel.Visible = true;
+                symptomsErrorLabel.Visible = true;
+                symptomsErrorLabel.Text = "Please enter Symptoms";
+                symptomsErrorLabel.ForeColor = Color.Red;
+                _error = true;
             }
         }
 
@@ -169,6 +192,13 @@ namespace HospitalManagement.View
             pulseTextBox.Clear();
             symptomsTextBox.Clear();
             errorLabel.Visible = false;
+            heightErrorLabel.Visible = false;
+            weightErrorLabel.Visible = false;
+            diastolicErrorLabel.Visible = false;
+            systolicErrorLabel.Visible = false;
+            temperatureErrorLabel.Visible = false;
+            symptomsErrorLabel.Visible = false;
+            pulseErrorLabel.Visible = false;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

@@ -14,6 +14,7 @@ namespace HospitalManagement.View
             InitializeComponent();
             _controller = new ManagementController();
             _appointment = new Appointment();
+            
         }
 
         public void SetNurse(Nurse nurse)
