@@ -49,10 +49,21 @@ namespace HospitalManagement.View
             datePicker.Value = DateTime.Today;
             if (_controller.IsFinalDiagnosisAvailable(_visitId))
             {
-                addButton.Enabled = false;
+                DisableAllFields();
+                
             }
             timePicker.Value = DateTime.Now;
             RefreshDataGridView();
+        }
+
+        private void DisableAllFields()
+        {
+            testResultTextBox.ReadOnly = true;
+            orderedTestsComboBox.Enabled = false;
+            normalComboBox.Enabled = false;
+            datePicker.Enabled = false;
+            timePicker.Enabled = false;
+            addButton.Enabled = false;
         }
 
         private void SetOrderTests()
