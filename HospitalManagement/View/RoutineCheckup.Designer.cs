@@ -57,62 +57,67 @@
             // 
             // weightTextBox
             // 
-            weightTextBox.Location = new Point(178, 94);
+            weightTextBox.Location = new Point(203, 125);
             weightTextBox.Margin = new Padding(2, 1, 2, 1);
             weightTextBox.Name = "weightTextBox";
-            weightTextBox.Size = new Size(178, 23);
+            weightTextBox.Size = new Size(203, 27);
             weightTextBox.TabIndex = 2;
+            weightTextBox.GotFocus += heightTextBox_GotFocus;
             // 
             // diaBPTextBox
             // 
-            diaBPTextBox.Location = new Point(178, 198);
+            diaBPTextBox.Location = new Point(203, 264);
             diaBPTextBox.Margin = new Padding(2, 1, 2, 1);
             diaBPTextBox.Name = "diaBPTextBox";
-            diaBPTextBox.Size = new Size(178, 23);
+            diaBPTextBox.Size = new Size(203, 27);
             diaBPTextBox.TabIndex = 4;
+            diaBPTextBox.GotFocus += heightTextBox_GotFocus;
             // 
             // tempTextBox
             // 
-            tempTextBox.Location = new Point(178, 249);
+            tempTextBox.Location = new Point(203, 332);
             tempTextBox.Margin = new Padding(2, 1, 2, 1);
             tempTextBox.Name = "tempTextBox";
-            tempTextBox.Size = new Size(178, 23);
+            tempTextBox.Size = new Size(203, 27);
             tempTextBox.TabIndex = 5;
+            tempTextBox.GotFocus += heightTextBox_GotFocus;
             // 
             // pulseTextBox
             // 
-            pulseTextBox.Location = new Point(178, 298);
+            pulseTextBox.Location = new Point(203, 397);
             pulseTextBox.Margin = new Padding(2, 1, 2, 1);
             pulseTextBox.Name = "pulseTextBox";
-            pulseTextBox.Size = new Size(178, 23);
+            pulseTextBox.Size = new Size(203, 27);
             pulseTextBox.TabIndex = 6;
+            pulseTextBox.GotFocus += heightTextBox_GotFocus;
             // 
             // heightTextBox
             // 
-            heightTextBox.Location = new Point(178, 46);
+            heightTextBox.Location = new Point(203, 61);
             heightTextBox.Margin = new Padding(2, 1, 2, 1);
             heightTextBox.Name = "heightTextBox";
-            heightTextBox.Size = new Size(178, 23);
+            heightTextBox.Size = new Size(203, 27);
             heightTextBox.TabIndex = 1;
+            heightTextBox.GotFocus += heightTextBox_GotFocus;
             // 
             // errorLabel
             // 
             errorLabel.AutoSize = true;
             errorLabel.ForeColor = Color.Red;
-            errorLabel.Location = new Point(73, 426);
+            errorLabel.Location = new Point(83, 568);
             errorLabel.Margin = new Padding(2, 0, 2, 0);
             errorLabel.Name = "errorLabel";
-            errorLabel.Size = new Size(57, 15);
+            errorLabel.Size = new Size(74, 20);
             errorLabel.TabIndex = 28;
             errorLabel.Text = "errorlabel";
             errorLabel.Visible = false;
             // 
             // addDetailsButton
             // 
-            addDetailsButton.Location = new Point(67, 455);
+            addDetailsButton.Location = new Point(77, 607);
             addDetailsButton.Margin = new Padding(2, 1, 2, 1);
             addDetailsButton.Name = "addDetailsButton";
-            addDetailsButton.Size = new Size(81, 22);
+            addDetailsButton.Size = new Size(93, 29);
             addDetailsButton.TabIndex = 8;
             addDetailsButton.Text = "Add";
             addDetailsButton.UseVisualStyleBackColor = true;
@@ -121,70 +126,70 @@
             // tempLabel
             // 
             tempLabel.AutoSize = true;
-            tempLabel.Location = new Point(11, 252);
+            tempLabel.Location = new Point(13, 336);
             tempLabel.Margin = new Padding(2, 0, 2, 0);
             tempLabel.Name = "tempLabel";
-            tempLabel.Size = new Size(159, 15);
+            tempLabel.Size = new Size(198, 20);
             tempLabel.TabIndex = 25;
             tempLabel.Text = "Temperature (in Fahrenheit) :";
             // 
             // pulseLabel
             // 
             pulseLabel.AutoSize = true;
-            pulseLabel.Location = new Point(42, 299);
+            pulseLabel.Location = new Point(48, 399);
             pulseLabel.Margin = new Padding(2, 0, 2, 0);
             pulseLabel.Name = "pulseLabel";
-            pulseLabel.Size = new Size(38, 15);
+            pulseLabel.Size = new Size(46, 20);
             pulseLabel.TabIndex = 24;
             pulseLabel.Text = "Pulse:";
             // 
             // symptomslabel
             // 
             symptomslabel.AutoSize = true;
-            symptomslabel.Location = new Point(42, 350);
+            symptomslabel.Location = new Point(48, 467);
             symptomslabel.Margin = new Padding(2, 0, 2, 0);
             symptomslabel.Name = "symptomslabel";
-            symptomslabel.Size = new Size(67, 15);
+            symptomslabel.Size = new Size(82, 20);
             symptomslabel.TabIndex = 23;
             symptomslabel.Text = "Symptoms:";
             // 
             // diaBPLabel
             // 
             diaBPLabel.AutoSize = true;
-            diaBPLabel.Location = new Point(42, 199);
+            diaBPLabel.Location = new Point(48, 265);
             diaBPLabel.Margin = new Padding(2, 0, 2, 0);
             diaBPLabel.Name = "diaBPLabel";
-            diaBPLabel.Size = new Size(72, 15);
+            diaBPLabel.Size = new Size(91, 20);
             diaBPLabel.TabIndex = 22;
             diaBPLabel.Text = "Diastolic BP:";
             // 
             // sysBpLabel
             // 
             sysBpLabel.AutoSize = true;
-            sysBpLabel.Location = new Point(42, 149);
+            sysBpLabel.Location = new Point(48, 199);
             sysBpLabel.Margin = new Padding(2, 0, 2, 0);
             sysBpLabel.Name = "sysBpLabel";
-            sysBpLabel.Size = new Size(44, 15);
+            sysBpLabel.Size = new Size(54, 20);
             sysBpLabel.TabIndex = 21;
             sysBpLabel.Text = "Sys BP:";
             // 
             // weightLabel
             // 
             weightLabel.AutoSize = true;
-            weightLabel.Location = new Point(42, 96);
+            weightLabel.Location = new Point(48, 128);
             weightLabel.Margin = new Padding(2, 0, 2, 0);
             weightLabel.Name = "weightLabel";
-            weightLabel.Size = new Size(115, 15);
+            weightLabel.Size = new Size(142, 20);
             weightLabel.TabIndex = 20;
             weightLabel.Text = "Weight (in pounds) :";
             // 
             // heightLabel
             // 
             heightLabel.AutoSize = true;
-            heightLabel.Location = new Point(42, 48);
+            heightLabel.Location = new Point(48, 64);
             heightLabel.Margin = new Padding(2, 0, 2, 0);
             heightLabel.Name = "heightLabel";
-            heightLabel.Size = new Size(107, 15);
+            heightLabel.Size = new Size(132, 20);
             heightLabel.TabIndex = 19;
             heightLabel.Text = "Height (in Inches) :";
             // 
@@ -192,36 +197,38 @@
             // 
             headerLabel.AutoSize = true;
             headerLabel.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            headerLabel.Location = new Point(113, 11);
+            headerLabel.Location = new Point(129, 15);
             headerLabel.Margin = new Padding(2, 0, 2, 0);
             headerLabel.Name = "headerLabel";
-            headerLabel.Size = new Size(146, 19);
+            headerLabel.Size = new Size(177, 23);
             headerLabel.TabIndex = 37;
             headerLabel.Text = "Enter Routine details";
             // 
             // sysBPTextBox
             // 
-            sysBPTextBox.Location = new Point(178, 148);
+            sysBPTextBox.Location = new Point(203, 197);
             sysBPTextBox.Margin = new Padding(2, 1, 2, 1);
             sysBPTextBox.Name = "sysBPTextBox";
-            sysBPTextBox.Size = new Size(178, 23);
+            sysBPTextBox.Size = new Size(203, 27);
             sysBPTextBox.TabIndex = 3;
+            sysBPTextBox.GotFocus += heightTextBox_GotFocus;
             // 
             // symptomsTextBox
             // 
-            symptomsTextBox.Location = new Point(178, 343);
+            symptomsTextBox.Location = new Point(203, 457);
             symptomsTextBox.Margin = new Padding(2, 1, 2, 1);
             symptomsTextBox.Name = "symptomsTextBox";
-            symptomsTextBox.Size = new Size(178, 74);
+            symptomsTextBox.Size = new Size(203, 97);
             symptomsTextBox.TabIndex = 7;
             symptomsTextBox.Text = "";
+            symptomsTextBox.GotFocus += heightTextBox_GotFocus;
             // 
             // cancelButton
             // 
-            cancelButton.Location = new Point(233, 455);
+            cancelButton.Location = new Point(266, 607);
             cancelButton.Margin = new Padding(2, 1, 2, 1);
             cancelButton.Name = "cancelButton";
-            cancelButton.Size = new Size(81, 22);
+            cancelButton.Size = new Size(93, 29);
             cancelButton.TabIndex = 9;
             cancelButton.Text = "Cancel";
             cancelButton.UseVisualStyleBackColor = true;
@@ -231,10 +238,10 @@
             // 
             symptomsErrorLabel.AutoSize = true;
             symptomsErrorLabel.ForeColor = Color.Red;
-            symptomsErrorLabel.Location = new Point(187, 426);
+            symptomsErrorLabel.Location = new Point(214, 568);
             symptomsErrorLabel.Margin = new Padding(2, 0, 2, 0);
             symptomsErrorLabel.Name = "symptomsErrorLabel";
-            symptomsErrorLabel.Size = new Size(57, 15);
+            symptomsErrorLabel.Size = new Size(74, 20);
             symptomsErrorLabel.TabIndex = 38;
             symptomsErrorLabel.Text = "errorlabel";
             symptomsErrorLabel.Visible = false;
@@ -243,10 +250,10 @@
             // 
             pulseErrorLabel.AutoSize = true;
             pulseErrorLabel.ForeColor = Color.Red;
-            pulseErrorLabel.Location = new Point(187, 322);
+            pulseErrorLabel.Location = new Point(214, 429);
             pulseErrorLabel.Margin = new Padding(2, 0, 2, 0);
             pulseErrorLabel.Name = "pulseErrorLabel";
-            pulseErrorLabel.Size = new Size(57, 15);
+            pulseErrorLabel.Size = new Size(74, 20);
             pulseErrorLabel.TabIndex = 39;
             pulseErrorLabel.Text = "errorlabel";
             pulseErrorLabel.Visible = false;
@@ -255,10 +262,10 @@
             // 
             temperatureErrorLabel.AutoSize = true;
             temperatureErrorLabel.ForeColor = Color.Red;
-            temperatureErrorLabel.Location = new Point(187, 273);
+            temperatureErrorLabel.Location = new Point(214, 364);
             temperatureErrorLabel.Margin = new Padding(2, 0, 2, 0);
             temperatureErrorLabel.Name = "temperatureErrorLabel";
-            temperatureErrorLabel.Size = new Size(57, 15);
+            temperatureErrorLabel.Size = new Size(74, 20);
             temperatureErrorLabel.TabIndex = 40;
             temperatureErrorLabel.Text = "errorlabel";
             temperatureErrorLabel.Visible = false;
@@ -267,10 +274,10 @@
             // 
             diastolicErrorLabel.AutoSize = true;
             diastolicErrorLabel.ForeColor = Color.Red;
-            diastolicErrorLabel.Location = new Point(187, 222);
+            diastolicErrorLabel.Location = new Point(214, 296);
             diastolicErrorLabel.Margin = new Padding(2, 0, 2, 0);
             diastolicErrorLabel.Name = "diastolicErrorLabel";
-            diastolicErrorLabel.Size = new Size(57, 15);
+            diastolicErrorLabel.Size = new Size(74, 20);
             diastolicErrorLabel.TabIndex = 41;
             diastolicErrorLabel.Text = "errorlabel";
             diastolicErrorLabel.Visible = false;
@@ -279,10 +286,10 @@
             // 
             systolicErrorLabel.AutoSize = true;
             systolicErrorLabel.ForeColor = Color.Red;
-            systolicErrorLabel.Location = new Point(187, 172);
+            systolicErrorLabel.Location = new Point(214, 229);
             systolicErrorLabel.Margin = new Padding(2, 0, 2, 0);
             systolicErrorLabel.Name = "systolicErrorLabel";
-            systolicErrorLabel.Size = new Size(57, 15);
+            systolicErrorLabel.Size = new Size(74, 20);
             systolicErrorLabel.TabIndex = 42;
             systolicErrorLabel.Text = "errorlabel";
             systolicErrorLabel.Visible = false;
@@ -291,10 +298,10 @@
             // 
             weightErrorLabel.AutoSize = true;
             weightErrorLabel.ForeColor = Color.Red;
-            weightErrorLabel.Location = new Point(187, 118);
+            weightErrorLabel.Location = new Point(214, 157);
             weightErrorLabel.Margin = new Padding(2, 0, 2, 0);
             weightErrorLabel.Name = "weightErrorLabel";
-            weightErrorLabel.Size = new Size(57, 15);
+            weightErrorLabel.Size = new Size(74, 20);
             weightErrorLabel.TabIndex = 43;
             weightErrorLabel.Text = "errorlabel";
             weightErrorLabel.Visible = false;
@@ -303,10 +310,10 @@
             // 
             heightErrorLabel.AutoSize = true;
             heightErrorLabel.ForeColor = Color.Red;
-            heightErrorLabel.Location = new Point(187, 70);
+            heightErrorLabel.Location = new Point(214, 93);
             heightErrorLabel.Margin = new Padding(2, 0, 2, 0);
             heightErrorLabel.Name = "heightErrorLabel";
-            heightErrorLabel.Size = new Size(57, 15);
+            heightErrorLabel.Size = new Size(74, 20);
             heightErrorLabel.TabIndex = 44;
             heightErrorLabel.Text = "errorlabel";
             heightErrorLabel.Visible = false;
@@ -314,10 +321,10 @@
             // RoutineCheckup
             // 
             AcceptButton = addDetailsButton;
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = cancelButton;
-            ClientSize = new Size(405, 488);
+            ClientSize = new Size(463, 651);
             Controls.Add(heightErrorLabel);
             Controls.Add(weightErrorLabel);
             Controls.Add(systolicErrorLabel);

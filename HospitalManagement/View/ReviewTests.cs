@@ -68,13 +68,20 @@ namespace HospitalManagement.View
 
         private void orderTestsButton_Click(object sender, EventArgs e)
         {
-            foreach (var currentTest in _finalTests)
+            try
             {
-                _controller.OrderTests(_visitId, currentTest.Id);
+                foreach (var currentTest in _finalTests)
+                {
+                    _controller.OrderTests(_visitId, currentTest.Id);
+                }
+                DialogResult = DialogResult.OK;
+                this.Close();
+                MessageBox.Show("Sucessfully ordered the tests");
             }
-            DialogResult = DialogResult.OK;
-            this.Close();
-            MessageBox.Show("Sucessfully ordered the tests");
+            catch (Exception)
+            {
+                MessageBox.Show("One of these tests was already added. Please remove it and try again");
+            }
         }
 
         private void ReviewTestsDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

@@ -38,6 +38,10 @@ namespace HospitalManagement.View
             _ordered.Add(testToAdd);
             _list.Remove(testToAdd);
             errorLabel.Visible = false;
+            if (_list.Count == 0 )
+            {
+                addButton.Enabled = false;
+            }
             RefreshList();
         }
 
@@ -67,6 +71,7 @@ namespace HospitalManagement.View
             _list.Add(_ordered[index]);
             _ordered.RemoveAt(index);
             deleteButton.Enabled = false;
+            addButton.Enabled = true;
             RefreshList();
         }
 

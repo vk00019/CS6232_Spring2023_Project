@@ -38,8 +38,10 @@ namespace HospitalManagement.View
             try
             {
                 errorLabel.Visible = false;
+                DisableErrorLabels();
+                _error = false;
                 CheckAllFields();
-                if (!errorLabel.Visible && !_error)
+                if (!_error)
                 {
                     var height = Convert.ToDecimal(heightTextBox.Text);
                     var weight = Convert.ToDecimal(weightTextBox.Text);
@@ -65,6 +67,12 @@ namespace HospitalManagement.View
                     errorLabel.Visible = true;
                 }
             }
+            catch (FormatException)
+            {
+                errorLabel.Text = @"Please enter only integers";
+                errorLabel.ForeColor = Color.Red;
+                errorLabel.Visible = true;
+            }
             catch (Exception)
             {
                 errorLabel.Text = @"Please enter only digits greater than 0";
@@ -81,7 +89,6 @@ namespace HospitalManagement.View
 
         public void SetFields(Visit visit)
         {
-
             var newVisit = _controller.GetEverything(visit.VisitId);
             heightTextBox.Text = newVisit.Height.ToString();
             weightTextBox.Text = newVisit.Weight.ToString();
@@ -127,10 +134,20 @@ namespace HospitalManagement.View
             addDetailsButton.Enabled = true;
         }
 
+        private void DisableErrorLabels()
+        {
+            errorLabel.Visible = false;
+            heightErrorLabel.Visible = false;
+            weightErrorLabel.Visible = false;
+            diastolicErrorLabel.Visible = false;
+            systolicErrorLabel.Visible = false;
+            temperatureErrorLabel.Visible = false;
+            symptomsErrorLabel.Visible = false;
+            pulseErrorLabel.Visible = false;
+        }
+
         private void CheckAllFields()
         {
-            errorLabel.Text = @"*All fields are required*";
-            errorLabel.ForeColor = Color.Red;
             if (string.IsNullOrEmpty(heightTextBox.Text))
             {
                 heightErrorLabel.Visible = true;
@@ -204,6 +221,11 @@ namespace HospitalManagement.View
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void heightTextBox_GotFocus(object sender, EventArgs e)
+        {
+            DisableErrorLabels();
         }
     }
 }
