@@ -79,23 +79,45 @@ namespace HospitalManagement.UserControls
             }
             else if (dobLnRadioButton.Checked)
             {
-                var patientsObject = new PersonalDetails
+                if (!string.IsNullOrEmpty(lastnameTextBox.Text))
                 {
-                    DateOfBirth = dobDateTimePicker.Value,
-                    LastName = lastnameTextBox.Text
-                };
-                appointments = _controller.GetAppointmentWithDobAndLastname(patientsObject);
-                CheckForAppointments(appointments);
+                    var patientsObject = new PersonalDetails
+                    {
+                        DateOfBirth = dobDateTimePicker.Value,
+                        LastName = lastnameTextBox.Text
+                    };
+                    appointments = _controller.GetAppointmentWithDobAndLastname(patientsObject);
+                    CheckForAppointments(appointments);
+                }
+                else
+                {
+                    errorLabel.Text = "Please fill the Lastname";
+                    errorLabel.Visible = true;
+                    errorLabel.ForeColor = Color.Red;
+                    viewEditButton.Visible = false;
+                    deleteButton.Visible = false;
+                }
             }
             else
             {
-                var patientsObject = new PersonalDetails
+                if (!(string.IsNullOrEmpty(firstnametextBox.Text) || string.IsNullOrEmpty(lastnameTextBox.Text)))
                 {
-                    FirstName = firstnametextBox.Text,
-                    LastName = lastnameTextBox.Text
-                };
-                appointments = _controller.GetAppointmentWithFirstNameAndLastName(patientsObject);
-                CheckForAppointments(appointments);
+                    var patientsObject = new PersonalDetails
+                    {
+                        FirstName = firstnametextBox.Text,
+                        LastName = lastnameTextBox.Text
+                    };
+                    appointments = _controller.GetAppointmentWithFirstNameAndLastName(patientsObject);
+                    CheckForAppointments(appointments);
+                }
+                else
+                {
+                    errorLabel.Text = "Please fill both Firstname and Lastname";
+                    errorLabel.Visible = true;
+                    errorLabel.ForeColor = Color.Red;
+                    viewEditButton.Visible = false;
+                    deleteButton.Visible = false;
+                }
             }
         }
 
@@ -229,6 +251,12 @@ namespace HospitalManagement.UserControls
         private void dobDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
+        }
+
+        private void SearchAppointmentByUserControl_Load(object sender, EventArgs e)
+        {
+            dobDateTimePicker.MaxDate = DateTime.Now;
+            dobDateTimePicker.Value = DateTime.Now.Date;
         }
     }
 }

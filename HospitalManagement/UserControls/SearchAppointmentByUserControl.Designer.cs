@@ -192,6 +192,7 @@
             this.firstnametextBox.Size = new System.Drawing.Size(327, 39);
             this.firstnametextBox.TabIndex = 66;
             this.firstnametextBox.Visible = false;
+            this.firstnametextBox.TextChanged += new System.EventHandler(this.firstnametextBox_TextChanged);
             // 
             // lastnameLabel
             // 
@@ -214,6 +215,7 @@
             this.dobDateTimePicker.Size = new System.Drawing.Size(223, 39);
             this.dobDateTimePicker.TabIndex = 64;
             this.dobDateTimePicker.Value = new System.DateTime(2023, 4, 12, 0, 0, 0, 0);
+            this.dobDateTimePicker.ValueChanged += new System.EventHandler(this.dobDateTimePicker_ValueChanged);
             // 
             // lastnameTextBox
             // 
@@ -223,6 +225,7 @@
             this.lastnameTextBox.Size = new System.Drawing.Size(327, 39);
             this.lastnameTextBox.TabIndex = 63;
             this.lastnameTextBox.Visible = false;
+            this.lastnameTextBox.TextChanged += new System.EventHandler(this.lastnameTextBox_TextChanged);
             // 
             // dobLabel
             // 
@@ -319,6 +322,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "SearchAppointmentByUserControl";
             this.Size = new System.Drawing.Size(901, 1007);
+            this.Load += new System.EventHandler(this.SearchAppointmentByUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.searchDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

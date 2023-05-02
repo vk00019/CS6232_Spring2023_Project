@@ -6,7 +6,7 @@ namespace HospitalManagement.UserControls
 {
     public partial class SearchPatientVisitByUserControl : UserControl
     {
-        private Visit _visit;
+        private readonly Visit _visit;
         private readonly ManagementController _controller;
         public SearchPatientVisitByUserControl()
         {
@@ -98,7 +98,6 @@ namespace HospitalManagement.UserControls
                     errorLabel.Visible = true;
                     errorLabel.ForeColor = Color.Red;
                     viewButton.Visible = false;
-
                 }
             }
             else
@@ -130,7 +129,7 @@ namespace HospitalManagement.UserControls
             {
                 searchDataGridView.Visible = true;
                 searchDataGridView.DataSource = patients;
-                viewButton.Enabled = true;
+                viewButton.Enabled = false;
                 searchDataGridView.ClearSelection();
                 searchDataGridView.Columns["nurseID"].Visible = false;
                 searchDataGridView.Columns["height"].Visible = false;
@@ -208,6 +207,12 @@ namespace HospitalManagement.UserControls
                     _visit.FinalDiagnosis = searchDataGridView.SelectedRows[0].Cells[12].Value.ToString();
                 }
             }
+        }
+
+        private void SearchPatientVisitByUserControl_Load(object sender, EventArgs e)
+        {
+            dobDateTimePicker.MaxDate = DateTime.Now;
+            dobDateTimePicker.Value = DateTime.Now.Date;
         }
     }
 }
