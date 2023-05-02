@@ -142,6 +142,7 @@ namespace HospitalManagement.UserControls
                 searchDataGridView.Columns["DoctorName"].Visible = false;
                 searchDataGridView.Columns["PatientName"].Visible = false;
                 searchDataGridView.Columns["NurseName"].Visible = false;
+                searchDataGridView.Columns["PatientDOB"].Visible = false;
             }
             else
             {
