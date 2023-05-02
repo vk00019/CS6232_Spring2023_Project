@@ -1376,7 +1376,8 @@ namespace HospitalManagement.DAL
             using var connection = DBConnection.GetConnection();
             connection.Open();
             string query = "select TOP 1 v.visitID, a.appointmentID, concat(dd.firstName, ' ', dd.lastName) as doctor, " +
-                           "concat(pd.firstName, ' ', pd.lastName) as patient " +
+                           "concat(pd.firstName, ' ', pd.lastName) as patient, " +
+                           "pd.dateOfBirth as patientDOB " +
                            "from Visit as v join Appointment as a on a.appointmentID = v.appointmentID " +
                            "join Doctor as d on d.doctorID = a.doctorID " +
                            "join Patient as p on p.patientID = a.patientID " +
@@ -1390,6 +1391,7 @@ namespace HospitalManagement.DAL
             var appointmentIdOrdinal = reader.GetOrdinal("appointmentID");
             var doctorOrdinal = reader.GetOrdinal("doctor");
             var patientName = reader.GetOrdinal("patient");
+            var patientDOB = reader.GetOrdinal("patientDOB");
 
             while (reader.Read())
             {
@@ -1397,11 +1399,13 @@ namespace HospitalManagement.DAL
                 var visitId = reader.GetInt32(visitIdOrdinal);
                 var doctor = reader.GetString(doctorOrdinal);
                 var patient = reader.GetString(patientName);
+                var dob = reader.GetDateTime(patientDOB);
 
                 visit.VisitId = visitId;
                 visit.AppointmentId = appointmentId;
                 visit.DoctorName = doctor;
                 visit.PatientName = patient;
+                visit.PatientDOB = dob;
             }
 
             return visit;
@@ -1481,7 +1485,7 @@ namespace HospitalManagement.DAL
             var visit = new Visit();
             using var connection = DBConnection.GetConnection();
             connection.Open();
-            var query = "select v.visitID, a.appointmentID, concat(dd.firstName, ' ', dd.lastName) as doctor,concat(nd.firstName, ' ', nd.lastName) as nurse, concat(pd.firstName, ' ', pd.lastName) as patient " +
+            var query = "select v.visitID, a.appointmentID, concat(dd.firstName, ' ', dd.lastName) as doctor,concat(nd.firstName, ' ', nd.lastName) as nurse, concat(pd.firstName, ' ', pd.lastName) as patient, pd.dateOfBirth as patientDOB " +
                         "from Visit as v " +
                         "join Appointment as a on a.appointmentID = v.appointmentID " +
                         "join Doctor as d on d.doctorID = a.doctorID " +
@@ -1504,6 +1508,7 @@ namespace HospitalManagement.DAL
             var doctorOrdinal = reader.GetOrdinal("doctor");
             var patientName = reader.GetOrdinal("patient");
             var nurseName = reader.GetOrdinal("nurse");
+            var patientDOB = reader.GetOrdinal("patientDOB");
 
             while (reader.Read())
             {
@@ -1512,12 +1517,14 @@ namespace HospitalManagement.DAL
                 var doctor = reader.GetString(doctorOrdinal);
                 var patient = reader.GetString(patientName);
                 var nurse = reader.GetString(nurseName);
+                var dob = reader.GetDateTime(patientDOB);
 
                 visit.VisitId = visitId;
                 visit.AppointmentId = appointmentId;
                 visit.DoctorName = doctor;
                 visit.PatientName = patient;
                 visit.NurseName = nurse;
+                visit.PatientDOB = dob;
             }
 
             return visit;

@@ -223,6 +223,8 @@
         public string PatientName { get; set; }
 
         public string NurseName { get; set; }
+
+        public DateTime PatientDOB { get; set; }
         
     }
 }
