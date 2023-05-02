@@ -37,7 +37,7 @@ namespace HospitalManagement.View
             doctorTextBox.Text = visit.DoctorName;
             nurseTextBox.Text = visit.NurseName;
             patientTextBox.Text = visit.PatientName;
-            patientDOBTextBox.Text = visit.PatientDOB.ToString();
+            patientDOBTextBox.Text = visit.PatientDOB.ToShortDateString();
             if (_controller.IsFinalDiagnosisAvailable(_visit.VisitId))
             {
                 orderTestsButton.Enabled = false;

@@ -31,7 +31,7 @@ namespace HospitalManagement.UserControls
             _visit = _controller.GetLatestVisit();
             doctorTextBox.Text = _visit.DoctorName;
             patientTextBox.Text = _visit.PatientName;
-            patientDOBTextBox.Text = _visit.PatientDOB.ToString();
+            patientDOBTextBox.Text = _visit.PatientDOB.ToShortDateString();
         }
 
         private void orderTestsButton_Click(object sender, EventArgs e)
