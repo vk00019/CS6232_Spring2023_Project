@@ -1,3 +1,6 @@
+Database updated kindly recreate it using the stored procedures as well
+All scripts are in individual .sql files 
+
 Login Credentails for the application
 - Username : test 
 - Password : test1234 
@@ -15,6 +18,3 @@ Stored Procedures added in the root folder
 
 ---------
 
--Faced Multiple issues to pass the Visit id/ Visit object around the multiple forms like 
-	routine checkup, order test, test results, diagnosis forms
-(Hopefully Everything cleared now!!)
